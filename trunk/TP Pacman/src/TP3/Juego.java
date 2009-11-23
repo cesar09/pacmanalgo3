@@ -18,7 +18,12 @@ public class Juego {
 	}
 
 	public void sumarPuntajeAlJugador(int puntaje){
+		if(puntaje<0) throw new IllegalArgumentException();
 		this.jugador.sumarPuntaje(puntaje);
+	}
+	
+	public int getPuntajeDelJugador(){
+		return this.jugador.getPuntaje();
 	}
 	
 	public void mover(){
