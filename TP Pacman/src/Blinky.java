@@ -41,4 +41,11 @@ public class Blinky extends Fantasma {
             } catch (NoTransitableException e) {}
             }
     }
+	
+	public static void main(String[] args) {
+		Laberinto miLaberinto = new Laberinto();
+		miLaberinto.cargarLaberintoSegunNivel();
+		Blinky miBlinky = new Blinky();
+		
+	}
 }
