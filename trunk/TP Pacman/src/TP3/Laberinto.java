@@ -1,23 +1,41 @@
 package TP3;
 
-//import java.io.*; //lo utiliza el cargarLaberintoSegunNivel que lee de archivo
+import java.io.*; //lo utiliza el cargarLaberintoSegunNivel que lee de archivo
 
 public class Laberinto {
 
 private Posicion[][] matrizPosicion;
 private int fila;
 private int columna;
+private int nivel;
 
- public Laberinto(){//cuando se use el cargador por archivo hay que poner Laberinto(nivel)
-	 this.fila= 7; // las y maximas
-	 this.columna=7; //las x maximas
-	 matrizPosicion = new Posicion[7][7];
-	 for(int i = 0;i<7;i++){
-		 for(int j = 0; j<7;j++){
+//Constructor para la carga desde archivo
+/*
+public Laberinto(int nivel){
+	 this.nivel = nivel;
+	 this.fila= 30; // las y maximas
+	 this.columna=27; //las x maximas
+	 matrizPosicion = new Posicion[fila][columna];
+	 for(int i = 0;i<fila;i++){
+		 for(int j = 0; j<columna;j++){
 			 matrizPosicion[i][j]=null;
 		 }
 	 }
  }
+*/	
+ 
+public Laberinto(){
+	 this.fila= 7; // las y maximas
+	 this.columna=7; //las x maximas
+	 matrizPosicion = new Posicion[fila][columna];
+	 for(int i = 0;i<7;i++){
+	 for(int j = 0; j<7;j++){
+		 matrizPosicion[i][j]=null;
+		 }
+	 }
+ }
+		 
+	 
  //nose me ocurria un nombre mas elegante desp lo cambiamos
  //este lo tendria que usar el pacman 
  public Posicion devolverPosicion(int x,int y){
@@ -28,7 +46,7 @@ private int columna;
  }
 
 //harcodie mientras no tengamos xml
- public void cargarLaberintoSegunNivel(){
+public void cargarLaberintoSegunNivel(){
 
 	  matrizPosicion[0][0]= new Posicion(new Bloque());
 	  matrizPosicion[0][1]= new Posicion(new Bloque());
@@ -78,13 +96,13 @@ private int columna;
 	  matrizPosicion[6][3]= new Posicion(new Bloque());
 	  matrizPosicion[6][4]= new Posicion(new Bloque());
 	  matrizPosicion[6][5]= new Posicion(new Bloque());
-	  matrizPosicion[6][6]= new Posicion(new Bloque());	  
+	  matrizPosicion[0][0]= new Posicion(new Bloque());
+	}
 
- }
 
- //Este es el metodo que carga desde archivo el laberinto. Falta comprobar que ande.
+//Este es el metodo que carga desde archivo el laberinto. Falta comprobar que ande.
 /*
- *  public void cargarLaberintoSegunNivel(){
+public void cargarLaberintoSegunNivel(){
 	  	
 		int x; 
 		int y;
@@ -97,11 +115,11 @@ private int columna;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		for (y = 1; y <= 31; y++) {
-			for (x = 1; x <= 28; x++) {
+		for (y = 0; y <= fila; y++) {
+			for (x = 0; x <= columna; x++) {
 				try {
 					caracter = input.read();
-					agregarObjeto(caracter, nivel, x, y);
+					agregarObjeto(caracter, x, y);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -111,20 +129,24 @@ private int columna;
 	}
 	
 
-private void agregarObjeto(int caracter, int nivel, int x, int y) {
+private void agregarObjeto(int caracter, int x, int y) {
 		switch (caracter) {
 			case 35:
-				new Bloque();
+				matrizPosicion[x][y]= new Posicion(new Bloque());
 				break;
 			case 111:
-				new Punto();
+				matrizPosicion[x][y]= new Posicion(new Punto());
 				break;
 			case 79:
-				new PuntoPoder();
+				matrizPosicion[x][y]= new Posicion(new PuntoPoder());
 				break;
-		}		
+			case 32:
+				matrizPosicion[x][y]= new Posicion(new Vacio());
+				break;
+		}
 	
 	}
 */
 
-}
+} 
+
