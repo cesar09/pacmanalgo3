@@ -25,9 +25,17 @@ public class Blinky extends Fantasma {
 
 	@Override
 	public void huirDePacman(Laberinto unLaberinto) {
-		// TODO: Pensar como implementar la estrategia
-		int x = 2;
-		int y = 2;
-		this.mover(x, y);
-	}
+        int x = this.obtenerPosicion().getX();
+        int y = this.obtenerPosicion().getY();
+        while (this.esComestible()){
+            try {
+                unLaberinto.devolverPosicion(x, y+1).getContenido().getTransitable();
+                this.mover(x, y+1);
+            } catch (NoTransitableException e) {}
+            try {
+            	unLaberinto.devolverPosicion(x+1,y).getContenido().getTransitable();
+                this.mover(x+1, y);
+            } catch (NoTransitableException e) {}
+            }
+    }
 }
