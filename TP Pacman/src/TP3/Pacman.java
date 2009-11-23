@@ -1,15 +1,14 @@
 package TP3;
-public class Pacman implements Personaje {
+public class Pacman extends Personaje {
 
 	private int vidas;
-	private Point posicion;
 	
 	public Pacman(Point posicionInicial) {
 		this.vidas = 3;
 		this.posicion = posicionInicial;
 	}
 	
-	public void mover(int x, int y) {
+	protected void mover(int x, int y) {
 		this.posicion.setXY(x, y); 
 	}
 	

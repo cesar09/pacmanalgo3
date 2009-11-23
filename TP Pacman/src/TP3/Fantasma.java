@@ -1,7 +1,6 @@
 package TP3;
-public abstract class Fantasma implements Personaje {
+public abstract class Fantasma extends Personaje {
 
-		private Point posicion;
 		private boolean comestible;
 		protected int velocidad;
 		
@@ -17,7 +16,7 @@ public abstract class Fantasma implements Personaje {
 			//TODO: Hay que poner un tiempo para q se vuelva a poner false
 		}
 		
-		public void mover(int x, int y) {
+		protected void mover(int x, int y) {
 			this.posicion.setXY(x, y); 
 		}
 		

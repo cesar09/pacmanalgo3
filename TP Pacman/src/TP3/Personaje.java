@@ -1,6 +1,8 @@
 package TP3;
-public interface Personaje {
+public abstract class Personaje {
 
-	public void mover(int x, int y);
+	protected Point posicion;
+	
+	protected void mover(int x, int y){};
 	
 }
