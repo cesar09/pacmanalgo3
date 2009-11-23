@@ -17,5 +17,9 @@ public class TestVacio extends TestCase {
 		unBloqueVacio.hayPacman(unNivel);
 		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
 	}
-
+	public void testGetTransitable() {
+		Vacio unBloqueVacio= new Vacio();		
+		Transitable auxiliar= unBloqueVacio.getTransitable();
+		assertSame(unBloqueVacio,auxiliar);
+	}
 }
