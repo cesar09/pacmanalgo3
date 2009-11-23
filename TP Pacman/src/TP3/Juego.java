@@ -23,7 +23,7 @@ public class Juego {
 	}
 	
 	public int getPuntajeDelJugador(){
-		return this.jugador.getPuntaje();
+		return this.jugador.obtenerPuntaje();
 	}
 	
 	public void mover(){
