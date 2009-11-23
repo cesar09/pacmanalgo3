@@ -25,16 +25,11 @@ public class Nivel {
 	}
 		
 	public boolean esTransitable(int x, int y){
-		/*if ((laberinto[x][y])instanceof Contenido){
-				//Transitable auxiliar = (Transitable)laberinto[x][y].getContenido();
-				//auxiliar.serComido(this);
-				laberinto[x][y].getContenido().getTransitable().hayPacman(this);
-				return true;	
-		}*/
-		 try {//falta validar devolver posicion en la clase laberinto
-			 this.getMiLaberinto().devolverPosicion(y, x).getContenido().getTransitable().hayPacman(this);
+		try {//falta validar devolver posicion en la clase laberinto
+			 Transitable transitable = (Transitable)this.getMiLaberinto().devolverPosicion(y, x).getContenido();
+			 transitable.hayPacman(this);
 			 return true;
-		 } catch (NoTransitableException e) {
+		 } catch (ClassCastException e) {
 				 return false;
 			 }
 	}
