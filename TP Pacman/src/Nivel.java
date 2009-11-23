@@ -2,7 +2,7 @@
 public class Nivel {
 	
 	private Juego juego;
-	private Posicion[][] laberinto;
+	private Laberinto miLaberinto;
 	private Pacman pacman;
 	
 	// TODO Hay q usarlo como vector quizás: private Vector<Fantasma> fantasmas; 
@@ -20,6 +20,7 @@ public class Nivel {
 		this.inky = new Inky (pos,vel);
 		this.clyde = new Clyde (pos,vel);
 		this.pacman = new Pacman (pos);
+		this.miLaberinto = new Laberinto ();//cuando se tenga xml se pasa el nivel
 		//TODO falta inicializar la parte del laberinto(pensar si está bien el tipo array)
 	}
 		
@@ -30,8 +31,8 @@ public class Nivel {
 				laberinto[x][y].getContenido().getTransitable().hayPacman(this);
 				return true;	
 		}*/
-		 try {
-			 laberinto[x][y].getContenido().getTransitable().hayPacman(this);
+		 try {//falta validar devolver posicion en la clase laberinto
+			 this.getMiLaberinto().devolverPosicion(y, x).getContenido().getTransitable().hayPacman(this);
 			 return true;
 		 } catch (NoTransitableException e) {
 				 return false;
@@ -43,10 +44,10 @@ public class Nivel {
 	}
 	
 	public void mueveFantasma(){
-		this.blinky.elegirMovimiento();
-		this.pinky.elegirMovimiento();
-		this.inky.elegirMovimiento();
-		this.clyde.elegirMovimiento();
+		this.blinky.elegirMovimiento(this.getMiLaberinto());
+		this.pinky.elegirMovimiento(this.getMiLaberinto());
+		this.inky.elegirMovimiento(this.getMiLaberinto());
+		this.clyde.elegirMovimiento(this.getMiLaberinto());
 	}
 	
 	public void muevePacman(){
@@ -67,6 +68,14 @@ public class Nivel {
 		this.pinky.hacerseComestible();
 		this.inky.hacerseComestible();
 		this.clyde.hacerseComestible();
+	}
+
+	public void setMiLaberinto(Laberinto miLaberinto) {
+		this.miLaberinto = miLaberinto;
+	}
+
+	public Laberinto getMiLaberinto() {
+		return miLaberinto;
 	}
 	
 }

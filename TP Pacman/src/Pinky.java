@@ -4,8 +4,8 @@ public class Pinky extends Fantasma {
 	public Pinky(Point posicionInicial, int velocidadInicial) {
 		super(posicionInicial, velocidadInicial);
 	}
-
-	public void atraparPacman() {
+	@Override
+	public void atraparPacman(Laberinto unLaberinto) {
 		// TODO: Pensar como implementar la estrategia
 		/*
 		 * 
@@ -14,9 +14,11 @@ public class Pinky extends Fantasma {
 		int x = 2;
 		int y = 2;
 		this.mover(x, y);
+		
 	}
 
-	public void huirDePacman() {
+	@Override
+	public void huirDePacman(Laberinto unLaberinto) {
 		// TODO: Pensar como implementar la estrategia
 		int x = 2;
 		int y = 2;

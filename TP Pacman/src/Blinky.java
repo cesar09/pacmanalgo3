@@ -5,26 +5,23 @@ public class Blinky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman() {
+	public void atraparPacman(Laberinto unLaberinto) {
 		// TODO: Pensar como implementar la estrategia
+		/*
+		 * 
+		 * 
+		 */
+		int x = 2;
+		int y = 2;
+		this.mover(x, y);
 		
-		/* LO SIGUE
-		 * si el pacman esta abajo mover hacia abajo
-		 * si el pacman esta arriba mover hacia arriba
-		 * si el pacman esta derecha mover hacia derecha
-		 * si el pacman esta izquierda mover hacia izquierda
-		*/
-		int x = 2;
-		int y = 2;
-		this.mover(x, y);
 	}
 
-	public void huirDePacman() {
+	@Override
+	public void huirDePacman(Laberinto unLaberinto) {
 		// TODO: Pensar como implementar la estrategia
-		// Que cada uno escape a una esquina distinta quizás
 		int x = 2;
 		int y = 2;
 		this.mover(x, y);
 	}
-
 }
