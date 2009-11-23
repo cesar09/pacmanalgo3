@@ -1,7 +1,7 @@
 
 public class ZZZZpaProba {
 	public static void main(String[] args) {
-		System.out.println("Haber si anda esto");
+		System.out.println("Chupala Lea");
 		Juego miJuego = new Juego();
 	}
 }
