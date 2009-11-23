@@ -24,18 +24,18 @@ public class Nivel {
 	}
 		
 	public boolean esTransitable(int x, int y){
-		//Avisa si se puede transitar la posicion q le pasemos
-		//TODO: LA IDEA ES Q ESTE METODO NO EXISTA, LO QUE QUIERO ES HACER ESTO
-		//      USANDO UN ENFOQUE MAS OPTIMISTA, ALGO ASI COMO DECIR QUE SI O SI
-		// 		SE LLAME AL METODO HAYPACMAN Y EN CASO DE NO PODERSE SE ARREGLA,
-
-		if ((laberinto[x][y])instanceof Contenido){
+		/*if ((laberinto[x][y])instanceof Contenido){
 				//Transitable auxiliar = (Transitable)laberinto[x][y].getContenido();
 				//auxiliar.serComido(this);
 				laberinto[x][y].getContenido().getTransitable().hayPacman(this);
 				return true;	
-		}
-		return false;
+		}*/
+		 try {
+			 laberinto[x][y].getContenido().getTransitable().hayPacman(this);
+			 return true;
+		 } catch (NoTransitableException e) {
+				 return false;
+			 }
 	}
 	
 	public Juego getMiJuego(){

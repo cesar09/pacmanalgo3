@@ -1,4 +1,4 @@
 
 public interface Contenido {
-		abstract public Transitable getTransitable();
+		abstract public Transitable getTransitable() throws NoTransitableException;
 }
