@@ -20,10 +20,13 @@ private Posicion[][] matrizPosicion;
 	 return PosicionPedida;
  }
  
- public boolean posicionValidad(int x, int y){
-	 
-	 //this.devolverPosicion(x, y).getContenido().getTransitable();
-	 return true;
+ public boolean posicionValida(int x, int y){
+	 try {
+		 devolverPosicion(y, x).getContenido().getTransitable();
+		 return true;
+	 } catch (NoTransitableException e) {
+			 return false;
+		 }
  }
 
 //harcodie mientras no tengamos xml
