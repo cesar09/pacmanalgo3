@@ -1,7 +1,7 @@
+package TP3;
+public class Clyde extends Fantasma {
 
-public class Inky extends Fantasma {
-
-	public Inky(Point posicionInicial, int velocidadInicial) {
+	public Clyde(Point posicionInicial, int velocidadInicial) {
 		super(posicionInicial, velocidadInicial);
 	}
 
@@ -24,4 +24,5 @@ public class Inky extends Fantasma {
 		int y = 2;
 		this.mover(x, y);
 	}
+
 }

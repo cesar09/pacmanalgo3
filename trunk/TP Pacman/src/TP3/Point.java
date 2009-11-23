@@ -1,4 +1,4 @@
-
+package TP3;
 public class Point {
 	// Creamos esta clase Point para poder usarla en el laberinto
   int x,y;

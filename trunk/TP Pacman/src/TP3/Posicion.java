@@ -1,4 +1,4 @@
-
+package TP3;
 public class Posicion {
 
 	private Contenido contenido;
