@@ -31,18 +31,20 @@ public class Blinky extends Fantasma {
 	public void huirDePacman(Laberinto unLaberinto) {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
+        Transitable transitable;
+		Transitable transitable2;
         while (this.esComestible()){
             try {
-                unLaberinto.devolverPosicion(x, y+1).getContenido().getTransitable();
+            	transitable = (Transitable)unLaberinto.devolverPosicion(x, y+1).getContenido();
                 this.mover(x, y+1);
-            } catch (NoTransitableException e) {}
+            } catch (ClassCastException e) {}
             try {
-            	unLaberinto.devolverPosicion(x+1,y).getContenido().getTransitable();
+            	transitable2 = (Transitable)unLaberinto.devolverPosicion(x+1,y).getContenido();
                 this.mover(x+1, y);
-            } catch (NoTransitableException e) {}
+            } catch (ClassCastException e) {}
             }
     }
-	
+		
 	public static void main(String[] args) {
 		Point Inicial = new Point(3,3);
 		Laberinto miLaberinto = new Laberinto();
