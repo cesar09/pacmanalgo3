@@ -21,11 +21,11 @@ public abstract class Fantasma implements Personaje {
 			this.posicion.setXY(x, y); 
 		}
 		
-		public void elegirMovimiento(){	
+		public void elegirMovimiento(Laberinto unLaberinto){	
 			if (comestible){
-				this.huirDePacman();
+				this.huirDePacman(unLaberinto);
 			}else{
-				this.atraparPacman();
+				this.atraparPacman(unLaberinto);
 			}
 		}
 		
@@ -33,8 +33,8 @@ public abstract class Fantasma implements Personaje {
 			return (this.posicion);
 		}
 		
-		abstract public void atraparPacman();
+		abstract public void atraparPacman(Laberinto unLaberinto);
 		
-		abstract public void huirDePacman();
+		abstract public void huirDePacman(Laberinto unLaberinto);
 
 }
