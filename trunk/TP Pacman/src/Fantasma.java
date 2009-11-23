@@ -33,6 +33,10 @@ public abstract class Fantasma implements Personaje {
 			return (this.posicion);
 		}
 		
+		public boolean esComestible(){
+			return this.comestible;
+		}
+		
 		abstract public void atraparPacman(Laberinto unLaberinto);
 		
 		abstract public void huirDePacman(Laberinto unLaberinto);
