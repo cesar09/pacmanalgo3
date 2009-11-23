@@ -19,15 +19,6 @@ private Posicion[][] matrizPosicion;
 	 PosicionPedida = matrizPosicion[y][x];
 	 return PosicionPedida;
  }
- 
- public boolean posicionValida(int x, int y){
-	 try {
-		 devolverPosicion(y, x).getContenido().getTransitable();
-		 return true;
-	 } catch (NoTransitableException e) {
-			 return false;
-		 }
- }
 
 //harcodie mientras no tengamos xml
  public void cargarLaberintoSegunNivel(){
