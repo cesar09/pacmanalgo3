@@ -8,7 +8,7 @@ private Posicion[][] matrizPosicion;
 private int fila;
 private int columna;
 
- public Laberinto(){
+ public Laberinto(){//cuando se use el cargador por archivo hay que poner Laberinto(nivel)
 	 this.fila= 7; // las y maximas
 	 this.columna=7; //las x maximas
 	 matrizPosicion = new Posicion[7][7];
@@ -85,7 +85,7 @@ private int columna;
 
  //Este es el metodo que carga desde archivo el laberinto. Falta comprobar que ande.
 /*
- *  public void cargarLaberintoSegunNivel(nivel){
+ *  public void cargarLaberintoSegunNivel(){
 	  	
 		int x; 
 		int y;
@@ -98,8 +98,8 @@ private int columna;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		for (y = 1; y <= 8; y++) {
-			for (x = 1; x <= 8; x++) {
+		for (y = 1; y <= 31; y++) {
+			for (x = 1; x <= 28; x++) {
 				try {
 					caracter = input.read();
 					agregarObjeto(caracter, nivel, x, y);
