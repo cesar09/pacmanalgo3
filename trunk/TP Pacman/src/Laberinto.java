@@ -2,8 +2,12 @@
 public class Laberinto {
 
 private Posicion[][] matrizPosicion;
+private int fila;
+private int columna;
 
  public Laberinto(){
+	 this.fila= 7; // las y maximas
+	 this.columna=7; //las x maximas
 	 matrizPosicion = new Posicion[7][7];
 	 for(int i = 0;i<7;i++){
 		 for(int j = 0; j<7;j++){
@@ -15,6 +19,7 @@ private Posicion[][] matrizPosicion;
  //nose me ocurria un nombre mas elegante desp lo cambiamos
  //este lo tendria que usar el pacman 
  public Posicion devolverPosicion(int x,int y){
+	 if ((x<=0)|(x>columna)|(y<=0)|(y>fila)) throw new IllegalArgumentException();
 	 Posicion PosicionPedida;
 	 PosicionPedida = matrizPosicion[y][x];
 	 return PosicionPedida;
