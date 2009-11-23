@@ -20,6 +20,10 @@ private Posicion[][] matrizPosicion;
 	 return PosicionPedida;
  }
  
+ public boolean posicionValidad(int x, int y){
+	 return true;
+ }
+
 //harcodie mientras no tengamos xml
  public void cargarLaberintoSegunNivel(){
 
@@ -74,5 +78,6 @@ private Posicion[][] matrizPosicion;
 	  matrizPosicion[6][6]= new Posicion(new Bloque());	  
 
  }
+
 
 }

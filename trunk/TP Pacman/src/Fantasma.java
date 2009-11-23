@@ -22,7 +22,7 @@ public abstract class Fantasma implements Personaje {
 		}
 		
 		public void elegirMovimiento(Laberinto unLaberinto){	
-			if (comestible){
+			if (comestible){//aca es un while 
 				this.huirDePacman(unLaberinto);
 			}else{
 				this.atraparPacman(unLaberinto);
