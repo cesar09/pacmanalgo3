@@ -26,7 +26,7 @@ public class Blinky extends Fantasma {
 		} catch (NoTransitableException e) {}
 	}
 
-	@Override
+
 	public void huirDePacman(Laberinto unLaberinto) {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
