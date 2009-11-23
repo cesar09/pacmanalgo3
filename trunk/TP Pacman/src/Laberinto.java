@@ -14,13 +14,15 @@ private Posicion[][] matrizPosicion;
 
  //nose me ocurria un nombre mas elegante desp lo cambiamos
  //este lo tendria que usar el pacman 
- public Posicion devolverPosicion(int y,int x){
+ public Posicion devolverPosicion(int x,int y){
 	 Posicion PosicionPedida;
 	 PosicionPedida = matrizPosicion[y][x];
 	 return PosicionPedida;
  }
  
  public boolean posicionValidad(int x, int y){
+	 
+	 //this.devolverPosicion(x, y).getContenido().getTransitable();
 	 return true;
  }
 
