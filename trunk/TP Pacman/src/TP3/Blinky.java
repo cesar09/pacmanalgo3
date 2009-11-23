@@ -37,12 +37,13 @@ public class Blinky extends Fantasma {
             try {
             	transitable = (Transitable)unLaberinto.devolverPosicion(x, y+1).getContenido();
                 this.mover(x, y+1);
-            } catch (ClassCastException e) {}
-            try {
-            	transitable2 = (Transitable)unLaberinto.devolverPosicion(x+1,y).getContenido();
-                this.mover(x+1, y);
-            } catch (ClassCastException e) {}
+            } catch (ClassCastException e) {
+            	try {
+            		transitable2 = (Transitable)unLaberinto.devolverPosicion(x+1,y).getContenido();
+            		this.mover(x+1, y);
+            	} catch (ClassCastException e2) {}
             }
+        }
     }
 		
 	public static void main(String[] args) {
