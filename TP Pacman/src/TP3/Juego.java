@@ -7,8 +7,8 @@ public class Juego {
 	private int nivelActual;
 	
 	public Juego(){
-		this.unNivel = new Nivel(this);
-		this.nivelActual = 1;
+		this.unNivel = new Nivel(this); //le pasa el Juego por argumento.
+		this.nivelActual = 1; //nivel inicial 1.
 		this.jugador = new Jugador();
 		//TODO: Nose q cantidad de niveles, VER de modificar
 	}
