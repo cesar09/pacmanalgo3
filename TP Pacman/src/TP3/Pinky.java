@@ -1,4 +1,4 @@
-
+package TP3;
 public class Pinky extends Fantasma {
 
 	public Pinky(Point posicionInicial, int velocidadInicial) {

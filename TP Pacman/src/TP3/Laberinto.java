@@ -1,4 +1,4 @@
-
+package TP3;
 public class Laberinto {
 
 private Posicion[][] matrizPosicion;

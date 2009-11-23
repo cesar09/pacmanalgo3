@@ -1,14 +1,13 @@
-
-import java.util.Vector;
+package TP3;
 
 public class Juego {
 
-	private Vector<Nivel> niveles; 
+	private Nivel unNivel; 
 	private Jugador jugador;
 	private int nivelActual;
 	
 	public Juego(){
-		this.niveles = new Vector<Nivel> (4);
+		this.unNivel = new Nivel(this);
 		this.nivelActual = 1;
 		this.jugador = new Jugador();
 		//TODO: Nose q cantidad de niveles, VER de modificar

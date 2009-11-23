@@ -1,4 +1,4 @@
-
+package TP3;
 public abstract class Fantasma implements Personaje {
 
 		private Point posicion;

@@ -1,3 +1,4 @@
+package TP3;
 public class PuntoPoder extends Comestible {
 
 	public PuntoPoder (){

@@ -1,8 +1,8 @@
+package TP3;
+public class Fruta extends Comestible {
 
-public class Punto extends Comestible {
-
-	public Punto (){
-		this.puntaje = 10;
+	public Fruta (){
+		this.puntaje = 100;
 	}
 	
 	public void hayPacman(Nivel unNivel) {
