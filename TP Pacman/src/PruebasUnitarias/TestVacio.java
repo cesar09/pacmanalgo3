@@ -4,18 +4,18 @@ import TP3.*;
 public class TestVacio extends TestCase {
 	
 	private Nivel unNivel;
+	private Juego unJuego;
 
 	public void setUp(){
-		this.unNivel= new Nivel(null);		
+		unJuego= new Juego();
+		this.unNivel= new Nivel(unJuego);		
 	}
 	
-	public void testHayPacman(Nivel unNivel) {
-		Laberinto unLaberinto= unNivel.getMiLaberinto();
-		Posicion unaPosicion= unLaberinto.devolverPosicion(1,1);
-		Transitable unContenido= (Vacio)unaPosicion.getContenido();
-		unContenido.hayPacman(unNivel);
-		
-		//TODO: TERMINAR ESTA GAROMPA.
+	public void testHayPacman() {
+		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		Vacio unBloqueVacio= new Vacio();		
+		unBloqueVacio.hayPacman(unNivel);
+		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
 	}
 
 }
