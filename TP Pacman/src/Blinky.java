@@ -43,9 +43,10 @@ public class Blinky extends Fantasma {
     }
 	
 	public static void main(String[] args) {
+		Point Inicial = new Point(3,3);
 		Laberinto miLaberinto = new Laberinto();
 		miLaberinto.cargarLaberintoSegunNivel();
-		Blinky miBlinky = new Blinky();
+		Blinky miBlinky = new Blinky(Inicial,5);
 		
 	}
 }
