@@ -1,4 +1,7 @@
 package TP3;
+
+//import java.io.*; //lo utiliza el cargarLaberintoSegunNivel que lee de archivo
+
 public class Laberinto {
 
 private Posicion[][] matrizPosicion;
@@ -80,5 +83,48 @@ private int columna;
 
  }
 
+ //Este es el metodo que carga desde archivo el laberinto. Falta comprobar que ande.
+/*
+ *  public void cargarLaberintoSegunNivel(nivel){
+	  	
+		int x; 
+		int y;
+		int caracter;
+				
+		BufferedReader input = null;
+		File laberintoFile = new File("nivel"+nivel+".xml");
+		try {
+			input = new BufferedReader(new FileReader(laberintoFile));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		for (y = 1; y <= 8; y++) {
+			for (x = 1; x <= 8; x++) {
+				try {
+					caracter = input.read();
+					agregarObjeto(caracter, nivel, x, y);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 
+	}
+	
+
+private void agregarObjeto(int caracter, int nivel, int x, int y) {
+		switch (caracter) {
+			case 35:
+				new Bloque();
+				break;
+			case 111:
+				new Punto();
+				break;
+			case 79:
+				new PuntoPoder();
+				break;
+		}		
+	
+	}
+*/
 }
