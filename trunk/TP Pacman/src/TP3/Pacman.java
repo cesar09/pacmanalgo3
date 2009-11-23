@@ -37,7 +37,7 @@ public class Pacman implements Personaje {
 		return (this.posicion);
 	}
 	
-	public void perderVida() {
+	public void morir() {
 		this.vidas -= 1;
 	}
 
