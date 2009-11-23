@@ -18,11 +18,10 @@ private int columna;
 		 }
 	 }
  }
-
  //nose me ocurria un nombre mas elegante desp lo cambiamos
  //este lo tendria que usar el pacman 
  public Posicion devolverPosicion(int x,int y){
-	 if ((x<=0)|(x>columna)|(y<=0)|(y>fila)) throw new IllegalArgumentException();
+	 if ((x<0)|(x>columna)|(y<0)|(y>fila)) throw new IllegalArgumentException();
 	 Posicion PosicionPedida;
 	 PosicionPedida = matrizPosicion[y][x];
 	 return PosicionPedida;
@@ -127,4 +126,5 @@ private void agregarObjeto(int caracter, int nivel, int x, int y) {
 	
 	}
 */
+
 }
