@@ -148,5 +148,6 @@ private void agregarObjeto(int caracter, int x, int y) {
 	}
 */
 
+
 } 
 
