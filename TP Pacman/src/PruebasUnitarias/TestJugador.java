@@ -7,13 +7,13 @@ public class TestJugador extends TestCase {
 
 	private Jugador unJugador;
 	
-	public void SetUp(){
-		unJugador= new Jugador();		
+	public void setUp(){
+		this.unJugador= new Jugador();		
 	}
-	public void TestObtenerPuntaje(){
-		assertEquals(unJugador.obtenerPuntaje(),0);		
+	public void testObtenerPuntaje(){
+		assertEquals(this.unJugador.obtenerPuntaje(),0);		
 	}
-	public void TestSumarPuntajeUno(){
+	public void testSumarPuntajeUno(){
 		try{
 			unJugador.sumarPuntaje(10);
 		}
@@ -22,7 +22,7 @@ public class TestJugador extends TestCase {
 		}
 		assertEquals(unJugador.obtenerPuntaje(),10);
 	}
-	public void TestSumarPuntajeDos(){
+	public void testSumarPuntajeDos(){
 		try{
 			unJugador.sumarPuntaje(-1);
 			fail("Permitió sumar puntaje con un valor inválido.");

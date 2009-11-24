@@ -15,7 +15,7 @@ public class TestPuntoPoder extends TestCase {
 	
 	public void testHayPacman() {
 		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
-		Vacio unBloqueVacio= new Vacio();		
+		PuntoPoder unBloqueVacio= new PuntoPoder();		
 		unBloqueVacio.hayPacman(unNivel);
 		assertEquals(this.unJuego.getPuntajeDelJugador(),50);
 	}
