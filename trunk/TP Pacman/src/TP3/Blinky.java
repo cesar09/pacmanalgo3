@@ -23,13 +23,9 @@ public class Blinky extends Fantasma {
               y++;
             	} catch (ClassCastException e2) {}
             }
-        //checkea desp de moverse si estan en la misma posicion q el pacman
         if(this.mismaPosicion(this, unPacman)){
         	unPacman.morir();
-        	unNivel.pacmanAtrapado();
         }
-
-
 	}
 	
 	public void huirDePacman(Nivel unNivel) {
