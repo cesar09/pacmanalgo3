@@ -10,4 +10,7 @@ public class PuntoPoder extends Comestible {
 		unNivel.hacerFantasmasComestibles();
 	}
 
+	public void serTransitado(Nivel unNivel){
+		
+	}	
 }

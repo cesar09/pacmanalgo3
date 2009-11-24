@@ -9,4 +9,8 @@ public class Punto extends Comestible {
 		unNivel.obtenerMiJuego().sumarPuntajeAlJugador(this.puntaje);
 	}
 
+	public void serTransitado(Nivel unNivel){
+		
+	}	
+
 }

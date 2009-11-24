@@ -21,17 +21,16 @@ public class Pinky extends Fantasma {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
         Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-        Transitable transitable;
         try {
-            	transitable = (Transitable)unLaberinto.devolverContenido(x, y-1);
+        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
                 this.mover(x, y-1);
                 y--;
-        } catch (ClassCastException e) {
+        }catch (NoTransitableException e) {
             	try {
-            		transitable = (Transitable)unLaberinto.devolverContenido(x+1,y);
+            		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
             		this.mover(x+1, y);
             		x++;
-            	} catch (ClassCastException e2) {}
+            	}catch (NoTransitableException e2) {}
          }
     }
 	

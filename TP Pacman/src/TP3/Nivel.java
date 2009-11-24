@@ -17,7 +17,7 @@ public class Nivel {
 		this.juego = unJuego;
 		this.miLaberinto = new Laberinto (1);
 		this.setearPacmanFantasmas();
-		this.ultimoSentido=1; //inicializo para q valla a la izquierda como ultimo movim.
+		this.ultimoSentido=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
 	//TODO: debería ser este metodo protected
 	public void setearPacmanFantasmas(){
@@ -68,42 +68,46 @@ public class Nivel {
 			//Este es un ejemplo de si quiere ir para la izquierda.
 			x = this.pacman.obtenerPosicion().getX()-1;
 			y = this.pacman.obtenerPosicion().getY();
-			if (esTransitable(x,y)){
-				this.pacman.irIzquierda();
-				ultimoSentido=1;
-				return true;
-			}
-		break;
+			try {
+				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.pacman.irIzquierda();
+				 ultimoSentido=1;
+				 return true;
+			 } catch (NoTransitableException e) {}
+			 break;
 		case 2:
 			//Este es un ejemplo de si quiere ir para la derecha.
 			x = this.pacman.obtenerPosicion().getX()+1;
 			y = this.pacman.obtenerPosicion().getY();
-			if (esTransitable(x,y)){
-				this.pacman.irDerecha();
-				ultimoSentido=2;
-				return true;
-			}
+			try {
+				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.pacman.irDerecha();
+				 ultimoSentido=2;
+				 return true;
+			 } catch (NoTransitableException e) {}
 		break;
 		
 		case 3:
 			//Este es un ejemplo de si quiere ir para abajo.
 			x = this.pacman.obtenerPosicion().getX();
 			y = this.pacman.obtenerPosicion().getY()-1;
-			if (esTransitable(x,y)){
-				this.pacman.irAbajo();
-				ultimoSentido=3;
-				return true;
-			}
+			try {
+				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.pacman.irAbajo();
+				 ultimoSentido=3;
+				 return true;
+			 } catch (NoTransitableException e) {}
 		break;
 		
 		case 4:
 			x = this.pacman.obtenerPosicion().getX();
 			y = this.pacman.obtenerPosicion().getY()+1;
-			if (esTransitable(x,y)){
-				this.pacman.irArriba();
-				ultimoSentido=4;
-				return true;
-			}
+			try {
+				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.pacman.irArriba();
+				 ultimoSentido=4;
+				 return true;
+			 } catch (NoTransitableException e) {}
 		break;
 		}
 		return false;
