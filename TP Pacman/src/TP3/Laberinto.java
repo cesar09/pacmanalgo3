@@ -15,7 +15,7 @@ public Laberinto(int nivel){
 	 this.fila= 30; // las y maximas
 	 this.columna=27; //las x maximas
 	 matrizPosicion = new Posicion[fila][columna];
-	 for(int i = 0;i<fila;i++){
+	 for(int i = 0;i<fila;i++){ //TODO: me parece que esto de los null es al pedo
 		 for(int j = 0; j<columna;j++){
 			 matrizPosicion[i][j]=null;
 		 }
