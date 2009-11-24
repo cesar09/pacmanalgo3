@@ -48,11 +48,11 @@ public class Blinky extends Fantasma {
             }
 
     }
-		
+/*		
 	public static void main(String[] args) {
 		Point Inicial = new Point(3,3);
 		Laberinto miLaberinto = new Laberinto(1);//TODO: VERIFICAR ESTO CON EL LABERINTO.
-	//	miLaberinto.cargarLaberintoSegunNivel();//TODO: CORREGIR PARA CAPTURAR LA EXCDEPCION.
+		miLaberinto.cargarLaberintoSegunNivel();//TODO: CORREGIR PARA CAPTURAR LA EXCDEPCION.
 		Blinky miBlinky = new Blinky(Inicial,5);
 		Pacman unPacman = new Pacman(new Point (1,1));
 		System.out.println(miBlinky.obtenerPosicion().getX());
@@ -65,5 +65,5 @@ public class Blinky extends Fantasma {
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
 
-	}
+	}*/
 }

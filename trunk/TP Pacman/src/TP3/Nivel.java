@@ -25,7 +25,7 @@ public class Nivel {
 		
 	public boolean esTransitable(int x, int y){
 		try {
-			 Transitable transitable = (Transitable)this.getMiLaberinto().devolverPosicion(y, x).getContenido();
+			 Transitable transitable = (Transitable)this.obtenerMiLaberinto().devolverPosicion(y, x).getContenido();
 			 transitable.hayPacman(this);
 			 return true;
 		 } catch (ClassCastException e) {
@@ -33,15 +33,15 @@ public class Nivel {
 			 }
 	}
 	
-	public Juego getMiJuego(){
+	public Juego obtenerMiJuego(){
 		return (this.juego);
 	}
 	
 	public void mueveFantasma(){
-		this.blinky.elegirMovimiento(this.getMiLaberinto(),this.getPacman());
-		this.pinky.elegirMovimiento(this.getMiLaberinto(),this.getPacman());
-		this.inky.elegirMovimiento(this.getMiLaberinto(),this.getPacman());
-		this.clyde.elegirMovimiento(this.getMiLaberinto(),this.getPacman());
+		this.blinky.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
+		this.pinky.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
+		this.inky.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
+		this.clyde.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
 	}
 	
 	public void muevePacman(){
@@ -63,11 +63,7 @@ public class Nivel {
 		this.clyde.hacerseComestible();
 	}
 
-	public void setMiLaberinto(Laberinto miLaberinto) {
-		this.miLaberinto = miLaberinto;
-	}
-
-	public Laberinto getMiLaberinto() {
+	public Laberinto obtenerMiLaberinto() {
 		return miLaberinto;
 	}
 	
