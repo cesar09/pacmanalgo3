@@ -2,6 +2,7 @@ package TP3;
 public class ZZZZpaProba {
 	public static void main(String[] args) {
 		System.out.println("Sigan mamando, vos tambien la tenes adentro");
+		System.out.println("la puta q los pario !!!!");
 		Juego miJuego = new Juego();
 		
 		

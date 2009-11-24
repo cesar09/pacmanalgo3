@@ -5,31 +5,32 @@ public class Blinky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Laberinto unLaberinto) {
-		int x = this.obtenerPosicion().getX();
-		int y = this.obtenerPosicion().getY();
+	public void atraparPacman(Laberinto unLaberinto,Pacman unPacman) {
+        int x = this.obtenerPosicion().getX();
+        int y = this.obtenerPosicion().getY();
+        Transitable transitable;
+        try {
+           transitable = (Transitable)unLaberinto.devolverPosicion(x-1,y).getContenido();
+           this.mover(x-1, y);
+           x--;}
+    
+        catch (ClassCastException e) {
+            try {
+              transitable = (Transitable)unLaberinto.devolverPosicion(x,y+1).getContenido();
+              this.mover(x,y+1);
+              y++;
+            	} catch (ClassCastException e2) {}
+            }
+        //checkea desp de moverse si estan en la misma posicion q el pacman
+        if(this.mismaPosicion(this, unPacman)){
+        	unPacman.morir();
+        	//aca pienso q se tendria q hacer unNivel.pacmanAtrapado();
+        	//tambien le tendriamos q pasar la referencia del nivel 
+        }
 
-		
-		
-		/*try {
-			atransitable= (Transitable)unLaberinto.devolverPosicion(x-1, y).getContenido();
-            this.mover(x+1, y);
-        } catch (ClassCastException e) {}*/
-	
-		
-	
-	/*	unLaberinto.devolverPosicion(x, y+1).getContenido().getTransitable();
-			this.mover(x,y+1);
-
-	    unLaberinto.devolverPosicion(x-1, y).getContenido().getTransitable();
-			this.mover(x-1,y);
-
-	    unLaberinto.devolverPosicion(x, y-1).getContenido().getTransitable();
-			this.mover(x,y-1);*/
 
 	}
-
-
+	
 	public void huirDePacman(Laberinto unLaberinto) {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
@@ -45,6 +46,7 @@ public class Blinky extends Fantasma {
             		x++;
             	} catch (ClassCastException e2) {}
             }
+
     }
 		
 	public static void main(String[] args) {
@@ -52,31 +54,16 @@ public class Blinky extends Fantasma {
 		Laberinto miLaberinto = new Laberinto();
 		miLaberinto.cargarLaberintoSegunNivel();
 		Blinky miBlinky = new Blinky(Inicial,5);
-		
-		
-		//HUIR
-		
+		Pacman unPacman = new Pacman(new Point (1,1));
+		System.out.println(miBlinky.obtenerPosicion().getX());
+		System.out.println(miBlinky.obtenerPosicion().getY());
 		miBlinky.hacerseComestible();
-		System.out.println(miBlinky.obtenerPosicion().getX());
-		System.out.println(miBlinky.obtenerPosicion().getY());
 		miBlinky.huirDePacman(miLaberinto);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.huirDePacman(miLaberinto);
+		miBlinky.atraparPacman(miLaberinto,unPacman);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.huirDePacman(miLaberinto);
-		System.out.println(miBlinky.obtenerPosicion().getX());
-		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.huirDePacman(miLaberinto);
-		System.out.println(miBlinky.obtenerPosicion().getX());
-		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.huirDePacman(miLaberinto);
-		System.out.println(miBlinky.obtenerPosicion().getX());
-		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.huirDePacman(miLaberinto);
-		System.out.println(miBlinky.obtenerPosicion().getX());
-		System.out.println(miBlinky.obtenerPosicion().getY());
-		
+
 	}
 }

@@ -5,7 +5,7 @@ public class Inky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Laberinto unLaberinto) {
+	public void atraparPacman(Laberinto unLaberinto,Pacman unPacman) {
 		// TODO: Pensar como implementar la estrategia
 		/*
 		 * 
