@@ -12,13 +12,13 @@ public class Blinky extends Fantasma {
         int y = this.obtenerPosicion().getY();
         Transitable transitable;
         try {
-           transitable = (Transitable)unLaberinto.devolverPosicion(x-1,y).getContenido();
+           transitable = (Transitable)unLaberinto.devolverContenido(x-1,y);
            this.mover(x-1, y);
            x--;}
     
         catch (ClassCastException e) {
             try {
-              transitable = (Transitable)unLaberinto.devolverPosicion(x,y+1).getContenido();
+              transitable = (Transitable)unLaberinto.devolverContenido(x,y+1);
               this.mover(x,y+1);
               y++;
             	} catch (ClassCastException e2) {}
@@ -34,12 +34,12 @@ public class Blinky extends Fantasma {
         Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Transitable transitable;
         try {
-            	transitable = (Transitable)unLaberinto.devolverPosicion(x, y+1).getContenido();
+            	transitable = (Transitable)unLaberinto.devolverContenido(x, y+1);
                 this.mover(x, y+1);
                 y++;
         } catch (ClassCastException e) {
             	try {
-            		transitable = (Transitable)unLaberinto.devolverPosicion(x+1,y).getContenido();
+            		transitable = (Transitable)unLaberinto.devolverContenido(x+1,y);
             		this.mover(x+1, y);
             		x++;
             	} catch (ClassCastException e2) {}
