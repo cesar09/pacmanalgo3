@@ -4,7 +4,7 @@ import java.io.*; //lo utiliza el cargarLaberintoSegunNivel que lee de archivo
 
 public class Laberinto {
 
-private Posicion[][] matrizPosicion;
+private Contenido[][] contenidos;
 private int fila;
 private int columna;
 private int nivel;
@@ -14,19 +14,19 @@ public Laberinto(int nivel){
 	 this.nivel = nivel;
 	 this.fila= 30; // las y maximas
 	 this.columna=27; //las x maximas
-	 matrizPosicion = new Posicion[fila][columna];
+	 contenidos = new Contenido[fila][columna];
 	 for(int i = 0;i<fila;i++){ //TODO: me parece que esto de los null es al pedo
 		 for(int j = 0; j<columna;j++){
-			 matrizPosicion[i][j]=null;
+			 contenidos[i][j]=null;
 		 }
 	 }
  }
 
- public Posicion devolverPosicion(int x,int y){
+ public Contenido devolverContenido(int x,int y){
 	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
-	 Posicion PosicionPedida;
-	 PosicionPedida = matrizPosicion[y][x];
-	 return PosicionPedida;
+	 Contenido contenidoPedido;
+	 contenidoPedido = contenidos[y][x];
+	 return contenidoPedido;
  }
 
 //harcodie mientras no tengamos xml
@@ -124,16 +124,16 @@ public void cargarLaberintoSegunNivel() throws ArchivoFueraDeFormatoException{
 private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeFormatoException {
 		switch (caracter) {
 			case 35:
-				matrizPosicion[x][y]= new Posicion(new Bloque());
+				contenidos[x][y]= new Bloque();
 				break;
 			case 111:
-				matrizPosicion[x][y]= new Posicion(new Punto());
+				contenidos[x][y]= new Punto();
 				break;
 			case 79:
-				matrizPosicion[x][y]= new Posicion(new PuntoPoder());
+				contenidos[x][y]= new PuntoPoder();
 				break;
 			case 32:
-				matrizPosicion[x][y]= new Posicion(new Vacio());
+				contenidos[x][y]= new Vacio();
 				break;
 			default: throw new ArchivoFueraDeFormatoException();
 		}

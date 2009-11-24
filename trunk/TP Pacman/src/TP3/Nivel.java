@@ -32,7 +32,7 @@ public class Nivel {
 		
 	public boolean esTransitable(int x, int y){
 		try {
-			 Transitable transitable = (Transitable)this.obtenerMiLaberinto().devolverPosicion(y, x).getContenido();
+			 Transitable transitable = (Transitable)this.obtenerMiLaberinto().devolverContenido(y, x);
 			 transitable.hayPacman(this);
 			 return true;
 		 } catch (ClassCastException e) {
