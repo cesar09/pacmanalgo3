@@ -20,11 +20,11 @@ public abstract class Fantasma extends Personaje {
 			this.posicion.setXY(x, y); 
 		}
 		
-		public void elegirMovimiento(Laberinto unLaberinto){	
+		public void elegirMovimiento(Laberinto unLaberinto, Pacman unPacman){	
 			if (comestible){//aca es un while 
 				this.huirDePacman(unLaberinto);
 			}else{
-				this.atraparPacman(unLaberinto);
+				this.atraparPacman(unLaberinto,unPacman);
 			}
 		}
 		
@@ -36,7 +36,15 @@ public abstract class Fantasma extends Personaje {
 			return this.comestible;
 		}
 		
-		abstract public void atraparPacman(Laberinto unLaberinto);
+		public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
+			if(unFantasma.obtenerPosicion().equals(unPacman.obtenerPosicion())){
+				return true;
+			} else {
+				return false;
+				}
+		}
+		
+		abstract public void atraparPacman(Laberinto unLaberinto, Pacman unPacman);
 		
 		abstract public void huirDePacman(Laberinto unLaberinto);
 
