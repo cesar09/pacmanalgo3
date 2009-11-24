@@ -29,5 +29,11 @@ public class Juego {
 	public void mover(){
 		//TODO: Debe llamar al mover correspondiente a la direccion en q se moverá
 	}
+
+	public void juegoPerdido() {
+		System.out.println("lo siente gil perdiste");
+		System.out.println("alegrate llegaste al nivel:"+ this.nivelActual);
+		
+	}
 	
 }

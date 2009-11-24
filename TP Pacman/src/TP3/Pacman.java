@@ -39,5 +39,9 @@ public class Pacman extends Personaje {
 	public void morir() {
 		this.vidas -= 1;
 	}
+	
+	public int getVida(){
+		return this.vidas;
+	}
 
 }

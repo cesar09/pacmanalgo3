@@ -26,6 +26,7 @@ public class Blinky extends Fantasma {
         //checkea desp de moverse si estan en la misma posicion q el pacman
         if(this.mismaPosicion(this, unPacman)){
         	unPacman.morir();
+        	unNivel.pacmanAtrapado();
         	//aca pienso q se tendria q hacer unNivel.pacmanAtrapado();
         	//tambien le tendriamos q pasar la referencia del nivel 
         }
