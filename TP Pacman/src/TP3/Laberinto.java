@@ -10,7 +10,7 @@ private int columna;
 private int nivel;
 
 //Constructor para la carga desde archivo
-/*
+
 public static void main(String[] args) throws ArchivoFueraDeFormatoException {
 	Laberinto unLaberinto= new Laberinto(1);
 	unLaberinto.cargarLaberintoSegunNivel();
@@ -27,8 +27,8 @@ public Laberinto(int nivel){
 		 }
 	 }
  }
-*/	
- 
+
+/* 
 public Laberinto(){
 	 this.fila= 7; // las y maximas
 	 this.columna=7; //las x maximas
@@ -40,7 +40,7 @@ public Laberinto(){
 	 }
  }
 		 
-	 
+*/	 
  //nose me ocurria un nombre mas elegante desp lo cambiamos
  //este lo tendria que usar el pacman 
  public Posicion devolverPosicion(int x,int y){
@@ -51,7 +51,7 @@ public Laberinto(){
  }
 
 //harcodie mientras no tengamos xml
-	
+/*	
 public void cargarLaberintoSegunNivel(){
 
 	  matrizPosicion[0][0]= new Posicion(new Bloque());
@@ -104,10 +104,10 @@ public void cargarLaberintoSegunNivel(){
 	  matrizPosicion[6][5]= new Posicion(new Bloque());
 	  matrizPosicion[0][0]= new Posicion(new Bloque());
 	}
-
+*/
 
 //Este es el metodo que carga desde archivo el laberinto. Falta comprobar que ande.
-/*
+
 public void cargarLaberintoSegunNivel() throws ArchivoFueraDeFormatoException{
 	  	
 		int x; 
@@ -162,6 +162,6 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 	}
 
 
-*/
+
 } 
 
