@@ -34,16 +34,16 @@ public class Blinky extends Fantasma {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
         Transitable transitable;
-//		Transitable transitable2;
-        while (this.esComestible()){
-            try {
+        try {
             	transitable = (Transitable)unLaberinto.devolverPosicion(x, y+1).getContenido();
                 this.mover(x, y+1);
-            } catch (ClassCastException e) {}
-            try {
-            	transitable = (Transitable)unLaberinto.devolverPosicion(x+1,y).getContenido();
-                this.mover(x+1, y);
-            } catch (ClassCastException e) {}
+                y++;
+        } catch (ClassCastException e) {
+            	try {
+            		transitable = (Transitable)unLaberinto.devolverPosicion(x+1,y).getContenido();
+            		this.mover(x+1, y);
+            		x++;
+            	} catch (ClassCastException e2) {}
             }
     }
 		
@@ -52,27 +52,31 @@ public class Blinky extends Fantasma {
 		Laberinto miLaberinto = new Laberinto();
 		miLaberinto.cargarLaberintoSegunNivel();
 		Blinky miBlinky = new Blinky(Inicial,5);
+		
+		
+		//HUIR
+		
+		miBlinky.hacerseComestible();
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.atraparPacman(miLaberinto);
+		miBlinky.huirDePacman(miLaberinto);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.atraparPacman(miLaberinto);
+		miBlinky.huirDePacman(miLaberinto);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.atraparPacman(miLaberinto);
+		miBlinky.huirDePacman(miLaberinto);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.atraparPacman(miLaberinto);
+		miBlinky.huirDePacman(miLaberinto);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.atraparPacman(miLaberinto);
+		miBlinky.huirDePacman(miLaberinto);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-		miBlinky.atraparPacman(miLaberinto);
+		miBlinky.huirDePacman(miLaberinto);
 		System.out.println(miBlinky.obtenerPosicion().getX());
 		System.out.println(miBlinky.obtenerPosicion().getY());
-
 		
 	}
 }

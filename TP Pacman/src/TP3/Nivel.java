@@ -5,7 +5,7 @@ public class Nivel {
 	private Laberinto miLaberinto;
 	private Pacman pacman;
 	
-	// TODO Hay q usarlo como vector quizás: private Vector<Fantasma> fantasmas; 
+	// TODO Podria usarse como array: private Fantasma[] fantasmas; 
 	private Blinky blinky;
 	private Pinky pinky;
 	private Inky inky;
@@ -20,12 +20,11 @@ public class Nivel {
 		this.inky = new Inky (pos,vel);
 		this.clyde = new Clyde (pos,vel); 
 		this.pacman = new Pacman (pos);
-		this.miLaberinto = new Laberinto ();//cuando se tenga xml se pasa el nivel
-		//TODO falta inicializar la parte del laberinto(pensar si está bien el tipo array)
+		this.miLaberinto = new Laberinto ();//TODO: cuando se tenga xml se pasa el nivel
 	}
 		
 	public boolean esTransitable(int x, int y){
-		try {//falta validar devolver posicion en la clase laberinto
+		try {
 			 Transitable transitable = (Transitable)this.getMiLaberinto().devolverPosicion(y, x).getContenido();
 			 transitable.hayPacman(this);
 			 return true;
@@ -58,7 +57,6 @@ public class Nivel {
 	}
 	
 	public void hacerFantasmasComestibles(){
-		//Hace que los fantasmas ahora puedan ser comidos por pacman
 		this.blinky.hacerseComestible();
 		this.pinky.hacerseComestible();
 		this.inky.hacerseComestible();
