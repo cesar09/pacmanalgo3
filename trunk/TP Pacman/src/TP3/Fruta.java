@@ -8,5 +8,9 @@ public class Fruta extends Comestible {
 	public void hayPacman(Nivel unNivel) {
 		unNivel.obtenerMiJuego().sumarPuntajeAlJugador(this.puntaje);
 	}
+	
+	public void serTransitado(Nivel unNivel){
+		
+	}	
 
 }

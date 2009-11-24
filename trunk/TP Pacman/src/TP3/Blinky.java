@@ -10,18 +10,16 @@ public class Blinky extends Fantasma {
         Pacman unPacman = unNivel.getPacman();
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
-        Transitable transitable;
         try {
-           transitable = (Transitable)unLaberinto.devolverContenido(x-1,y);
+           unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
            this.mover(x-1, y);
-           x--;}
-    
-        catch (ClassCastException e) {
+           x--;
+        }catch (NoTransitableException e) {
             try {
-              transitable = (Transitable)unLaberinto.devolverContenido(x,y+1);
+              unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
               this.mover(x,y+1);
               y++;
-            	} catch (ClassCastException e2) {}
+            }catch (NoTransitableException e2) {}
             }
         if(this.mismaPosicion(this, unPacman)){
         	unPacman.morir();
@@ -32,19 +30,17 @@ public class Blinky extends Fantasma {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
         Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-        Transitable transitable;
         try {
-            	transitable = (Transitable)unLaberinto.devolverContenido(x, y+1);
+        		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
                 this.mover(x, y+1);
                 y++;
-        } catch (ClassCastException e) {
+        }catch (NoTransitableException e) {
             	try {
-            		transitable = (Transitable)unLaberinto.devolverContenido(x+1,y);
+            		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
             		this.mover(x+1, y);
             		x++;
-            	} catch (ClassCastException e2) {}
+            	}catch (NoTransitableException e2) {}
             }
-
     }
 /*		
 	public static void main(String[] args) {
