@@ -20,7 +20,7 @@ public class Nivel {
 		this.inky = new Inky (pos,vel);
 		this.clyde = new Clyde (pos,vel); 
 		this.pacman = new Pacman (pos);
-		this.miLaberinto = new Laberinto ();//TODO: cuando se tenga xml se pasa el nivel
+		this.miLaberinto = new Laberinto (1);//TODO: cuando se tenga xml se pasa el nivel
 	}
 		
 	public boolean esTransitable(int x, int y){
