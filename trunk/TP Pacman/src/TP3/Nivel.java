@@ -10,6 +10,7 @@ public class Nivel {
 	private Pinky pinky;
 	private Inky inky;
 	private Clyde clyde;
+	
 
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;

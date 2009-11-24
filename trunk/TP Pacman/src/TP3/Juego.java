@@ -15,6 +15,7 @@ public class Juego {
 	
 	public void pasarDeNivel(){
 		this.nivelActual += 1;
+		//TODO: acá falta cambiar el laberinto, quizas halla que agregar metodos en laberinto para descartar el viejo y poner el nuevo.
 	}
 
 	public void sumarPuntajeAlJugador(int puntaje){
@@ -33,7 +34,7 @@ public class Juego {
 	public void juegoPerdido() {
 		System.out.println("lo siente gil perdiste");
 		System.out.println("alegrate llegaste al nivel:"+ this.nivelActual);
-		
+		//TODO estos mensaje son muy buenos!!! pero habría q cambiarlos jeje.
 	}
 	
 }
