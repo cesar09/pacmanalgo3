@@ -19,7 +19,7 @@ public class Pacman extends Personaje {
 	
 	public void irDerecha() {
 		//Mueve al pacman un casillero a la derecha
-			this.mover((this.posicion.getX()+1),this.posicion.getY());
+		this.mover((this.posicion.getX()+1),this.posicion.getY());
 	}
 	
 	public void irArriba() {
@@ -41,12 +41,7 @@ public class Pacman extends Personaje {
 	}
 	
 	public int getVida(){
-		return this.vidas;
-	}
-
-	public void irUltimoSentido() {
-		// TODO Auto-generated method stub
-		
+		return this.vidas;		
 	}
 
 }

@@ -10,12 +10,14 @@ public class Nivel {
 	private Pinky pinky;
 	private Inky inky;
 	private Clyde clyde;
+	private int ultimoSentido;
 	
 
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;
 		this.miLaberinto = new Laberinto (1);
 		this.setearPacmanFantasmas();
+		this.ultimoSentido=1; //inicializo para q valla a la izquierda como ultimo movim.
 	}
 	//TODO: debería ser este metodo protected
 	public void setearPacmanFantasmas(){
@@ -49,14 +51,17 @@ public class Nivel {
 		this.clyde.elegirMovimiento(this);
 	}
 	
-	public void muevePacman(){		
-		int x;
-		int y;
+	public void muevePacman(){	
 		int sentido=0;
-		
 		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
+		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentido);
+	}
+	
+	protected boolean moverSegunSentido(int sentido){
+		int x;
+		int y;
 		switch (sentido){
 		
 		case 1:
@@ -65,7 +70,8 @@ public class Nivel {
 			y = this.pacman.obtenerPosicion().getY();
 			if (esTransitable(x,y)){
 				this.pacman.irIzquierda();
-				return;
+				ultimoSentido=1;
+				return true;
 			}
 		break;
 		case 2:
@@ -74,7 +80,8 @@ public class Nivel {
 			y = this.pacman.obtenerPosicion().getY();
 			if (esTransitable(x,y)){
 				this.pacman.irDerecha();
-				return;
+				ultimoSentido=2;
+				return true;
 			}
 		break;
 		
@@ -84,7 +91,8 @@ public class Nivel {
 			y = this.pacman.obtenerPosicion().getY()-1;
 			if (esTransitable(x,y)){
 				this.pacman.irAbajo();
-				return;
+				ultimoSentido=3;
+				return true;
 			}
 		break;
 		
@@ -93,11 +101,12 @@ public class Nivel {
 			y = this.pacman.obtenerPosicion().getY()+1;
 			if (esTransitable(x,y)){
 				this.pacman.irArriba();
-				return;
+				ultimoSentido=4;
+				return true;
 			}
 		break;
 		}
-		this.pacman.irUltimoSentido();
+		return false;
 	}
 	
 	public void hacerFantasmasComestibles(){
