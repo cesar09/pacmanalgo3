@@ -35,9 +35,10 @@ public class Pinky extends Fantasma {
     }
 	
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Point Inicial = new Point(3,3);
-		Laberinto miLaberinto = new Laberinto(1);
+		Laberinto miLaberinto = new Laberinto(1);//TODO: VERIFICAR ESTO CON EL LABERINTO.
+		miLaberinto.cargarLaberintoSegunNivel();
 		Pinky miPinky = new Pinky(Inicial,5);
 		
 		//HUIR
@@ -64,7 +65,7 @@ public class Pinky extends Fantasma {
 		System.out.println(miPinky.obtenerPosicion().getX());
 		System.out.println(miPinky.obtenerPosicion().getY());
 		
-	}
+	}*/
 	
 
 }

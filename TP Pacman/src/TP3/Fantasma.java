@@ -13,7 +13,6 @@ public abstract class Fantasma extends Personaje {
 		
 		public void hacerseComestible(){
 			this.comestible = true;
-			//TODO: Hay que poner un tiempo para q se vuelva a poner false
 		}
 		
 		protected void mover(int x, int y) {
