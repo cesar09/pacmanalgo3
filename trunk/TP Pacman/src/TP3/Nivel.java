@@ -5,7 +5,7 @@ public class Nivel {
 	private Laberinto miLaberinto;
 	private Pacman pacman;
 	
-	// TODO Podria usarse como array: private Fantasma[] fantasmas; 
+
 	private Blinky blinky;
 	private Pinky pinky;
 	private Inky inky;
@@ -13,7 +13,7 @@ public class Nivel {
 
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;
-		this.miLaberinto = new Laberinto (1);//TODO: cuando se tenga xml se pasa el nivel
+		this.miLaberinto = new Laberinto (1);
 		this.setearPacmanFantasmas();
 	}
 	
@@ -78,7 +78,8 @@ public class Nivel {
 	public Juego getJuego(){
 		return this.juego;
 	}
-
+    
+	//esto qdo rustico, alguien que lo mejore en lo posible 
 	public void pacmanAtrapado() {
          if(this.getPacman().getVida()==0){
         	 this.getJuego().juegoPerdido();
