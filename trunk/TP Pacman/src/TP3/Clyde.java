@@ -38,7 +38,6 @@ public class Clyde extends Fantasma {
 	public static void main(String[] args) {
 		Point Inicial = new Point(3,3);
 		Laberinto miLaberinto = new Laberinto(1);//TODO: VERIFICAR ESTO CON EL LABERINTO.
-		miLaberinto.cargarLaberintoSegunNivel();// TODO: CORREGIR PARA CAPTURAR LA EXCDEPCION. 
 		Clyde miClyde = new Clyde(Inicial,5);
 		
 		//HUIR
