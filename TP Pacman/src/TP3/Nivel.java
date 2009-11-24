@@ -18,7 +18,7 @@ public class Nivel {
 		this.blinky = new Blinky (pos,vel);
 		this.pinky = new Pinky (pos,vel);
 		this.inky = new Inky (pos,vel);
-		this.clyde = new Clyde (pos,vel);
+		this.clyde = new Clyde (pos,vel); 
 		this.pacman = new Pacman (pos);
 		this.miLaberinto = new Laberinto ();//cuando se tenga xml se pasa el nivel
 		//TODO falta inicializar la parte del laberinto(pensar si está bien el tipo array)
