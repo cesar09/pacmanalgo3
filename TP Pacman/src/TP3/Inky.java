@@ -37,8 +37,8 @@ public class Inky extends Fantasma {
 	
 	public static void main(String[] args) {
 		Point Inicial = new Point(3,3);
-		Laberinto miLaberinto = new Laberinto();
-		miLaberinto.cargarLaberintoSegunNivel();
+		Laberinto miLaberinto = new Laberinto(1); //TODO: VERIFICAR ESTO CON EL LABERINTO.
+		miLaberinto.cargarLaberintoSegunNivel(); //TODO: CORREGIR PARA CAPTURAR LA EXCEPCION.
 		Inky miInky = new Inky(Inicial,5);
 		
 		//HUIR
