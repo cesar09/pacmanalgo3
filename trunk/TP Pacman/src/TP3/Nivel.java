@@ -13,14 +13,18 @@ public class Nivel {
 
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;
-		int vel = 1;
+		this.miLaberinto = new Laberinto (1);//TODO: cuando se tenga xml se pasa el nivel
+		this.setearPacmanFantasmas();
+	}
+	
+	public void setearPacmanFantasmas(){
+		int vel = 1;//habria q setear la velocidad dentro de cada contructor
 		Point pos = new Point (1,1);
 		this.blinky = new Blinky (pos,vel);
 		this.pinky = new Pinky (pos,vel);
 		this.inky = new Inky (pos,vel);
 		this.clyde = new Clyde (pos,vel); 
 		this.pacman = new Pacman (pos);
-		this.miLaberinto = new Laberinto (1);//TODO: cuando se tenga xml se pasa el nivel
 	}
 		
 	public boolean esTransitable(int x, int y){
@@ -69,6 +73,20 @@ public class Nivel {
 	
 	public Pacman getPacman(){
 		return this.pacman;
+	}
+	
+	public Juego getJuego(){
+		return this.juego;
+	}
+
+	public void pacmanAtrapado() {
+         if(this.getPacman().getVida()==0){
+        	 this.getJuego().juegoPerdido();
+         } else {
+        	 this.setearPacmanFantasmas();
+        	 this.mueveFantasma();
+         }
+		
 	}
 	
 }

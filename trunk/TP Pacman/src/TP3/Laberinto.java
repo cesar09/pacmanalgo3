@@ -9,12 +9,6 @@ private int fila;
 private int columna;
 private int nivel;
 
-//Constructor para la carga desde archivo
-
-public static void main(String[] args) throws ArchivoFueraDeFormatoException {
-	Laberinto unLaberinto= new Laberinto(1);
-	unLaberinto.cargarLaberintoSegunNivel();
-}
 
 public Laberinto(int nivel){
 	 this.nivel = nivel;
@@ -28,21 +22,6 @@ public Laberinto(int nivel){
 	 }
  }
 
-/* 
-public Laberinto(){
-	 this.fila= 7; // las y maximas
-	 this.columna=7; //las x maximas
-	 matrizPosicion = new Posicion[fila][columna];
-	 for(int i = 0;i<7;i++){
-	 for(int j = 0; j<7;j++){
-		 matrizPosicion[i][j]=null;
-		 }
-	 }
- }
-		 
-*/	 
- //nose me ocurria un nombre mas elegante desp lo cambiamos
- //este lo tendria que usar el pacman 
  public Posicion devolverPosicion(int x,int y){
 	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
 	 Posicion PosicionPedida;
@@ -161,6 +140,12 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 	
 	}
 
+//Constructor para la carga desde archivo
+
+public static void main(String[] args) throws ArchivoFueraDeFormatoException {
+	Laberinto unLaberinto= new Laberinto(1);
+	unLaberinto.cargarLaberintoSegunNivel();
+}
 
 
 } 
