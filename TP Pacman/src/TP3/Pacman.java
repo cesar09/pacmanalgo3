@@ -44,4 +44,9 @@ public class Pacman extends Personaje {
 		return this.vidas;
 	}
 
+	public void irUltimoSentido() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
