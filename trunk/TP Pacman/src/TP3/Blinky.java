@@ -5,7 +5,9 @@ public class Blinky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Laberinto unLaberinto,Pacman unPacman) {
+	public void atraparPacman(Nivel unNivel) {
+        Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
+        Pacman unPacman = unNivel.getPacman();
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
         Transitable transitable;
@@ -31,9 +33,10 @@ public class Blinky extends Fantasma {
 
 	}
 	
-	public void huirDePacman(Laberinto unLaberinto) {
+	public void huirDePacman(Nivel unNivel) {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
+        Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Transitable transitable;
         try {
             	transitable = (Transitable)unLaberinto.devolverPosicion(x, y+1).getContenido();

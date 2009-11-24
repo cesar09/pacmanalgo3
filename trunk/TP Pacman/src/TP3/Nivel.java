@@ -38,10 +38,10 @@ public class Nivel {
 	}
 	
 	public void mueveFantasma(){
-		this.blinky.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
-		this.pinky.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
-		this.inky.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
-		this.clyde.elegirMovimiento(this.obtenerMiLaberinto(),this.getPacman());
+		this.blinky.elegirMovimiento(this);
+		this.pinky.elegirMovimiento(this);
+		this.inky.elegirMovimiento(this);
+		this.clyde.elegirMovimiento(this);
 	}
 	
 	public void muevePacman(){

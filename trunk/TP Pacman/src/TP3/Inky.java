@@ -5,7 +5,7 @@ public class Inky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Laberinto unLaberinto,Pacman unPacman) {
+	public void atraparPacman(Nivel unNivel) {
 		// TODO: Pensar como implementar la estrategia
 		/*
 		 * 
@@ -17,9 +17,10 @@ public class Inky extends Fantasma {
 		
 	}
 
-	public void huirDePacman(Laberinto unLaberinto) {
+	public void huirDePacman(Nivel unNivel) {
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
+        Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Transitable transitable;
         try {
             	transitable = (Transitable)unLaberinto.devolverPosicion(x, y-1).getContenido();

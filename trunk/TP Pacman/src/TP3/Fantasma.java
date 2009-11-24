@@ -19,11 +19,11 @@ public abstract class Fantasma extends Personaje {
 			this.posicion.setXY(x, y); 
 		}
 		
-		public void elegirMovimiento(Laberinto unLaberinto, Pacman unPacman){	
+		public void elegirMovimiento(Nivel unNivel){	
 			if (comestible){//aca es un while 
-				this.huirDePacman(unLaberinto);
+				this.huirDePacman(unNivel);
 			}else{
-				this.atraparPacman(unLaberinto,unPacman);
+				this.atraparPacman(unNivel);
 			}
 		}
 		
@@ -43,8 +43,8 @@ public abstract class Fantasma extends Personaje {
 				}
 		}
 		
-		abstract public void atraparPacman(Laberinto unLaberinto, Pacman unPacman);
+		abstract public void atraparPacman(Nivel unNivel);
 		
-		abstract public void huirDePacman(Laberinto unLaberinto);
+		abstract public void huirDePacman(Nivel unNivel);
 
 }
