@@ -15,7 +15,7 @@ public class TestFruta extends TestCase {
 	
 	public void testHayPacman() {
 		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
-		Vacio unBloqueVacio= new Vacio();		
+		Fruta unBloqueVacio= new Fruta();		
 		unBloqueVacio.hayPacman(unNivel);
 		assertEquals(this.unJuego.getPuntajeDelJugador(),100);
 	}

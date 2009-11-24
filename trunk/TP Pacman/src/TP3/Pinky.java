@@ -4,7 +4,7 @@ public class Pinky extends Fantasma {
 	public Pinky(Point posicionInicial, int velocidadInicial) {
 		super(posicionInicial, velocidadInicial);
 	}
-	@Override
+	
 	public void atraparPacman(Nivel unNivel) {
 		// TODO: Pensar como implementar la estrategia
 		/*
