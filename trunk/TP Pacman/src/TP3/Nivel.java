@@ -17,7 +17,7 @@ public class Nivel {
 		this.miLaberinto = new Laberinto (1);
 		this.setearPacmanFantasmas();
 	}
-	
+	//TODO: debería ser este metodo protected
 	public void setearPacmanFantasmas(){
 		int vel = 1;//habria q setear la velocidad dentro de cada contructor
 		Point pos = new Point (1,1);
@@ -49,16 +49,55 @@ public class Nivel {
 		this.clyde.elegirMovimiento(this);
 	}
 	
-	public void muevePacman(){
-			//TODO: Llama al "mover" de esta misma clase q corresponda a 
-		    //la direccion deseada.
+	public void muevePacman(){		
+		int x;
+		int y;
+		int sentido=0;
 		
-		//Este es un ejemplo de si quiere ir para arriba.
-		int x = this.pacman.obtenerPosicion().getX();
-		int y = this.pacman.obtenerPosicion().getY()+1;
-		if (esTransitable(x,y)){
-			this.pacman.irArriba();
+		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
+	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
+		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
+		switch (sentido){
+		
+		case 1:
+			//Este es un ejemplo de si quiere ir para la izquierda.
+			x = this.pacman.obtenerPosicion().getX()-1;
+			y = this.pacman.obtenerPosicion().getY();
+			if (esTransitable(x,y)){
+				this.pacman.irIzquierda();
+				return;
+			}
+		break;
+		case 2:
+			//Este es un ejemplo de si quiere ir para la derecha.
+			x = this.pacman.obtenerPosicion().getX()+1;
+			y = this.pacman.obtenerPosicion().getY();
+			if (esTransitable(x,y)){
+				this.pacman.irDerecha();
+				return;
+			}
+		break;
+		
+		case 3:
+			//Este es un ejemplo de si quiere ir para abajo.
+			x = this.pacman.obtenerPosicion().getX();
+			y = this.pacman.obtenerPosicion().getY()-1;
+			if (esTransitable(x,y)){
+				this.pacman.irAbajo();
+				return;
+			}
+		break;
+		
+		case 4:
+			x = this.pacman.obtenerPosicion().getX();
+			y = this.pacman.obtenerPosicion().getY()+1;
+			if (esTransitable(x,y)){
+				this.pacman.irArriba();
+				return;
+			}
+		break;
 		}
+		this.pacman.irUltimoSentido();
 	}
 	
 	public void hacerFantasmasComestibles(){
