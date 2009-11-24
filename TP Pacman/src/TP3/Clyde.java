@@ -6,15 +6,26 @@ public class Clyde extends Fantasma {
 	}
 
 	public void atraparPacman(Nivel unNivel) {
-		// TODO: Pensar como implementar la estrategia
-		/*
-		 * 
-		 * 
-		 */
-		int x = 2;
-		int y = 2;
-		this.mover(x, y);
-		
+        Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
+        Pacman unPacman = unNivel.getPacman();
+        int x = this.obtenerPosicion().getX();
+        int y = this.obtenerPosicion().getY();
+        Transitable transitable;
+        try {
+           transitable = (Transitable)unLaberinto.devolverPosicion(x+1,y).getContenido();
+           this.mover(x+1, y);
+           x++;}
+    
+        catch (ClassCastException e) {
+            try {
+              transitable = (Transitable)unLaberinto.devolverPosicion(x,y-1).getContenido();
+              this.mover(x,y-1);
+              y--;
+            	} catch (ClassCastException e2) {}
+            }
+        if(this.mismaPosicion(this, unPacman)){
+        	unPacman.morir();
+        }
 	}
 
 	public void huirDePacman(Nivel unNivel) {

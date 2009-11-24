@@ -6,15 +6,51 @@ public class Inky extends Fantasma {
 	}
 
 	public void atraparPacman(Nivel unNivel) {
-		// TODO: Pensar como implementar la estrategia
-		/*
-		 * 
-		 * 
-		 */
-		int x = 2;
-		int y = 2;
-		this.mover(x, y);
+        //falta poner la condicion q sea transitable
+		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
+        Pacman unPacman = unNivel.getPacman();
+		Point distancia = this.distanciaPacman(unPacman.obtenerPosicion());
+
+		int x = this.obtenerPosicion().getX();
+		int y = this.obtenerPosicion().getY();
+
+		int distanciaEnX = distancia.getX();
+		int distanciaEnY = distancia.getY();
+
+		double positivoEnX = Math.pow(distancia.getX(),2);
+		double positivoEnY = Math.pow(distancia.getY(),2);
+
+		positivoEnX = Math.sqrt(positivoEnX);
+		positivoEnY = Math.sqrt(positivoEnY);
 		
+		if(positivoEnX<=positivoEnY){
+			if(distanciaEnX>=0){
+				
+				this.mover(x+1,y);
+			}else{
+				this.mover(x-1,y);
+			}
+		}else{
+			if(distanciaEnY>=0){
+				this.mover(x,y+1);
+			}else{
+				this.mover(x,y-1);
+			}
+		}
+
+		
+		if(this.mismaPosicion(this,unPacman)){
+			unPacman.morir();
+			unNivel.pacmanAtrapado();
+		}
+	}
+
+	public Point distanciaPacman(Point posicionPacman) {
+		Point auxiliar = new Point();
+		int distanciaEnX = this.obtenerPosicion().getX() - posicionPacman.getX();
+		int distanciaEnY = this.obtenerPosicion().getY() - posicionPacman.getY();
+		auxiliar.setXY(distanciaEnX,distanciaEnY);
+		return auxiliar;
 	}
 
 	public void huirDePacman(Nivel unNivel) {
