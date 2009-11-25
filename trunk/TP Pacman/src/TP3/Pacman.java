@@ -47,5 +47,9 @@ public class Pacman extends Personaje {
 	public void renacer(Point posicion) {
 		this.posicion=posicion;		
 	}
+	
+	public void agregarVida(){
+		this.vidas += 1;
+	}
 
 }
