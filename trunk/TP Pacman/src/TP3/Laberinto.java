@@ -12,15 +12,15 @@ private int nivel;
 
 public Laberinto(int nivel){
 	 this.nivel = nivel;
-	 this.fila= 30; // las y maximas
-	 this.columna=27; //las x maximas
-	 contenidos = new Contenido[fila][columna];
+	 this.fila= 31; // las y maximas
+	 this.columna=28; //las x maximas
+	 contenidos = new Contenido[columna][fila];
 }
 
  public Contenido devolverContenido(int x,int y){
 	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
 	 Contenido contenidoPedido;
-	 contenidoPedido = contenidos[y][x];
+	 contenidoPedido = contenidos[x][y];
 	 return contenidoPedido;
  }
  
@@ -37,20 +37,17 @@ public void cargarLaberintoSegunNivel() throws ArchivoFueraDeFormatoException{
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		for (y = 0; y <= fila; y++) {
-			for (x = 0; x <= columna +2; x++) {				
+		for (y = 0; y < fila; y++) {
+			for (x = 0; x < columna +2; x++) {				
 				try {
 					caracter = input.read();					
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				if((x>columna)&(!((caracter==13)|(caracter==10)))) throw new ArchivoFueraDeFormatoException(); 
-				else if (x<=columna){
-					try {
+				if((x>columna-1)&(!((caracter==13)|(caracter==10)))) throw new ArchivoFueraDeFormatoException(); 
+				else if (x<=columna-1){
 					agregarObjeto(caracter, x, y);
-					} catch (ArchivoFueraDeFormatoException e) {
-						e.printStackTrace();
-					}
+				
 				}
 			}
 		}
