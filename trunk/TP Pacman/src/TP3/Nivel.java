@@ -13,7 +13,7 @@ public class Nivel {
 	private int ultimoSentidoPacman;
 	
 
-	public Nivel(Juego unJuego) throws ArchivoFueraDeFormatoException{
+	public Nivel(Juego unJuego){
 		this.juego = unJuego;
 		this.miLaberinto = new Laberinto (this.juego.obtenerNivelActual());
 		this.crearPersonajes();

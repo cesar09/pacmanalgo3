@@ -9,24 +9,12 @@ public class Juego {
 	public Juego(){
 		this.nivelActual = 1; //nivel inicial 1.
 		this.jugador = new Jugador();
-		try {
-			this.unNivel = new Nivel(this);
-		} catch (ArchivoFueraDeFormatoException e) {
-			// TODO completar con detalles para cuando se carga un Laberinto que desde el archivo esta mal armado.
-			e.printStackTrace();
-		}
-		//TODO: Nose q cantidad de niveles, VER de modificar
+		this.unNivel = new Nivel(this);
 	}
 	
 	public void pasarDeNivel(){
 		this.nivelActual++;
-		try {
-			//this.unNivel.nuevoNivel(nivelActual);
-			this.unNivel = new Nivel (this);
-		} catch (ArchivoFueraDeFormatoException e) {
-			// TODO completar con detalles para cuando se carga un Laberinto que desde el archivo esta mal armado.
-			e.printStackTrace();
-		}
+        this.unNivel = new Nivel(this);
 	}
 
 	public void sumarPuntajeAlJugador(int puntaje){
