@@ -25,8 +25,25 @@ public class Inky extends Fantasma {
 		
 		if(positivoEnX<=positivoEnY){
 			if(distanciaEnX>=0){
+		        try {
+		        	unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
+		                this.mover(x+1, y);
+		                x++;
+		        }catch (NoTransitableException e) {
+		            	try {
+		            		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
+		            		this.mover(x, y-1);
+		            		y--;
+		            	}catch (NoTransitableException e2) {
+		            		try {
+			            		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
+			            		this.mover(x, y+1);
+			            		y++;
+			            	}catch (NoTransitableException e5) {}
+		            	}
+		            }
 				
-				this.mover(x+1,y);
+
 			}else{
 				this.mover(x-1,y);
 			}
@@ -41,14 +58,6 @@ public class Inky extends Fantasma {
         	unPacman.morir();
         	unNivel.pacmanAtrapado();
         }
-	}
-
-	public Point distanciaPacman(Point posicionPacman) {
-		Point auxiliar = new Point();
-		int distanciaEnX = this.obtenerPosicion().getX() - posicionPacman.getX();
-		int distanciaEnY = this.obtenerPosicion().getY() - posicionPacman.getY();
-		auxiliar.setXY(distanciaEnX,distanciaEnY);
-		return auxiliar;
 	}
 
 	public void huirDePacman(Nivel unNivel) {
