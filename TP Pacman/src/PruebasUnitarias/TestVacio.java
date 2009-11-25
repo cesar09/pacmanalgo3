@@ -17,17 +17,17 @@ public class TestVacio extends TestCase {
 	}
 	
 	public void testHayPacman() {
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Vacio unBloqueVacio= new Vacio();		
 		unBloqueVacio.hayPacman(unNivel);
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 	}
 	
 	public void testSerTransitado() {
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Vacio unBloqueVacio= new Vacio();		
 		unBloqueVacio.serTransitado(unNivel);
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		
 	}
 }

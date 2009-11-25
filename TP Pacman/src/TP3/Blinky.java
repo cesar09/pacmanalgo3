@@ -42,8 +42,7 @@ public class Blinky extends Fantasma {
             		x++;
             	}catch (NoTransitableException e2) {}
             }
-        Pacman unPacman = unNivel.obtenerPacman();
-        if(unNivel.mismaPosicion(this, unPacman)){
+        if(unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
         	this.fantasmaComido(unNivel);
         }
     }

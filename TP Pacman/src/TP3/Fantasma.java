@@ -39,6 +39,10 @@ public abstract class Fantasma extends Personaje {
 			return this.comestible;
 		}
 		
+		public void volverAJaula (Point posicion){
+			this.posicion = posicion;
+		}
+		
 		abstract public void atraparPacman(Nivel unNivel);
 		
 		abstract public void huirDePacman(Nivel unNivel);
@@ -46,8 +50,7 @@ public abstract class Fantasma extends Personaje {
 		public void fantasmaComido(Nivel unNivel) {
 			this.hacerseNoComestible();
 			this.mover(1,1);//TODO:poner los valores de posicion inicial
-			Juego unJuego=unNivel.obtenerMiJuego();
-			unJuego.sumarPuntajeAlJugador(200);
+			unNivel.obtenerMiJuego().sumarPuntajeAlJugador(200);
 		}
 
 }
