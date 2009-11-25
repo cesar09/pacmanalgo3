@@ -35,7 +35,12 @@ public class Juego {
 			this.juegoPerdido();
 		}
 		
-		this.unNivel.muevePacman();
+		try {
+			this.unNivel.muevePacman();
+		} catch (JuegoPerdido e) {
+			// Si un fantasma morfa al pacman y se quedó sin vidas se lanza JuegoPerido, esto lo atrapa
+			this.juegoPerdido();
+		}
 		//TODO: Debe llamar al mover correspondiente a la direccion en q se moverá
 	}
 
