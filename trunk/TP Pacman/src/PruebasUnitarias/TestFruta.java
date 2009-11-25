@@ -19,16 +19,16 @@ public class TestFruta extends TestCase {
 	}
 	
 	public void testHayPacman() {
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Fruta unaFruta= new Fruta();		
 		unaFruta.hayPacman(unNivel);
-		assertEquals(this.unJuego.getPuntajeDelJugador(),100);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),100);
 	}
 	
 	public void testSerTransitado() {
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Fruta unaFruta= new Fruta();		
 		unaFruta.serTransitado(unNivel);
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 	}
 }

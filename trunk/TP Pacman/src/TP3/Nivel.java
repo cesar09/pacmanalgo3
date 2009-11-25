@@ -15,27 +15,29 @@ public class Nivel {
 
 	public Nivel(Juego unJuego) throws ArchivoFueraDeFormatoException{
 		this.juego = unJuego;
-		this.miLaberinto = new Laberinto (1);
-		this.setearFantasmas();
-		this.setearPacman();
+		this.miLaberinto = new Laberinto (this.juego.obtenerNivelActual());
+		this.crearPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
 	//TODO: debería ser este metodo protected
-	public void setearFantasmas(){
+	public void crearPersonajes(){
 		int vel = 1;//habria q setear la velocidad dentro de cada contructor
 		Point pos = new Point (1,1);//TODO: inicializar las posiciones correctamente
 		this.blinky = new Blinky (pos,vel);
 		this.pinky = new Pinky (pos,vel);
 		this.inky = new Inky (pos,vel);
-		this.clyde = new Clyde (pos,vel); 		
-	}
-	public void setearPacman(){
-		Point pos = new Point (1,1);//TODO: inicializar las posiciones correctamente
+		this.clyde = new Clyde (pos,vel); 	
 		this.pacman = new Pacman (pos);
 	}
-	public void posicionInicialPacman() {
+	
+	public void renacerPersonajes() {
 		Point posicion= new Point (1,1);//TODO: inicializar las posiciones correctamente
-		this.pacman.nuevaPosicion(posicion);
+		this.pacman.renacer(posicion);
+		this.blinky.volverAJaula(posicion);
+		this.pinky.volverAJaula(posicion);
+		this.inky.volverAJaula(posicion);
+		this.clyde.volverAJaula(posicion); 	
+		this.pacman.renacer(posicion);
 	}
 	
 	public Juego obtenerMiJuego(){
@@ -49,13 +51,13 @@ public class Nivel {
 		this.clyde.elegirMovimiento(this);
 	}
 	
-	public void muevePacman() throws JuegoPerdido{	
+	public void muevePacman(){// throws JuegoPerdido{	
 		int sentido=0;
 		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
 		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
-		if(this.mismaPosicion(blinky, pacman)) this.comerOMorir(blinky,pacman);
+/*		if(this.mismaPosicion(blinky, pacman)) this.comerOMorir(blinky,pacman);
 		else if(this.mismaPosicion(inky, pacman)) this.comerOMorir(inky,pacman);
 		else if(this.mismaPosicion(pinky, pacman)) this.comerOMorir(pinky,pacman);
 		else if(this.mismaPosicion(clyde, pacman)) this.comerOMorir(clyde,pacman);
@@ -64,7 +66,7 @@ public class Nivel {
 	private void comerOMorir(Fantasma unFantasma, Pacman pacman) throws JuegoPerdido {
 		// TODO Auto-generated method stub
 		if(!unFantasma.esComestible()) pacman.morir();
-		else unFantasma.fantasmaComido(this);
+		else unFantasma.fantasmaComido(this);*/
 	}
 	protected boolean moverSegunSentido(int sentido){
 		int x;
@@ -154,21 +156,19 @@ public class Nivel {
 			return false;
 			}
 	}
-	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
+	/*public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
 		// TODO Auto-generated method stub
 		this.miLaberinto = new Laberinto (nivelActual);
-		this.setearFantasmas();
-		this.posicionInicialPacman();
+		this.renacerPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
-	}
+	}*/
     
 
 	public void pacmanAtrapado() {
          if(this.obtenerPacman().obtenerVidasDisponibles()==0){
         	 this.juego.juegoPerdido();
          } else {
-        	 this.setearFantasmas();
-        	 this.setearPacman();
+        	 this.renacerPersonajes();
         	 this.mueveFantasma();
          }
 		

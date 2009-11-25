@@ -19,7 +19,7 @@ public class testBloque extends TestCase{
 	}
 	
 	public void testHayPacman(){
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Bloque unBloque= new Bloque();		
 		try {
 			unBloque.hayPacman(unNivel);
@@ -28,11 +28,11 @@ public class testBloque extends TestCase{
 			// TODO Auto-generated catch block
 			assertTrue(true);
 		}
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);		
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		
 	}
 	
 	public void testSerTransitado(){
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Bloque unBloque= new Bloque();		
 		try {
 			unBloque.serTransitado(unNivel);
@@ -41,7 +41,7 @@ public class testBloque extends TestCase{
 			// TODO Auto-generated catch block
 			assertTrue(true);
 		}
-		assertEquals(this.unJuego.getPuntajeDelJugador(),0);		
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		
 	}
 
 }
