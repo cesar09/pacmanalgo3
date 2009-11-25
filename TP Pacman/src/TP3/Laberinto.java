@@ -7,14 +7,16 @@ public class Laberinto {
 private Contenido[][] contenidos;
 private int fila;
 private int columna;
-private int nivel;
-
 
 public Laberinto(int nivel){
-	 this.nivel = nivel;
 	 this.fila= 31; // las y maximas
 	 this.columna=28; //las x maximas
 	 contenidos = new Contenido[columna][fila];
+	 try{
+		 this.cargarLaberintoSegunNivel(1);
+	 }catch (ArchivoFueraDeFormatoException e){
+		 
+	 }
 }
 
  public Contenido devolverContenido(int x,int y){
@@ -24,7 +26,7 @@ public Laberinto(int nivel){
 	 return contenidoPedido;
  }
  
-public void cargarLaberintoSegunNivel() throws ArchivoFueraDeFormatoException{
+public void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoException{
 	  	
 		int x; 
 		int y;
@@ -73,14 +75,5 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 		}
 	
 	}
-
-//Constructor para la carga desde archivo
-
-public static void main(String[] args) throws ArchivoFueraDeFormatoException {
-	Laberinto unLaberinto= new Laberinto(1);
-	unLaberinto.cargarLaberintoSegunNivel();
-}
-
-
 } 
 
