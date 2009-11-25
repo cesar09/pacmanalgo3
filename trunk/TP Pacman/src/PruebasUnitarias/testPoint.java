@@ -21,5 +21,9 @@ public class testPoint extends TestCase{
 		assertEquals(punto2.getX(),1);
 		assertEquals(punto2.getY(),1);
 	}
-	
+	public void testPointSetXY(){
+		punto1.setXY(3,4);
+		assertEquals(punto2.getX(),3);
+		assertEquals(punto2.getY(),4);
+	}
 }
