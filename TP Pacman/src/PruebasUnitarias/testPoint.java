@@ -23,7 +23,7 @@ public class testPoint extends TestCase{
 	}
 	public void testPointSetXY(){
 		punto1.setXY(3,4);
-		assertEquals(punto2.getX(),3);
-		assertEquals(punto2.getY(),4);
+		assertEquals(punto1.getX(),3);
+		assertEquals(punto1.getY(),4);
 	}
 }
