@@ -29,16 +29,6 @@ public class Nivel {
 		this.clyde = new Clyde (pos,vel); 
 		this.pacman = new Pacman (pos);
 	}
-		
-	public boolean esTransitable(int x, int y){
-		try {
-			 Transitable transitable = (Transitable)this.obtenerMiLaberinto().devolverContenido(y, x);
-			 transitable.hayPacman(this);
-			 return true;
-		 } catch (ClassCastException e) {
-				 return false;
-			 }
-	}
 	
 	public Juego obtenerMiJuego(){
 		return (this.juego);
