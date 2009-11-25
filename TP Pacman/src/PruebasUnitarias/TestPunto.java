@@ -14,7 +14,7 @@ public class TestPunto extends TestCase {
 			this.unNivel= new Nivel(unJuego);
 		} catch (ArchivoFueraDeFormatoException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			fail("Fallo la carga del archivo para crear el laberinto.");
 		}		
 	}
 	
