@@ -6,20 +6,6 @@ public class Pinky extends Fantasma {
 	}
 	
 	public void atraparPacman(Nivel unNivel){
-		// TODO: Pensar como implementar la estrategia
-		/*
-		 * 
-		 * 
-		 */
-		int x = 2;
-		int y = 2;
-		Pacman unPacman = unNivel.obtenerPacman();
-		this.mover(x, y);
-	
-        if(unNivel.mismaPosicion(this, unPacman)){
-        	unPacman.morir();
-        	unNivel.pacmanAtrapado();
-        }
 	}
 	
 

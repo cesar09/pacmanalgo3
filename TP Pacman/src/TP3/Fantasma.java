@@ -53,4 +53,12 @@ public abstract class Fantasma extends Personaje {
 			unNivel.obtenerMiJuego().sumarPuntajeAlJugador(200);
 		}
 
+
+		public Point distanciaPacman(Point posicionPacman) {
+			Point auxiliar = new Point();
+			int distanciaEnX = this.obtenerPosicion().getX() - posicionPacman.getX();
+			int distanciaEnY = this.obtenerPosicion().getY() - posicionPacman.getY();
+			auxiliar.setXY(distanciaEnX,distanciaEnY);
+			return auxiliar;
+		}
 }
