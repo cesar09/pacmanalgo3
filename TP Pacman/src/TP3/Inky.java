@@ -6,24 +6,21 @@ public class Inky extends Fantasma {
 	}
 
 	public void atraparPacman(Nivel unNivel){
-        //falta poner la condicion q sea transitable
 		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Pacman unPacman = unNivel.obtenerPacman();
 		Point distancia = this.distanciaPacman(unPacman.obtenerPosicion());
-
 		int x = this.obtenerPosicion().getX();
 		int y = this.obtenerPosicion().getY();
-
 		int distanciaEnX = distancia.getX();
 		int distanciaEnY = distancia.getY();
-
 		double positivoEnX = Math.pow(distancia.getX(),2);
 		double positivoEnY = Math.pow(distancia.getY(),2);
-
 		positivoEnX = Math.sqrt(positivoEnX);
 		positivoEnY = Math.sqrt(positivoEnY);
-		
+
+		//comprueba si en x o y estan a menor casilleros
 		if(positivoEnX<=positivoEnY){
+            //si x esta a menor distancia y la diferencia es positiva entonces se mueve x++
 			if(distanciaEnX>=0){
 		        try {
 		        	unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
@@ -42,7 +39,7 @@ public class Inky extends Fantasma {
 			            	}catch (NoTransitableException e5) {}
 		            	}
 		            }
-			}else{
+			}else{//si x esta a menor distancia y la diferencia es negativo entonces se mueve x--
 		        try {
 		        	unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
 		                this.mover(x-1, y);
@@ -61,7 +58,8 @@ public class Inky extends Fantasma {
 		            	}
 		            }
 			}
-		}else{
+		}else{//si estaba a menor distancia en y lo anterior no corre y entra en este else
+			//si la distancia es positivia se mueve y++
 			if(distanciaEnY>=0){
 		        try {
 		        	unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
@@ -80,7 +78,7 @@ public class Inky extends Fantasma {
 			            	}catch (NoTransitableException e5) {}
 		            	}
 		            }
-			}else{
+			}else{//sino se mueve y--
 		        try {
 		        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
 		                this.mover(x, y-1);
@@ -99,7 +97,7 @@ public class Inky extends Fantasma {
 		            	}
 		            }
 			}
-		}		
+		}//checkea desp de moverse si estan en la misma posicion		
         if(unNivel.mismaPosicion(this, unPacman)){
         	unPacman.morir();
         	unNivel.pacmanAtrapado();
