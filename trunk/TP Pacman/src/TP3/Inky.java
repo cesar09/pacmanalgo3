@@ -8,7 +8,7 @@ public class Inky extends Fantasma {
 	public void atraparPacman(Nivel unNivel) {
         //falta poner la condicion q sea transitable
 		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-        Pacman unPacman = unNivel.getPacman();
+        Pacman unPacman = unNivel.obtenerPacman();
 		Point distancia = this.distanciaPacman(unPacman.obtenerPosicion());
 
 		int x = this.obtenerPosicion().getX();

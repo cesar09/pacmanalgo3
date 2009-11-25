@@ -40,7 +40,7 @@ public class Pacman extends Personaje {
 		this.vidas -= 1;
 	}
 	
-	public int getVida(){
+	public int obtenerVidasDisponibles(){
 		return this.vidas;		
 	}
 

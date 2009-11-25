@@ -108,13 +108,21 @@ public class Nivel {
 		this.pinky.hacerseComestible();
 		this.inky.hacerseComestible();
 		this.clyde.hacerseComestible();
+		new TimerComestible (7, this);
+	}
+	
+	public void hacerFantasmasNoComestibles(){
+		this.blinky.hacerseNoComestible();
+		this.pinky.hacerseNoComestible();
+		this.inky.hacerseNoComestible();
+		this.clyde.hacerseNoComestible();
 	}
 
 	public Laberinto obtenerMiLaberinto() {
 		return miLaberinto;
 	}
 	
-	public Pacman getPacman(){
+	public Pacman obtenerPacman(){
 		return this.pacman;
 	}
 	
@@ -124,7 +132,7 @@ public class Nivel {
     
 	//esto qdo rustico, alguien que lo mejore en lo posible 
 	public void pacmanAtrapado() {
-         if(this.getPacman().getVida()==0){
+         if(this.obtenerPacman().obtenerVidasDisponibles()==0){
         	 this.getJuego().juegoPerdido();
          } else {
         	 this.setearPacmanFantasmas();

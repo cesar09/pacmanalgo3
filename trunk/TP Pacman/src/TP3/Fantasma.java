@@ -15,6 +15,10 @@ public abstract class Fantasma extends Personaje {
 			this.comestible = true;
 		}
 		
+		public void hacerseNoComestible(){
+			this.comestible = false;
+		}
+		
 		protected void mover(int x, int y) {
 			this.posicion.setXY(x, y); 
 		}
