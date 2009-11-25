@@ -16,18 +16,26 @@ public class Nivel {
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;
 		this.miLaberinto = new Laberinto (1);
-		this.setearPacmanFantasmas();
+		this.setearFantasmas();
+		this.setearPacman();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
 	//TODO: debería ser este metodo protected
-	public void setearPacmanFantasmas(){
+	public void setearFantasmas(){
 		int vel = 1;//habria q setear la velocidad dentro de cada contructor
-		Point pos = new Point (1,1);
+		Point pos = new Point (1,1);//TODO: inicializar las posiciones correctamente
 		this.blinky = new Blinky (pos,vel);
 		this.pinky = new Pinky (pos,vel);
 		this.inky = new Inky (pos,vel);
-		this.clyde = new Clyde (pos,vel); 
+		this.clyde = new Clyde (pos,vel); 		
+	}
+	public void setearPacman(){
+		Point pos = new Point (1,1);//TODO: inicializar las posiciones correctamente
 		this.pacman = new Pacman (pos);
+	}
+	public void posicionInicialPacman() {
+		Point posicion= new Point (1,1);//TODO: inicializar las posiciones correctamente
+		this.pacman.nuevaPosicion(posicion);
 	}
 	
 	public Juego obtenerMiJuego(){
@@ -41,14 +49,23 @@ public class Nivel {
 		this.clyde.elegirMovimiento(this);
 	}
 	
-	public void muevePacman(){	
+	public void muevePacman() throws JuegoPerdido{	
 		int sentido=0;
 		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
 		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
+		if(this.mismaPosicion(blinky, pacman)) this.comerOMorir(blinky,pacman);
+		else if(this.mismaPosicion(inky, pacman)) this.comerOMorir(inky,pacman);
+		else if(this.mismaPosicion(pinky, pacman)) this.comerOMorir(pinky,pacman);
+		else if(this.mismaPosicion(clyde, pacman)) this.comerOMorir(clyde,pacman);
 	}
 	
+	private void comerOMorir(Fantasma unFantasma, Pacman pacman) throws JuegoPerdido {
+		// TODO Auto-generated method stub
+		if(!unFantasma.esComestible()) pacman.morir();
+		else unFantasma.fantasmaComido();
+	}
 	protected boolean moverSegunSentido(int sentido){
 		int x;
 		int y;
@@ -129,6 +146,14 @@ public class Nivel {
 	public Juego getJuego(){
 		return this.juego;
 	}
+	
+	public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
+		if(unFantasma.obtenerPosicion().equals(unPacman.obtenerPosicion())){
+			return true;
+		} else {
+			return false;
+			}
+	}
     
 /*	//esto qdo rustico, alguien que lo mejore en lo posible 
 	public void pacmanAtrapado() {
@@ -139,6 +164,7 @@ public class Nivel {
         	 this.mueveFantasma();
          }
 		
-	}*///esto va a volar	
+	}*///esto va a volar, por ahora está al pedo 
+	//a menos que alguien piense q es util, hice otras cosas q lo reemplezan	
 	
 }

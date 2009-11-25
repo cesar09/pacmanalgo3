@@ -40,9 +40,13 @@ public class Pacman extends Personaje {
 		this.vidas -= 1;
 		if (this.vidas==0) throw new JuegoPerdido();
 	}
-	
+
 	public int obtenerVidasDisponibles(){
 		return this.vidas;		
+	}
+
+	public void nuevaPosicion(Point posicion) {
+		this.posicion=posicion;		
 	}
 
 }

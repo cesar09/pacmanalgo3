@@ -39,16 +39,13 @@ public abstract class Fantasma extends Personaje {
 			return this.comestible;
 		}
 		
-		public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
-			if(unFantasma.obtenerPosicion().equals(unPacman.obtenerPosicion())){
-				return true;
-			} else {
-				return false;
-				}
-		}
-		
 		abstract public void atraparPacman(Nivel unNivel) throws JuegoPerdido;
 		
 		abstract public void huirDePacman(Nivel unNivel);
+		
+		public void fantasmaComido() {
+			this.hacerseNoComestible();
+			this.mover(1,1);//TODO:poner los valores de posicion inicial
+		}
 
 }
