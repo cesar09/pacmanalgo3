@@ -45,7 +45,7 @@ public class Clyde extends Fantasma {
             }
         Pacman unPacman = unNivel.obtenerPacman();
         if(unNivel.mismaPosicion(this, unPacman)){
-        	this.fantasmaComido();
+        	this.fantasmaComido(unNivel);
         }
     }
 

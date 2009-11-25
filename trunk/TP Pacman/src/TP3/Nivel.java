@@ -65,7 +65,7 @@ public class Nivel {
 	private void comerOMorir(Fantasma unFantasma, Pacman pacman) throws JuegoPerdido {
 		// TODO Auto-generated method stub
 		if(!unFantasma.esComestible()) pacman.morir();
-		else unFantasma.fantasmaComido();
+		else unFantasma.fantasmaComido(this);
 	}
 	protected boolean moverSegunSentido(int sentido){
 		int x;
