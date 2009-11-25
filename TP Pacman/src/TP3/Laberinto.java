@@ -13,7 +13,7 @@ public Laberinto(int nivel){
 	 this.columna=28; //las x maximas
 	 contenidos = new Contenido[columna][fila];
 	 try{
-		 this.cargarLaberintoSegunNivel(1);
+		 this.cargarLaberintoSegunNivel(nivel);
 	 }catch (ArchivoFueraDeFormatoException e){
 		 
 	 }
