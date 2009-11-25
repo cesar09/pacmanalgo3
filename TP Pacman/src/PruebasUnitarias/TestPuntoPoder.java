@@ -19,4 +19,10 @@ public class TestPuntoPoder extends TestCase {
 		unBloqueVacio.hayPacman(unNivel);
 		assertEquals(this.unJuego.getPuntajeDelJugador(),50);
 	}
+	public void testSerTransitado() {
+		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+		PuntoPoder unBloqueVacio= new PuntoPoder();		
+		unBloqueVacio.serTransitado(unNivel);
+		assertEquals(this.unJuego.getPuntajeDelJugador(),0);
+	}
 }
