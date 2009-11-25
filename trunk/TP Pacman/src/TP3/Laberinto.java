@@ -23,7 +23,6 @@ public Laberinto(int nivel){
 	 contenidoPedido = contenidos[y][x];
 	 return contenidoPedido;
  }
-
  
 public void cargarLaberintoSegunNivel() throws ArchivoFueraDeFormatoException{
 	  	

@@ -7,7 +7,12 @@ public class Juego {
 	private int nivelActual;
 	
 	public Juego(){
-		this.unNivel = new Nivel(this); //le pasa el Juego por argumento.
+		try {
+			this.unNivel = new Nivel(this);
+		} catch (ArchivoFueraDeFormatoException e) {
+			// TODO completar con detalles para cuando se carga un Laberinto que desde el archivo esta mal armado.
+			e.printStackTrace();
+		}
 		this.nivelActual = 1; //nivel inicial 1.
 		this.jugador = new Jugador();
 		//TODO: Nose q cantidad de niveles, VER de modificar
@@ -15,7 +20,12 @@ public class Juego {
 	
 	public void pasarDeNivel(){
 		this.nivelActual += 1;
-		//TODO: acá falta cambiar el laberinto, quizas halla que agregar metodos en laberinto para descartar el viejo y poner el nuevo.
+		try {
+			this.unNivel.nuevoNivel(nivelActual);
+		} catch (ArchivoFueraDeFormatoException e) {
+			// TODO completar con detalles para cuando se carga un Laberinto que desde el archivo esta mal armado.
+			e.printStackTrace();
+		}
 	}
 
 	public void sumarPuntajeAlJugador(int puntaje){

@@ -13,9 +13,10 @@ public class Nivel {
 	private int ultimoSentidoPacman;
 	
 
-	public Nivel(Juego unJuego){
+	public Nivel(Juego unJuego) throws ArchivoFueraDeFormatoException{
 		this.juego = unJuego;
 		this.miLaberinto = new Laberinto (1);
+		this.miLaberinto.cargarLaberintoSegunNivel();
 		this.setearFantasmas();
 		this.setearPacman();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
@@ -153,6 +154,14 @@ public class Nivel {
 		} else {
 			return false;
 			}
+	}
+	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
+		// TODO Auto-generated method stub
+		this.miLaberinto = new Laberinto (nivelActual);
+		this.miLaberinto.cargarLaberintoSegunNivel();
+		this.setearFantasmas();
+		this.posicionInicialPacman();
+		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
     
 /*	//esto qdo rustico, alguien que lo mejore en lo posible 

@@ -8,7 +8,12 @@ public class TestVacio extends TestCase {
 
 	public void setUp(){
 		unJuego= new Juego();
-		this.unNivel= new Nivel(unJuego);		
+		try {
+			this.unNivel= new Nivel(unJuego);
+		} catch (ArchivoFueraDeFormatoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 	
 	public void testHayPacman() {
