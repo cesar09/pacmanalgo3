@@ -5,7 +5,7 @@ public class Pinky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 	
-	public void atraparPacman(Nivel unNivel) throws JuegoPerdido {
+	public void atraparPacman(Nivel unNivel){
 		// TODO: Pensar como implementar la estrategia
 		/*
 		 * 
@@ -16,10 +16,9 @@ public class Pinky extends Fantasma {
 		Pacman unPacman = unNivel.obtenerPacman();
 		this.mover(x, y);
 	
-		if(unNivel.mismaPosicion(this, unPacman)){
-        	unPacman.morir();//este metodo lanza excepcion.
-        	unNivel.setearFantasmas();
-        	unNivel.posicionInicialPacman();
+        if(unNivel.mismaPosicion(this, unPacman)){
+        	unPacman.morir();
+        	unNivel.pacmanAtrapado();
         }
 	}
 	

@@ -38,7 +38,7 @@ public class Juego {
 	}
 	
 	public void mover(){
-		try {
+	/*	try {
 			this.unNivel.mueveFantasma();
 		} catch (JuegoPerdido e) {
 			// Si un fantasma morfa al pacman y se quedó sin vidas se lanza JuegoPerido, esto lo atrapa
@@ -50,11 +50,11 @@ public class Juego {
 		} catch (JuegoPerdido e) {
 			// Si un fantasma morfa al pacman y se quedó sin vidas se lanza JuegoPerido, esto lo atrapa
 			this.juegoPerdido();
-		}
+		}*/
 		//TODO: Debe llamar al mover correspondiente a la direccion en q se moverá
 	}
 
-	public void juegoPerdido() {
+	public void juegoPerdido(){
 		System.out.println("lo siente gil perdiste");
 		System.out.println("alegrate llegaste al nivel:"+ this.nivelActual);
 		//TODO estos mensaje son muy buenos!!! pero habría q cambiarlos jeje.
