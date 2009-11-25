@@ -5,7 +5,7 @@ public class Blinky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Nivel unNivel) {
+	public void atraparPacman(Nivel unNivel) throws JuegoPerdido {
         Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Pacman unPacman = unNivel.obtenerPacman();
         int x = this.obtenerPosicion().getX();
@@ -22,7 +22,7 @@ public class Blinky extends Fantasma {
             }catch (NoTransitableException e2) {}
             }
         if(this.mismaPosicion(this, unPacman)){
-        	unPacman.morir();
+        	unPacman.morir(); //Este metodo lanza excepcion de JuegoPerdido.
         }
 	}
 	

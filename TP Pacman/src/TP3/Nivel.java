@@ -10,14 +10,14 @@ public class Nivel {
 	private Pinky pinky;
 	private Inky inky;
 	private Clyde clyde;
-	private int ultimoSentido;
+	private int ultimoSentidoPacman;
 	
 
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;
 		this.miLaberinto = new Laberinto (1);
 		this.setearPacmanFantasmas();
-		this.ultimoSentido=1; //inicializo para q vaya a la izquierda como ultimo movim.
+		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
 	//TODO: debería ser este metodo protected
 	public void setearPacmanFantasmas(){
@@ -34,7 +34,7 @@ public class Nivel {
 		return (this.juego);
 	}
 	
-	public void mueveFantasma(){
+	public void mueveFantasma() throws JuegoPerdido{
 		this.blinky.elegirMovimiento(this);
 		this.pinky.elegirMovimiento(this);
 		this.inky.elegirMovimiento(this);
@@ -46,7 +46,7 @@ public class Nivel {
 		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
-		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentido);
+		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
 	}
 	
 	protected boolean moverSegunSentido(int sentido){
@@ -61,7 +61,7 @@ public class Nivel {
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
 				 this.pacman.irIzquierda();
-				 ultimoSentido=1;
+				 ultimoSentidoPacman=1;
 				 return true;
 			 } catch (NoTransitableException e) {}
 			 break;
@@ -72,7 +72,7 @@ public class Nivel {
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
 				 this.pacman.irDerecha();
-				 ultimoSentido=2;
+				 ultimoSentidoPacman=2;
 				 return true;
 			 } catch (NoTransitableException e) {}
 		break;
@@ -84,7 +84,7 @@ public class Nivel {
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
 				 this.pacman.irAbajo();
-				 ultimoSentido=3;
+				 ultimoSentidoPacman=3;
 				 return true;
 			 } catch (NoTransitableException e) {}
 		break;
@@ -95,7 +95,7 @@ public class Nivel {
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
 				 this.pacman.irArriba();
-				 ultimoSentido=4;
+				 ultimoSentidoPacman=4;
 				 return true;
 			 } catch (NoTransitableException e) {}
 		break;
@@ -130,15 +130,15 @@ public class Nivel {
 		return this.juego;
 	}
     
-	//esto qdo rustico, alguien que lo mejore en lo posible 
+/*	//esto qdo rustico, alguien que lo mejore en lo posible 
 	public void pacmanAtrapado() {
          if(this.obtenerPacman().obtenerVidasDisponibles()==0){
-        	 this.getJuego().juegoPerdido();
+        	 this.juego.juegoPerdido();
          } else {
         	 this.setearPacmanFantasmas();
         	 this.mueveFantasma();
          }
 		
-	}
+	}*///esto va a volar	
 	
 }
