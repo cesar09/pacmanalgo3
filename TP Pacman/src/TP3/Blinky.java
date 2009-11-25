@@ -7,7 +7,7 @@ public class Blinky extends Fantasma {
 
 	public void atraparPacman(Nivel unNivel) {
         Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-        Pacman unPacman = unNivel.getPacman();
+        Pacman unPacman = unNivel.obtenerPacman();
         int x = this.obtenerPosicion().getX();
         int y = this.obtenerPosicion().getY();
         try {
