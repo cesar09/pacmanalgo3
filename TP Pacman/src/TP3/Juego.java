@@ -20,6 +20,8 @@ public class Juego {
 	public void sumarPuntajeAlJugador(int puntaje){
 		if(puntaje<0) throw new IllegalArgumentException();
 		this.jugador.sumarPuntaje(puntaje);
+		if (this.jugador.obtenerPuntaje()%10000.0 == 0) // Obtiene el resto de la division
+			this.unNivel.obtenerPacman().agregarVida();
 	}
 	
 	public int obtenerPuntajeDelJugador(){
