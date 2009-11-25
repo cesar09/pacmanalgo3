@@ -15,12 +15,7 @@ public Laberinto(int nivel){
 	 this.fila= 30; // las y maximas
 	 this.columna=27; //las x maximas
 	 contenidos = new Contenido[fila][columna];
-	 for(int i = 0;i<fila;i++){ //TODO: me parece que esto de los null es al pedo
-		 for(int j = 0; j<columna;j++){
-			 contenidos[i][j]=null;
-		 }
-	 }
- }
+}
 
  public Contenido devolverContenido(int x,int y){
 	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
@@ -29,64 +24,7 @@ public Laberinto(int nivel){
 	 return contenidoPedido;
  }
 
-//harcodie mientras no tengamos xml
-/*	
-public void cargarLaberintoSegunNivel(){
-
-	  matrizPosicion[0][0]= new Posicion(new Bloque());
-	  matrizPosicion[0][1]= new Posicion(new Bloque());
-	  matrizPosicion[0][2]= new Posicion(new Bloque());
-	  matrizPosicion[0][3]= new Posicion(new Bloque());
-	  matrizPosicion[0][4]= new Posicion(new Bloque());
-	  matrizPosicion[0][5]= new Posicion(new Bloque());
-	  matrizPosicion[0][6]= new Posicion(new Bloque());
-	  matrizPosicion[1][0]= new Posicion(new Bloque());
-	  matrizPosicion[1][1]= new Posicion(new PuntoPoder());
-	  matrizPosicion[1][2]= new Posicion(new Punto());
-	  matrizPosicion[1][3]= new Posicion(new Punto());
-	  matrizPosicion[1][4]= new Posicion(new Punto());
-	  matrizPosicion[1][5]= new Posicion(new PuntoPoder());
-	  matrizPosicion[1][6]= new Posicion(new Bloque());
-	  matrizPosicion[2][0]= new Posicion(new Bloque());
-	  matrizPosicion[2][1]= new Posicion(new Punto());
-	  matrizPosicion[2][2]= new Posicion(new Bloque());
-	  matrizPosicion[2][3]= new Posicion(new Punto());
-	  matrizPosicion[2][4]= new Posicion(new Bloque());
-	  matrizPosicion[2][5]= new Posicion(new Punto());
-	  matrizPosicion[2][6]= new Posicion(new Bloque());
-	  matrizPosicion[3][0]= new Posicion(new Bloque());
-	  matrizPosicion[3][1]= new Posicion(new Punto());
-	  matrizPosicion[3][2]= new Posicion(new Punto());
-	  matrizPosicion[3][3]= new Posicion(new Punto());
-	  matrizPosicion[3][4]= new Posicion(new Punto());
-	  matrizPosicion[3][5]= new Posicion(new Punto());
-	  matrizPosicion[3][6]= new Posicion(new Bloque());
-	  matrizPosicion[4][0]= new Posicion(new Bloque());
-	  matrizPosicion[4][1]= new Posicion(new Punto());
-	  matrizPosicion[4][2]= new Posicion(new Bloque());
-	  matrizPosicion[4][3]= new Posicion(new Punto());
-	  matrizPosicion[4][4]= new Posicion(new Bloque());
-	  matrizPosicion[4][5]= new Posicion(new Punto());
-	  matrizPosicion[4][6]= new Posicion(new Bloque());
-	  matrizPosicion[5][0]= new Posicion(new Bloque());
-	  matrizPosicion[5][1]= new Posicion(new PuntoPoder());
-	  matrizPosicion[5][2]= new Posicion(new Punto());
-	  matrizPosicion[5][3]= new Posicion(new Punto());
-	  matrizPosicion[5][4]= new Posicion(new Punto());
-	  matrizPosicion[5][5]= new Posicion(new PuntoPoder());
-	  matrizPosicion[5][6]= new Posicion(new Bloque());
-	  matrizPosicion[6][0]= new Posicion(new Bloque());
-	  matrizPosicion[6][1]= new Posicion(new Bloque());
-	  matrizPosicion[6][2]= new Posicion(new Bloque());
-	  matrizPosicion[6][3]= new Posicion(new Bloque());
-	  matrizPosicion[6][4]= new Posicion(new Bloque());
-	  matrizPosicion[6][5]= new Posicion(new Bloque());
-	  matrizPosicion[0][0]= new Posicion(new Bloque());
-	}
-*/
-
-//Este es el metodo que carga desde archivo el laberinto. Falta comprobar que ande.
-
+ 
 public void cargarLaberintoSegunNivel() throws ArchivoFueraDeFormatoException{
 	  	
 		int x; 
@@ -94,7 +32,7 @@ public void cargarLaberintoSegunNivel() throws ArchivoFueraDeFormatoException{
 		int caracter = 0;
 				
 		BufferedReader input = null;
-		File laberintoFile = new File("nivel1.xml");
+		File laberintoFile = new File("nivel"+nivel+".xml");
 		try {
 			input = new BufferedReader(new FileReader(laberintoFile));
 		} catch (FileNotFoundException e) {
