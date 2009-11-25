@@ -10,12 +10,7 @@ public class TestPuntoPoder extends TestCase {
 
 	public void setUp(){
 		unJuego= new Juego();
-		try {
-			this.unNivel= new Nivel(unJuego);
-		} catch (ArchivoFueraDeFormatoException e) {
-			// TODO Auto-generated catch block
-			fail("Fallo la carga del archivo para crear el laberinto.");
-		}		
+		this.unNivel= new Nivel(unJuego);	
 	}
 	
 	public void testHayPacman() {

@@ -11,11 +11,8 @@ public class testBloque extends TestCase{
 
 	public void setUp(){
 		unJuego= new Juego();
-		try {
-			this.unNivel= new Nivel(unJuego);
-		} catch (ArchivoFueraDeFormatoException e) {
-			e.printStackTrace();
-		}		
+		this.unNivel= new Nivel(unJuego);
+			
 	}
 	
 	public void testHayPacman(){
