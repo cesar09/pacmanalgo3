@@ -42,16 +42,62 @@ public class Inky extends Fantasma {
 			            	}catch (NoTransitableException e5) {}
 		            	}
 		            }
-				
-
 			}else{
-				this.mover(x-1,y);
+		        try {
+		        	unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
+		                this.mover(x-1, y);
+		                x--;
+		        }catch (NoTransitableException e) {
+		            	try {
+		            		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
+		            		this.mover(x, y+1);
+		            		y++;
+		            	}catch (NoTransitableException e2) {
+		            		try {
+			            		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
+			            		this.mover(x, y-1);
+			            		y--;
+			            	}catch (NoTransitableException e5) {}
+		            	}
+		            }
 			}
 		}else{
 			if(distanciaEnY>=0){
-				this.mover(x,y+1);
+		        try {
+		        	unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
+		                this.mover(x, y+1);
+		                y++;
+		        }catch (NoTransitableException e) {
+		            	try {
+		            		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
+		            		this.mover(x-1, y);
+		            		x--;
+		            	}catch (NoTransitableException e2) {
+		            		try {
+			            		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
+			            		this.mover(x+1, y);
+			            		x--;
+			            	}catch (NoTransitableException e5) {}
+		            	}
+		            }
 			}else{
-				this.mover(x,y-1);
+		        try {
+		        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
+		                this.mover(x, y-1);
+		                y--;
+		        }catch (NoTransitableException e) {
+		            	try {
+		            		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
+		            		this.mover(x+1, y);
+		            		x++;
+		            	}catch (NoTransitableException e2) {
+		            		try {
+			            		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
+			            		this.mover(x-1, y);
+			            		x--;
+			            	}catch (NoTransitableException e5) {}
+		            	}
+		            }
 			}
 		}		
         if(unNivel.mismaPosicion(this, unPacman)){
