@@ -5,7 +5,7 @@ public class Inky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Nivel unNivel) throws JuegoPerdido {
+	public void atraparPacman(Nivel unNivel){
         //falta poner la condicion q sea transitable
 		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Pacman unPacman = unNivel.obtenerPacman();
@@ -37,11 +37,10 @@ public class Inky extends Fantasma {
 				this.mover(x,y-1);
 			}
 		}		
-		if(unNivel.mismaPosicion(this,unPacman)){
-			unPacman.morir();//este metodo lanza excepcion.
-			unNivel.setearFantasmas();
-        	unNivel.posicionInicialPacman();
-		}
+        if(unNivel.mismaPosicion(this, unPacman)){
+        	unPacman.morir();
+        	unNivel.pacmanAtrapado();
+        }
 	}
 
 	public Point distanciaPacman(Point posicionPacman) {

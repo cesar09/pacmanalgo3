@@ -42,7 +42,7 @@ public class Nivel {
 		return (this.juego);
 	}
 	
-	public void mueveFantasma() throws JuegoPerdido{
+	public void mueveFantasma(){
 		this.blinky.elegirMovimiento(this);
 		this.pinky.elegirMovimiento(this);
 		this.inky.elegirMovimiento(this);
@@ -162,16 +162,16 @@ public class Nivel {
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
     
-/*	//esto qdo rustico, alguien que lo mejore en lo posible 
+
 	public void pacmanAtrapado() {
          if(this.obtenerPacman().obtenerVidasDisponibles()==0){
         	 this.juego.juegoPerdido();
          } else {
-        	 this.setearPacmanFantasmas();
+        	 this.setearFantasmas();
+        	 this.setearPacman();
         	 this.mueveFantasma();
          }
 		
-	}*///esto va a volar, por ahora está al pedo 
-	//a menos que alguien piense q es util, hice otras cosas q lo reemplezan	
+	}
 	
 }

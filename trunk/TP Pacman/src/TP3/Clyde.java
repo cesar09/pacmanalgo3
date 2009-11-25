@@ -5,7 +5,7 @@ public class Clyde extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Nivel unNivel) throws JuegoPerdido {
+	public void atraparPacman(Nivel unNivel){
         Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Pacman unPacman = unNivel.obtenerPacman();
         int x = this.obtenerPosicion().getX();
@@ -22,9 +22,8 @@ public class Clyde extends Fantasma {
             }catch (NoTransitableException e2) {}
         }
         if(unNivel.mismaPosicion(this, unPacman)){
-        	unPacman.morir();//este metodo lanza excepcion.
-        	unNivel.setearFantasmas();
-        	unNivel.posicionInicialPacman();
+        	unPacman.morir();
+        	unNivel.pacmanAtrapado();
         }
 	}
 
