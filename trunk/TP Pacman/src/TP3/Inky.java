@@ -24,9 +24,9 @@ public class Inky extends Fantasma {
 			}else{//si estaba a menor distancia en y lo anterior no corre y entra en este else
 			//si la distancia es positivia se mueve y++
 			if(distanciaEnY>=0){
-		        this.moverArriba(unNivel);
-			}else{//sino se mueve y--
 		        this.moverAbajo(unNivel);
+			}else{//sino se mueve y--
+		        this.moverArriba(unNivel);
 			}
 		}		
         if(unNivel.mismaPosicion(this, unPacman)){
