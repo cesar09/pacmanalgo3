@@ -145,10 +145,12 @@ public class Nivel {
 	public Pacman obtenerPacman(){
 		return this.pacman;
 	}
+
+//Esta dos veces. Si hay algun lado que lo usa cambiar por obtenerMiJuego
 	
-	public Juego obtenerJuego(){
-		return this.juego;
-	}
+//	public Juego obtenerJuego(){
+//		return this.juego;
+//	}
 	
 	public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
 		if(unFantasma.obtenerPosicion().equals(unPacman.obtenerPosicion())){
@@ -164,6 +166,10 @@ public class Nivel {
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
     
+	public void finDeNivel(){
+		this.juego.pasarDeNivel();	
+	}
+	
 	//Lo dejo por las dudas pero creo q se puede borrar al re carajo
 	/*public void pacmanAtrapado() {
          if(this.obtenerPacman().obtenerVidasDisponibles()==0){
