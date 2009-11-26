@@ -55,8 +55,7 @@ public class Pacman extends Personaje {
 	}
 //La vi como renacer pero queda mejor nuevaPosicion para mi, lo hablamos sino.
 	public void nuevaPosicion(Point posicion) {
-		this.posicion=posicion;
-		
+		this.posicion=posicion;		
 	}
 
 }

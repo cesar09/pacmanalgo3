@@ -40,5 +40,11 @@ public class testPacman extends TestCase{
 		}
 	}
 	
+	public void testNuevaPosicion(){
+		Point unPoint=new Point(2,2);
+		unPacman.nuevaPosicion(unPoint);
+		assertSame(unPacman.obtenerPosicion(),unPoint);
+	}
+	
 	
 }
