@@ -19,18 +19,17 @@ public class TestPuntoPoder extends TestCase {
 		unBloqueVacio.hayPacman(unNivel);
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),50);
 	}
+	public void testHayPacman2() {
+		Laberinto unLaberinto=unNivel.obtenerMiLaberinto();
+		for(int x=0;x<243;x++) unLaberinto.restarCantidadPastillas();
+		PuntoPoder unPuntoPoder= new PuntoPoder();	
+		unPuntoPoder.hayPacman(unNivel);
+		assertEquals(unJuego.obtenerNivelActual(),2);
+	}
 	public void testSerTransitado() {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		PuntoPoder unBloqueVacio= new PuntoPoder();		
 		unBloqueVacio.serTransitado(unNivel);
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-	}
-	public void testHayPacman2() {
-		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-		Laberinto unLaberinto=unNivel.obtenerMiLaberinto();
-		for(int x=0;x<108;x++) unLaberinto.restarCantidadPastillas();
-		PuntoPoder unBloqueVacio= new PuntoPoder();	
-		unBloqueVacio.hayPacman(unNivel);
-		assertEquals(unJuego.obtenerNivelActual(),2);
 	}
 }

@@ -8,6 +8,7 @@ public class PuntoPoder extends Comestible {
 	public void hayPacman(Nivel unNivel) {
 		unNivel.obtenerMiJuego().sumarPuntajeAlJugador(this.puntaje);
 		unNivel.hacerFantasmasComestibles();
+		unNivel.obtenerMiLaberinto().restarCantidadPastillas();
 		if (unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0)
 			unNivel.finDeNivel();
 	}
