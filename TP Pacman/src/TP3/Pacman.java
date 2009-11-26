@@ -45,19 +45,15 @@ public class Pacman extends Personaje {
 		if(!unFantasma.esComestible()) this.morir();
 		else unFantasma.fantasmaComido(unNivel);
 	}
-/*
+/*//Esto tmb se puede volar al re carajo.
 	public int obtenerVidasDisponibles(){
 		return this.vidas;		
 	}*/
 
-	public void renacer(Point posicion) {
-		this.posicion=posicion;		
-	}
-	
 	public void agregarVida(){
 		this.vidas += 1;
 	}
-
+//La vi como renacer pero queda mejor nuevaPosicion para mi, lo hablamos sino.
 	public void nuevaPosicion(Point posicion) {
 		this.posicion=posicion;
 		

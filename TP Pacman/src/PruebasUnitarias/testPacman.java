@@ -17,11 +17,24 @@ public class testPacman extends TestCase{
 			unPacman.morir();
 			unPacman.morir();
 		}catch(PacmanSinVidaException e){
-			fail("Lanz+o excepcion estando aún vivo.");
+			fail("Lanzó excepcion estando aún vivo.");
 		}
 		try{
 			unPacman.morir();
-			fail("Lanz+o excepcion estando aún vivo.");
+			fail("No lanzó excepcion de pacman sin vida estándo con 0 vidas.");
+		}catch(PacmanSinVidaException e){
+			assertTrue(true);
+		}
+	}
+	public void testAgregarVida(){
+		unPacman.agregarVida();
+		
+		try{
+			unPacman.morir();
+			unPacman.morir();
+			unPacman.morir();
+			unPacman.morir();
+			fail("No lanzó excepcion de pacman sin vida estándo con 0 vidas.");
 		}catch(PacmanSinVidaException e){
 			assertTrue(true);
 		}
