@@ -5,7 +5,6 @@ public class Pinky extends Fantasma {
 		super(velocidadInicial);
 	}
 	
-	//metodo implicitamente apodado fantasmaDrogado()
 	public void atraparPacman(Nivel unNivel)throws PacmanSinVidaException{
 		Pacman unPacman = unNivel.obtenerPacman();
 		int numeroAleatorio = (int) (Math.random()*1+4);
@@ -39,42 +38,9 @@ public class Pinky extends Fantasma {
     }
 	
 	public void irAJaula() {
-		Point posicion = new Point (3,4);
+		Point posicion = new Point (13,14);
 		this.posicion = posicion;
 	}
-	
-	
-	/*public static void main(String[] args) {
-		Point Inicial = new Point(3,3);
-		Laberinto miLaberinto = new Laberinto(1);//TODO: VERIFICAR ESTO CON EL LABERINTO.
-		miLaberinto.cargarLaberintoSegunNivel();
-		Pinky miPinky = new Pinky(Inicial,5);
-		
-		//HUIR
-		
-		miPinky.hacerseComestible();
-		System.out.println(miPinky.obtenerPosicion().getX());
-		System.out.println(miPinky.obtenerPosicion().getY());
-		miPinky.huirDePacman(miLaberinto);
-		System.out.println(miPinky.obtenerPosicion().getX());
-		System.out.println(miPinky.obtenerPosicion().getY());
-		miPinky.huirDePacman(miLaberinto);
-		System.out.println(miPinky.obtenerPosicion().getX());
-		System.out.println(miPinky.obtenerPosicion().getY());
-		miPinky.huirDePacman(miLaberinto);
-		System.out.println(miPinky.obtenerPosicion().getX());
-		System.out.println(miPinky.obtenerPosicion().getY());
-		miPinky.huirDePacman(miLaberinto);
-		System.out.println(miPinky.obtenerPosicion().getX());
-		System.out.println(miPinky.obtenerPosicion().getY());
-		miPinky.huirDePacman(miLaberinto);
-		System.out.println(miPinky.obtenerPosicion().getX());
-		System.out.println(miPinky.obtenerPosicion().getY());
-		miPinky.huirDePacman(miLaberinto);
-		System.out.println(miPinky.obtenerPosicion().getX());
-		System.out.println(miPinky.obtenerPosicion().getY());
-		
-	}*/
 	
 
 }

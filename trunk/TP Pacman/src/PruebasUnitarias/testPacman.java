@@ -9,7 +9,7 @@ public class testPacman extends TestCase{
 	
 	public void setUp(){
 		unPacman=new Pacman();
-		Point unPoint= new Point();
+		Point unPoint= new Point(0,0);
 		unPoint=unPacman.obtenerPosicion();
 		assertEquals(unPoint.getX(),1);
 		assertEquals(unPoint.getY(),1);
@@ -44,7 +44,7 @@ public class testPacman extends TestCase{
 	
 	public void testNuevaPosicion(){
 		unPacman.renacer();
-		Point unPoint= new Point();
+		Point unPoint= new Point(0,0);
 		unPoint=unPacman.obtenerPosicion();
 		assertEquals(unPoint.getX(),1);
 		assertEquals(unPoint.getY(),1);

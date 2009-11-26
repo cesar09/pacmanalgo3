@@ -13,9 +13,8 @@ public class ZZZZpaProba {
 		y = pacman.obtenerPosicion();
 		System.out.println(y.getX()+(",")+y.getY());*/
 		
-		int p = 15;
-		int d = p/2;
-		System.out.println(d);
+		Juego miJu = new Juego();
+		
 		
 	}
 }

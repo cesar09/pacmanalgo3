@@ -55,15 +55,15 @@ public abstract class Fantasma extends Personaje {
 		}
 
 
-		public Point distanciaPacman(Point posicionPacman) {
-			Point auxiliar = new Point();
+		protected Point distanciaPacman(Point posicionPacman) {
+			Point auxiliar = new Point(0,0);
 			int distanciaEnX = this.obtenerPosicion().getX() - posicionPacman.getX();
 			int distanciaEnY = this.obtenerPosicion().getY() - posicionPacman.getY();
 			auxiliar.setXY(distanciaEnX,distanciaEnY);
 			return auxiliar;
 		}
 		
-		public void moverArriba(Nivel unNivel){
+		protected void moverArriba(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
@@ -92,7 +92,7 @@ public abstract class Fantasma extends Personaje {
             		    }
                 }
 		
-		public void moverAbajo(Nivel unNivel){
+		protected void moverAbajo(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
@@ -122,7 +122,7 @@ public abstract class Fantasma extends Personaje {
 			
 		}
 		
-		public void moverDerecha(Nivel unNivel){
+		protected void moverDerecha(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
@@ -152,7 +152,7 @@ public abstract class Fantasma extends Personaje {
 			
 		}
 		
-		public void moverIzquierda(Nivel unNivel){
+		protected void moverIzquierda(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
