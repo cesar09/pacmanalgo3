@@ -4,7 +4,7 @@ public class Nivel {
 	private Juego juego;
 	private Laberinto miLaberinto;
 	private Pacman pacman;
-	
+	private int nivel;
 
 	private Blinky blinky;
 	private Pinky pinky;
@@ -15,7 +15,8 @@ public class Nivel {
 
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;
-		this.miLaberinto = new Laberinto (1);
+		this.nivel=1;
+		this.miLaberinto = new Laberinto (this.nivel);
 		this.crearPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
@@ -156,7 +157,7 @@ public class Nivel {
 			}
 	}
 	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
-		// TODO Auto-generated method stub
+		this.nivel=nivelActual;
 		this.miLaberinto = new Laberinto (nivelActual);
 		this.renacerPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
