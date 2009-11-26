@@ -26,9 +26,11 @@ public abstract class Fantasma extends Personaje {
 		public void elegirMovimiento(Nivel unNivel) throws PacmanSinVidaException{	
 				while (this.esComestible()){ 
 					this.huirDePacman(unNivel);
+					new TimerVelocidad (1/this.velocidad);
 				}
 				while(!this.esComestible()){
 					this.atraparPacman(unNivel);
+					new TimerVelocidad (1/this.velocidad);
 				}
 			}
 		
