@@ -60,17 +60,13 @@ public class Nivel {
 	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
 		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
-/*		if(this.mismaPosicion(blinky, pacman)) this.comerOMorir(blinky,pacman);
-		else if(this.mismaPosicion(inky, pacman)) this.comerOMorir(inky,pacman);
-		else if(this.mismaPosicion(pinky, pacman)) this.comerOMorir(pinky,pacman);
-		else if(this.mismaPosicion(clyde, pacman)) this.comerOMorir(clyde,pacman);
+/*		if(this.mismaPosicion(blinky, pacman)) pacman.comerOMorir(blinky,this);
+		else if(this.mismaPosicion(inky, pacman)) pacman.comerOMorir(inky,this);
+		else if(this.mismaPosicion(pinky, pacman)) pacman.comerOMorir(pinky,this);
+		else if(this.mismaPosicion(clyde, pacman)) pacman.comerOMorir(clyde,this);
 	}
 	
-	private void comerOMorir(Fantasma unFantasma, Pacman pacman) throws JuegoPerdido {
-		// TODO Auto-generated method stub
-		if(!unFantasma.esComestible()) pacman.morir();
-		else unFantasma.fantasmaComido(this);*/
-	}
+	
 	protected boolean moverSegunSentido(int sentido){
 		int x;
 		int y;

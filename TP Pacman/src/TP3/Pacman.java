@@ -36,8 +36,14 @@ public class Pacman extends Personaje {
 		return (this.posicion);
 	}
 	
-	public void morir(){
-		this.vidas -= 1;;
+	public void morir() throws PacmanSinVidaException {
+		this.vidas -= 1;
+		if (this.vidas==0) throw new PacmanSinVidaException();
+	}
+	
+	public void comerOMorir(Fantasma unFantasma, Nivel unNivel) throws PacmanSinVidaException {
+		if(!unFantasma.esComestible()) this.morir();
+		else unFantasma.fantasmaComido(unNivel);
 	}
 
 	public int obtenerVidasDisponibles(){
