@@ -74,7 +74,7 @@ public class testBlinky extends TestCase{
 		assertEquals(unPoint.getX(),16);
 		assertEquals(unPoint.getY(),14);
 	}
-	public void testMoverDerecha(){
+	public void testIrAJaula(){
 		try {
 			this.unFantasma.elegirMovimiento(unNivel);
 		} catch (PacmanSinVidaException e) {
