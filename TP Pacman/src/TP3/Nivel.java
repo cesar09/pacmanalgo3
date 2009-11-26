@@ -75,7 +75,7 @@ public class Nivel {
 		switch (sentido){
 		
 		case 1:
-			//Este es un ejemplo de si quiere ir para la izquierda.
+			//Si se desea ir para la izquierda.
 			x = this.pacman.obtenerPosicion().getX()-1;
 			y = this.pacman.obtenerPosicion().getY();
 			try {
@@ -86,7 +86,7 @@ public class Nivel {
 			 } catch (NoTransitableException e) {}
 			 break;
 		case 2:
-			//Este es un ejemplo de si quiere ir para la derecha.
+			//Si se desea ir para la derecha.
 			x = this.pacman.obtenerPosicion().getX()+1;
 			y = this.pacman.obtenerPosicion().getY();
 			try {
@@ -98,7 +98,7 @@ public class Nivel {
 		break;
 		
 		case 3:
-			//Este es un ejemplo de si quiere ir para abajo.
+			//Si se desea ir para abajo.
 			x = this.pacman.obtenerPosicion().getX();
 			y = this.pacman.obtenerPosicion().getY()-1;
 			try {
@@ -145,12 +145,6 @@ public class Nivel {
 	public Pacman obtenerPacman(){
 		return this.pacman;
 	}
-
-//Esta dos veces. Si hay algun lado que lo usa cambiar por obtenerMiJuego
-	
-//	public Juego obtenerJuego(){
-//		return this.juego;
-//	}
 	
 	public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
 		if(unFantasma.obtenerPosicion().equals(unPacman.obtenerPosicion())){
@@ -159,6 +153,7 @@ public class Nivel {
 			return false;
 			}
 	}
+	
 	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
 		this.nivel=nivelActual;
 		this.miLaberinto = new Laberinto (nivelActual);
@@ -169,18 +164,5 @@ public class Nivel {
 	public void finDeNivel(){
 		this.juego.pasarDeNivel();	
 	}
-	
-	//Lo dejo por las dudas pero creo q se puede borrar al re carajo
-	/*public void pacmanAtrapado() {
-         if(this.obtenerPacman().obtenerVidasDisponibles()==0){
-        	 return;
-         } else {
-        	 this.renacerPersonajes();
-        	 try{
-        		 this.mueveFantasma();
-         }catch (PacmanSinVidaException e){}
-		
-         }
-	}*/
 	
 }

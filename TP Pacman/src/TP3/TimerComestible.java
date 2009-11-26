@@ -13,7 +13,7 @@ package TP3;
 		this.timer.schedule ( new RemindTask ( ) , segundos*1000 ) ;
 		}
 
-		public void hacerFantasmasNoComestibles(){
+		private void hacerFantasmasNoComestibles(){
 			this.miNivel.hacerFantasmasNoComestibles();
 		}
 
@@ -24,12 +24,5 @@ package TP3;
 			}
 		}
 		
-		/*
-		public static void main ( String args [ ] ) {
-			System.out.println ( "Empezará." ) ;
-			new TimerComestible ( 10 ) ;
-				System.out.println ( "Empezó." ) ;
-		}
-		*/
 }
 	

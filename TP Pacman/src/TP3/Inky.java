@@ -10,10 +10,8 @@ public class Inky extends Fantasma {
 		Point distancia = this.distanciaPacman(unPacman.obtenerPosicion());
 		int distanciaEnX = distancia.getX();
 		int distanciaEnY = distancia.getY();
-		double positivoEnX = Math.pow(distancia.getX(),2);
-		double positivoEnY = Math.pow(distancia.getY(),2);
-		positivoEnX = Math.sqrt(positivoEnX);
-		positivoEnY = Math.sqrt(positivoEnY);
+		double positivoEnX = Math.sqrt(Math.pow(distancia.getX(),2));
+		double positivoEnY = Math.sqrt(Math.pow(distancia.getY(),2));
 
 		//comprueba si en x o y estan a menor casilleros
 		if(positivoEnX<=positivoEnY){
@@ -32,7 +30,7 @@ public class Inky extends Fantasma {
 			}
 		}		
         if(unNivel.mismaPosicion(this, unPacman)){
-        	unPacman.morir(); //Este metodo lanza excepcion de JuegoPerdido.
+        	unPacman.morir();
         	unNivel.llevarFantasmasAJaula();
         	unNivel.posicionInicialPacman();
         }
@@ -47,41 +45,8 @@ public class Inky extends Fantasma {
     }
 	
 	public void irAJaula() {
-		Point posicion = new Point (4,4);
+		Point posicion = new Point (14,14);
 		this.posicion = posicion;
 	}
-	
-	
-	/*public static void main(String[] args) {
-		Point Inicial = new Point(3,3);
-		Laberinto miLaberinto = new Laberinto(1); //TODO: VERIFICAR ESTO CON EL LABERINTO.
-		miLaberinto.cargarLaberintoSegunNivel(); //TODO: CORREGIR PARA CAPTURAR LA EXCEPCION.
-		Inky miInky = new Inky(Inicial,5);
-		
-		//HUIR
-		
-		miInky.hacerseComestible();
-		System.out.println(miInky.obtenerPosicion().getX());
-		System.out.println(miInky.obtenerPosicion().getY());
-		miInky.huirDePacman(miLaberinto);
-		System.out.println(miInky.obtenerPosicion().getX());
-		System.out.println(miInky.obtenerPosicion().getY());
-		miInky.huirDePacman(miLaberinto);
-		System.out.println(miInky.obtenerPosicion().getX());
-		System.out.println(miInky.obtenerPosicion().getY());
-		miInky.huirDePacman(miLaberinto);
-		System.out.println(miInky.obtenerPosicion().getX());
-		System.out.println(miInky.obtenerPosicion().getY());
-		miInky.huirDePacman(miLaberinto);
-		System.out.println(miInky.obtenerPosicion().getX());
-		System.out.println(miInky.obtenerPosicion().getY());
-		miInky.huirDePacman(miLaberinto);
-		System.out.println(miInky.obtenerPosicion().getX());
-		System.out.println(miInky.obtenerPosicion().getY());
-		miInky.huirDePacman(miLaberinto);
-		System.out.println(miInky.obtenerPosicion().getX());
-		System.out.println(miInky.obtenerPosicion().getY());
-		
-	}*/
 	
 }

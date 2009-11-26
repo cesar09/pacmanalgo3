@@ -30,7 +30,7 @@ public Contenido devolverContenido(int x,int y){
 	 return contenidoPedido;
  }
  
-public void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoException{
+private void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoException{
 	  	
 		int x; 
 		int y;

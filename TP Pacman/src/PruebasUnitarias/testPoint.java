@@ -9,7 +9,7 @@ public class testPoint extends TestCase{
 	private Point punto2;
 	
 	public void setUp(){
-		this.punto1= new Point();
+		this.punto1= new Point(0,0);
 		this.punto2=new Point(1,1);		
 	}
 	
