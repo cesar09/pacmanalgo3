@@ -15,7 +15,7 @@ public class Nivel {
 
 	public Nivel(Juego unJuego){
 		this.juego = unJuego;
-		this.miLaberinto = new Laberinto (this.juego.obtenerNivelActual());
+		this.miLaberinto = new Laberinto (1);
 		this.crearPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
@@ -60,7 +60,7 @@ public class Nivel {
 	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
 		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
-/*		if(this.mismaPosicion(blinky, pacman)) pacman.comerOMorir(blinky,this);
+		if(this.mismaPosicion(blinky, pacman)) pacman.comerOMorir(blinky,this);
 		else if(this.mismaPosicion(inky, pacman)) pacman.comerOMorir(inky,this);
 		else if(this.mismaPosicion(pinky, pacman)) pacman.comerOMorir(pinky,this);
 		else if(this.mismaPosicion(clyde, pacman)) pacman.comerOMorir(clyde,this);
@@ -155,12 +155,12 @@ public class Nivel {
 			return false;
 			}
 	}
-	/*public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
+	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
 		// TODO Auto-generated method stub
 		this.miLaberinto = new Laberinto (nivelActual);
 		this.renacerPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
-	}*/
+	}
     
 
 	public void pacmanAtrapado() {
