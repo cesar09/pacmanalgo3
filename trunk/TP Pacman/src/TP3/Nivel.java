@@ -33,7 +33,6 @@ public class Nivel {
 	
 	public void renacerFantasmas() {
 		Point posicion= new Point (1,1);//TODO: inicializar las posiciones correctamente
-		this.pacman.renacer(posicion);
 		this.blinky.volverAJaula(posicion);
 		this.pinky.volverAJaula(posicion);
 		this.inky.volverAJaula(posicion);
