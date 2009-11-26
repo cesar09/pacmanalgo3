@@ -22,7 +22,6 @@ public class testBloque extends TestCase{
 			unBloque.hayPacman(unNivel);
 			fail("Debió lanzar excepción por ser los Bloques no transitables.");
 		} catch (NoTransitableException e) {
-			// TODO Auto-generated catch block
 			assertTrue(true);
 		}
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		
@@ -35,7 +34,6 @@ public class testBloque extends TestCase{
 			unBloque.serTransitado(unNivel);
 			fail("Debió lanzar excepción por ser los Bloques no transitables.");
 		} catch (NoTransitableException e) {
-			// TODO Auto-generated catch block
 			assertTrue(true);
 		}
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		

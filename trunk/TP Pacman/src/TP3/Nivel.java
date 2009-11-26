@@ -19,8 +19,8 @@ public class Nivel {
 		this.miLaberinto = new Laberinto (this.nivel);
 		this.crearPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
-		new TimerFruta(5,this); //ver si anda
-		new TimerVacio(15,this);//ver si anda
+		new TimerFruta(5,this); 
+		new TimerVacio(15,this);
 	}
 
 	private void crearPersonajes(){
@@ -67,7 +67,7 @@ public class Nivel {
 	
 	public void muevePacman() throws PacmanSinVidaException{
 		int sentido=0;
-		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
+		//FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 	    //SI SENTIDO ES 0, EJECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
 		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);

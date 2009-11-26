@@ -17,8 +17,8 @@ public class Juego {
 		try {
 			this.unNivel.nuevoNivel(nivelActual);
 		} catch (ArchivoFueraDeFormatoException e) {
-			// TODO completar con detalles para cuando se carga un Laberinto que desde el archivo esta mal armado.
-			e.printStackTrace();
+			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
+			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
 		}
 	}
 
@@ -51,9 +51,8 @@ public class Juego {
 	}
 
 	public void juegoPerdido(){
-		System.out.println("lo siente gil perdiste");
-		System.out.println("alegrate llegaste al nivel:"+ this.nivelActual);
-		//TODO estos mensaje son muy buenos!!! pero habría q cambiarlos jeje.
+		System.out.println("Has perdido el juego.");
+		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 	}
 	
 }
