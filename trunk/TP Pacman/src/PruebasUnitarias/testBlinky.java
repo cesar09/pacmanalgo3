@@ -86,11 +86,4 @@ public class testBlinky extends TestCase{
 		assertEquals(unPoint.getY(),13);
 	}
 	
-	public static void main(String[] srgs){
-		testBlinky unTest= new testBlinky();
-		unTest.setUp();
-		unTest.testMoverIzquierda();
-		
-	}
-	
 }
