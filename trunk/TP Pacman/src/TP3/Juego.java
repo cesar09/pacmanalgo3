@@ -5,6 +5,7 @@ public class Juego {
 	private Nivel unNivel; 
 	private Jugador jugador;
 	private int nivelActual;
+	private static int cantidadDeNiveles=2;
 	
 	public Juego(){
 		this.nivelActual = 1; //nivel inicial 1.
@@ -14,12 +15,13 @@ public class Juego {
 	
 	public void pasarDeNivel(){
 		this.nivelActual++;
-		try {
-			this.unNivel.nuevoNivel(nivelActual);
-		} catch (ArchivoFueraDeFormatoException e) {
+		if(cantidadDeNiveles==nivelActual) this.JuegoGanado(); 
+		else try {
+				this.unNivel.nuevoNivel(nivelActual);
+			} catch (ArchivoFueraDeFormatoException e) {
 			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
-			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
-		}
+				System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
+			}
 	}
 
 	public void sumarPuntajeAlJugador(int puntaje){
@@ -54,5 +56,8 @@ public class Juego {
 		System.out.println("Has perdido el juego.");
 		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 	}
-	
+	private void JuegoGanado() {
+		System.out.println("Has ganado el juego.");
+		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
+	}
 }
