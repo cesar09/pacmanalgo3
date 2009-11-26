@@ -37,7 +37,7 @@ public class Nivel {
 		this.clyde.irAJaula(); 	
 	}
 	
-	public void posicionInicialPacman() {
+	public void llevarPacmanAPosicionInicial() {
 		this.pacman.renacer();
 	}
 	

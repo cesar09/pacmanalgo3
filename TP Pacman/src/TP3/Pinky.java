@@ -25,7 +25,7 @@ public class Pinky extends Fantasma {
 		 if(unNivel.mismaPosicion(this, unPacman)){
 	        	unPacman.morir();
 	        	unNivel.llevarFantasmasAJaula();
-	        	unNivel.posicionInicialPacman();
+	        	unNivel.llevarPacmanAPosicionInicial();
 	        }
 	}
 

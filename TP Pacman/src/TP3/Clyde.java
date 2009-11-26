@@ -10,7 +10,7 @@ public class Clyde extends Fantasma {
         this.moverDerecha(unNivel);
         if(unNivel.mismaPosicion(this, unPacman)){
         	unNivel.llevarFantasmasAJaula();
-        	unNivel.posicionInicialPacman();
+        	unNivel.llevarPacmanAPosicionInicial();
         }
 	}
 
