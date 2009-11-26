@@ -3,12 +3,14 @@ public abstract class Fantasma extends Personaje {
 
 		private boolean comestible;
 		protected int velocidad;
+		private int contador;
 		
 		
 		public Fantasma(int velocidadInicial) {
 			this.irAJaula();
 			this.comestible = false;
 			this.velocidad = velocidadInicial;
+			this.contador=1;
 		}
 		
 		public void hacerseComestible(){
@@ -23,14 +25,18 @@ public abstract class Fantasma extends Personaje {
 			this.posicion.setXY(x, y); 
 		}
 		
-		public void elegirMovimiento(Nivel unNivel) throws PacmanSinVidaException{	
+		public void elegirMovimiento(Nivel unNivel) throws PacmanSinVidaException{
+			if(contador==velocidad){
 				if (this.esComestible()){ 
-					new TimerVelocidadHuir (1/this.velocidad, this, unNivel);
+					this.huirDePacman(unNivel);
 				}
 				if (!this.esComestible()){
-					new TimerVelocidadAtrapar (1/this.velocidad, this, unNivel);
+					this.atraparPacman(unNivel);
 				}
+				contador=1;
 			}
+			else contador++;
+		}
 		
 		public Point obtenerPosicion() {
 			return (this.posicion);
