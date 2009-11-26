@@ -51,7 +51,7 @@ public class Pacman extends Personaje {
 	}
 
 	public void renacer() {
-		Point posicion = new Point(23,13); //TODO: VERIFICAR Q ESTE BIEN LA POSICION
+		Point posicion = new Point(13,23); //TODO: VERIFICAR Q ESTE BIEN LA POSICION
 		this.posicion=posicion;		
 	}
 
