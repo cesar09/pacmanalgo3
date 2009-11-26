@@ -1,4 +1,4 @@
-package TP3;
+
 public class Nivel {
 	
 	private Juego juego;
@@ -44,14 +44,17 @@ public class Nivel {
 		return (this.juego);
 	}
 	
-	public void mueveFantasma(){
+	public void mueveFantasma() throws PacmanSinVidaException{
 		this.blinky.elegirMovimiento(this);
 		this.pinky.elegirMovimiento(this);
 		this.inky.elegirMovimiento(this);
 		this.clyde.elegirMovimiento(this);
+		if (this.obtenerPacman().obtenerVidasDisponibles() == 0){
+			throw new PacmanSinVidaException();
+		}
 	}
 	
-	public void muevePacman(){// throws JuegoPerdido{	
+	public void muevePacman() throws PacmanSinVidaException{
 		int sentido=0;
 		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
@@ -67,6 +70,9 @@ public class Nivel {
 		// TODO Auto-generated method stub
 		if(!unFantasma.esComestible()) pacman.morir();
 		else unFantasma.fantasmaComido(this);*/
+		if (this.obtenerPacman().obtenerVidasDisponibles() == 0){
+			throw new PacmanSinVidaException();
+		}
 	}
 	protected boolean moverSegunSentido(int sentido){
 		int x;
@@ -145,7 +151,7 @@ public class Nivel {
 		return this.pacman;
 	}
 	
-	public Juego getJuego(){
+	public Juego obtenerJuego(){
 		return this.juego;
 	}
 	
@@ -166,12 +172,14 @@ public class Nivel {
 
 	public void pacmanAtrapado() {
          if(this.obtenerPacman().obtenerVidasDisponibles()==0){
-        	 this.juego.juegoPerdido();
+        	 return;
          } else {
         	 this.renacerPersonajes();
-        	 this.mueveFantasma();
-         }
+        	 try{
+        		 this.mueveFantasma();
+         }catch (PacmanSinVidaException e){}
 		
+         }
 	}
 	
 }
