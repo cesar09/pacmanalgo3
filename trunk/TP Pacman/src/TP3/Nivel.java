@@ -24,11 +24,10 @@ public class Nivel {
 	}
 
 	private void crearPersonajes(){
-		int vel = 1;//TODO: ELEGIR VELOCIDAD CORRECTA
-		this.blinky = new Blinky (vel);
-		this.pinky = new Pinky (vel);
-		this.inky = new Inky (vel);
-		this.clyde = new Clyde (vel); 	
+		this.blinky = new Blinky (1);
+		this.pinky = new Pinky (2);
+		this.inky = new Inky (1);
+		this.clyde = new Clyde (2); 	
 		this.pacman = new Pacman ();
 	}
 	
