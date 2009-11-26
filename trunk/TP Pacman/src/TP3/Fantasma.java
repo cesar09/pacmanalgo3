@@ -23,7 +23,7 @@ public abstract class Fantasma extends Personaje {
 			this.posicion.setXY(x, y); 
 		}
 		
-		public void elegirMovimiento(Nivel unNivel){	
+		public void elegirMovimiento(Nivel unNivel) throws PacmanSinVidaException{	
 			if (comestible){//aca es un while 
 				this.huirDePacman(unNivel);
 			}else{
@@ -43,7 +43,7 @@ public abstract class Fantasma extends Personaje {
 			this.posicion = posicion;
 		}
 		
-		abstract public void atraparPacman(Nivel unNivel);
+		abstract public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException;
 		
 		abstract public void huirDePacman(Nivel unNivel);
 		
