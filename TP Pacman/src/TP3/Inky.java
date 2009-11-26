@@ -5,7 +5,7 @@ public class Inky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 
-	public void atraparPacman(Nivel unNivel){
+	public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException{
 		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Pacman unPacman = unNivel.obtenerPacman();
 		Point distancia = this.distanciaPacman(unPacman.obtenerPosicion());
