@@ -60,7 +60,7 @@ public class testClyde extends TestCase{
 			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
 		}
 		Point unPoint=this.unFantasma.obtenerPosicion();
-		assertEquals(unPoint.getX(),15);
+		assertEquals(unPoint.getX(),13);
 		assertEquals(unPoint.getY(),13);
 		try {
 			this.unFantasma.elegirMovimiento(unNivel);
@@ -70,18 +70,10 @@ public class testClyde extends TestCase{
 			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
 		}
 		unPoint=this.unFantasma.obtenerPosicion();
-		assertEquals(unPoint.getX(),16);
-		assertEquals(unPoint.getY(),14);
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
-		}
-		unPoint=this.unFantasma.obtenerPosicion();
-		assertEquals(unPoint.getX(),16);
-		assertEquals(unPoint.getY(),14);
+		assertEquals(unPoint.getX(),12);
+		assertEquals(unPoint.getY(),13);
 	}
+		
 	public void testIrAJaula(){
 		try {
 			this.unFantasma.elegirMovimiento(unNivel);
