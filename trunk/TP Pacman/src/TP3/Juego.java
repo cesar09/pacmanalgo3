@@ -14,7 +14,12 @@ public class Juego {
 	
 	public void pasarDeNivel(){
 		this.nivelActual++;
-        this.unNivel = new Nivel(this);
+		try {
+			this.unNivel.nuevoNivel(nivelActual);
+		} catch (ArchivoFueraDeFormatoException e) {
+			// TODO completar con detalles para cuando se carga un Laberinto que desde el archivo esta mal armado.
+			e.printStackTrace();
+		}
 	}
 
 	public void sumarPuntajeAlJugador(int puntaje){
