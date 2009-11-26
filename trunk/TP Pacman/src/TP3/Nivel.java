@@ -31,7 +31,7 @@ public class Nivel {
 	}
 	
 	public void llevarFantasmasAJaula() {
-		this.blinky.irAJaula();//TODO: VER Q POSICIONES USAREMOS
+		this.blinky.irAJaula();
 		this.pinky.irAJaula();
 		this.inky.irAJaula();
 		this.clyde.irAJaula(); 	
@@ -46,14 +46,22 @@ public class Nivel {
 	}
 	
 	public void mueveFantasma() throws PacmanSinVidaException{
-		new TimerSalirDeJaula (2);
-		this.blinky.elegirMovimiento(this);
-		new TimerSalirDeJaula (2);
-		this.pinky.elegirMovimiento(this);
-		new TimerSalirDeJaula (3);
-		this.inky.elegirMovimiento(this);
-		new TimerSalirDeJaula (3);
-		this.clyde.elegirMovimiento(this);	
+		if (this.blinky.estaEncerrado()){
+			new TimerSalirDeJaula (2, this.blinky);
+		}else
+			this.blinky.elegirMovimiento(this);
+		if (this.pinky.estaEncerrado()){
+			new TimerSalirDeJaula (3, this.blinky);
+		}else
+			this.pinky.elegirMovimiento(this);
+		if (this.clyde.estaEncerrado()){
+			new TimerSalirDeJaula (4, this.blinky);
+		}else
+			this.clyde.elegirMovimiento(this);	
+		if (this.inky.estaEncerrado()){
+			new TimerSalirDeJaula (5, this.blinky);
+		}else
+			this.inky.elegirMovimiento(this);
 	}
 	
 	public void muevePacman() throws PacmanSinVidaException{

@@ -32,6 +32,7 @@ public class Inky extends Fantasma {
         if(unNivel.mismaPosicion(this, unPacman)){
         	unPacman.morir();
         	unNivel.llevarFantasmasAJaula();
+        	this.encerrado = true;
         	unNivel.llevarPacmanAPosicionInicial();
         }
 	}
@@ -47,6 +48,14 @@ public class Inky extends Fantasma {
 	public void irAJaula() {
 		Point posicion = new Point (14,14);
 		this.posicion = posicion;
+		this.encerrado = true;
+	}
+	
+	public void salirDeJaula (){
+		this.encerrado = false;
+		Point posicion = new Point (14,11);
+		this.posicion = posicion;
+		this.encerrado = false;
 	}
 	
 }

@@ -4,6 +4,7 @@ public abstract class Fantasma extends Personaje {
 		private boolean comestible;
 		protected int velocidad;
 		private int contador;
+		protected boolean encerrado;
 		
 		
 		public Fantasma(int velocidadInicial) {
@@ -11,6 +12,10 @@ public abstract class Fantasma extends Personaje {
 			this.comestible = false;
 			this.velocidad = velocidadInicial;
 			this.contador=1;
+		}
+		
+		public boolean estaEncerrado(){
+			return (this.encerrado);
 		}
 		
 		public void hacerseComestible(){
@@ -45,6 +50,8 @@ public abstract class Fantasma extends Personaje {
 		public boolean esComestible(){
 			return this.comestible;
 		}
+		
+		abstract public void salirDeJaula();
 		
 		abstract public void irAJaula ();
 		
@@ -185,4 +192,6 @@ public abstract class Fantasma extends Personaje {
             		    }
 			
 		}
+
+	
 }
