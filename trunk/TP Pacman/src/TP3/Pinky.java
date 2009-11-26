@@ -23,8 +23,10 @@ public class Pinky extends Fantasma {
 			 this.moverAbajo(unNivel);
 			 break;
 		 }
-	        if(unNivel.mismaPosicion(this, unPacman)){
+		 if(unNivel.mismaPosicion(this, unPacman)){
 	        	unPacman.morir();
+	        	unNivel.llevarFantasmasAJaula();
+	        	unNivel.posicionInicialPacman();
 	        }
 	}
 
