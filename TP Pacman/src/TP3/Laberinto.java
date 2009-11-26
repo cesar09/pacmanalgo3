@@ -7,10 +7,14 @@ public class Laberinto {
 private Contenido[][] contenidos;
 private int fila;
 private int columna;
+int cantidadPastillas;
+int cantFilas = 31;
+int cantColumnas = 28;
 
 public Laberinto(int nivel){
-	 this.fila= 31; // las y maximas
-	 this.columna=28; //las x maximas
+	 this.fila = cantFilas;
+	 this.columna = cantColumnas;
+	 cantidadPastillas = 0;
 	 contenidos = new Contenido[columna][fila];
 	 try{
 		 this.cargarLaberintoSegunNivel(nivel);
@@ -75,5 +79,14 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 		}
 	
 	}
-} 
+ 
 
+public int obtenerCantidadPastillas(){
+	return cantidadPastillas;
+}
+
+public int restarCantidadPastillas(){
+	return cantidadPastillas--;
+}
+
+}

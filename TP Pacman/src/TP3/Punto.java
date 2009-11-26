@@ -7,8 +7,11 @@ public class Punto extends Comestible {
 	
 	public void hayPacman(Nivel unNivel) {
 		unNivel.obtenerMiJuego().sumarPuntajeAlJugador(this.puntaje);
+		unNivel.obtenerMiLaberinto().restarCantidadPastillas();
+		if (unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0)
+			unNivel.finDeNivel();
 	}
-
+	
 	public void serTransitado(Nivel unNivel){
 		
 	}	
