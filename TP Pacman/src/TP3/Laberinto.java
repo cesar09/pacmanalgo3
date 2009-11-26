@@ -23,7 +23,7 @@ public Laberinto(int nivel){
 	 }
 }
 
- public Contenido devolverContenido(int x,int y){
+public Contenido devolverContenido(int x,int y){
 	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
 	 Contenido contenidoPedido;
 	 contenidoPedido = contenidos[x][y];
@@ -68,9 +68,11 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 				break;
 			case 111:
 				contenidos[x][y]= new Punto();
+				cantidadPastillas++;
 				break;
 			case 79:
 				contenidos[x][y]= new PuntoPoder();
+				cantidadPastillas++;
 				break;
 			case 32:
 				contenidos[x][y]= new Vacio();
