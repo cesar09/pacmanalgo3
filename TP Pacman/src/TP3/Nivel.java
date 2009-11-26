@@ -31,14 +31,18 @@ public class Nivel {
 		this.pacman = new Pacman (pos);
 	}
 	
-	public void renacerPersonajes() {
+	public void renacerFantasmas() {
 		Point posicion= new Point (1,1);//TODO: inicializar las posiciones correctamente
 		this.pacman.renacer(posicion);
 		this.blinky.volverAJaula(posicion);
 		this.pinky.volverAJaula(posicion);
 		this.inky.volverAJaula(posicion);
 		this.clyde.volverAJaula(posicion); 	
-		this.pacman.renacer(posicion);
+	}
+	
+	public void posicionInicialPacman() {
+		Point posicion= new Point (1,1);//TODO: inicializar las posiciones correctamente
+		this.pacman.nuevaPosicion(posicion);
 	}
 	
 	public Juego obtenerMiJuego(){
@@ -54,9 +58,6 @@ public class Nivel {
 		this.inky.elegirMovimiento(this);
 		new TimerSalirDeJaula (3);
 		this.clyde.elegirMovimiento(this);	
-		if (this.obtenerPacman().obtenerVidasDisponibles() == 0){
-			throw new PacmanSinVidaException();
-		}
 	}
 	
 	public void muevePacman() throws PacmanSinVidaException{
@@ -163,12 +164,12 @@ public class Nivel {
 	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
 		this.nivel=nivelActual;
 		this.miLaberinto = new Laberinto (nivelActual);
-		this.renacerPersonajes();
+		this.renacerFantasmas();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
     
-
-	public void pacmanAtrapado() {
+	//Lo dejo por las dudas pero creo q se puede borrar al re carajo
+	/*public void pacmanAtrapado() {
          if(this.obtenerPacman().obtenerVidasDisponibles()==0){
         	 return;
          } else {
@@ -178,6 +179,6 @@ public class Nivel {
          }catch (PacmanSinVidaException e){}
 		
          }
-	}
+	}*/
 	
 }

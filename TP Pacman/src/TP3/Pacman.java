@@ -45,10 +45,10 @@ public class Pacman extends Personaje {
 		if(!unFantasma.esComestible()) this.morir();
 		else unFantasma.fantasmaComido(unNivel);
 	}
-
+/*
 	public int obtenerVidasDisponibles(){
 		return this.vidas;		
-	}
+	}*/
 
 	public void renacer(Point posicion) {
 		this.posicion=posicion;		
@@ -56,6 +56,11 @@ public class Pacman extends Personaje {
 	
 	public void agregarVida(){
 		this.vidas += 1;
+	}
+
+	public void nuevaPosicion(Point posicion) {
+		this.posicion=posicion;
+		
 	}
 
 }

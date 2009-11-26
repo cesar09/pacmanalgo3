@@ -99,8 +99,9 @@ public class Inky extends Fantasma {
 			}
 		}//checkea desp de moverse si estan en la misma posicion		
         if(unNivel.mismaPosicion(this, unPacman)){
-        	unPacman.morir();
-        	unNivel.pacmanAtrapado();
+        	unPacman.morir(); //Este metodo lanza excepcion de JuegoPerdido.
+        	unNivel.renacerFantasmas();
+        	unNivel.posicionInicialPacman();
         }
 	}
 

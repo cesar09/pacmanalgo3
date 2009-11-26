@@ -23,7 +23,8 @@ public class Blinky extends Fantasma {
             }
         if(unNivel.mismaPosicion(this, unPacman)){
         	unPacman.morir();
-        	unNivel.pacmanAtrapado();
+        	unNivel.renacerFantasmas();
+        	unNivel.posicionInicialPacman();
         }
 	}
 	
