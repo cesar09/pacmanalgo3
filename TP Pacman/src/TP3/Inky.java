@@ -6,11 +6,8 @@ public class Inky extends Fantasma {
 	}
 
 	public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException{
-		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
         Pacman unPacman = unNivel.obtenerPacman();
 		Point distancia = this.distanciaPacman(unPacman.obtenerPosicion());
-		int x = this.obtenerPosicion().getX();
-		int y = this.obtenerPosicion().getY();
 		int distanciaEnX = distancia.getX();
 		int distanciaEnY = distancia.getY();
 		double positivoEnX = Math.pow(distancia.getX(),2);
@@ -22,82 +19,18 @@ public class Inky extends Fantasma {
 		if(positivoEnX<=positivoEnY){
             //si x esta a menor distancia y la diferencia es positiva entonces se mueve x++
 			if(distanciaEnX>=0){
-		        try {
-		        	unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-		                this.mover(x+1, y);
-		                x++;
-		        }catch (NoTransitableException e) {
-		            	try {
-		            		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-		            		this.mover(x, y-1);
-		            		y--;
-		            	}catch (NoTransitableException e2) {
-		            		try {
-			            		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
-			            		this.mover(x, y+1);
-			            		y++;
-			            	}catch (NoTransitableException e5) {}
-		            	}
-		            }
+				this.moverDerecha(unNivel);
 			}else{//si x esta a menor distancia y la diferencia es negativo entonces se mueve x--
-		        try {
-		        	unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-		                this.mover(x-1, y);
-		                x--;
-		        }catch (NoTransitableException e) {
-		            	try {
-		            		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
-		            		this.mover(x, y+1);
-		            		y++;
-		            	}catch (NoTransitableException e2) {
-		            		try {
-			            		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-			            		this.mover(x, y-1);
-			            		y--;
-			            	}catch (NoTransitableException e5) {}
-		            	}
-		            }
-			}
-		}else{//si estaba a menor distancia en y lo anterior no corre y entra en este else
+		      this.moverIzquierda(unNivel);
+		      }
+			}else{//si estaba a menor distancia en y lo anterior no corre y entra en este else
 			//si la distancia es positivia se mueve y++
 			if(distanciaEnY>=0){
-		        try {
-		        	unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
-		                this.mover(x, y+1);
-		                y++;
-		        }catch (NoTransitableException e) {
-		            	try {
-		            		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-		            		this.mover(x-1, y);
-		            		x--;
-		            	}catch (NoTransitableException e2) {
-		            		try {
-			            		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-			            		this.mover(x+1, y);
-			            		x--;
-			            	}catch (NoTransitableException e5) {}
-		            	}
-		            }
+		        this.moverArriba(unNivel);
 			}else{//sino se mueve y--
-		        try {
-		        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-		                this.mover(x, y-1);
-		                y--;
-		        }catch (NoTransitableException e) {
-		            	try {
-		            		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-		            		this.mover(x+1, y);
-		            		x++;
-		            	}catch (NoTransitableException e2) {
-		            		try {
-			            		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-			            		this.mover(x-1, y);
-			            		x--;
-			            	}catch (NoTransitableException e5) {}
-		            	}
-		            }
+		        this.moverAbajo(unNivel);
 			}
-		}//checkea desp de moverse si estan en la misma posicion		
+		}		
         if(unNivel.mismaPosicion(this, unPacman)){
         	unPacman.morir(); //Este metodo lanza excepcion de JuegoPerdido.
         	unNivel.renacerFantasmas();
@@ -106,21 +39,8 @@ public class Inky extends Fantasma {
 	}
 
 	public void huirDePacman(Nivel unNivel) {
-        int x = this.obtenerPosicion().getX();
-        int y = this.obtenerPosicion().getY();
-        Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-        try {
-        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-                this.mover(x, y-1);
-                y--;
-        }catch (NoTransitableException e) {
-            	try {
-            		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-            		this.mover(x-1, y);
-            		x--;
-            	}catch (NoTransitableException e2) {}
-            }
-        Pacman unPacman = unNivel.obtenerPacman();
+		Pacman unPacman = unNivel.obtenerPacman();
+        this.moverAbajo(unNivel);
         if(unNivel.mismaPosicion(this, unPacman)){
         	this.fantasmaComido(unNivel);
         }

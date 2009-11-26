@@ -5,25 +5,35 @@ public class Pinky extends Fantasma {
 		super(posicionInicial, velocidadInicial);
 	}
 	
-	public void atraparPacman(Nivel unNivel){
+	//metodo implicitamente apodado fantasmaDrogado()
+	public void atraparPacman(Nivel unNivel)throws PacmanSinVidaException{
+		Pacman unPacman = unNivel.obtenerPacman();
+		int numeroAleatorio = (int) (Math.random()*1+4);
+		 switch(numeroAleatorio) {
+		 case 0:
+			 this.moverDerecha(unNivel);
+			 break;
+		 case 1: 
+			 this.moverArriba(unNivel);
+			 break;
+		 case 2: 
+			 this.moverIzquierda(unNivel);
+			 break;
+		 case 3: 
+			 this.moverAbajo(unNivel);
+			 break;
+		 }
+	        if(unNivel.mismaPosicion(this, unPacman)){
+	        	unPacman.morir();
+	        }
 	}
-	
 
 	public void huirDePacman(Nivel unNivel) {
-        int x = this.obtenerPosicion().getX();
-        int y = this.obtenerPosicion().getY();
-        Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-        try {
-        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-                this.mover(x, y-1);
-                y--;
-        }catch (NoTransitableException e) {
-            	try {
-            		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-            		this.mover(x+1, y);
-            		x++;
-            	}catch (NoTransitableException e2) {}
-         }
+		Pacman unPacman = unNivel.obtenerPacman();
+        this.moverIzquierda(unNivel);
+        if(unNivel.mismaPosicion(this, unPacman)){
+        	this.fantasmaComido(unNivel);
+        }
     }
 	
 	
