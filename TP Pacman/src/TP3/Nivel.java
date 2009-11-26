@@ -20,28 +20,25 @@ public class Nivel {
 		this.crearPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
-	//TODO: debería ser este metodo protected
-	public void crearPersonajes(){
-		int vel = 1;//habria q setear la velocidad dentro de cada contructor
-		Point pos = new Point (1,1);//TODO: inicializar las posiciones correctamente
-		this.blinky = new Blinky (pos,vel);
-		this.pinky = new Pinky (pos,vel);
-		this.inky = new Inky (pos,vel);
-		this.clyde = new Clyde (pos,vel); 	
-		this.pacman = new Pacman (pos);
+
+	private void crearPersonajes(){
+		int vel = 1;//TODO: ELEGIR VELOCIDAD CORRECTA
+		this.blinky = new Blinky (vel);
+		this.pinky = new Pinky (vel);
+		this.inky = new Inky (vel);
+		this.clyde = new Clyde (vel); 	
+		this.pacman = new Pacman ();
 	}
 	
-	public void renacerFantasmas() {
-		Point posicion= new Point (1,1);//TODO: inicializar las posiciones correctamente
-		this.blinky.volverAJaula(posicion);
-		this.pinky.volverAJaula(posicion);
-		this.inky.volverAJaula(posicion);
-		this.clyde.volverAJaula(posicion); 	
+	public void llevarFantasmasAJaula() {
+		this.blinky.irAJaula();//TODO: VER Q POSICIONES USAREMOS
+		this.pinky.irAJaula();
+		this.inky.irAJaula();
+		this.clyde.irAJaula(); 	
 	}
 	
 	public void posicionInicialPacman() {
-		Point posicion= new Point (1,1);//TODO: inicializar las posiciones correctamente
-		this.pacman.nuevaPosicion(posicion);
+		this.pacman.renacer();
 	}
 	
 	public Juego obtenerMiJuego(){
@@ -62,7 +59,7 @@ public class Nivel {
 	public void muevePacman() throws PacmanSinVidaException{
 		int sentido=0;
 		//TODO: FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
-	    //SI SENTIDO ES 0, EGECUTA EL ULTIMO MOVIMIENTO
+	    //SI SENTIDO ES 0, EJECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
 		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
 		if(this.mismaPosicion(blinky, pacman)) pacman.comerOMorir(blinky,this);
@@ -163,7 +160,7 @@ public class Nivel {
 	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
 		this.nivel=nivelActual;
 		this.miLaberinto = new Laberinto (nivelActual);
-		this.renacerFantasmas();
+		this.llevarFantasmasAJaula();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
 	}
     

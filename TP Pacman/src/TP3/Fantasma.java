@@ -5,8 +5,8 @@ public abstract class Fantasma extends Personaje {
 		protected int velocidad;
 		
 		
-		public Fantasma(Point posicionInicial, int velocidadInicial) {
-			this.posicion = posicionInicial;
+		public Fantasma(int velocidadInicial) {
+			this.irAJaula();
 			this.comestible = false;
 			this.velocidad = velocidadInicial;
 		}
@@ -42,9 +42,7 @@ public abstract class Fantasma extends Personaje {
 			return this.comestible;
 		}
 		
-		public void volverAJaula (Point posicion){
-			this.posicion = posicion;
-		}
+		abstract public void irAJaula ();
 		
 		abstract public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException;
 		

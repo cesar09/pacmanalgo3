@@ -1,8 +1,8 @@
 package TP3;
 public class Inky extends Fantasma {
 
-	public Inky(Point posicionInicial, int velocidadInicial) {
-		super(posicionInicial, velocidadInicial);
+	public Inky(int velocidadInicial) {
+		super(velocidadInicial);
 	}
 
 	public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException{
@@ -33,7 +33,7 @@ public class Inky extends Fantasma {
 		}		
         if(unNivel.mismaPosicion(this, unPacman)){
         	unPacman.morir(); //Este metodo lanza excepcion de JuegoPerdido.
-        	unNivel.renacerFantasmas();
+        	unNivel.llevarFantasmasAJaula();
         	unNivel.posicionInicialPacman();
         }
 	}
@@ -45,6 +45,11 @@ public class Inky extends Fantasma {
         	this.fantasmaComido(unNivel);
         }
     }
+	
+	public void irAJaula() {
+		Point posicion = new Point (4,4);
+		this.posicion = posicion;
+	}
 	
 	
 	/*public static void main(String[] args) {

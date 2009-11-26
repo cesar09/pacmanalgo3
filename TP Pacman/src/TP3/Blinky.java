@@ -1,8 +1,8 @@
 package TP3;
 public class Blinky extends Fantasma {
 
-	public Blinky(Point posicionInicial, int velocidadInicial) {
-		super(posicionInicial, velocidadInicial);
+	public Blinky(int velocidadInicial) {
+		super(velocidadInicial);
 	}
 
 	public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException{
@@ -10,7 +10,7 @@ public class Blinky extends Fantasma {
         this.moverIzquierda(unNivel);
         if(unNivel.mismaPosicion(this, unPacman)){
         	unPacman.morir();
-        	unNivel.renacerFantasmas();
+        	unNivel.llevarFantasmasAJaula();
         	unNivel.posicionInicialPacman();
         }
 	}
@@ -22,6 +22,13 @@ public class Blinky extends Fantasma {
         	this.fantasmaComido(unNivel);
         }
     }
+	
+	public void irAJaula() {
+		Point posicion = new Point (3,3);
+		this.posicion = posicion;
+	}
+	
+	
 /*		
 	public static void main(String[] args) {
 		Point Inicial = new Point(3,3);
@@ -40,4 +47,5 @@ public class Blinky extends Fantasma {
 		System.out.println(miBlinky.obtenerPosicion().getY());
 
 	}*/
+
 }
