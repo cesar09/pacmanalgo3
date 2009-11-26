@@ -24,12 +24,13 @@ public abstract class Fantasma extends Personaje {
 		}
 		
 		public void elegirMovimiento(Nivel unNivel) throws PacmanSinVidaException{	
-			if (comestible){//aca es un while 
-				this.huirDePacman(unNivel);
-			}else{
-				this.atraparPacman(unNivel);
+				while (this.esComestible()){ 
+					this.huirDePacman(unNivel);
+				}
+				while(!this.esComestible()){
+					this.atraparPacman(unNivel);
+				}
 			}
-		}
 		
 		public Point obtenerPosicion() {
 			return (this.posicion);
