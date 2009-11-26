@@ -1,15 +1,15 @@
 package TP3;
 public class Clyde extends Fantasma {
 
-	public Clyde(Point posicionInicial, int velocidadInicial) {
-		super(posicionInicial, velocidadInicial);
+	public Clyde(int velocidadInicial) {
+		super(velocidadInicial);
 	}
 
 	public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException{
         Pacman unPacman = unNivel.obtenerPacman();
         this.moverDerecha(unNivel);
         if(unNivel.mismaPosicion(this, unPacman)){
-        	unNivel.renacerFantasmas();
+        	unNivel.llevarFantasmasAJaula();
         	unNivel.posicionInicialPacman();
         }
 	}
@@ -21,5 +21,11 @@ public class Clyde extends Fantasma {
         	this.fantasmaComido(unNivel);
         }
     }
+	
+	public void irAJaula() {
+		Point posicion = new Point (4,3);
+		this.posicion = posicion;
+	}
+	
 	
 }

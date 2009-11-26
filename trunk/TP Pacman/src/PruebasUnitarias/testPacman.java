@@ -9,7 +9,7 @@ public class testPacman extends TestCase{
 	
 	public void setUp(){
 		Point unPoint=new Point(4,4);
-		unPacman=new Pacman(unPoint);
+		unPacman=new Pacman();
 		assertSame(unPacman.obtenerPosicion(),unPoint);
 	}
 	public void testMorir(){
@@ -42,7 +42,7 @@ public class testPacman extends TestCase{
 	
 	public void testNuevaPosicion(){
 		Point unPoint=new Point(2,2);
-		unPacman.nuevaPosicion(unPoint);
+		unPacman.renacer();
 		assertSame(unPacman.obtenerPosicion(),unPoint);
 	}
 	

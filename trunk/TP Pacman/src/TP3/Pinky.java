@@ -1,8 +1,8 @@
 package TP3;
 public class Pinky extends Fantasma {
 
-	public Pinky(Point posicionInicial, int velocidadInicial) {
-		super(posicionInicial, velocidadInicial);
+	public Pinky(int velocidadInicial) {
+		super(velocidadInicial);
 	}
 	
 	//metodo implicitamente apodado fantasmaDrogado()
@@ -35,6 +35,11 @@ public class Pinky extends Fantasma {
         	this.fantasmaComido(unNivel);
         }
     }
+	
+	public void irAJaula() {
+		Point posicion = new Point (3,4);
+		this.posicion = posicion;
+	}
 	
 	
 	/*public static void main(String[] args) {

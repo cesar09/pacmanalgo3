@@ -37,6 +37,10 @@ public class Juego {
 		return this.nivelActual;
 	}
 	
+	public int obtenerVidasDisponibles(){
+		return (this.unNivel.obtenerPacman().obtenerVidasDisponibles());
+	}
+	
 	public void mover(){
 		try {
 			this.unNivel.mueveFantasma();
