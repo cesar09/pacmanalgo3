@@ -8,9 +8,11 @@ public class testPacman extends TestCase{
 	private Pacman unPacman;
 	
 	public void setUp(){
-		Point unPoint=new Point(4,4);
 		unPacman=new Pacman();
-		assertSame(unPacman.obtenerPosicion(),unPoint);
+		Point unPoint= new Point();
+		unPoint=unPacman.obtenerPosicion();
+		assertEquals(unPoint.getX(),1);
+		assertEquals(unPoint.getY(),1);
 	}
 	public void testMorir(){
 		try{
@@ -41,32 +43,66 @@ public class testPacman extends TestCase{
 	}
 	
 	public void testNuevaPosicion(){
-		Point unPoint=new Point(2,2);
 		unPacman.renacer();
+		Point unPoint= new Point();
+		unPoint=unPacman.obtenerPosicion();
+		assertEquals(unPoint.getX(),1);
+		assertEquals(unPoint.getY(),1);
 		assertSame(unPacman.obtenerPosicion(),unPoint);
 	}
 	public void testIrIzquierda(){
 		unPacman.irIzquierda();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),3);
-		assertEquals(unPoint.getY(),4);
+		assertEquals(unPoint.getX(),0);
+		assertEquals(unPoint.getY(),1);
 	}
 	public void testIrDerecha(){
 		unPacman.irDerecha();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),5);
-		assertEquals(unPoint.getY(),4);
+		assertEquals(unPoint.getX(),2);
+		assertEquals(unPoint.getY(),1);
 	}
 	public void testIrArriba(){
 		unPacman.irArriba();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),4);
-		assertEquals(unPoint.getY(),5);
+		assertEquals(unPoint.getX(),1);
+		assertEquals(unPoint.getY(),2);
 	}
 	public void testIrAbajo(){
 		unPacman.irAbajo();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),4);
-		assertEquals(unPoint.getY(),3);
+		assertEquals(unPoint.getX(),1);
+		assertEquals(unPoint.getY(),0);
+	}
+	public void testMatarOMorir1(){
+		Juego unJuego= new Juego();
+		Nivel unNivel= new Nivel(unJuego);	
+		Fantasma unFantasma= new Clyde(10);
+		unFantasma.hacerseComestible();
+		try {
+			unPacman.comerOMorir(unFantasma,unNivel);			
+		} catch (PacmanSinVidaException e) {
+			fail("El pacman se quedó sin vidas cuando tenía 3 y perdió solo 1.");
+		}
+		assertEquals(unJuego.obtenerPuntajeDelJugador(),200);
+	}
+	public void testMatarOMorir2(){
+		Juego unJuego= new Juego();
+		Nivel unNivel= new Nivel(unJuego);	
+		Fantasma unFantasma= new Clyde(10);
+		try {
+			unPacman.comerOMorir(unFantasma,unNivel);	
+			unPacman.comerOMorir(unFantasma,unNivel);
+			unPacman.comerOMorir(unFantasma,unNivel);
+			fail("El pacman debió morir luego de haber sido comido 3 veces.");
+		} catch (PacmanSinVidaException e) {
+			assertTrue(true);
+		}
+		assertEquals(unJuego.obtenerPuntajeDelJugador(),0);
+	}
+	
+	
+	public void testObtenerVidas(){
+		assertEquals(unPacman.obtenerVidasDisponibles(),3);
 	}
 }
