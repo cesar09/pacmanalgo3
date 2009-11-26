@@ -1,4 +1,4 @@
-
+package TP3;
 public class Nivel {
 	
 	private Juego juego;
@@ -70,9 +70,6 @@ public class Nivel {
 		// TODO Auto-generated method stub
 		if(!unFantasma.esComestible()) pacman.morir();
 		else unFantasma.fantasmaComido(this);*/
-		if (this.obtenerPacman().obtenerVidasDisponibles() == 0){
-			throw new PacmanSinVidaException();
-		}
 	}
 	protected boolean moverSegunSentido(int sentido){
 		int x;
