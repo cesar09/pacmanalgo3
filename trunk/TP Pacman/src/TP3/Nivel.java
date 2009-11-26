@@ -46,10 +46,14 @@ public class Nivel {
 	}
 	
 	public void mueveFantasma() throws PacmanSinVidaException{
+		new TimerSalirDeJaula (2, this);
 		this.blinky.elegirMovimiento(this);
+		new TimerSalirDeJaula (2, this);
 		this.pinky.elegirMovimiento(this);
+		new TimerSalirDeJaula (3, this);
 		this.inky.elegirMovimiento(this);
-		this.clyde.elegirMovimiento(this);
+		new TimerSalirDeJaula (3, this);
+		this.clyde.elegirMovimiento(this);	
 		if (this.obtenerPacman().obtenerVidasDisponibles() == 0){
 			throw new PacmanSinVidaException();
 		}
