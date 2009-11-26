@@ -23,6 +23,10 @@ public Laberinto(int nivel){
 	 }
 }
 
+public static void main(String[] args){
+	Laberinto unLab=new Laberinto(1);
+}
+
 public Contenido devolverContenido(int x,int y){
 	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
 	 Contenido contenidoPedido;

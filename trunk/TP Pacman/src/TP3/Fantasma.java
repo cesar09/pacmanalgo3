@@ -63,7 +63,7 @@ public abstract class Fantasma extends Personaje {
 			return auxiliar;
 		}
 		
-		protected void moverArriba(Nivel unNivel){
+		protected void moverAbajo(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
@@ -92,7 +92,7 @@ public abstract class Fantasma extends Personaje {
             		    }
                 }
 		
-		protected void moverAbajo(Nivel unNivel){
+		protected void moverArriba(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
