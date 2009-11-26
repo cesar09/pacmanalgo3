@@ -69,7 +69,7 @@ public class Nivel {
 	}
 	
 	
-	protected boolean moverSegunSentido(int sentido){
+	public boolean moverSegunSentido(int sentido){
 		int x;
 		int y;
 		switch (sentido){

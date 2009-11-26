@@ -5,4 +5,8 @@ public abstract class Personaje {
 	
 	protected void mover(int x, int y){};
 	
+	public Point obtenerPosicion() {
+		return null;
+	}
+	
 }
