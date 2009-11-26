@@ -31,7 +31,7 @@ public class Clyde extends Fantasma {
 	
 	public void salirDeJaula (){
 		this.encerrado = false;
-		Point posicion = new Point (13,11);
+		Point posicion = new Point (14,11);
 		this.posicion = posicion;
 		this.encerrado = false;
 	}

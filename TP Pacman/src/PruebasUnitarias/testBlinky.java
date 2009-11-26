@@ -85,5 +85,12 @@ public class testBlinky extends TestCase{
 		assertEquals(unPoint.getX(),13);
 		assertEquals(unPoint.getY(),13);
 	}
-	
+	public void testSalirDeJaula(){
+		assertTrue(this.unFantasma.estaEncerrado());
+		this.unFantasma.salirDeJaula();
+		assertFalse(this.unFantasma.estaEncerrado());
+		Point unPoint=this.unFantasma.obtenerPosicion();
+		assertEquals(unPoint.getX(),13);
+		assertEquals(unPoint.getY(),11);		
+	}
 }
