@@ -7,9 +7,11 @@ public class Laberinto {
 private Contenido[][] contenidos;
 private int fila;
 private int columna;
-int cantidadPastillas;
-int cantFilas = 31;
-int cantColumnas = 28;
+private int cantidadPastillas;
+private int cantFilas = 31;
+private int cantColumnas = 28;
+private int posicionFilaFruta = 17;
+private int posicionColumnaFruta = 14;
 
 public Laberinto(int nivel){
 	 this.fila = cantFilas;
@@ -23,9 +25,9 @@ public Laberinto(int nivel){
 	 }
 }
 
-public static void main(String[] args){
-	Laberinto unLab=new Laberinto(1);
-}
+//public static void main(String[] args){
+//	Laberinto unLab=new Laberinto(1);
+//}
 
 public Contenido devolverContenido(int x,int y){
 	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
@@ -94,5 +96,11 @@ public int obtenerCantidadPastillas(){
 public int restarCantidadPastillas(){
 	return cantidadPastillas--;
 }
+public void agregarFruta(){
+	contenidos[posicionFilaFruta][posicionColumnaFruta] = new Fruta();
+	}
 
+public void agregarVacio() {
+	contenidos[posicionFilaFruta][posicionColumnaFruta] = new Vacio();
+}
 }

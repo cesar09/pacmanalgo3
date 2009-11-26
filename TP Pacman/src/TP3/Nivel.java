@@ -19,6 +19,8 @@ public class Nivel {
 		this.miLaberinto = new Laberinto (this.nivel);
 		this.crearPersonajes();
 		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
+		new TimerFruta(5,this); //ver si anda
+		new TimerVacio(15,this);//ver si anda
 	}
 
 	private void crearPersonajes(){
