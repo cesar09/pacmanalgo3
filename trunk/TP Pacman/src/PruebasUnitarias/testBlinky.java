@@ -7,6 +7,6 @@ public class testBlinky extends TestCase{
 	private Blinky unFantasma;
 	
 	public void setUp(){
-		unfantasma=new Blinky(10);		
+		unFantasma=new Blinky(10);		
 	}
 }
