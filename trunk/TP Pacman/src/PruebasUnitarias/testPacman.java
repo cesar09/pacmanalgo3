@@ -9,10 +9,10 @@ public class testPacman extends TestCase{
 	
 	public void setUp(){
 		unPacman=new Pacman();
-		Point unPoint= new Point(0,0);
+		Point unPoint;
 		unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),1);
-		assertEquals(unPoint.getY(),1);
+		assertEquals(unPoint.getX(),23);
+		assertEquals(unPoint.getY(),13);
 	}
 	public void testMorir(){
 		try{
@@ -44,35 +44,35 @@ public class testPacman extends TestCase{
 	
 	public void testNuevaPosicion(){
 		unPacman.renacer();
-		Point unPoint= new Point(0,0);
+		Point unPoint;
 		unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),1);
-		assertEquals(unPoint.getY(),1);
+		assertEquals(unPoint.getX(),23);
+		assertEquals(unPoint.getY(),13);
 		assertSame(unPacman.obtenerPosicion(),unPoint);
 	}
 	public void testIrIzquierda(){
 		unPacman.irIzquierda();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),0);
-		assertEquals(unPoint.getY(),1);
+		assertEquals(unPoint.getX(),22);
+		assertEquals(unPoint.getY(),13);
 	}
 	public void testIrDerecha(){
 		unPacman.irDerecha();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),2);
-		assertEquals(unPoint.getY(),1);
+		assertEquals(unPoint.getX(),24);
+		assertEquals(unPoint.getY(),13);
 	}
 	public void testIrArriba(){
 		unPacman.irArriba();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),1);
-		assertEquals(unPoint.getY(),2);
+		assertEquals(unPoint.getX(),23);
+		assertEquals(unPoint.getY(),14);
 	}
 	public void testIrAbajo(){
 		unPacman.irAbajo();
 		Point unPoint=unPacman.obtenerPosicion();
-		assertEquals(unPoint.getX(),1);
-		assertEquals(unPoint.getY(),0);
+		assertEquals(unPoint.getX(),23);
+		assertEquals(unPoint.getY(),12);
 	}
 	public void testMatarOMorir1(){
 		Juego unJuego= new Juego();
