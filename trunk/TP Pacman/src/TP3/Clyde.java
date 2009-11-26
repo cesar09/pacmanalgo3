@@ -22,8 +22,8 @@ public class Clyde extends Fantasma {
             }catch (NoTransitableException e2) {}
         }
         if(unNivel.mismaPosicion(this, unPacman)){
-        	unPacman.morir();
-        	unNivel.pacmanAtrapado();
+        	unNivel.renacerFantasmas();
+        	unNivel.posicionInicialPacman();
         }
 	}
 
@@ -47,10 +47,5 @@ public class Clyde extends Fantasma {
         	this.fantasmaComido(unNivel);
         }
     }
-
-	
-
-	
-	
 	
 }
