@@ -17,7 +17,7 @@ public class KeyPress extends Frame{
         System.exit(0);
       }
     });
-   setSize(400,400);
+   setSize(200,200);
     setVisible(true);
   }
 
