@@ -9,6 +9,7 @@ import com.sun.image.codec.jpeg.JPEGImageDecoder;
 
 import ar.uba.fi.algo3.titiritero.Dibujable;
 import ar.uba.fi.algo3.titiritero.Posicionable;
+import ar.uba.fi.algo3.titiritero.Movible;
 import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 
 /*
@@ -20,7 +21,7 @@ public class Imagen implements Dibujable{
 
 	private String nombreArchivoImagen;
     private BufferedImage imagen;
-    protected Posicionable posicionable;
+    protected Movible movible;
 
 	public Imagen(){
 		
@@ -28,7 +29,7 @@ public class Imagen implements Dibujable{
 
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
 		Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
-		grafico.drawImage(this.imagen, this.posicionable.getX(), this.posicionable.getY(), null);
+		grafico.drawImage(this.imagen, this.movible.getX(), this.movible.getY(), null);
 	}
 	    
 	public String getNombreArchivoImagen() {
@@ -48,11 +49,14 @@ public class Imagen implements Dibujable{
 	}
 	
 	public Posicionable getPosicionable() {
-		return posicionable;
+		return movible;
 	}
 
 	public void setPosicionable(Posicionable posicionable) {
-		this.posicionable = posicionable;
+		
 	}
 	
+public void setMovible(Movible movible) {
+		this.movible = movible;
+	}
 }

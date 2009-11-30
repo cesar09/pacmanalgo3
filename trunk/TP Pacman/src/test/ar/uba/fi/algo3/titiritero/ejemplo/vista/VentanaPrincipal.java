@@ -6,7 +6,7 @@ import ar.uba.fi.algo3.titiritero.vista.Ventana;
 public class VentanaPrincipal extends Ventana {
 
 	public VentanaPrincipal(ControladorJuego unControladorJuego) {
-		super(300,300, unControladorJuego);
+		super(500,500, unControladorJuego);
 		this.setTitle("Ejemplo");
 	}
 
