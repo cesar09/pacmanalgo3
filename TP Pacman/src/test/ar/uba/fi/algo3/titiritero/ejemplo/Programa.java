@@ -18,7 +18,7 @@ public class Programa {
 		 * Primero instancio mi modelo: una pelota que se mueve por una mesa
 		 */
 		Pacman unPacman = new Pacman();
-		Mesa unaMesa = new Mesa(300, 300);
+		Mesa unaMesa = new Mesa(500, 500);
 		unPacman.setMesa(unaMesa);
 		/*
 		 * Luego instancio los objetos del framework: una ventana y el controlador
@@ -50,7 +50,7 @@ public class Programa {
 		 * Instancio una imagen para que actue como vista de la pelota
 		 */
 		VistaPacman vistaPacman = new VistaPacman();
-		vistaPacman.setPosicionable(unPacman);
+		vistaPacman.setMovible(unPacman);
 		
 		/*
 		 * agrego la pelota a la lista de objetos vivios del controlador

@@ -1,9 +1,9 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo.modelo;
 
 import ar.uba.fi.algo3.titiritero.ObjetoVivo;
-import ar.uba.fi.algo3.titiritero.Posicionable;
+import ar.uba.fi.algo3.titiritero.Movible;
 
-public class Pacman implements Posicionable, ObjetoVivo {
+public class Pacman implements Movible, ObjetoVivo {
 
 	private int nuevoSentidoX;
 	private int nuevoSentidoY;
@@ -64,6 +64,14 @@ public class Pacman implements Posicionable, ObjetoVivo {
 
 	public void setMesa(Mesa mesa) {
 		this.mesa = mesa;
+	}
+
+	public int getSentidoX() {
+		return this.nuevoSentidoX;
+	}
+
+	public int getSentidoY() {
+		return this.nuevoSentidoY;
 	}
 }
 	
