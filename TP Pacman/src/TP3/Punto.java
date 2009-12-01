@@ -5,11 +5,10 @@ public class Punto extends Comestible {
 		this.puntaje = 10;
 	}
 	
-	public void hayPacman(Nivel unNivel) {
+	public void hayPacman(Nivel unNivel,int x,int y) {
 		unNivel.obtenerMiJuego().sumarPuntajeAlJugador(this.puntaje);
 		unNivel.obtenerMiLaberinto().restarCantidadPastillas();
-		if (unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0)
-			unNivel.finDeNivel();
+		unNivel.obtenerMiLaberinto().agregarVacio(x,y);
 	}
 	
 	public void serTransitado(Nivel unNivel){

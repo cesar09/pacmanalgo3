@@ -30,17 +30,24 @@ public abstract class Fantasma extends Personaje {
 			this.posicion.setXY(x, y); 
 		}
 		
-		public void elegirMovimiento(Nivel unNivel) throws PacmanSinVidaException{
-			if(contador==velocidad){
+		public void elegirMovimiento (Nivel unNivel)throws PacmanAtrapadoException,FantasmaAtrapadoException{
+			if(this.contador==velocidad){
 				if (this.esComestible()){ 
 					this.huirDePacman(unNivel);
+					if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
+						throw new FantasmaAtrapadoException();
+					}
+				}else{
+					if (!this.esComestible()){
+						this.atraparPacman(unNivel);
+						if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
+							throw new PacmanAtrapadoException();
+						}
+					}
 				}
-				if (!this.esComestible()){
-					this.atraparPacman(unNivel);
-				}
-				contador=1;
+				this.contador=1;
 			}
-			else contador++;
+			else this.contador++;
 		}
 		
 		public Point obtenerPosicion() {
@@ -55,7 +62,7 @@ public abstract class Fantasma extends Personaje {
 		
 		abstract public void irAJaula ();
 		
-		abstract public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException;
+		abstract public void atraparPacman(Nivel unNivel);
 		
 		abstract public void huirDePacman(Nivel unNivel);
 		

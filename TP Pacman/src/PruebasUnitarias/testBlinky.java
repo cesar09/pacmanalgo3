@@ -4,92 +4,114 @@ import junit.framework.TestCase;
 import TP3.*;
 public class testBlinky extends TestCase{
 
-	private Blinky unFantasma;
+	private Blinky blinky;
 	private Nivel unNivel;
 	
 	public void setUp(){
-		this.unFantasma=new Blinky(1);	
+		this.blinky=new Blinky(1);	
 		Juego unJuego=new Juego();
-		this.unNivel =new Nivel(unJuego);
+		try{
+			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
+		} catch (ArchivoFueraDeFormatoException e) {
+			System.out.println("Formato incorrecto en laberinto correspondiente al nivel");
+		}
 	}
+	
 	public void testMoverIzquierda(){
-		Point unPoint=this.unFantasma.obtenerPosicion();
+		Point unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),13);
 		assertEquals(unPoint.getY(),13);
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
+		try{
+			this.blinky.elegirMovimiento(unNivel);
+		}catch(PacmanAtrapadoException e){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
+		}catch(FantasmaAtrapadoException e2){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
 		}
-		unPoint=this.unFantasma.obtenerPosicion();
+		unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),12);
 		assertEquals(unPoint.getY(),13);
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
+		try{
+			this.blinky.elegirMovimiento(unNivel);
+			this.blinky.elegirMovimiento(unNivel);
+		}catch(PacmanAtrapadoException e){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
+		}catch(FantasmaAtrapadoException e2){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
 		}
-		unPoint=this.unFantasma.obtenerPosicion();
+		unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),11);
 		assertEquals(unPoint.getY(),14);
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
+		try{
+			this.blinky.elegirMovimiento(unNivel);
+		}catch(PacmanAtrapadoException e){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
+		}catch(FantasmaAtrapadoException e2){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
 		}
-		unPoint=this.unFantasma.obtenerPosicion();
+		unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),11);
 		assertEquals(unPoint.getY(),13);
 	}
+	
 	public void testComestible(){
-		assertFalse(this.unFantasma.esComestible());
-		this.unFantasma.hacerseComestible();
-		assertTrue(this.unFantasma.esComestible());
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
+		assertFalse(this.blinky.esComestible());
+		this.blinky.hacerseComestible();
+		assertTrue(this.blinky.esComestible());
+		try{
+			this.blinky.elegirMovimiento(unNivel);
+		}catch(PacmanAtrapadoException e){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
+		}catch(FantasmaAtrapadoException e2){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
 		}
-		Point unPoint=this.unFantasma.obtenerPosicion();
+		Point unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),14);
 		assertEquals(unPoint.getY(),13);
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-			this.unFantasma.elegirMovimiento(unNivel);
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
+		try{
+			this.blinky.elegirMovimiento(unNivel);
+			this.blinky.elegirMovimiento(unNivel);
+			this.blinky.elegirMovimiento(unNivel);
+		}catch(PacmanAtrapadoException e){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
+		}catch(FantasmaAtrapadoException e2){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
 		}
-		unPoint=this.unFantasma.obtenerPosicion();
+		unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),16);
 		assertEquals(unPoint.getY(),14);
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
+		try{
+			this.blinky.elegirMovimiento(unNivel);
+			this.blinky.elegirMovimiento(unNivel);
+		}catch(PacmanAtrapadoException e){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
+		}catch(FantasmaAtrapadoException e2){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
 		}
-		unPoint=this.unFantasma.obtenerPosicion();
+		unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),16);
 		assertEquals(unPoint.getY(),14);
 	}
+	
 	public void testIrAJaula(){
-		try {
-			this.unFantasma.elegirMovimiento(unNivel);
-		} catch (PacmanSinVidaException e) {
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");
+		try{
+			this.blinky.elegirMovimiento(unNivel);
+		}catch(PacmanAtrapadoException e){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
+		}catch(FantasmaAtrapadoException e2){
+			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
 		}
-		this.unFantasma.irAJaula();
-		Point unPoint=this.unFantasma.obtenerPosicion();
+		this.blinky.irAJaula();
+		Point unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),13);
 		assertEquals(unPoint.getY(),13);
 	}
+	
 	public void testSalirDeJaula(){
-		assertTrue(this.unFantasma.estaEncerrado());
-		this.unFantasma.salirDeJaula();
-		assertFalse(this.unFantasma.estaEncerrado());
-		Point unPoint=this.unFantasma.obtenerPosicion();
+		assertTrue(this.blinky.estaEncerrado());
+		this.blinky.salirDeJaula();
+		assertFalse(this.blinky.estaEncerrado());
+		Point unPoint=this.blinky.obtenerPosicion();
 		assertEquals(unPoint.getX(),13);
 		assertEquals(unPoint.getY(),11);		
 	}

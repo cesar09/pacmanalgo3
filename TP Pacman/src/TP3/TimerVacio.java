@@ -16,13 +16,13 @@ public class TimerVacio {
 	}
 
 	private void aparecerVacio(){
-			this.miNivel.obtenerMiLaberinto().agregarVacio();
-	}
+        this.miNivel.obtenerMiLaberinto().agregarVacio(14,17);
+}
 
 	class RemindTask extends TimerTask {
 		public void run ( ) {
 			aparecerVacio();
-//			timer.cancel ( ) ; //Cancela el hilo del timer
+			timer.cancel ( ) ; //Cancela el hilo del timer
 								
 		}
 	}

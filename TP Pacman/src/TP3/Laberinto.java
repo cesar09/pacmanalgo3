@@ -1,39 +1,27 @@
 package TP3;
 
-import java.io.*; //lo utiliza el cargarLaberintoSegunNivel que lee de archivo
+import java.io.*; 
 
 public class Laberinto {
 
 private Contenido[][] contenidos;
-private int fila;
-private int columna;
 private int cantidadPastillas;
-private int cantFilas = 31;
-private int cantColumnas = 28;
-private int posicionFilaFruta = 17;
-private int posicionColumnaFruta = 14;
+private int cantidadFilas = 31;
+private int cantidadColumnas = 28;
 
-public Laberinto(int nivel){
-	 this.fila = cantFilas;
-	 this.columna = cantColumnas;
+public Laberinto(int nivel) throws ArchivoFueraDeFormatoException{
 	 cantidadPastillas = 0;
-	 contenidos = new Contenido[columna][fila];
+	 contenidos = new Contenido[cantidadColumnas][cantidadFilas];
 	 try{
 		 this.cargarLaberintoSegunNivel(nivel);
 	 }catch (ArchivoFueraDeFormatoException e){
-		 
+		 throw new ArchivoFueraDeFormatoException();
 	 }
 }
 
-//public static void main(String[] args){
-//	Laberinto unLab=new Laberinto(1);
-//}
-
 public Contenido devolverContenido(int x,int y){
-	 if ((x<0)|(x>=columna)|(y<0)|(y>=fila)) throw new IllegalArgumentException();
-	 Contenido contenidoPedido;
-	 contenidoPedido = contenidos[x][y];
-	 return contenidoPedido;
+	 if ((x<0)|(x>=cantidadColumnas)|(y<0)|(y>=cantidadFilas)) throw new IllegalArgumentException();
+	 	return (contenidos[x][y]);
  }
  
 private void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoException{
@@ -49,15 +37,15 @@ private void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoEx
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		for (y = 0; y < fila; y++) {
-			for (x = 0; x < columna +2; x++) {				
+		for (y = 0; y < cantidadFilas; y++) {
+			for (x = 0; x < cantidadColumnas +2; x++) {				
 				try {
 					caracter = input.read();					
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				if((x>columna-1)&(!((caracter==13)|(caracter==10)))) throw new ArchivoFueraDeFormatoException(); 
-				else if (x<=columna-1){
+				if((x>cantidadColumnas-1)&(!((caracter==13)|(caracter==10)))) throw new ArchivoFueraDeFormatoException(); 
+				else if (x<=cantidadColumnas-1){
 					agregarObjeto(caracter, x, y);
 				
 				}
@@ -97,10 +85,10 @@ public int restarCantidadPastillas(){
 	return cantidadPastillas--;
 }
 public void agregarFruta(){
-	contenidos[posicionFilaFruta][posicionColumnaFruta] = new Fruta();
+	contenidos[14][17] = new Fruta();
 	}
 
-public void agregarVacio() {
-	contenidos[posicionFilaFruta][posicionColumnaFruta] = new Vacio();
+public void agregarVacio(int columna,int fila) {
+    contenidos[columna][fila] = new Vacio();
 }
 }

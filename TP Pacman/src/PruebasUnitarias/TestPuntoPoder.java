@@ -10,22 +10,20 @@ public class TestPuntoPoder extends TestCase {
 
 	public void setUp(){
 		unJuego= new Juego();
-		this.unNivel= new Nivel(unJuego);	
+		try{
+			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
+		} catch (ArchivoFueraDeFormatoException e) {
+			System.out.println("Formato incorrecto en laberinto correspondiente al nivel");
+		}
 	}
 	
 	public void testHayPacman1() {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		PuntoPoder unBloqueVacio= new PuntoPoder();		
-		unBloqueVacio.hayPacman(unNivel);
+		unBloqueVacio.hayPacman(unNivel,1,1);//Doy valores a x e y aleatorios, ya que no son necesarios.
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),50);
 	}
-	public void testHayPacman2() {
-		Laberinto unLaberinto=unNivel.obtenerMiLaberinto();
-		for(int x=0;x<243;x++) unLaberinto.restarCantidadPastillas();
-		PuntoPoder unPuntoPoder= new PuntoPoder();	
-		unPuntoPoder.hayPacman(unNivel);
-		assertEquals(unJuego.obtenerNivelActual(),2);
-	}
+
 	public void testSerTransitado() {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		PuntoPoder unBloqueVacio= new PuntoPoder();		

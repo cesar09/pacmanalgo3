@@ -13,21 +13,34 @@ public class Nivel {
 	private int ultimoSentidoPacman;
 	
 
-	public Nivel(Juego unJuego){
+	public Nivel(Juego unJuego, int nivel) throws ArchivoFueraDeFormatoException{
+		//La idea es q reciba el numero de nivel por parametro y en base al
+		//nivel se crea el laberinto. Tmb pense en darle a velocidad el mismo
+		//valor q nivel, entonces a medida q avanza niveles, la velocidad de
+		//los fantasmas es mayor. Lo mismo con la duracion de puntoPoder.
 		this.juego = unJuego;
-		this.nivel=1;
-		this.miLaberinto = new Laberinto (this.nivel);
-		this.crearPersonajes();
-		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
-		new TimerFruta(5,this); 
-		new TimerVacio(15,this);
+		this.nivel=nivel;
+		try{
+			this.miLaberinto = new Laberinto (this.nivel);
+		}catch(ArchivoFueraDeFormatoException e){
+			throw new ArchivoFueraDeFormatoException();
+		}
+		int velocidad = 10 - this.nivel;
+		if (velocidad >2){
+			this.crearPersonajes(velocidad);
+		}else{
+			this.crearPersonajes(2);
+		}
+		this.ultimoSentidoPacman=1;//inicializo para q vaya a la izquierda como ultimo movim.
+		new TimerFruta(15,this); 
+		new TimerVacio(22,this);
 	}
 
-	private void crearPersonajes(){
-		this.blinky = new Blinky (1);
-		this.pinky = new Pinky (2);
-		this.inky = new Inky (1);
-		this.clyde = new Clyde (2); 	
+	private void crearPersonajes(int velocidad){
+		this.blinky = new Blinky (velocidad-1);
+		this.pinky = new Pinky (velocidad);
+		this.inky = new Inky (velocidad-1);
+		this.clyde = new Clyde (velocidad); 	
 		this.pacman = new Pacman ();
 	}
 	
@@ -46,39 +59,48 @@ public class Nivel {
 		return (this.juego);
 	}
 	
-	public void mueveFantasma() throws PacmanSinVidaException{
-		if (this.blinky.estaEncerrado()){
-			new TimerSalirDeJaula (2, this.blinky);
-		}else
-			this.blinky.elegirMovimiento(this);
-		if (this.pinky.estaEncerrado()){
-			new TimerSalirDeJaula (3, this.blinky);
-		}else
-			this.pinky.elegirMovimiento(this);
-		if (this.clyde.estaEncerrado()){
-			new TimerSalirDeJaula (4, this.blinky);
-		}else
-			this.clyde.elegirMovimiento(this);	
-		if (this.inky.estaEncerrado()){
-			new TimerSalirDeJaula (5, this.blinky);
-		}else
-			this.inky.elegirMovimiento(this);
+	public void moverFantasma (Fantasma unFantasma) throws PacmanAtrapadoException{
+		if (unFantasma.estaEncerrado()){
+			new TimerSalirDeJaula (2, unFantasma);
+		}else{
+			try{
+				unFantasma.elegirMovimiento(this);
+			}catch(PacmanAtrapadoException e){
+				throw new PacmanAtrapadoException ();
+			}catch(FantasmaAtrapadoException e2){
+				unFantasma.fantasmaComido(this);
+			}
+		}
 	}
 	
-	public void muevePacman() throws PacmanSinVidaException{
+	public void mueveFantasmas() throws PacmanAtrapadoException{
+		try{
+			this.moverFantasma(this.blinky);
+			this.moverFantasma(this.pinky);
+			this.moverFantasma(this.clyde);
+			this.moverFantasma(this.inky);
+		}catch(PacmanAtrapadoException e){
+			this.llevarFantasmasAJaula();
+			this.llevarPacmanAPosicionInicial();
+			throw new PacmanAtrapadoException ();
+		}
+	}
+		
+	
+	public void muevePacman() throws PacmanAtrapadoException{
 		int sentido=0;
 		//FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 	    //SI SENTIDO ES 0, EJECUTA EL ULTIMO MOVIMIENTO
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
-		if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
-		if(this.mismaPosicion(blinky, pacman)) pacman.comerOMorir(blinky,this);
-		else if(this.mismaPosicion(inky, pacman)) pacman.comerOMorir(inky,this);
-		else if(this.mismaPosicion(pinky, pacman)) pacman.comerOMorir(pinky,this);
-		else if(this.mismaPosicion(clyde, pacman)) pacman.comerOMorir(clyde,this);
+		try{
+			if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
+		}catch(PacmanAtrapadoException e){
+			throw new PacmanAtrapadoException();
+		}
 	}
 	
 	
-	public boolean moverSegunSentido(int sentido){
+	public boolean moverSegunSentido(int sentido) throws PacmanAtrapadoException{
 		int x;
 		int y;
 		switch (sentido){
@@ -88,46 +110,86 @@ public class Nivel {
 			x = this.pacman.obtenerPosicion().getX()-1;
 			y = this.pacman.obtenerPosicion().getY();
 			try {
-				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irIzquierda();
-				 ultimoSentidoPacman=1;
+				 if (!this.juego.seGanoJuego()){
+					 ultimoSentidoPacman=1;
+					 try{
+						 this.comeOMuere(this.blinky);
+						 this.comeOMuere(this.pinky);
+						 this.comeOMuere(this.clyde);
+						 this.comeOMuere(this.inky);
+					 }catch (PacmanAtrapadoException e2){
+						 throw new PacmanAtrapadoException();
+					 }
 				 return true;
-			 } catch (NoTransitableException e) {}
+				 }
+			} catch (NoTransitableException e) {}
 			 break;
 		case 2:
 			//Si se desea ir para la derecha.
 			x = this.pacman.obtenerPosicion().getX()+1;
 			y = this.pacman.obtenerPosicion().getY();
 			try {
-				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irDerecha();
-				 ultimoSentidoPacman=2;
+				 if (!this.juego.seGanoJuego()){
+					 ultimoSentidoPacman=1;
+					 try{
+						 this.comeOMuere(this.blinky);
+						 this.comeOMuere(this.pinky);
+						 this.comeOMuere(this.clyde);
+						 this.comeOMuere(this.inky);
+					 }catch (PacmanAtrapadoException e2){
+						 throw new PacmanAtrapadoException();
+					 }
 				 return true;
-			 } catch (NoTransitableException e) {}
-		break;
+				 }
+			} catch (NoTransitableException e) {}
+			 break;
 		
 		case 3:
 			//Si se desea ir para abajo.
 			x = this.pacman.obtenerPosicion().getX();
-			y = this.pacman.obtenerPosicion().getY()-1;
+			y = this.pacman.obtenerPosicion().getY()+1;
 			try {
-				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irAbajo();
-				 ultimoSentidoPacman=3;
+				 if (!this.juego.seGanoJuego()){
+					 ultimoSentidoPacman=1;
+					 try{
+						 this.comeOMuere(this.blinky);
+						 this.comeOMuere(this.pinky);
+						 this.comeOMuere(this.clyde);
+						 this.comeOMuere(this.inky);
+					 }catch (PacmanAtrapadoException e2){
+						 throw new PacmanAtrapadoException();
+					 }
 				 return true;
-			 } catch (NoTransitableException e) {}
-		break;
+				 }
+			} catch (NoTransitableException e) {}
+			 break;
 		
 		case 4:
 			x = this.pacman.obtenerPosicion().getX();
-			y = this.pacman.obtenerPosicion().getY()+1;
+			y = this.pacman.obtenerPosicion().getY()-1;
 			try {
-				 this.obtenerMiLaberinto().devolverContenido(y, x).hayPacman(this);
+				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irArriba();
-				 ultimoSentidoPacman=4;
+				 if (!this.juego.seGanoJuego()){
+					 ultimoSentidoPacman=1;
+					 try{
+						 this.comeOMuere(this.blinky);
+						 this.comeOMuere(this.pinky);
+						 this.comeOMuere(this.clyde);
+						 this.comeOMuere(this.inky);
+					 }catch (PacmanAtrapadoException e2){
+						 throw new PacmanAtrapadoException();
+					 }
 				 return true;
-			 } catch (NoTransitableException e) {}
-		break;
+				 }
+			} catch (NoTransitableException e) {}
+			 break;
 		}
 		return false;
 	}
@@ -137,7 +199,12 @@ public class Nivel {
 		this.pinky.hacerseComestible();
 		this.inky.hacerseComestible();
 		this.clyde.hacerseComestible();
-		new TimerComestible (7, this);
+		int segundos = (8 - this.nivel);
+		if (segundos > 1){
+			new TimerComestible (segundos, this);
+		}else{
+			new TimerComestible (2, this);
+		}
 	}
 	
 	public void hacerFantasmasNoComestibles(){
@@ -163,15 +230,15 @@ public class Nivel {
 			}
 	}
 	
-	public void nuevoNivel(int nivelActual) throws ArchivoFueraDeFormatoException {
-		this.nivel=nivelActual;
-		this.miLaberinto = new Laberinto (nivelActual);
-		this.llevarFantasmasAJaula();
-		this.ultimoSentidoPacman=1; //inicializo para q vaya a la izquierda como ultimo movim.
-	}
-    
-	public void finDeNivel(){
-		this.juego.pasarDeNivel();	
+	public void comeOMuere(Fantasma unFantasma) throws PacmanAtrapadoException{
+		if (mismaPosicion(unFantasma,this.obtenerPacman())){
+			if(unFantasma.esComestible()){
+				unFantasma.fantasmaComido(this);
+			}else{
+				throw new PacmanAtrapadoException();
+			}
+				
+		}
 	}
 	
 }
