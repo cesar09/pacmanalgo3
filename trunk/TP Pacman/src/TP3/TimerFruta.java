@@ -22,7 +22,7 @@ public class TimerFruta {
 	class RemindTask extends TimerTask {
 		public void run ( ) {
 			aparecerFruta();
-//			timer.cancel ( ) ; //Cancela el hilo del timer
+			timer.cancel ( ) ; //Cancela el hilo del timer
 		}
 	}
 }

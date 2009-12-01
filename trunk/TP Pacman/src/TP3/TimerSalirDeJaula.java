@@ -2,8 +2,6 @@ package TP3;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import TP3.Nivel;
-
 	public class TimerSalirDeJaula {
 		
 		Timer timer;

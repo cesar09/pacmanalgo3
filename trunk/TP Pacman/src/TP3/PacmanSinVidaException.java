@@ -1,5 +1,5 @@
-package TP3;
+/*package TP3;
 
 public class PacmanSinVidaException extends Exception {
 
-}
+}*/

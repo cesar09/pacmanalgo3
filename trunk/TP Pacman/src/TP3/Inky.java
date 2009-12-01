@@ -5,9 +5,8 @@ public class Inky extends Fantasma {
 		super(velocidadInicial);
 	}
 
-	public void atraparPacman(Nivel unNivel) throws PacmanSinVidaException{
-        Pacman unPacman = unNivel.obtenerPacman();
-		Point distancia = this.distanciaPacman(unPacman.obtenerPosicion());
+	public void atraparPacman(Nivel unNivel){
+		Point distancia = this.distanciaPacman(unNivel.obtenerPacman().obtenerPosicion());
 		int distanciaEnX = distancia.getX();
 		int distanciaEnY = distancia.getY();
 		double positivoEnX = Math.sqrt(Math.pow(distancia.getX(),2));
@@ -29,20 +28,10 @@ public class Inky extends Fantasma {
 		        this.moverArriba(unNivel);
 			}
 		}		
-        if(unNivel.mismaPosicion(this, unPacman)){
-        	unPacman.morir();
-        	unNivel.llevarFantasmasAJaula();
-        	this.encerrado = true;
-        	unNivel.llevarPacmanAPosicionInicial();
-        }
 	}
 
 	public void huirDePacman(Nivel unNivel) {
-		Pacman unPacman = unNivel.obtenerPacman();
         this.moverAbajo(unNivel);
-        if(unNivel.mismaPosicion(this, unPacman)){
-        	this.fantasmaComido(unNivel);
-        }
     }
 	
 	public void irAJaula() {
@@ -52,7 +41,6 @@ public class Inky extends Fantasma {
 	}
 	
 	public void salirDeJaula (){
-		this.encerrado = false;
 		Point posicion = new Point (14,11);
 		this.posicion = posicion;
 		this.encerrado = false;

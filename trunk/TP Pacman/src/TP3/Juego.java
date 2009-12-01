@@ -10,14 +10,19 @@ public class Juego {
 	public Juego(){
 		this.nivelActual = 1; //nivel inicial 1.
 		this.jugador = new Jugador();
-		this.unNivel = new Nivel(this);
+		try{
+			this.unNivel = new Nivel(this, this.nivelActual);
+		} catch (ArchivoFueraDeFormatoException e) {
+			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
+			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
+		}
 	}
 	
 	public void pasarDeNivel(){
 		this.nivelActual++;
 		if(cantidadDeNiveles==nivelActual) this.JuegoGanado(); 
 		else try {
-				this.unNivel.nuevoNivel(nivelActual);
+				this.unNivel = new Nivel(this, this.nivelActual);
 			} catch (ArchivoFueraDeFormatoException e) {
 			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 				System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
@@ -28,7 +33,7 @@ public class Juego {
 		if(puntaje<0) throw new IllegalArgumentException();
 		this.jugador.sumarPuntaje(puntaje);
 		if (this.jugador.obtenerPuntaje()%10000.0 == 0) // Obtiene el resto de la division
-			this.unNivel.obtenerPacman().agregarVida();
+			this.jugador.agregarVida();
 	}
 	
 	public int obtenerPuntajeDelJugador(){
@@ -40,15 +45,22 @@ public class Juego {
 	}
 	
 	public int obtenerVidasDisponibles(){
-		return (this.unNivel.obtenerPacman().obtenerVidasDisponibles());
+		return (this.jugador.obtenerVidasDisponibles());
 	}
 	
 	public void mover(){
 		try {
-			this.unNivel.mueveFantasma();
+			this.unNivel.mueveFantasmas();
 			this.unNivel.muevePacman();
-		} catch (PacmanSinVidaException e) {
-			this.juegoPerdido();
+		} catch (PacmanAtrapadoException e) {
+			try{
+				this.jugador.perderVida();
+			}catch (JugadorSinVidasException e2){
+				this.juegoPerdido();
+			}
+		}
+		if (this.seGanoJuego()){
+			this.pasarDeNivel();
 		}
 	}
 
@@ -60,4 +72,12 @@ public class Juego {
 		System.out.println("Has ganado el juego.");
 		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 	}
+	
+	public boolean seGanoJuego(){
+		if (this.unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0){
+			return true;
+		}
+		return false;
+	}
+	
 }

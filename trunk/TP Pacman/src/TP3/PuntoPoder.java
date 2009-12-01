@@ -5,12 +5,11 @@ public class PuntoPoder extends Comestible {
 		this.puntaje = 50;
 	}
 	
-	public void hayPacman(Nivel unNivel) {
+	public void hayPacman(Nivel unNivel,int x,int y) {
 		unNivel.obtenerMiJuego().sumarPuntajeAlJugador(this.puntaje);
 		unNivel.hacerFantasmasComestibles();
 		unNivel.obtenerMiLaberinto().restarCantidadPastillas();
-		if (unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0)
-			unNivel.finDeNivel();
+		unNivel.obtenerMiLaberinto().agregarVacio(x,y);
 	}
 
 	public void serTransitado(Nivel unNivel){
