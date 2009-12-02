@@ -49,6 +49,18 @@ public class Nivel {
 		VistaFondo vistaFondo=new VistaFondo();
 		vistaFondo.setPosicionable(fondo);
 		
+		VistaFantasma vistaPinky=new VistaFantasma(pinky,"pinky.jpg");
+		vistaPinky.setPosicionable(pinky);
+
+		VistaFantasma vistaBlinky=new VistaFantasma(blinky,"blinky.jpg");
+		vistaBlinky.setPosicionable(blinky);
+		
+		VistaFantasma vistaClyde=new VistaFantasma(clyde,"clyde.jpg");
+		vistaClyde.setPosicionable(clyde);
+		
+		VistaFantasma vistaInky=new VistaFantasma(inky,"inky.jpg");
+		vistaInky.setPosicionable(inky);
+		
 		VistaPacman vistaPacman=new VistaPacman(this.pacman);		
 		vistaPacman.setPosicionable(pacman);
 		vistaPacman.setMovible(pacman);
@@ -58,7 +70,11 @@ public class Nivel {
 		this.juego.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		this.juego.agregarDibujable(vistaFondo);
-		this.juego.agregarDibujable(vistaPacman);		
+		this.juego.agregarDibujable(vistaPacman);
+		this.juego.agregarDibujable(vistaPinky);
+		this.juego.agregarDibujable(vistaClyde);
+		this.juego.agregarDibujable(vistaBlinky);
+		this.juego.agregarDibujable(vistaInky);
 	}
 
 	private void crearPersonajes(int velocidad){
