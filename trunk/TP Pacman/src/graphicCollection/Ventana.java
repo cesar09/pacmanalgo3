@@ -1,4 +1,4 @@
-package ar.uba.fi.algo3.titiritero.vista;
+package graphicCollection;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -26,14 +26,23 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	 * Esta yerba es generada automática y aún no se su utilidad
 	 */
 	private static final long serialVersionUID = 1L;
-	TextField txtField;//TODO: agregado mio
+    private Image imagen;
 	
-	private ControladorJuego controlador;
-	
-	public Ventana(ControladorJuego unControlador){
-		this.controlador = unControlador;
-		this.addMouseListener(new MouseClickController(this.controlador));
-	    this.addKeyListener(new KeyboardController(unControlador)); //TODO agregado mio
+	public Ventana(int ancho,int alto, MouseClickController unControladorMouse,KeyboardController unControladorTeclado){
+		this.addMouseListener(unControladorMouse);
+		this.addKeyListener(unControladorTeclado); 
+		setSize(ancho, alto);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension frameSize = getSize();
+		int x = (screenSize.width - frameSize.width) / 2;
+		int y = (screenSize.height - frameSize.height) / 2;
+		setLocation(x, y);
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				dispose();
+				System.exit(0);
+			}
+		});
 	}
 	// es llamado internamente por el metodo repaint() de la clase Frame
 	public void update(Graphics g) {
@@ -44,7 +53,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	 *Esta es la imagen en que se realiza todo el dibujo utilizando la tecnica
 	 *de doble buffering.
 	 */
-    private Image imagen;
+
     
 	public void paint(Graphics g) {
 		g.drawImage(this.imagen, 8, 28, null);
@@ -64,23 +73,6 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	
 	public void actualizar(){
 		this.repaint();
-	}
-	
-	public Ventana(int ancho,int alto, ControladorJuego unControlador){
-		this.addMouseListener(new MouseClickController(unControlador));
-		this.addKeyListener(new KeyboardController(unControlador)); 
-		setSize(ancho, alto);
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		Dimension frameSize = getSize();
-		int x = (screenSize.width - frameSize.width) / 2;
-		int y = (screenSize.height - frameSize.height) / 2;
-		setLocation(x, y);
-		addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent e) {
-				dispose();
-				System.exit(0);
-			}
-		});
 	}
 	
 }

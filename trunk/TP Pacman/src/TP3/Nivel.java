@@ -1,4 +1,10 @@
 package TP3;
+
+import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Mesa;
+import graphicCollection.*;
+import ar.uba.fi.algo3.titiritero.*;
+import Vista.*;
+
 public class Nivel {
 	
 	private Juego juego;
@@ -11,6 +17,7 @@ public class Nivel {
 	private Inky inky;
 	private Clyde clyde;
 	private int ultimoSentidoPacman;
+	private Mesa fondo;
 	
 
 	public Nivel(Juego unJuego, int nivel) throws ArchivoFueraDeFormatoException{
@@ -31,9 +38,27 @@ public class Nivel {
 		}else{
 			this.crearPersonajes(2);
 		}
+		configurarInterfazGrafica();
 		this.ultimoSentidoPacman=1;//inicializo para q vaya a la izquierda como ultimo movim.
 		new TimerFruta(15,this); 
 		new TimerVacio(22,this);
+	}
+
+	protected void configurarInterfazGrafica() {
+		fondo=new Mesa(600,600);
+		VistaFondo vistaFondo=new VistaFondo();
+		vistaFondo.setPosicionable(fondo);
+		
+		VistaPacman vistaPacman=new VistaPacman(this.pacman);		
+		vistaPacman.setPosicionable(pacman);
+		vistaPacman.setMovible(pacman);
+		KeyboardController teclado=new KeyboardController(this.pacman);
+		MouseClickController mouse=new MouseClickController();
+		Ventana ventana=new VentanaPrincipal(mouse,teclado);
+		this.juego.setSuperficieDeDibujo(ventana);
+		ventana.setVisible(true);
+		this.juego.agregarDibujable(vistaFondo);
+		this.juego.agregarDibujable(vistaPacman);		
 	}
 
 	private void crearPersonajes(int velocidad){
@@ -88,105 +113,81 @@ public class Nivel {
 		
 	
 	public void muevePacman() throws PacmanAtrapadoException{
-		int sentido=0;
 		//FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
-	    //SI SENTIDO ES 0, EJECUTA EL ULTIMO MOVIMIENTO
-		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE
-		try{
-			if(!(this.moverSegunSentido(sentido))) this.moverSegunSentido(ultimoSentidoPacman);
-		}catch(PacmanAtrapadoException e){
-			throw new PacmanAtrapadoException();
-		}
+		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE lanza excepcion
+			this.moverSegunSentido();
 	}
 	
 	
-	public boolean moverSegunSentido(int sentido) throws PacmanAtrapadoException{
+	protected boolean moverSegunSentido() throws PacmanAtrapadoException{
 		int x;
 		int y;
-		switch (sentido){
-		
-		case 1:
+		x = this.pacman.getX();
+		y = this.pacman.getY();
+		switch (this.pacman.getSentidoX()){		
+		case -1:
 			//Si se desea ir para la izquierda.
-			x = this.pacman.obtenerPosicion().getX()-1;
-			y = this.pacman.obtenerPosicion().getY();
+			x = x-1;
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irIzquierda();
 				 if (!this.juego.seGanoJuego()){
-					 ultimoSentidoPacman=1;
-					 try{
-						 this.comeOMuere(this.blinky);
-						 this.comeOMuere(this.pinky);
-						 this.comeOMuere(this.clyde);
-						 this.comeOMuere(this.inky);
-					 }catch (PacmanAtrapadoException e2){
-						 throw new PacmanAtrapadoException();
-					 }
-				 return true;
+					ultimoSentidoPacman=1;
+					this.comeOMuere(this.blinky);
+					this.comeOMuere(this.pinky);
+					this.comeOMuere(this.clyde);
+					this.comeOMuere(this.inky);
+					return true;
 				 }
 			} catch (NoTransitableException e) {}
 			 break;
-		case 2:
+		case 1:
 			//Si se desea ir para la derecha.
-			x = this.pacman.obtenerPosicion().getX()+1;
-			y = this.pacman.obtenerPosicion().getY();
+			x = x+1;
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irDerecha();
 				 if (!this.juego.seGanoJuego()){
 					 ultimoSentidoPacman=1;
-					 try{
-						 this.comeOMuere(this.blinky);
-						 this.comeOMuere(this.pinky);
-						 this.comeOMuere(this.clyde);
-						 this.comeOMuere(this.inky);
-					 }catch (PacmanAtrapadoException e2){
-						 throw new PacmanAtrapadoException();
-					 }
-				 return true;
+					 this.comeOMuere(this.blinky);
+					 this.comeOMuere(this.pinky);
+					 this.comeOMuere(this.clyde);
+					 this.comeOMuere(this.inky);
+					 return true;
 				 }
 			} catch (NoTransitableException e) {}
 			 break;
-		
-		case 3:
+		}
+		switch (this.pacman.getSentidoY()){
+		case 1:
 			//Si se desea ir para abajo.
-			x = this.pacman.obtenerPosicion().getX();
-			y = this.pacman.obtenerPosicion().getY()+1;
+			y = y+1;
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irAbajo();
 				 if (!this.juego.seGanoJuego()){
 					 ultimoSentidoPacman=1;
-					 try{
-						 this.comeOMuere(this.blinky);
-						 this.comeOMuere(this.pinky);
-						 this.comeOMuere(this.clyde);
-						 this.comeOMuere(this.inky);
-					 }catch (PacmanAtrapadoException e2){
-						 throw new PacmanAtrapadoException();
-					 }
-				 return true;
+					 this.comeOMuere(this.blinky);
+					 this.comeOMuere(this.pinky);
+					 this.comeOMuere(this.clyde);
+					 this.comeOMuere(this.inky);
+					 return true;
 				 }
 			} catch (NoTransitableException e) {}
 			 break;
 		
-		case 4:
-			x = this.pacman.obtenerPosicion().getX();
-			y = this.pacman.obtenerPosicion().getY()-1;
+		case -1:
+			y = y-1;
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irArriba();
 				 if (!this.juego.seGanoJuego()){
 					 ultimoSentidoPacman=1;
-					 try{
-						 this.comeOMuere(this.blinky);
-						 this.comeOMuere(this.pinky);
-						 this.comeOMuere(this.clyde);
-						 this.comeOMuere(this.inky);
-					 }catch (PacmanAtrapadoException e2){
-						 throw new PacmanAtrapadoException();
-					 }
-				 return true;
+					 this.comeOMuere(this.blinky);
+					 this.comeOMuere(this.pinky);
+					 this.comeOMuere(this.clyde);
+					 this.comeOMuere(this.inky);
+					 return true;
 				 }
 			} catch (NoTransitableException e) {}
 			 break;

@@ -80,7 +80,7 @@ public class ControladorJuego {
 			dibujable.dibujar(this.superficieDeDibujo);
 			//System.out.println(dib.getPosicionable().getX());
 			//System.out.println( dib.getPosicionable().getY());
-		}		
+		}
 		this.superficieDeDibujo.actualizar();
 	}
 	
