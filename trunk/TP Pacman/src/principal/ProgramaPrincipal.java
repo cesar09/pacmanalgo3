@@ -9,5 +9,5 @@ public class ProgramaPrincipal {
 		Juego unJuego=new Juego();
 		unJuego.setIntervaloSimulacion(60);
 		unJuego.comenzar();
-	}
+	} 
 }
