@@ -25,7 +25,6 @@ public class VistaFantasma implements Dibujable{
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
 		int x=this.posicionable.getX();
 		int y=this.posicionable.getY();
-		if(contador<10){
 			if (!unFantasma.esComestible()){
 				Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 				grafico.drawImage(imagenFantasma,x*20,y*20, null);
@@ -34,9 +33,6 @@ public class VistaFantasma implements Dibujable{
 				Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 				grafico.drawImage(imagenComible,x*20,y*20, null);
 			}			
-		}
-		if(contador==15) contador=1;
-		else contador++;
 	}
 
 	public void setNombreArchivoImagen(String nombreArchivoImagen) {
