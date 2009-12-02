@@ -1,8 +1,15 @@
 package TP3;
+
+import interfasesYControladores.SuperficieDeDibujo;
+import Vista.VistaContenido;
+
 public class Punto extends Comestible {
+
+	private VistaContenido vistaPunto;
 
 	public Punto (){
 		this.puntaje = 10;
+		vistaPunto=new VistaContenido(this,"punto.jpg");	
 	}
 	
 	public void hayPacman(Nivel unNivel,int x,int y) {
@@ -13,6 +20,10 @@ public class Punto extends Comestible {
 	
 	public void serTransitado(Nivel unNivel){
 		
-	}	
+	}
+
+	public void dibujar(SuperficieDeDibujo superficie,int x, int y) {
+		vistaPunto.dibujar(superficie,x,y);
+	}
 
 }

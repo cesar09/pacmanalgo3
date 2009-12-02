@@ -49,6 +49,7 @@ public class Nivel {
 		VistaFondo vistaFondo=new VistaFondo();
 		vistaFondo.setPosicionable(fondo);
 		
+		VistaLaberinto vistaLaberinto=new VistaLaberinto(miLaberinto);
 		VistaFantasma vistaPinky=new VistaFantasma(pinky,"pinky.jpg");
 		vistaPinky.setPosicionable(pinky);
 
@@ -70,6 +71,7 @@ public class Nivel {
 		this.juego.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		this.juego.agregarDibujable(vistaFondo);
+		this.juego.agregarDibujable(vistaLaberinto);
 		this.juego.agregarDibujable(vistaPacman);
 		this.juego.agregarDibujable(vistaPinky);
 		this.juego.agregarDibujable(vistaClyde);
