@@ -17,7 +17,7 @@ public class ControladorJuego {
 	private ObjetoVivo unPacman;
 	private List objetosVivos;
 	private List dibujables;
-	private List mouseClickObservadores;
+	private List mouseClickObservadores;//TODO esto es necesario?
 	private SuperficieDeDibujo superficieDeDibujo;	
 	
 	public ControladorJuego(){
