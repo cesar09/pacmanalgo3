@@ -1,7 +1,13 @@
 package TP3;
-public class Pacman extends Personaje {
+
+import ar.uba.fi.algo3.titiritero.*;
+
+public class Pacman extends Personaje implements Posicionable,Movible {
 
 	
+	private int sentidoY=0;
+	private int sentidoX=-1;
+
 	public Pacman() {
 		this.renacer();
 	}
@@ -33,6 +39,33 @@ public class Pacman extends Personaje {
 	public void renacer() {
 		Point posicion = new Point(13,23);
 		this.posicion=posicion;		
+	}
+	
+	public void nuevoSentido(int i, int j) {
+		if((((i==1)|(i==-1))&(j==0))|(((j==1)|(j==-1))&(i==0))) {
+			this.sentidoX=i;
+			this.sentidoY=j;
+		}
+		else throw new IllegalArgumentException();
+	}
+
+	public int getX() {
+		Point unPoint=obtenerPosicion();
+		return unPoint.getX();
+	}
+
+	public int getY() {
+		Point unPoint=obtenerPosicion();
+		return unPoint.getY();
+	}
+
+	public int getSentidoX() {
+		return sentidoX;
+	}
+
+	public int getSentidoY() {
+		// TODO Auto-generated method stub
+		return sentidoY;
 	}
 
 }

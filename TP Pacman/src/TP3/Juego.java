@@ -1,13 +1,23 @@
 package TP3;
 
+import java.util.*;
+
+import ar.uba.fi.algo3.titiritero.Dibujable;
+import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
+
 public class Juego {
 
 	private Nivel unNivel; 
 	private Jugador jugador;
 	private int nivelActual;
+	private List dibujables;
+	private SuperficieDeDibujo superficieDeDibujo;
+	private boolean estaEnEjecucion;
+	private long intervaloSimulacion;
 	private static int cantidadDeNiveles=2;
 	
 	public Juego(){
+		this.dibujables = new ArrayList();
 		this.nivelActual = 1; //nivel inicial 1.
 		this.jugador = new Jugador();
 		try{
@@ -17,7 +27,20 @@ public class Juego {
 			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
 		}
 	}
-	
+	public void comenzar(){
+		estaEnEjecucion = true;
+		try{
+			
+		while(estaEnEjecucion){
+			mover();
+			dibujar();
+			Thread.sleep(intervaloSimulacion);
+		}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void pasarDeNivel(){
 		this.nivelActual++;
 		if(cantidadDeNiveles==nivelActual) this.JuegoGanado(); 
@@ -50,6 +73,7 @@ public class Juego {
 	
 	public void mover(){
 		try {
+			this.superficieDeDibujo.limpiar();
 			this.unNivel.mueveFantasmas();
 			this.unNivel.muevePacman();
 		} catch (PacmanAtrapadoException e) {
@@ -80,4 +104,24 @@ public class Juego {
 		return false;
 	}
 	
+	private void dibujar() {
+		Iterator iterador = dibujables.iterator();
+		while(iterador.hasNext()){
+			Dibujable dibujable = (Dibujable)iterador.next();
+			dibujable.dibujar(this.superficieDeDibujo);
+		}		
+		this.superficieDeDibujo.actualizar();
+	}
+	public void agregarDibujable(Dibujable unDibujable){
+		dibujables.add(unDibujable);
+	}
+	public SuperficieDeDibujo getSuperficieDeDibujo() {
+		return superficieDeDibujo;
+	}
+	public void setSuperficieDeDibujo(SuperficieDeDibujo superficieDeDibujo) {
+		this.superficieDeDibujo = superficieDeDibujo;
+	}
+	public void setIntervaloSimulacion(long intervaloSimulacion) {
+		this.intervaloSimulacion = intervaloSimulacion;
+	}	
 }

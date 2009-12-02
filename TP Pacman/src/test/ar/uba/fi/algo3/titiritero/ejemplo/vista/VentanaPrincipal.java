@@ -1,12 +1,12 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo.vista;
 
+import graphicCollection.Ventana;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
-import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 public class VentanaPrincipal extends Ventana {
 
 	public VentanaPrincipal(ControladorJuego unControladorJuego) {
-		super(500,500, unControladorJuego);
+		super(500,500, null,null);
 		this.setTitle("Ejemplo");
 	}
 

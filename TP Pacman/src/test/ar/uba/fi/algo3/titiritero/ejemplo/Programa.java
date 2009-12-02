@@ -1,5 +1,6 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo;
 
+import graphicCollection.Ventana;
 import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Mesa;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Pacman;
@@ -8,7 +9,6 @@ import test.ar.uba.fi.algo3.titiritero.ejemplo.vista.VentanaPrincipal;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.vista.VistaMesa;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.vista.VistaPacman;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.vista.VistaPelota;
-import ar.uba.fi.algo3.titiritero.vista.Ventana;
 
 public class Programa {
 

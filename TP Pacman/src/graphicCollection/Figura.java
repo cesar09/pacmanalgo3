@@ -1,4 +1,4 @@
-package ar.uba.fi.algo3.titiritero.vista;
+package graphicCollection;
 
 import java.awt.Color;
 

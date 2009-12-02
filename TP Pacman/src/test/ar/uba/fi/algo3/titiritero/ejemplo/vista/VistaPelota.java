@@ -1,7 +1,8 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo.vista;
 
+import graphicCollection.Circulo;
+
 import java.awt.Color;
-import ar.uba.fi.algo3.titiritero.vista.Circulo;
 
 public class VistaPelota extends Circulo {
  

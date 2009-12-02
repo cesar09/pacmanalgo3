@@ -1,4 +1,4 @@
-package ar.uba.fi.algo3.titiritero.vista;
+package graphicCollection;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -23,8 +23,7 @@ public class Imagen implements Dibujable{
     private BufferedImage imagen;
     protected Movible movible;
 
-	public Imagen(){
-		
+	public Imagen(){		
 	}
 
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
