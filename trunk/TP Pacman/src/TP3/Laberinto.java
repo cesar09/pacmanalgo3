@@ -1,8 +1,9 @@
 package TP3;
 
+import interfasesYControladores.Posicionable;
 import java.io.*; 
 
-public class Laberinto {
+public class Laberinto implements Posicionable{
 
 private Contenido[][] contenidos;
 private int cantidadPastillas;
@@ -72,23 +73,29 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 				contenidos[x][y]= new Vacio();
 				break;
 			default: throw new ArchivoFueraDeFormatoException();
-		}
-	
-	}
- 
+		}	
+	} 
 
-public int obtenerCantidadPastillas(){
-	return cantidadPastillas;
-}
-
-public int restarCantidadPastillas(){
-	return cantidadPastillas--;
-}
-public void agregarFruta(){
-	contenidos[14][17] = new Fruta();
+	public int obtenerCantidadPastillas(){
+		return cantidadPastillas;
 	}
 
-public void agregarVacio(int columna,int fila) {
-    contenidos[columna][fila] = new Vacio();
-}
+	public int restarCantidadPastillas(){
+		return cantidadPastillas--;
+	}
+	public void agregarFruta(){
+		contenidos[14][17] = new Fruta();
+	}
+
+	public void agregarVacio(int columna,int fila) {
+		contenidos[columna][fila] = new Vacio();
+	}
+
+	public int getX() {
+		return 0;
+	}
+
+	public int getY() {
+		return 0;
+	}
 }
