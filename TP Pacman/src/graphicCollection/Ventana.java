@@ -1,5 +1,8 @@
 package graphicCollection;
 
+import interfasesYControladores.ControladorJuego;
+import interfasesYControladores.SuperficieDeDibujo;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
@@ -10,8 +13,6 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import ar.uba.fi.algo3.titiritero.ControladorJuego;
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 /*
  * ESta clase representa la superficie de dibujo, tipicamente será el formulario
  * principal de la aplicación y donde se dibujará la vista.

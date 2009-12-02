@@ -1,7 +1,7 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo.modelo;
 
-import ar.uba.fi.algo3.titiritero.ObjetoVivo;
-import ar.uba.fi.algo3.titiritero.Movible;
+import interfasesYControladores.Movible;
+import interfasesYControladores.ObjetoVivo;
 
 public class Pacman implements Movible, ObjetoVivo {
 

@@ -1,9 +1,10 @@
 package TP3;
 
+import interfasesYControladores.Dibujable;
+import interfasesYControladores.SuperficieDeDibujo;
+
 import java.util.*;
 
-import ar.uba.fi.algo3.titiritero.Dibujable;
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 
 public class Juego {
 

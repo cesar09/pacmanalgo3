@@ -1,5 +1,10 @@
 package graphicCollection;
 
+import interfasesYControladores.Dibujable;
+import interfasesYControladores.Movible;
+import interfasesYControladores.Posicionable;
+import interfasesYControladores.SuperficieDeDibujo;
+
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
@@ -7,10 +12,6 @@ import java.io.InputStream;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageDecoder;
 
-import ar.uba.fi.algo3.titiritero.Dibujable;
-import ar.uba.fi.algo3.titiritero.Posicionable;
-import ar.uba.fi.algo3.titiritero.Movible;
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 
 /*
  * Esta clase representa una imagen JPG abstrayendo al usuario de los detalles de Java2D

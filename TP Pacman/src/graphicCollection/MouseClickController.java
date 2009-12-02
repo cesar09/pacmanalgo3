@@ -1,9 +1,10 @@
 package graphicCollection;
 
+import interfasesYControladores.ControladorJuego;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import ar.uba.fi.algo3.titiritero.ControladorJuego;
 
 
 public class MouseClickController extends MouseAdapter{ 

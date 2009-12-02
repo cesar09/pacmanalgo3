@@ -1,4 +1,4 @@
-package ar.uba.fi.algo3.titiritero;
+package interfasesYControladores;
 
 /*
  * Esta abstraccion es solo a fin de poder abstraerse de la API grafica de Java
