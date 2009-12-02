@@ -23,7 +23,7 @@ public class KeyboardController extends KeyAdapter{
 		Pacman unPacman;
 		int aux=e.getKeyCode();
 		switch(aux){
-		case 38: 
+		case 38: //TODO esto debe ir dentro del Pacman o ligado al pacman pero no de esta forma
 			unPacman = (Pacman) controlador.getObjetoVivo();
 			unPacman.nuevoSentido(0,-1);	
 			break;
