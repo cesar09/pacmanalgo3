@@ -1,5 +1,8 @@
 package TP3;
-public abstract class Fantasma extends Personaje {
+
+import ar.uba.fi.algo3.titiritero.Posicionable;
+
+public abstract class Fantasma extends Personaje implements Posicionable{
 
 		private boolean comestible;
 		protected int velocidad;
@@ -199,6 +202,11 @@ public abstract class Fantasma extends Personaje {
             		    }
 			
 		}
-
+		public int getX() {
+			return this.obtenerPosicion().getX();
+		}
+		public int getY() {
+			return this.obtenerPosicion().getY();
+		}
 	
 }

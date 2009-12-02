@@ -1,5 +1,8 @@
 package TP3;
-public class Pinky extends Fantasma {
+
+import ar.uba.fi.algo3.titiritero.Posicionable;
+
+public class Pinky extends Fantasma  {
 
 	public Pinky(int velocidadInicial) {
 		super(velocidadInicial);
