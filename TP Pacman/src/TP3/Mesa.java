@@ -1,4 +1,4 @@
-package test.ar.uba.fi.algo3.titiritero.ejemplo.modelo;
+package TP3;
 
 import interfasesYControladores.Posicionable;
 

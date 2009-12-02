@@ -1,7 +1,5 @@
-package test.ar.uba.fi.algo3.titiritero.ejemplo;
+package principal;
 
-import graphicCollection.Ventana;
-import test.ar.uba.fi.algo3.titiritero.ejemplo.vista.VentanaPrincipal;
 import TP3.*;
 
 public class ProgramaPrincipal {
