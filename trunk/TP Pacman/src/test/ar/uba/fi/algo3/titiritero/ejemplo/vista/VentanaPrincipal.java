@@ -1,7 +1,7 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo.vista;
 
+import interfasesYControladores.ControladorJuego;
 import graphicCollection.Ventana;
-import ar.uba.fi.algo3.titiritero.ControladorJuego;
 
 public class VentanaPrincipal extends Ventana {
 

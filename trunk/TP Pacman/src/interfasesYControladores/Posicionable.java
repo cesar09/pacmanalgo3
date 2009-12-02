@@ -1,4 +1,4 @@
-package ar.uba.fi.algo3.titiritero;
+package interfasesYControladores;
 
 /*
  * Esta es la interface que debe implementar todo objeto del modelo que desee ser 

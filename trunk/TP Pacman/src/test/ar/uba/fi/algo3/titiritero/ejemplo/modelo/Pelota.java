@@ -1,7 +1,7 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo.modelo;
 
-import ar.uba.fi.algo3.titiritero.ObjetoVivo;
-import ar.uba.fi.algo3.titiritero.Posicionable;
+import interfasesYControladores.ObjetoVivo;
+import interfasesYControladores.Posicionable;
 
 public class Pelota implements Posicionable, ObjetoVivo {
 

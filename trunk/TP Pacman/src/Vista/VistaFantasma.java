@@ -1,11 +1,12 @@
 package Vista;
 
 import graphicCollection.*;
+import interfasesYControladores.*;
+
 import java.awt.*;
 import java.io.InputStream;
 import com.sun.image.codec.jpeg.*;
 import TP3.*;
-import ar.uba.fi.algo3.titiritero.*;
 
 public class VistaFantasma implements Dibujable{
 	 

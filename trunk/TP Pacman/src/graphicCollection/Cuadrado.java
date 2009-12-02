@@ -1,9 +1,10 @@
 package graphicCollection;
 
+import interfasesYControladores.SuperficieDeDibujo;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 
 /* 
  * Esta clase dibuja un Cuadrado (de color gris por el momento)utilizando la API Java2D 

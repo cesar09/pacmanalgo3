@@ -1,11 +1,12 @@
 package graphicCollection;
 
+import interfasesYControladores.Dibujable;
+import interfasesYControladores.MouseClickObservador;
+import interfasesYControladores.Posicionable;
+import interfasesYControladores.SuperficieDeDibujo;
+
 import java.awt.Color;
 
-import ar.uba.fi.algo3.titiritero.Dibujable;
-import ar.uba.fi.algo3.titiritero.MouseClickObservador;
-import ar.uba.fi.algo3.titiritero.Posicionable;
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 
 public abstract class Figura implements Dibujable, MouseClickObservador {
 

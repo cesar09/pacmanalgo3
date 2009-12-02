@@ -1,6 +1,6 @@
 package TP3;
 
-import ar.uba.fi.algo3.titiritero.*;
+import interfasesYControladores.*;
 
 public class Pacman extends Personaje implements Posicionable,Movible {
 

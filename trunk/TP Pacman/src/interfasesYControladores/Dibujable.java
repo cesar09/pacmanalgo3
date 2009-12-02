@@ -1,4 +1,4 @@
-package ar.uba.fi.algo3.titiritero;
+package interfasesYControladores;
 
 /*
  * Esta abstraccion representa a todos los objetos Vista de la aplicacion

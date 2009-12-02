@@ -3,6 +3,9 @@ package test.ar.uba.fi.algo3.titiritero.ejemplo.vista;
 import graphicCollection.Imagen;
 import graphicCollection.Ventana;
 
+import interfasesYControladores.Movible;
+import interfasesYControladores.SuperficieDeDibujo;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.InputStream;
@@ -10,8 +13,6 @@ import java.io.InputStream;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageDecoder;
 
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
-import ar.uba.fi.algo3.titiritero.Movible;
 
 public class VistaPacman extends Imagen {
 	 

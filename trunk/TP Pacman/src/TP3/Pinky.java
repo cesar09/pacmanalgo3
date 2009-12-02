@@ -1,6 +1,6 @@
 package TP3;
 
-import ar.uba.fi.algo3.titiritero.Posicionable;
+import interfasesYControladores.Posicionable;
 
 public class Pinky extends Fantasma  {
 

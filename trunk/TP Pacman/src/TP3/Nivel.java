@@ -1,8 +1,8 @@
 package TP3;
 
+import interfasesYControladores.*;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Mesa;
 import graphicCollection.*;
-import ar.uba.fi.algo3.titiritero.*;
 import Vista.*;
 
 public class Nivel {

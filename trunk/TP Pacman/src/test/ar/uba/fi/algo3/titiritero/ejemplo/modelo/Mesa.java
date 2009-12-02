@@ -1,6 +1,6 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo.modelo;
 
-import ar.uba.fi.algo3.titiritero.Posicionable;
+import interfasesYControladores.Posicionable;
 
 public class Mesa implements Posicionable {
 

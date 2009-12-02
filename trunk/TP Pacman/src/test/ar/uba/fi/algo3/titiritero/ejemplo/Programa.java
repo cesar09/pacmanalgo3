@@ -1,7 +1,7 @@
 package test.ar.uba.fi.algo3.titiritero.ejemplo;
 
+import interfasesYControladores.ControladorJuego;
 import graphicCollection.Ventana;
-import ar.uba.fi.algo3.titiritero.ControladorJuego;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Mesa;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Pacman;
 import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Pelota;

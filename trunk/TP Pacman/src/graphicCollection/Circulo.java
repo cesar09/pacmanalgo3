@@ -1,8 +1,9 @@
 package graphicCollection;
 
+import interfasesYControladores.SuperficieDeDibujo;
+
 import java.awt.Graphics;
 
-import ar.uba.fi.algo3.titiritero.SuperficieDeDibujo;
 
 public class Circulo  extends Figura {
 
