@@ -222,11 +222,6 @@ public class Nivel {
 		}
 		return false;
 	}
-	
-	private int sentidoEnY() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	public void hacerFantasmasComestibles(){
 		this.blinky.hacerseComestible();

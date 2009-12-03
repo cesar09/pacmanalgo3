@@ -34,19 +34,19 @@ public class VistaPacman implements Dibujable{
 		int x=this.posicionable.getX();
 		int y=this.posicionable.getY();
 		if(contador<2){
-			if (this.movible.getSentidoY() == -1){
+			if (this.movible.getSentidoGraficoY() == -1){
 				Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 				grafico.drawImage(imagenPacmanU,x*20,y*20, null);
 			}
-			if (this.movible.getSentidoY() == 1){
+			if (this.movible.getSentidoGraficoY() == 1){
 				Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 				grafico.drawImage(imagenPacmanD,x*20,y*20, null);
 			}
-			if (this.movible.getSentidoX() == -1){
+			if (this.movible.getSentidoGraficoX() == -1){
 				Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 				grafico.drawImage(imagenPacmanL,x*20,y*20, null);
 			}
-			if (this.movible.getSentidoX() == 1){
+			if (this.movible.getSentidoGraficoX() == 1){
 				Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 				grafico.drawImage(imagenPacmanR,x*20,y*20, null);
 			}
