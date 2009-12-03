@@ -17,6 +17,8 @@ public class Nivel {
 	private Clyde clyde;
 	private int ultimoSentidoPacman;
 	private Mesa fondo;
+	private int ultimoSentidoPacmanX;
+	private int ultimoSentidoPacmanY;
 	
 
 	public Nivel(Juego unJuego, int nivel) throws ArchivoFueraDeFormatoException{
@@ -130,26 +132,32 @@ public class Nivel {
 		
 	
 	public void muevePacman() throws PacmanAtrapadoException{
-		//FALTARÍA IMPLEMENTAR EL DETECTOR DE INTERRUPCIONES 
 		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE lanza excepcion
-			this.moverSegunSentido();
-	}
+			if(!this.moverSegunSentido(false)) this.moverSegunSentido(true);
+		}	
 	
-	
-	protected boolean moverSegunSentido() throws PacmanAtrapadoException{
+	protected boolean moverSegunSentido(boolean moverSegunUltimoSentido) throws PacmanAtrapadoException{
 		int x;
 		int y;
+		int sentidoEnX=this.pacman.getSentidoX();
+		int sentidoEnY=this.pacman.getSentidoY();
+		if(moverSegunUltimoSentido){	
+			sentidoEnX=ultimoSentidoPacmanX;
+			sentidoEnY=ultimoSentidoPacmanY;
+		}
 		x = this.pacman.getX();
 		y = this.pacman.getY();
-		switch (this.pacman.getSentidoX()){		
+		
+		switch (sentidoEnX){		
 		case -1:
 			//Si se desea ir para la izquierda.
 			x = x-1;
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irIzquierda();
+				 ultimoSentidoPacmanX=-1;
+				 ultimoSentidoPacmanY=0;
 				 if (!this.juego.seGanoJuego()){
-					ultimoSentidoPacman=1;
 					this.comeOMuere(this.blinky);
 					this.comeOMuere(this.pinky);
 					this.comeOMuere(this.clyde);
@@ -164,8 +172,9 @@ public class Nivel {
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irDerecha();
+				 ultimoSentidoPacmanX=1;
+				 ultimoSentidoPacmanY=0;
 				 if (!this.juego.seGanoJuego()){
-					 ultimoSentidoPacman=1;
 					 this.comeOMuere(this.blinky);
 					 this.comeOMuere(this.pinky);
 					 this.comeOMuere(this.clyde);
@@ -175,15 +184,16 @@ public class Nivel {
 			} catch (NoTransitableException e) {}
 			 break;
 		}
-		switch (this.pacman.getSentidoY()){
+		switch (sentidoEnY){
 		case 1:
 			//Si se desea ir para abajo.
 			y = y+1;
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irAbajo();
+				 ultimoSentidoPacmanY=1;
+				 ultimoSentidoPacmanX=0;
 				 if (!this.juego.seGanoJuego()){
-					 ultimoSentidoPacman=1;
 					 this.comeOMuere(this.blinky);
 					 this.comeOMuere(this.pinky);
 					 this.comeOMuere(this.clyde);
@@ -198,8 +208,9 @@ public class Nivel {
 			try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irArriba();
+				 ultimoSentidoPacmanY=-1;
+				 ultimoSentidoPacmanX=0;
 				 if (!this.juego.seGanoJuego()){
-					 ultimoSentidoPacman=1;
 					 this.comeOMuere(this.blinky);
 					 this.comeOMuere(this.pinky);
 					 this.comeOMuere(this.clyde);
@@ -212,6 +223,11 @@ public class Nivel {
 		return false;
 	}
 	
+	private int sentidoEnY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	public void hacerFantasmasComestibles(){
 		this.blinky.hacerseComestible();
 		this.pinky.hacerseComestible();
