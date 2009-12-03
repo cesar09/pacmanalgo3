@@ -252,12 +252,18 @@ public class Nivel {
 	}
 	
 	public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
-		if(unFantasma.obtenerPosicion().equals(unPacman.obtenerPosicion())){
-			return true;
-		} else {
-			return false;
+		int fantasmaX = unFantasma.obtenerPosicion().getX();
+		int fantasmaY = unFantasma.obtenerPosicion().getY();
+		int pacmanX = unPacman.obtenerPosicion().getX();
+		int pacmanY = unPacman.obtenerPosicion().getY();
+		if(fantasmaX == pacmanX){
+			if (fantasmaY == pacmanY){
+				return true;
 			}
+		}
+		return false;
 	}
+
 	
 	public void comeOMuere(Fantasma unFantasma) throws PacmanAtrapadoException{
 		if (mismaPosicion(unFantasma,this.obtenerPacman())){
