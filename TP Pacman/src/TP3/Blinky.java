@@ -3,11 +3,11 @@ public class Blinky extends Fantasma {
 
 	public Blinky(int velocidadInicial) {
 		super(velocidadInicial);
-		this.nuevaUltimaPosicion(0);
+		this.nuevaUltimaPosicion(2);
 	}
 
 	public void atraparPacman(Nivel unNivel) {
-		 switch(UltimaPosicion()) {
+		 switch(this.UltimaPosicion()) {
 		 case 0:
 			 this.moverArriba(unNivel);
 		     break;

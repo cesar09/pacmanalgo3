@@ -31,7 +31,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			this.comestible = false;
 		}
 		
-		protected void mover(int x, int y) {
+		public void mover(int x, int y) {
 			this.posicion.setXY(x, y); 
 		}
 		
@@ -77,7 +77,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		}
 
 
-		protected Point distanciaPacman(Point posicionPacman) {
+		public Point distanciaPacman(Point posicionPacman) {
 			Point auxiliar = new Point(0,0);
 			int distanciaEnX = this.obtenerPosicion().getX() - posicionPacman.getX();
 			int distanciaEnY = this.obtenerPosicion().getY() - posicionPacman.getY();
@@ -85,137 +85,60 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			return auxiliar;
 		}
 		
-		protected void moverAbajo(Nivel unNivel){
+		public void moverAbajo(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
 	        try {
-	        	unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
-                this.mover(x,y+1);
+	        	y++;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+                this.mover(x,y);
                 this.nuevaUltimaPosicion(1);
-                y++;
                 }catch (NoTransitableException e1) {
-                	try {
-                		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-            		    this.mover(x+1, y);
-            		    this.nuevaUltimaPosicion(3);
-            		    x++;
-            		    }catch (NoTransitableException e2) {
-                        	try {
-                        		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-                    		    this.mover(x-1,y);
-                    		    this.nuevaUltimaPosicion(2);
-                    		    x--;
-                    		    }catch (NoTransitableException e3) {
-                                	try {
-                                		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-                            		    this.mover(x, y-1);
-                            		    this.nuevaUltimaPosicion(0);
-                            		    y--;
-                            		    }catch (NoTransitableException e4) {}
-                            		    }
-                    		    }
-            		    }
+                	this.moverDerecha(unNivel);
                 }
+        }
 		
-		protected void moverArriba(Nivel unNivel){
+		public void moverArriba(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
 	        try {
-	        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-                this.mover(x,y-1);
+	        	y--;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+                this.mover(x,y);
                 this.nuevaUltimaPosicion(0);
-                y--;
                 }catch (NoTransitableException e1) {
-                	try {
-                		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-            		    this.mover(x-1, y);
-            		    this.nuevaUltimaPosicion(2);
-            		    x--;
-            		    }catch (NoTransitableException e2) {
-                        	try {
-                        		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-                    		    this.mover(x+1,y);
-                    		    this.nuevaUltimaPosicion(3);
-                    		    x++;
-                    		    }catch (NoTransitableException e3) {
-                                	try {
-                                		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
-                            		    this.mover(x, y+1);
-                            		    this.nuevaUltimaPosicion(1);
-                            		    y++;
-                            		    }catch (NoTransitableException e4) {}
-                            		    }
-                    		    }
+                	this.moverIzquierda(unNivel);
             		    }
 			
 		}
 		
-		protected void moverDerecha(Nivel unNivel){
+		public void moverDerecha(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
 	        try {
-	        	unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-                this.mover(x+1,y);
+	        	x++;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+                this.mover(x,y);
                 this.nuevaUltimaPosicion(3);
-                x++;
                 }catch (NoTransitableException e1) {
-                	try {
-                		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
-            		    this.mover(x,y+1);
-            		    this.nuevaUltimaPosicion(1);
-            		    y++;
-            		    }catch (NoTransitableException e2) {
-                        	try {
-                        		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-                    		    this.mover(x,y-1);
-                    		    this.nuevaUltimaPosicion(0);
-                    		    y--;
-                    		    }catch (NoTransitableException e3) {
-                                	try {
-                                		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-                            		    this.mover(x-1,y);
-                            		    this.nuevaUltimaPosicion(2);
-                            		    x--;
-                            		    }catch (NoTransitableException e4) {}
-                            		    }
-                    		    }
+                	this.moverArriba(unNivel);
             		    }
-			
 		}
 		
-		protected void moverIzquierda(Nivel unNivel){
+		public void moverIzquierda(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
 			int y = this.obtenerPosicion().getY();
 	        try {
-	        	unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
-                this.mover(x-1,y);
+	        	x--;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+                this.mover(x,y);
                 this.nuevaUltimaPosicion(2);
-                x--;
                 }catch (NoTransitableException e1) {
-                	try {
-                		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
-            		    this.mover(x,y-1);
-            		    this.nuevaUltimaPosicion(0);
-            		    y--;
-            		    }catch (NoTransitableException e2) {
-                        	try {
-                        		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
-                    		    this.mover(x,y+1);
-                    		    this.nuevaUltimaPosicion(1);
-                    		    y++;
-                    		    }catch (NoTransitableException e3) {
-                                	try {
-                                		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
-                            		    this.mover(x+1,y);
-                            		    this.nuevaUltimaPosicion(3);
-                            		    x++;
-                            		    }catch (NoTransitableException e4) {}
-                            		    }
-                    		    }
+                	this.moverAbajo(unNivel);
             		    }
 			
 		}

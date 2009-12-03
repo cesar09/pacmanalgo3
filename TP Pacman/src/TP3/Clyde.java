@@ -7,7 +7,7 @@ public class Clyde extends Fantasma {
 	}
 
 	public void atraparPacman(Nivel unNivel) {
-		 switch(UltimaPosicion()) {
+		 switch(this.UltimaPosicion()) {
 		 case 0:
 			 this.moverArriba(unNivel);
 		     break;
