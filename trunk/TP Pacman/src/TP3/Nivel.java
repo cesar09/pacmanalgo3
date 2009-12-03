@@ -105,7 +105,7 @@ public class Nivel {
 	
 	public void moverFantasma (Fantasma unFantasma, int tiempo) throws PacmanAtrapadoException{
 		if (unFantasma.estaEncerrado()){
-			new TimerSalirDeJaula (tiempo, unFantasma);
+			new TimerSalirDeJaula (3, unFantasma);
 		}else{
 			try{
 				unFantasma.elegirMovimiento(this);
@@ -119,10 +119,10 @@ public class Nivel {
 	
 	public void mueveFantasmas() throws PacmanAtrapadoException{
 		try{
-			this.moverFantasma(this.blinky,2);
-			this.moverFantasma(this.pinky,10);
-			this.moverFantasma(this.clyde,18);
-			this.moverFantasma(this.inky,26);
+			this.moverFantasma(this.blinky,10);
+			this.moverFantasma(this.pinky,15);
+			this.moverFantasma(this.clyde,20);
+			this.moverFantasma(this.inky,25);
 		}catch(PacmanAtrapadoException e){
 			this.llevarFantasmasAJaula();
 			this.llevarPacmanAPosicionInicial();

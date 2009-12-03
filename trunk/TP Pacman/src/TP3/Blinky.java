@@ -20,9 +20,9 @@ public class Blinky extends Fantasma {
 	}
 	
 	public void salirDeJaula (){
+		this.encerrado = false;
 		Point posicion = new Point (13,11);
 		this.posicion = posicion;
-		this.encerrado = false;
 	}
 
 }
