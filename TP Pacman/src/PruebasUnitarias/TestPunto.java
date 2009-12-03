@@ -1,5 +1,6 @@
 package PruebasUnitarias;
 
+import graphicCollection.Ventana;
 import junit.framework.TestCase;
 import TP3.*;
 
@@ -7,11 +8,12 @@ public class TestPunto extends TestCase {
 
 	private Nivel unNivel;
 	private Juego unJuego;
+	private Ventana unaVentana;
 
 	public void setUp(){
 		unJuego= new Juego();
 		try{
-			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
+			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual(),unaVentana);
 		} catch (ArchivoFueraDeFormatoException e) {
 			System.out.println("Formato incorrecto en laberinto correspondiente al nivel");
 		}
