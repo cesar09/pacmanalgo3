@@ -6,4 +6,8 @@ public interface Movible extends Posicionable {
 	
 	public int getSentidoY();
 
+	public int getSentidoGraficoY();
+	
+	public int getSentidoGraficoX();
+
 }
