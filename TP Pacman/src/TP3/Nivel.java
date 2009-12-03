@@ -69,6 +69,8 @@ public class Nivel {
 		KeyboardController teclado=new KeyboardController(this.pacman);
 		ventana.addKeyboard(teclado);
 		
+		VistaInformacion pa = new VistaInformacion(this);
+		
 		this.juego.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		this.juego.agregarDibujable(vistaFondo);
@@ -78,6 +80,7 @@ public class Nivel {
 		this.juego.agregarDibujable(vistaClyde);
 		this.juego.agregarDibujable(vistaBlinky);
 		this.juego.agregarDibujable(vistaInky);
+		this.juego.agregarDibujable(pa);
 	}
 
 	private void crearPersonajes(int velocidad){
