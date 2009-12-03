@@ -1,7 +1,7 @@
 package TP3;
 
-import interfasesYControladores.Dibujable;
-import interfasesYControladores.SuperficieDeDibujo;
+import graphicCollection.*;
+import interfasesYControladores.*;
 
 import java.util.*;
 
@@ -18,15 +18,14 @@ public class Juego {
 	private boolean estaEnEjecucion;
 	private long intervaloSimulacion;
 	private static int cantidadDeNiveles=2;
-	private VentanaPrincipal ventana;
 	
 	public Juego(){
-		this.ventana=new VentanaPrincipal();
+		this.superficieDeDibujo=new VentanaPrincipal();
 		this.dibujables = new ArrayList();
 		this.nivelActual = 1; //nivel inicial 1.
 		this.jugador = new Jugador();
 		try{
-			this.unNivel = new Nivel(this, this.nivelActual, ventana);
+			this.unNivel = new Nivel(this, this.nivelActual, (Ventana)superficieDeDibujo);
 		} catch (ArchivoFueraDeFormatoException e) {
 			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
@@ -44,16 +43,18 @@ public class Juego {
 		catch (NivelGanado e) {
 			this.dibujar();
 			this.pasarDeNivel();
-		} catch (InterruptedException e) {
+		}catch (InterruptedException e) {
 			e.printStackTrace();
+		}catch(JugadorSinVidasException e){
+			//TODO que se imprima el mensaje de juegoPerdido.
 		}
 	}
 	public void pasarDeNivel(){
 		this.nivelActual++;
-		if(cantidadDeNiveles<nivelActual) this.JuegoGanado(); 
+		if(cantidadDeNiveles<nivelActual); //TODO que se imprima el mensaje de JuegoGanado 
 		else try {
 				this.dibujables = new ArrayList();
-				this.unNivel = new Nivel(this, this.nivelActual, ventana);
+				this.unNivel = new Nivel(this, this.nivelActual,(Ventana)superficieDeDibujo);
 			} catch (ArchivoFueraDeFormatoException e) {
 			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 				System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
@@ -80,18 +81,14 @@ public class Juego {
 		return (this.jugador.obtenerVidasDisponibles());
 	}
 	
-	public void mover() throws NivelGanado{
+	public void mover() throws NivelGanado, JugadorSinVidasException{
 		try {
 			this.superficieDeDibujo.limpiar();
 			this.unNivel.mueveFantasmas();
 			this.unNivel.muevePacman();
 		} catch (PacmanAtrapadoException e) {
-			try{
-				this.jugador.perderVida();
-			}catch (JugadorSinVidasException e2){
-				this.juegoPerdido();
-			}
-		}
+			this.jugador.perderVida();
+			}		
 		if (this.seGanoJuego()){
 			throw new NivelGanado();
 		}
@@ -101,9 +98,10 @@ public class Juego {
 		System.out.println("Has perdido el juego.");
 		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 	}
-	private void JuegoGanado() {
+	private Object JuegoGanado() {
 		System.out.println("Has ganado el juego.");
 		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
+		return null;
 	}
 	
 	public boolean seGanoJuego(){
@@ -123,12 +121,6 @@ public class Juego {
 	}
 	public void agregarDibujable(Dibujable unDibujable){
 		dibujables.add(unDibujable);
-	}
-	public SuperficieDeDibujo getSuperficieDeDibujo() {
-		return superficieDeDibujo;
-	}
-	public void setSuperficieDeDibujo(SuperficieDeDibujo superficieDeDibujo) {
-		this.superficieDeDibujo = superficieDeDibujo;
 	}
 	public void setIntervaloSimulacion(long intervaloSimulacion) {
 		this.intervaloSimulacion = intervaloSimulacion;

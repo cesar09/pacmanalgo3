@@ -42,7 +42,7 @@ public class Nivel {
 	}
 
 	protected void configurarInterfazGrafica(Ventana ventana) {
-		fondo=new Mesa(740,625);
+		fondo=new Mesa(565,650);
 		VistaFondo vistaFondo=new VistaFondo(fondo);
 		vistaFondo.setPosicionable(fondo);
 		
@@ -67,7 +67,6 @@ public class Nivel {
 		
 		VistaInformacion pa = new VistaInformacion(this);
 		
-		this.juego.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		this.juego.agregarDibujable(vistaFondo);
 		this.juego.agregarDibujable(vistaLaberinto);
