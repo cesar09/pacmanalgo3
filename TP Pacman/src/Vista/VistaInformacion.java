@@ -3,14 +3,7 @@ package Vista;
 import graphicCollection.*;
 import java.awt.Font;
 import interfasesYControladores.*;
-
 import java.awt.*;
-import java.io.IOException;
-import java.io.InputStream;
-
-import javax.swing.JFormattedTextField;
-
-import com.sun.image.codec.jpeg.*;
 import TP3.*;
 
 public class VistaInformacion implements Dibujable{
@@ -27,8 +20,17 @@ public class VistaInformacion implements Dibujable{
 			Color miColor = new Color(500);
 			grafico.setColor(miColor);
 			grafico.setFont(new Font("fuente",  Font.BOLD, 20));
-			grafico.drawString("VIDAS: "+ this.miNivel.obtenerMiJuego().obtenerVidasDisponibles(), 100, 640);
+			int vidas=this.miNivel.obtenerMiJuego().obtenerVidasDisponibles();
+			grafico.drawString("VIDAS: "+ vidas, 100, 640);
 			grafico.drawString("PUNTAJE: "+ this.miNivel.obtenerMiJuego().obtenerPuntajeDelJugador(), 340, 640);
+			if(vidas==0) {
+				grafico.setFont(new Font("fuente",  Font.BOLD, 30));
+				grafico.drawString("JUEGO PERDIDO", 154, 360);
+			}
+			else if(this.miNivel.obtenerMiJuego().seGanoJuego()){
+					grafico.setFont(new Font("fuente",  Font.BOLD, 30));
+					grafico.drawString("JUEGO GANADO", 154, 360);
+			}
 	}
 
 	public Posicionable getPosicionable() {
