@@ -13,11 +13,8 @@ private int cantidadColumnas = 28;
 public Laberinto(int nivel) throws ArchivoFueraDeFormatoException{
 	 cantidadPastillas = 0;
 	 contenidos = new Contenido[cantidadColumnas][cantidadFilas];
-	 try{
-		 this.cargarLaberintoSegunNivel(nivel);
-	 }catch (ArchivoFueraDeFormatoException e){
-		 throw new ArchivoFueraDeFormatoException();
-	 }
+	 this.cargarLaberintoSegunNivel(nivel);
+	
 }
 
 public Contenido devolverContenido(int x,int y){
