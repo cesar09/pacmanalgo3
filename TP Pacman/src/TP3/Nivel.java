@@ -19,6 +19,9 @@ public class Nivel {
 	private int ultimoSentidoPacmanY;
 	private TimerComestible timerComestible;
 	private boolean timerActivado=false;
+	private boolean timerComestibleActivado;
+	private TimerSalirDeJaula timerSalirDeJaula;
+	private boolean timerSalirActivado=false;
 	
 
 	public Nivel(Juego unJuego, int nivel, Ventana ventana) throws ArchivoFueraDeFormatoException{
@@ -102,7 +105,7 @@ public class Nivel {
 	
 	public void moverFantasma (Fantasma unFantasma, int tiempo) throws PacmanAtrapadoException{
 		if (unFantasma.estaEncerrado()){
-			new TimerSalirDeJaula (3, unFantasma);
+			timerSalirDeJaula = new TimerSalirDeJaula (3, unFantasma);
 		}else{
 			try{
 				unFantasma.elegirMovimiento(this);
@@ -226,13 +229,13 @@ public class Nivel {
 		this.clyde.hacerseComestible();
 		int segundos = (12 - this.nivel);
 		if (segundos > 1){
-			if(timerActivado) timerComestible.cancelarTimer();
+			if(timerComestibleActivado) timerComestible.cancelarTimer();
 			timerComestible= new TimerComestible (segundos, this);
 		}else{
-			if(timerActivado) timerComestible.cancelarTimer();
+			if(timerComestibleActivado) timerComestible.cancelarTimer();
 			timerComestible= new TimerComestible (segundos, this);
 		}
-		timerActivado=true;
+		timerComestibleActivado=true;
 	}
 	
 	public void hacerFantasmasNoComestibles(){
@@ -270,6 +273,8 @@ public class Nivel {
 			if(unFantasma.esComestible()){
 				unFantasma.fantasmaComido(this);
 			}else{
+				this.llevarFantasmasAJaula();
+				this.llevarPacmanAPosicionInicial();
 				throw new PacmanAtrapadoException();
 			}
 				
