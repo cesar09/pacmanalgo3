@@ -103,16 +103,6 @@ public class Juego {
 			throw new NivelGanado();
 		}
 	}
-
-	public void juegoPerdido(){
-		System.out.println("Has perdido el juego.");
-		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
-	}
-	private Object JuegoGanado() {
-		System.out.println("Has ganado el juego.");
-		//Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
-		return null;
-	}
 	
 	public boolean seGanoNivel(){
 		if (this.unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0){
