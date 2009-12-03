@@ -103,9 +103,9 @@ public class Nivel {
 		return (this.juego);
 	}
 	
-	public void moverFantasma (Fantasma unFantasma, int tiempo) throws PacmanAtrapadoException{
+	public void moverFantasma (Fantasma unFantasma, int tiempoEncerrado) throws PacmanAtrapadoException{
 		if (unFantasma.estaEncerrado()){
-			timerSalirDeJaula = new TimerSalirDeJaula (3, unFantasma);
+			timerSalirDeJaula = new TimerSalirDeJaula (tiempoEncerrado, unFantasma);
 		}else{
 			try{
 				unFantasma.elegirMovimiento(this);
