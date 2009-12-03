@@ -27,7 +27,7 @@ public class Clyde extends Fantasma {
     }
 	
 	public void irAJaula() {
-		Point posicion = new Point (13,13);
+		Point posicion = new Point (14,13);
 		this.posicion = posicion;
 		this.encerrado = true;
 	}

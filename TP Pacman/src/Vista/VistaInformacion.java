@@ -30,25 +30,25 @@ public class VistaInformacion implements Dibujable, Posicionable{
 	}
 		
 
-	@Override
+
 	public Posicionable getPosicionable() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+
 	public void setPosicionable(Posicionable posicionable) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+
 	public int getX() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+	
 	public int getY() {
 		// TODO Auto-generated method stub
 		return 0;
