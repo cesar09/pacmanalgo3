@@ -13,17 +13,16 @@ import java.util.TimerTask;
 		timer.schedule ( new RemindTask ( ) , segundos*1000 ) ;
 		}
 
-		private void liberarFantasmas() {
+		private void liberarFantasma() {
 			this.fantasma.salirDeJaula();
 			
 		}
 		
 		class RemindTask extends TimerTask {
 			public void run ( ) {
-				liberarFantasmas();
+				liberarFantasma();
 				timer.cancel ( ) ; //Cancela el hilo del timer
 			}
-
 			
 		}
 }

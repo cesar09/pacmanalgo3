@@ -41,15 +41,15 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 						throw new FantasmaAtrapadoException();
 					}
 				}else{
-					if (!this.esComestible())
-						this.atraparPacman(unNivel);					
-				}
+					if (!this.esComestible()){
+						this.atraparPacman(unNivel);	
+						if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
+							throw new PacmanAtrapadoException();
+						}
+					}
 				this.contador=1;
-			}
-			else this.contador++;
-			if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
-				throw new PacmanAtrapadoException();
-			}
+				}
+			}else this.contador++;
 		}
 		
 		public Point obtenerPosicion() {
@@ -69,9 +69,9 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		abstract public void huirDePacman(Nivel unNivel);
 		
 		public void fantasmaComido(Nivel unNivel) {
-			this.hacerseNoComestible();
 			unNivel.obtenerMiJuego().sumarPuntajeAlJugador(200);
 			this.irAJaula();			
+			this.hacerseNoComestible();
 		}
 
 
