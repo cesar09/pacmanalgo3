@@ -30,27 +30,31 @@ public class Juego {
 	}
 	public void comenzar(){
 		estaEnEjecucion = true;
-		try{
-			
-		while(estaEnEjecucion){
-			mover();
-			dibujar();
-			Thread.sleep(intervaloSimulacion);
+		try{			
+			while(estaEnEjecucion){
+				this.mover();
+				this.dibujar();
+				Thread.sleep(intervaloSimulacion);
+			}
 		}
-		}
-		catch (Exception e) {
+		catch (NivelGanado e) {
+			this.dibujar();
+			this.pasarDeNivel();
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
 	public void pasarDeNivel(){
 		this.nivelActual++;
-		if(cantidadDeNiveles==nivelActual) this.JuegoGanado(); 
+		if(cantidadDeNiveles<nivelActual) this.JuegoGanado(); 
 		else try {
+				this.dibujables = new ArrayList();
 				this.unNivel = new Nivel(this, this.nivelActual);
 			} catch (ArchivoFueraDeFormatoException e) {
 			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 				System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
 			}
+		this.comenzar();
 	}
 
 	public void sumarPuntajeAlJugador(int puntaje){
@@ -72,7 +76,7 @@ public class Juego {
 		return (this.jugador.obtenerVidasDisponibles());
 	}
 	
-	public void mover(){
+	public void mover() throws NivelGanado{
 		try {
 			this.superficieDeDibujo.limpiar();
 			this.unNivel.mueveFantasmas();
@@ -85,7 +89,7 @@ public class Juego {
 			}
 		}
 		if (this.seGanoJuego()){
-			this.pasarDeNivel();
+			throw new NivelGanado();
 		}
 	}
 
