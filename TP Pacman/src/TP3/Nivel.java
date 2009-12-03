@@ -1,6 +1,5 @@
 package TP3;
 
-import interfasesYControladores.*;
 import graphicCollection.*;
 import Vista.*;
 
@@ -29,17 +28,14 @@ public class Nivel {
 		//los fantasmas es mayor. Lo mismo con la duracion de puntoPoder.
 		this.juego = unJuego;
 		this.nivel=nivel;
-		try{
-			this.miLaberinto = new Laberinto (this.nivel);
-		}catch(ArchivoFueraDeFormatoException e){
-			throw new ArchivoFueraDeFormatoException();
-		}
+		this.miLaberinto = new Laberinto (this.nivel);
+		
 		int velocidad = 8 - this.nivel;
-		if (velocidad >2){
+		if (velocidad >2)
 			this.crearPersonajes(velocidad);
-		}else{
+		else
 			this.crearPersonajes(2);
-		}
+		
 		configurarInterfazGrafica(ventana);
 		new TimerFruta(15,this); 
 		new TimerVacio(22,this);
@@ -135,7 +131,6 @@ public class Nivel {
 		
 	
 	public void muevePacman() throws PacmanAtrapadoException{
-		//SI EL MOVIMIENTO INDICADO NO ES TRANSITABLE lanza excepcion
 			if(!this.moverSegunSentido(false)) this.moverSegunSentido(true);
 		}	
 	
