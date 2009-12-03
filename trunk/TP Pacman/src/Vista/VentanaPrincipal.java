@@ -8,7 +8,7 @@ import TP3.*;
 public class VentanaPrincipal extends Ventana {
 
 	public VentanaPrincipal() {
-		super(725,650);
+		super(567,670);
 		this.setTitle("Pacman Grupo 8");
 	}
 
