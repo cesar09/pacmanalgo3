@@ -3,10 +3,23 @@ public class Blinky extends Fantasma {
 
 	public Blinky(int velocidadInicial) {
 		super(velocidadInicial);
+		this.nuevaUltimaPosicion(0);
 	}
 
 	public void atraparPacman(Nivel unNivel) {
-        this.moverIzquierda(unNivel);
+		 switch(UltimaPosicion()) {
+		 case 0:
+			 this.moverArriba(unNivel);
+		     break;
+		 case 1:
+			 this.moverAbajo(unNivel);
+			 break;
+		 case 2:
+			 this.moverIzquierda(unNivel);
+		 case 3:
+			 this.moverDerecha(unNivel);
+			 break;
+		 }
 	}
 	
 	public void huirDePacman(Nivel unNivel) {
@@ -20,9 +33,9 @@ public class Blinky extends Fantasma {
 	}
 	
 	public void salirDeJaula (){
-		this.encerrado = false;
 		Point posicion = new Point (13,11);
 		this.posicion = posicion;
+		this.encerrado = false;
 	}
 
 }
