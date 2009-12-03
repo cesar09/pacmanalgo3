@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import test.ar.uba.fi.algo3.titiritero.ejemplo.modelo.Pacman;
 
 /**
  * @author Nicolas

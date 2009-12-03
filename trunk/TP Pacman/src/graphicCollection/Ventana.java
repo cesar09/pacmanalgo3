@@ -18,7 +18,6 @@ import java.awt.event.WindowEvent;
  * principal de la aplicación y donde se dibujará la vista.
  * Esta clase utiliza la tecnica de doble buffering para evitar los efectos de flicking
  */
-import test.ar.uba.fi.algo3.titiritero.ejemplo.KeyPress.MyKeyListener;
 
 	
 public class Ventana extends Frame implements SuperficieDeDibujo{
@@ -57,7 +56,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 
     
 	public void paint(Graphics g) {
-		g.drawImage(this.imagen, 8, 28, null);
+		g.drawImage(this.imagen, 4, 24, null);
 	}
 
 	public void limpiar() {
