@@ -33,25 +33,31 @@ public class Juego {
 	}
 	public void comenzar(){
 		estaEnEjecucion = true;
-		try{			
-			while(estaEnEjecucion){
-				this.mover();
-				this.dibujar();
-				Thread.sleep(intervaloSimulacion);
+		try{
+			try{			
+				while(estaEnEjecucion){
+					this.mover();
+					this.dibujar();
+					Thread.sleep(intervaloSimulacion);
+				}
 			}
-		}
-		catch (NivelGanado e) {
-			this.dibujar();
-			this.pasarDeNivel();
-		}catch (InterruptedException e) {
-			e.printStackTrace();
-		}catch(JugadorSinVidasException e){
-			//TODO que se imprima el mensaje de juegoPerdido.
+			catch (NivelGanado e) {
+				this.dibujar();
+				this.pasarDeNivel();
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			}catch(JugadorSinVidasException e){
+				this.dibujar();
+			}
+		}catch(JuegoGanado e){ return;
 		}
 	}
-	public void pasarDeNivel(){
+	public void pasarDeNivel() throws JuegoGanado{
 		this.nivelActual++;
-		if(cantidadDeNiveles<nivelActual); //TODO que se imprima el mensaje de JuegoGanado 
+		if(seGanoJuego()){
+			this.dibujar();
+			throw new JuegoGanado();
+		}
 		else try {
 				this.dibujables = new ArrayList();
 				this.unNivel = new Nivel(this, this.nivelActual,(Ventana)superficieDeDibujo);
@@ -62,6 +68,10 @@ public class Juego {
 		this.comenzar();
 	}
 
+	public boolean seGanoJuego() {
+		if(cantidadDeNiveles<nivelActual) return true;
+		else return false;
+	}
 	public void sumarPuntajeAlJugador(int puntaje){
 		if(puntaje<0) throw new IllegalArgumentException();
 		this.jugador.sumarPuntaje(puntaje);
@@ -89,7 +99,7 @@ public class Juego {
 		} catch (PacmanAtrapadoException e) {
 			this.jugador.perderVida();
 			}		
-		if (this.seGanoJuego()){
+		if (this.seGanoNivel()){
 			throw new NivelGanado();
 		}
 	}
@@ -104,7 +114,7 @@ public class Juego {
 		return null;
 	}
 	
-	public boolean seGanoJuego(){
+	public boolean seGanoNivel(){
 		if (this.unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0){
 			return true;
 		}
