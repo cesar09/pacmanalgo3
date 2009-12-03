@@ -21,7 +21,7 @@ public class Nivel {
 	private int ultimoSentidoPacmanY;
 	
 
-	public Nivel(Juego unJuego, int nivel) throws ArchivoFueraDeFormatoException{
+	public Nivel(Juego unJuego, int nivel, Ventana ventana) throws ArchivoFueraDeFormatoException{
 		//La idea es q reciba el numero de nivel por parametro y en base al
 		//nivel se crea el laberinto. Tmb pense en darle a velocidad el mismo
 		//valor q nivel, entonces a medida q avanza niveles, la velocidad de
@@ -39,13 +39,13 @@ public class Nivel {
 		}else{
 			this.crearPersonajes(2);
 		}
-		configurarInterfazGrafica();
+		configurarInterfazGrafica(ventana);
 		this.ultimoSentidoPacman=1;//TODO esto es necesario??? inicializo para q pacman vaya a la izquierda como ultimo movim.
 		new TimerFruta(15,this); 
 		new TimerVacio(22,this);
 	}
 
-	protected void configurarInterfazGrafica() {
+	protected void configurarInterfazGrafica(Ventana ventana) {
 		fondo=new Mesa(740,625);
 		VistaFondo vistaFondo=new VistaFondo(fondo);
 		vistaFondo.setPosicionable(fondo);
@@ -67,8 +67,8 @@ public class Nivel {
 		vistaPacman.setPosicionable(pacman);
 		vistaPacman.setMovible(pacman);
 		KeyboardController teclado=new KeyboardController(this.pacman);
-		MouseClickController mouse=new MouseClickController();
-		Ventana ventana=new VentanaPrincipal(mouse,teclado);
+		ventana.addKeyboard(teclado);
+		
 		this.juego.setSuperficieDeDibujo(ventana);
 		ventana.setVisible(true);
 		this.juego.agregarDibujable(vistaFondo);

@@ -5,6 +5,8 @@ import interfasesYControladores.SuperficieDeDibujo;
 
 import java.util.*;
 
+import Vista.VentanaPrincipal;
+
 
 public class Juego {
 
@@ -16,13 +18,15 @@ public class Juego {
 	private boolean estaEnEjecucion;
 	private long intervaloSimulacion;
 	private static int cantidadDeNiveles=2;
+	private VentanaPrincipal ventana;
 	
 	public Juego(){
+		this.ventana=new VentanaPrincipal();
 		this.dibujables = new ArrayList();
 		this.nivelActual = 1; //nivel inicial 1.
 		this.jugador = new Jugador();
 		try{
-			this.unNivel = new Nivel(this, this.nivelActual);
+			this.unNivel = new Nivel(this, this.nivelActual, ventana);
 		} catch (ArchivoFueraDeFormatoException e) {
 			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
@@ -49,7 +53,7 @@ public class Juego {
 		if(cantidadDeNiveles<nivelActual) this.JuegoGanado(); 
 		else try {
 				this.dibujables = new ArrayList();
-				this.unNivel = new Nivel(this, this.nivelActual);
+				this.unNivel = new Nivel(this, this.nivelActual, ventana);
 			} catch (ArchivoFueraDeFormatoException e) {
 			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 				System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
