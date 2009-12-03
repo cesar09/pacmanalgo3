@@ -8,7 +8,7 @@ import TP3.*;
 public class VentanaPrincipal extends Ventana {
 
 	public VentanaPrincipal(MouseClickController unControladorMouse,KeyboardController unControladorTeclado) {
-		super(600,600,unControladorMouse,unControladorTeclado);
+		super(750,650,unControladorMouse,unControladorTeclado);
 		this.setTitle("Pacman Grupo 8");
 	}
 
