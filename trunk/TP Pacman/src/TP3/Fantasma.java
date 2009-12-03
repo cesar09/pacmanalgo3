@@ -8,6 +8,8 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		protected int velocidad;
 		private int contador;
 		protected boolean encerrado;
+		private int ultimaPosicion;
+
 		
 		
 		public Fantasma(int velocidadInicial) {
@@ -41,15 +43,15 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 						throw new FantasmaAtrapadoException();
 					}
 				}else{
-					if (!this.esComestible()){
-						this.atraparPacman(unNivel);	
-						if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
-							throw new PacmanAtrapadoException();
-						}
-					}
-				this.contador=1;
+					if (!this.esComestible())
+						this.atraparPacman(unNivel);					
 				}
-			}else this.contador++;
+				this.contador=1;
+			}
+			else this.contador++;
+			if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
+				throw new PacmanAtrapadoException();
+			}
 		}
 		
 		public Point obtenerPosicion() {
@@ -69,9 +71,9 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		abstract public void huirDePacman(Nivel unNivel);
 		
 		public void fantasmaComido(Nivel unNivel) {
+			this.hacerseNoComestible();
 			unNivel.obtenerMiJuego().sumarPuntajeAlJugador(200);
 			this.irAJaula();			
-			this.hacerseNoComestible();
 		}
 
 
@@ -90,21 +92,25 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
                 this.mover(x,y+1);
+                this.nuevaUltimaPosicion(1);
                 y++;
                 }catch (NoTransitableException e1) {
                 	try {
                 		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
             		    this.mover(x+1, y);
+            		    this.nuevaUltimaPosicion(3);
             		    x++;
             		    }catch (NoTransitableException e2) {
                         	try {
                         		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
                     		    this.mover(x-1,y);
+                    		    this.nuevaUltimaPosicion(2);
                     		    x--;
                     		    }catch (NoTransitableException e3) {
                                 	try {
                                 		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
                             		    this.mover(x, y-1);
+                            		    this.nuevaUltimaPosicion(0);
                             		    y--;
                             		    }catch (NoTransitableException e4) {}
                             		    }
@@ -119,21 +125,25 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
                 this.mover(x,y-1);
+                this.nuevaUltimaPosicion(0);
                 y--;
                 }catch (NoTransitableException e1) {
                 	try {
                 		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
             		    this.mover(x-1, y);
+            		    this.nuevaUltimaPosicion(2);
             		    x--;
             		    }catch (NoTransitableException e2) {
                         	try {
                         		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
                     		    this.mover(x+1,y);
+                    		    this.nuevaUltimaPosicion(3);
                     		    x++;
                     		    }catch (NoTransitableException e3) {
                                 	try {
                                 		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
                             		    this.mover(x, y+1);
+                            		    this.nuevaUltimaPosicion(1);
                             		    y++;
                             		    }catch (NoTransitableException e4) {}
                             		    }
@@ -149,21 +159,25 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
                 this.mover(x+1,y);
-                y++;
+                this.nuevaUltimaPosicion(3);
+                x++;
                 }catch (NoTransitableException e1) {
                 	try {
                 		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
             		    this.mover(x,y+1);
+            		    this.nuevaUltimaPosicion(1);
             		    y++;
             		    }catch (NoTransitableException e2) {
                         	try {
                         		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
                     		    this.mover(x,y-1);
+                    		    this.nuevaUltimaPosicion(0);
                     		    y--;
                     		    }catch (NoTransitableException e3) {
                                 	try {
                                 		unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
                             		    this.mover(x-1,y);
+                            		    this.nuevaUltimaPosicion(2);
                             		    x--;
                             		    }catch (NoTransitableException e4) {}
                             		    }
@@ -179,21 +193,25 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	unLaberinto.devolverContenido(x-1,y).serTransitado(unNivel);
                 this.mover(x-1,y);
+                this.nuevaUltimaPosicion(2);
                 x--;
                 }catch (NoTransitableException e1) {
                 	try {
                 		unLaberinto.devolverContenido(x,y-1).serTransitado(unNivel);
             		    this.mover(x,y-1);
+            		    this.nuevaUltimaPosicion(0);
             		    y--;
             		    }catch (NoTransitableException e2) {
                         	try {
                         		unLaberinto.devolverContenido(x,y+1).serTransitado(unNivel);
                     		    this.mover(x,y+1);
+                    		    this.nuevaUltimaPosicion(1);
                     		    y++;
                     		    }catch (NoTransitableException e3) {
                                 	try {
                                 		unLaberinto.devolverContenido(x+1,y).serTransitado(unNivel);
                             		    this.mover(x+1,y);
+                            		    this.nuevaUltimaPosicion(3);
                             		    x++;
                             		    }catch (NoTransitableException e4) {}
                             		    }
@@ -206,6 +224,14 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		}
 		public int getY() {
 			return this.obtenerPosicion().getY();
+		}
+
+		public void nuevaUltimaPosicion(int ultimaPosicion) {
+			this.ultimaPosicion = ultimaPosicion;
+		}
+
+		public int UltimaPosicion() {
+			return ultimaPosicion;
 		}
 	
 }
