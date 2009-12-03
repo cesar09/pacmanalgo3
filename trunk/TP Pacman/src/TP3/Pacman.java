@@ -44,7 +44,11 @@ public class Pacman extends Personaje implements Posicionable,Movible {
 	
 	public void renacer() {
 		Point posicion = new Point(13,23);
-		this.posicion=posicion;		
+		this.posicion=posicion;
+		sentidoY=0;
+		sentidoX=-1;
+		sentidoGraficoY=0;
+		sentidoGraficoX=-1;
 	}
 	
 	public void nuevoSentido(int i, int j) {
