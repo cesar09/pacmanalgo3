@@ -18,6 +18,8 @@ public class Nivel {
 	private Mesa fondo;
 	private int ultimoSentidoPacmanX;
 	private int ultimoSentidoPacmanY;
+	private TimerComestible timerComestible;
+	private boolean timerActivado=false;
 	
 
 	public Nivel(Juego unJuego, int nivel, Ventana ventana) throws ArchivoFueraDeFormatoException{
@@ -231,13 +233,17 @@ public class Nivel {
 		this.clyde.hacerseComestible();
 		int segundos = (12 - this.nivel);
 		if (segundos > 1){
-			new TimerComestible (segundos, this);
+			if(timerActivado) timerComestible.cancelarTimer();
+			timerComestible= new TimerComestible (segundos, this);
 		}else{
-			new TimerComestible (5, this);
+			if(timerActivado) timerComestible.cancelarTimer();
+			timerComestible= new TimerComestible (segundos, this);
 		}
+		timerActivado=true;
 	}
 	
 	public void hacerFantasmasNoComestibles(){
+		timerActivado=false;
 		this.blinky.hacerseNoComestible();
 		this.pinky.hacerseNoComestible();
 		this.inky.hacerseNoComestible();
