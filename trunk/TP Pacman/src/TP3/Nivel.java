@@ -15,7 +15,6 @@ public class Nivel {
 	private Pinky pinky;
 	private Inky inky;
 	private Clyde clyde;
-	private int ultimoSentidoPacman;
 	private Mesa fondo;
 	private int ultimoSentidoPacmanX;
 	private int ultimoSentidoPacmanY;
@@ -40,7 +39,6 @@ public class Nivel {
 			this.crearPersonajes(2);
 		}
 		configurarInterfazGrafica(ventana);
-		this.ultimoSentidoPacman=1;//TODO esto es necesario??? inicializo para q pacman vaya a la izquierda como ultimo movim.
 		new TimerFruta(15,this); 
 		new TimerVacio(22,this);
 	}
@@ -231,11 +229,11 @@ public class Nivel {
 		this.pinky.hacerseComestible();
 		this.inky.hacerseComestible();
 		this.clyde.hacerseComestible();
-		int segundos = (8 - this.nivel);
+		int segundos = (12 - this.nivel);
 		if (segundos > 1){
 			new TimerComestible (segundos, this);
 		}else{
-			new TimerComestible (2, this);
+			new TimerComestible (5, this);
 		}
 	}
 	

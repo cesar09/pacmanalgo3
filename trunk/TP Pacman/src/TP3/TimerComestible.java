@@ -6,11 +6,13 @@ package TP3;
 		
 		Timer timer;
 		Nivel miNivel;
-
-		public TimerComestible ( int segundos, Nivel miNivel ) {
-		this.timer = new Timer ( ) ;
-		this.miNivel = miNivel;
-		this.timer.schedule ( new RemindTask ( ) , segundos*1000 ) ;
+		private boolean contadorActivado=false;
+		public TimerComestible ( int segundos, Nivel miNivel ) {			
+			if(contadorActivado)timer.cancel () ;
+			this.timer = new Timer ( ) ;
+			this.miNivel = miNivel;
+			contadorActivado=true;
+			this.timer.schedule ( new RemindTask ( ) , segundos*1000 ) ;
 		}
 
 		private void hacerFantasmasNoComestibles(){
@@ -20,7 +22,8 @@ package TP3;
 		class RemindTask extends TimerTask {
 			public void run ( ) {
 				hacerFantasmasNoComestibles();
-				timer.cancel ( ) ; //Cancela el hilo del timer
+				timer.cancel () ; //Cancela el hilo del timer
+				contadorActivado=false;
 			}
 		}
 		
