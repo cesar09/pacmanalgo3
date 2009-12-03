@@ -28,9 +28,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 	private static final long serialVersionUID = 1L;
     private Image imagen;
 	
-	public Ventana(int ancho,int alto, MouseClickController unControladorMouse,KeyboardController unControladorTeclado){
-		this.addMouseListener(unControladorMouse);
-		this.addKeyListener(unControladorTeclado); 
+	public Ventana(int ancho,int alto){
 		setSize(ancho, alto);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		Dimension frameSize = getSize();
@@ -75,4 +73,10 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		this.repaint();
 	}
 	
+	public void addMouse(MouseClickController unControladorMouse){
+		this.addMouseListener(unControladorMouse);
+	}
+	public void addKeyboard(KeyboardController unControladorTeclado){
+		this.addKeyListener(unControladorTeclado);
+	}
 }
