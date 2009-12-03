@@ -33,7 +33,7 @@ public class VistaPacman implements Dibujable{
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo) {
 		int x=this.posicionable.getX();
 		int y=this.posicionable.getY();
-		if(contador<10){
+		if(contador<2){
 			if (this.movible.getSentidoY() == -1){
 				Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 				grafico.drawImage(imagenPacmanU,x*20,y*20, null);
@@ -52,11 +52,11 @@ public class VistaPacman implements Dibujable{
 			}
 			
 		}
-		if(contador>=10){
+		if(contador>=2){
 			Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();
 			grafico.drawImage(imagenPacmanCerrado,x*20,y*20, null);
 		}
-		if(contador==15) contador=1;
+		if(contador==2) contador=1;
 		else contador++;
 	}
 

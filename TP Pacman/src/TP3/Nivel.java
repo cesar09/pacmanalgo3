@@ -31,21 +31,21 @@ public class Nivel {
 		}catch(ArchivoFueraDeFormatoException e){
 			throw new ArchivoFueraDeFormatoException();
 		}
-		int velocidad = 10 - this.nivel;
+		int velocidad = 8 - this.nivel;
 		if (velocidad >2){
 			this.crearPersonajes(velocidad);
 		}else{
 			this.crearPersonajes(2);
 		}
 		configurarInterfazGrafica();
-		this.ultimoSentidoPacman=1;//inicializo para q vaya a la izquierda como ultimo movim.
+		this.ultimoSentidoPacman=1;//TODO esto es necesario??? inicializo para q pacman vaya a la izquierda como ultimo movim.
 		new TimerFruta(15,this); 
 		new TimerVacio(22,this);
 	}
 
 	protected void configurarInterfazGrafica() {
-		fondo=new Mesa(600,600);
-		VistaFondo vistaFondo=new VistaFondo();
+		fondo=new Mesa(740,625);
+		VistaFondo vistaFondo=new VistaFondo(fondo);
 		vistaFondo.setPosicionable(fondo);
 		
 		VistaLaberinto vistaLaberinto=new VistaLaberinto(miLaberinto);
@@ -79,9 +79,9 @@ public class Nivel {
 	}
 
 	private void crearPersonajes(int velocidad){
-		this.blinky = new Blinky (velocidad-1);
+		this.blinky = new Blinky (velocidad-2);
 		this.pinky = new Pinky (velocidad);
-		this.inky = new Inky (velocidad-1);
+		this.inky = new Inky (velocidad-2);
 		this.clyde = new Clyde (velocidad); 	
 		this.pacman = new Pacman ();
 	}
@@ -101,9 +101,9 @@ public class Nivel {
 		return (this.juego);
 	}
 	
-	public void moverFantasma (Fantasma unFantasma) throws PacmanAtrapadoException{
+	public void moverFantasma (Fantasma unFantasma, int tiempo) throws PacmanAtrapadoException{
 		if (unFantasma.estaEncerrado()){
-			new TimerSalirDeJaula (2, unFantasma);
+			new TimerSalirDeJaula (tiempo, unFantasma);
 		}else{
 			try{
 				unFantasma.elegirMovimiento(this);
@@ -117,10 +117,10 @@ public class Nivel {
 	
 	public void mueveFantasmas() throws PacmanAtrapadoException{
 		try{
-			this.moverFantasma(this.blinky);
-			this.moverFantasma(this.pinky);
-			this.moverFantasma(this.clyde);
-			this.moverFantasma(this.inky);
+			this.moverFantasma(this.blinky,2);
+			this.moverFantasma(this.pinky,10);
+			this.moverFantasma(this.clyde,18);
+			this.moverFantasma(this.inky,26);
 		}catch(PacmanAtrapadoException e){
 			this.llevarFantasmasAJaula();
 			this.llevarPacmanAPosicionInicial();
