@@ -35,23 +35,24 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			this.posicion.setXY(x, y); 
 		}
 		
-		public void elegirMovimiento (Nivel unNivel)throws PacmanAtrapadoException,FantasmaAtrapadoException{
+		public void elegirMovimiento (Nivel unNivel){
 			if(this.contador==velocidad){
 				if (this.esComestible()){ 
 					this.huirDePacman(unNivel);
 					if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
-						throw new FantasmaAtrapadoException();
+						this.fantasmaComido(unNivel);
 					}
 				}else{
-					if (!this.esComestible())
-						this.atraparPacman(unNivel);					
+					if (!this.esComestible()){
+						this.atraparPacman(unNivel);	
+						if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
+							unNivel.setPacmanAtrapado(true);
+						}
+					}
 				}
 				this.contador=1;
 			}
 			else this.contador++;
-			if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
-				throw new PacmanAtrapadoException();
-			}
 		}
 		
 		public Point obtenerPosicion() {
@@ -76,6 +77,15 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			this.irAJaula();			
 		}
 
+		
+		public void moverFantasma (Nivel unNivel) {
+			if (this.estaEncerrado()){
+				this.salirDeJaula();//TODO ACA VA LA PARTE DEL CONTADOR TIMER.
+			}else{
+					this.elegirMovimiento(unNivel);
+				}
+		}
+		
 
 		public Point distanciaPacman(Point posicionPacman) {
 			Point auxiliar = new Point(0,0);
