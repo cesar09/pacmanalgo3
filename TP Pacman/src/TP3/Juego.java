@@ -46,12 +46,11 @@ public class Juego {
 				this.pasarDeNivel();
 			}catch (InterruptedException e) {
 				e.printStackTrace();
-			}catch(JugadorSinVidasException e){
-				this.dibujar();
 			}
 		}catch(JuegoGanado e){ return;
 		}
 	}
+	
 	public void pasarDeNivel() throws JuegoGanado{
 		this.nivelActual++;
 		if(seGanoJuego()){
@@ -91,14 +90,11 @@ public class Juego {
 		return (this.jugador.obtenerVidasDisponibles());
 	}
 	
-	public void mover() throws NivelGanado, JugadorSinVidasException{
-		try {
+	public void mover() throws NivelGanado{
 			this.superficieDeDibujo.limpiar();
-			this.unNivel.mueveFantasmas();
+			this.unNivel.comenzarMoverFantasmas();
 			this.unNivel.muevePacman();
-		} catch (PacmanAtrapadoException e) {
-			this.jugador.perderVida();
-			}		
+
 		if (this.seGanoNivel()){
 			throw new NivelGanado();
 		}
@@ -124,5 +120,12 @@ public class Juego {
 	}
 	public void setIntervaloSimulacion(long intervaloSimulacion) {
 		this.intervaloSimulacion = intervaloSimulacion;
+	}
+	public void pacmanFueAtrapado() {
+		this.jugador.perderVida();	
+		if (this.jugador.obtenerVidasDisponibles() == 0){
+			System.out.println("PERDISTE");//TODO HAY Q CAMBIAR ESTA PARTE
+		}		
 	}	
+	
 }

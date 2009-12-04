@@ -14,6 +14,8 @@ public class Nivel {
 	private Pinky pinky;
 	private Inky inky;
 	private Clyde clyde;
+	private boolean pacmanAtrapado;//TODO ESTE ATRIBUTO HAY Q BORRARLO DESP DE ENCONTRAR OTRA FORMA DE HACERLO.
+	
 	private Mesa fondo;
 	private int ultimoSentidoPacmanX;
 	private int ultimoSentidoPacmanY;
@@ -103,39 +105,26 @@ public class Nivel {
 		return (this.juego);
 	}
 	
-	public void moverFantasma (Fantasma unFantasma, int tiempoEncerrado) throws PacmanAtrapadoException{
-		if (unFantasma.estaEncerrado()){
-			timerSalirDeJaula = new TimerSalirDeJaula (tiempoEncerrado, unFantasma);
-		}else{
-			try{
-				unFantasma.elegirMovimiento(this);
-			}catch(PacmanAtrapadoException e){
-				throw new PacmanAtrapadoException ();
-			}catch(FantasmaAtrapadoException e2){
-				unFantasma.fantasmaComido(this);
-			}
-		}
-	}
 	
-	public void mueveFantasmas() throws PacmanAtrapadoException{
-		try{
-			this.moverFantasma(this.blinky,10);
-			this.moverFantasma(this.pinky,15);
-			this.moverFantasma(this.clyde,20);
-			this.moverFantasma(this.inky,25);
-		}catch(PacmanAtrapadoException e){
-			this.llevarFantasmasAJaula();
-			this.llevarPacmanAPosicionInicial();
-			throw new PacmanAtrapadoException ();
-		}
+	public void comenzarMoverFantasmas(){
+			this.blinky.moverFantasma(this);
+			this.pinky.moverFantasma(this);
+			this.clyde.moverFantasma(this);
+			this.inky.moverFantasma(this);
+			if(this.pacmanFueAtrapado()){
+				this.llevarFantasmasAJaula();
+				this.llevarPacmanAPosicionInicial();
+				this.juego.pacmanFueAtrapado();
+				this.setPacmanAtrapado(false);
+			}
 	}
 		
 	
-	public void muevePacman() throws PacmanAtrapadoException{
+	public void muevePacman(){
 			if(!this.moverSegunSentido(false)) this.moverSegunSentido(true);
 		}	
 	
-	protected boolean moverSegunSentido(boolean moverSegunUltimoSentido) throws PacmanAtrapadoException{
+	protected boolean moverSegunSentido(boolean moverSegunUltimoSentido){
 		int x;
 		int y;
 		int sentidoEnX=this.pacman.getSentidoX();
@@ -268,17 +257,27 @@ public class Nivel {
 	}
 
 	
-	public void comeOMuere(Fantasma unFantasma) throws PacmanAtrapadoException{
+	public void comeOMuere(Fantasma unFantasma){
 		if (mismaPosicion(unFantasma,this.obtenerPacman())){
 			if(unFantasma.esComestible()){
 				unFantasma.fantasmaComido(this);
 			}else{
 				this.llevarFantasmasAJaula();
 				this.llevarPacmanAPosicionInicial();
-				throw new PacmanAtrapadoException();
+				this.juego.pacmanFueAtrapado();
+				this.setPacmanAtrapado(false);
 			}
 				
 		}
+	}
+	
+	
+	public void setPacmanAtrapado(boolean estado){//TODO ESTE METODO HAY Q BORRARLO DESP DE ENCONTRAR OTRA FORMA DE HACERLO.
+		this.pacmanAtrapado = estado;
+	}
+	
+	public boolean pacmanFueAtrapado(){//TODO ESTE METODO HAY Q BORRARLO DESP DE ENCONTRAR OTRA FORMA DE HACERLO.
+		return this.pacmanAtrapado;
 	}
 	
 }

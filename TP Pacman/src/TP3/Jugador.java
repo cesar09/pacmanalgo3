@@ -18,11 +18,8 @@ public class Jugador {
 		return this.puntaje;
 	}
 	
-	public void perderVida() throws JugadorSinVidasException{
+	public void perderVida(){
 		this.vidas--;
-		if (this.vidas == 0){
-			throw new JugadorSinVidasException();			
-		}
 	}
 	
 	public int obtenerVidasDisponibles(){
