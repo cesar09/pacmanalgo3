@@ -8,6 +8,4 @@ public interface Contenido {
 	
 	abstract public void serTransitado(Nivel unNivel) throws NoTransitableException;
 
-	public abstract void dibujar(SuperficieDeDibujo superficie, int x, int y);	
-	
 }

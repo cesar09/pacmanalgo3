@@ -6,6 +6,7 @@ import interfasesYControladores.*;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
+
 import com.sun.image.codec.jpeg.*;
 import TP3.*;
 
@@ -13,10 +14,18 @@ public class VistaLaberinto implements Dibujable{
 
 	private Posicionable laberinto;
 	private Laberinto unLaberinto;
+	private VistaContenido vistaPunto;
+	private VistaContenido vistaPuntoPoder;
+	private VistaContenido vistaBloque;
+	private VistaContenido vistaFruta;
 	
 	public VistaLaberinto(Laberinto unLaberinto){
 		this.unLaberinto=unLaberinto;
 		this.setPosicionable(unLaberinto);
+		this.vistaPunto = new VistaContenido("punto.jpg");
+		this.vistaPuntoPoder = new VistaContenido("puntopoder.jpg");
+		this.vistaBloque = new VistaContenido("bloque.jpg");
+		this.vistaFruta = new VistaContenido("fruta.jpg");
 	}
 	
 	public void dibujar(SuperficieDeDibujo superficie) {
@@ -26,7 +35,25 @@ public class VistaLaberinto implements Dibujable{
 		for (int y = 0; y < cantidadFilas; y++) {
 			for (int x = 0; x < cantidadColumnas ; x++) {				
 				unContenido=unLaberinto.devolverContenido(x,y);
-				unContenido.dibujar(superficie,x,y); 
+				if (unContenido instanceof Punto){
+					this.vistaPunto.dibujar(superficie,x,y);
+				}else{
+					if (unContenido instanceof PuntoPoder){
+						this.vistaPuntoPoder.dibujar(superficie,x,y);
+					}else{
+						if (unContenido instanceof Bloque){
+							this.vistaBloque.dibujar(superficie,x,y);
+						}else{
+							if (unContenido instanceof Vacio){
+
+							}else{
+								if (unContenido instanceof Fruta){
+									this.vistaFruta.dibujar(superficie,x,y);
+								}
+							}
+						}
+					}
+				}
 				}
 		}
 	}

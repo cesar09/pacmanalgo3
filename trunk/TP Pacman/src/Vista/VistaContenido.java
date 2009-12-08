@@ -14,10 +14,10 @@ public class VistaContenido{
 	private Posicionable posicionable;
 	private Contenido unContenido;
 	
-	public VistaContenido(Contenido unContenido, String nombreArchivoImagen) {
-		this.unContenido=unContenido;
+	public VistaContenido(String nombreArchivoImagen) {
 		setNombreArchivoImagen(nombreArchivoImagen);
 	}	
+	
 	//redefino dibujar de la clase Imagen.
 	public void dibujar(SuperficieDeDibujo superficeDeDibujo, int x, int y) {
 			Graphics grafico = ((Ventana)superficeDeDibujo).getGrafico();

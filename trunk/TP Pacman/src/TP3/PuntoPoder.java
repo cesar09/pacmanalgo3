@@ -9,7 +9,6 @@ public class PuntoPoder extends Comestible {
 
 	public PuntoPoder (){
 		this.puntaje = 50;
-		vistaPuntoPoder=new VistaContenido(this,"puntopoder.jpg");	
 	}
 	
 	public void hayPacman(Nivel unNivel,int x,int y) {
@@ -21,7 +20,5 @@ public class PuntoPoder extends Comestible {
 
 	public void serTransitado(Nivel unNivel){		
 	}	
-	public void dibujar(SuperficieDeDibujo superficie,int x,int y) {
-		vistaPuntoPoder.dibujar(superficie,x,y);
-	}
+
 }
