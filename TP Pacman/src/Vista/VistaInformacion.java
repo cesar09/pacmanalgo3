@@ -4,6 +4,8 @@ import graphicCollection.*;
 import java.awt.Font;
 import interfasesYControladores.*;
 import java.awt.*;
+
+import modelo.Nivel;
 import TP3.*;
 
 public class VistaInformacion implements Dibujable{

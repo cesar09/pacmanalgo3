@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 public class Jugador {
 	
 	private int puntaje;

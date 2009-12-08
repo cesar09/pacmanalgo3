@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 public class Clyde extends Fantasma {
 
 	public Clyde(int velocidadInicial) {

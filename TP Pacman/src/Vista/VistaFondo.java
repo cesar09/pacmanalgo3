@@ -4,7 +4,8 @@ import graphicCollection.Cuadrado;
 
 import java.awt.Color;
 
-import TP3.Mesa;
+import modelo.Mesa;
+
 
 
 public class VistaFondo extends Cuadrado {

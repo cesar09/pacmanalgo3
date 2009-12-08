@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 public class Inky extends Fantasma {
 
 	public Inky(int velocidadInicial) {

@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 public abstract class Personaje {
 
 	protected Point posicion;

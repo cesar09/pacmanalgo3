@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 public class Blinky extends Fantasma {
 
 	public Blinky(int velocidadInicial) {

@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 
 import interfasesYControladores.SuperficieDeDibujo;
 

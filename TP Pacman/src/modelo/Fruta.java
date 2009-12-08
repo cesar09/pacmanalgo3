@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 
 import Vista.VistaContenido;
 import interfasesYControladores.SuperficieDeDibujo;

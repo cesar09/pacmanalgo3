@@ -1,5 +1,9 @@
 package PruebasUnitarias;
 
+import modelo.ArchivoFueraDeFormatoException;
+import modelo.Fruta;
+import modelo.Juego;
+import modelo.Nivel;
 import graphicCollection.Ventana;
 import junit.framework.TestCase;
 import TP3.*;

@@ -1,5 +1,6 @@
 package PruebasUnitarias;
 
+import modelo.Jugador;
 import junit.framework.TestCase;
 import TP3.*;
 
