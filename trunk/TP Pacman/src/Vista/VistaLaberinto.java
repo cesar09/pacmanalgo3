@@ -7,6 +7,14 @@ import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 
+import modelo.Bloque;
+import modelo.Contenido;
+import modelo.Fruta;
+import modelo.Laberinto;
+import modelo.Punto;
+import modelo.PuntoPoder;
+import modelo.Vacio;
+
 import com.sun.image.codec.jpeg.*;
 import TP3.*;
 

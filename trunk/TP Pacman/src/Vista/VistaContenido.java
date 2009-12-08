@@ -5,6 +5,9 @@ import interfasesYControladores.*;
 
 import java.awt.*;
 import java.io.InputStream;
+
+import modelo.Contenido;
+
 import com.sun.image.codec.jpeg.*;
 import TP3.*;
 

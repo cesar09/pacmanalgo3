@@ -1,5 +1,12 @@
 package PruebasUnitarias;
 
+import modelo.ArchivoFueraDeFormatoException;
+import modelo.Bloque;
+import modelo.Fruta;
+import modelo.Laberinto;
+import modelo.Punto;
+import modelo.PuntoPoder;
+import modelo.Vacio;
 import junit.framework.TestCase;
 import TP3.*;
 

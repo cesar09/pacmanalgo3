@@ -1,5 +1,6 @@
 package principal;
 
+import modelo.Juego;
 import TP3.*;
 
 public class ProgramaPrincipal {

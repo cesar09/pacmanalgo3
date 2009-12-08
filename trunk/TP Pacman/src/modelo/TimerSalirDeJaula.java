@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 import java.util.Timer;
 import java.util.TimerTask;
 

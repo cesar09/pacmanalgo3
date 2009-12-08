@@ -1,4 +1,4 @@
-package TP3;
+package modelo;
 public class NoTransitableException extends Exception {
 
 }
