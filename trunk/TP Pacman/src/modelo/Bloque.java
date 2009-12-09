@@ -9,7 +9,7 @@ public class Bloque implements Contenido {
 		throw new NoTransitableException();
 	}
 
-	public void serTransitado(Nivel unNivel) throws NoTransitableException {
+	public void serTransitado(Nivel unNivel, Fantasma unFantasma, int x, int y) throws NoTransitableException {
 		throw new NoTransitableException();		
 	}
 

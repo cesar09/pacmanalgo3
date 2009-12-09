@@ -93,11 +93,18 @@ public class Pacman extends Personaje implements Posicionable,Movible {
 	}
 
 	public void serTransportadoADerecha() {
-			this.mover(28,8);
+		/*int x = this.obtenerPosicion().getX();
+		int y = this.obtenerPosicion().getY();		
+		try{
+			this.mover(x+27, y);
+		}catch (IllegalArgumentException e){
+			this.mover(x-24, y);
+		}*/
+		this.mover(27,8);
 	}
 	
 	public void serTransportadoAIzquierda() {
-		this.mover(-1,8);
+		this.mover(0,8);
 	}
 	
 }

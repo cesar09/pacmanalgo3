@@ -13,7 +13,7 @@ public class Punto extends Comestible {
 		unNivel.obtenerMiLaberinto().agregarVacio(x,y);
 	}
 	
-	public void serTransitado(Nivel unNivel){
+	public void serTransitado(Nivel unNivel, Fantasma unFantasma, int x, int y){
 		
 	}
 

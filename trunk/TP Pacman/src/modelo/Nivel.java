@@ -116,7 +116,7 @@ public class Nivel {
 		case 1:
 			//Si se desea ir para la derecha.
 			x = x+1;
-			try {
+			  try {
 				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
 				 this.pacman.irDerecha();
 				 ultimoSentidoPacmanX=1;
@@ -128,7 +128,7 @@ public class Nivel {
 					 this.comeOMuere(this.inky);
 					 return true;
 				 }
-			} catch (NoTransitableException e) {}
+			  } catch (NoTransitableException e) {}
 			 break;
 		}
 		switch (sentidoEnY){
@@ -262,12 +262,42 @@ public class Nivel {
 	public void transportarPacman(int x) {
 		if(x==0){
 			this.pacman.serTransportadoADerecha();
-		}
+			try{	
+				int posicionPacmanX = this.pacman.obtenerPosicion().getX()-1;
+				int posicionPacmanY = this.pacman.obtenerPosicion().getY();
+				this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
+			   } catch (NoTransitableException e) {}
+			}
 		
 		if(x==27){
 			this.pacman.serTransportadoAIzquierda();
+		    try{	
+			   int posicionPacmanX = this.pacman.obtenerPosicion().getX()+1;
+			   int posicionPacmanY = this.pacman.obtenerPosicion().getY();
+			   this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
+		    } catch (NoTransitableException e) {}
 		}
+	}
+
+
+	public void transportarFantasma(Fantasma unFantasma, int x) {
+		if(x==0){
+			unFantasma.serTransportadoADerecha();
+			try{	
+				int posicionPacmanX = unFantasma.obtenerPosicion().getX()-1;
+				int posicionPacmanY = unFantasma.obtenerPosicion().getY();
+				this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
+			   } catch (NoTransitableException e) {}
+			}
 		
+		if(x==27){
+			unFantasma.serTransportadoAIzquierda();
+		    try{	
+			   int posicionPacmanX = unFantasma.obtenerPosicion().getX()+1;
+			   int posicionPacmanY = unFantasma.obtenerPosicion().getY();
+			   this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
+		    } catch (NoTransitableException e) {}
+		}	
 	}
 	
 }
