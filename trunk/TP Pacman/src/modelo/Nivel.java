@@ -257,4 +257,17 @@ public class Nivel {
 	public Inky obtenerInky(){
 		return (this.inky);
 	}
+
+
+	public void transportarPacman(int x) {
+		if(x==0){
+			this.pacman.serTransportadoADerecha();
+		}
+		
+		if(x==27){
+			this.pacman.serTransportadoAIzquierda();
+		}
+		
+	}
+	
 }

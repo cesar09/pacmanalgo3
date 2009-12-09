@@ -91,4 +91,13 @@ public class Pacman extends Personaje implements Posicionable,Movible {
 	public int getSentidoGraficoY() {
 		return sentidoGraficoY;
 	}
+
+	public void serTransportadoADerecha() {
+			this.mover(28,8);
+	}
+	
+	public void serTransportadoAIzquierda() {
+		this.mover(-1,8);
+	}
+	
 }
