@@ -1,6 +1,5 @@
 package graphicCollection;
 
-import interfasesYControladores.ControladorJuego;
 import interfasesYControladores.SuperficieDeDibujo;
 
 import java.awt.Color;
@@ -8,7 +7,6 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.TextField;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

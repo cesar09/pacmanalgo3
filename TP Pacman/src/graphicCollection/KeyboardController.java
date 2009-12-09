@@ -1,19 +1,9 @@
 package graphicCollection;
 
-import interfasesYControladores.ControladorJuego;
-import interfasesYControladores.ObjetoVivo;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 import modelo.Pacman;
-
-import TP3.*;
 	
-
 public class KeyboardController extends KeyAdapter{
 	
 	private Pacman unPacman;

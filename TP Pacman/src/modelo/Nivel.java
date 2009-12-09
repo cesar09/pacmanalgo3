@@ -16,17 +16,16 @@ public class Nivel {
 	private Clyde clyde;
 	private boolean pacmanAtrapado;//TODO ESTE ATRIBUTO HAY Q BORRARLO DESP DE ENCONTRAR OTRA FORMA DE HACERLO.
 	
-	private Mesa fondo;
 	private int ultimoSentidoPacmanX;
 	private int ultimoSentidoPacmanY;
 	private TimerComestible timerComestible;
 	private boolean timerActivado=false;
 	private boolean timerComestibleActivado;
-	private TimerSalirDeJaula timerSalirDeJaula;
-	private boolean timerSalirActivado=false;
+	//private TimerSalirDeJaula timerSalirDeJaula;
+	//private boolean timerSalirActivado=false;
 	
 
-	public Nivel(Juego unJuego, int nivel, Ventana ventana) throws ArchivoFueraDeFormatoException{
+	public Nivel(Juego unJuego, int nivel) throws ArchivoFueraDeFormatoException{
 		//La idea es q reciba el numero de nivel por parametro y en base al
 		//nivel se crea el laberinto. Tmb pense en darle a velocidad el mismo
 		//valor q nivel, entonces a medida q avanza niveles, la velocidad de
@@ -40,47 +39,10 @@ public class Nivel {
 			this.crearPersonajes(velocidad);
 		else
 			this.crearPersonajes(2);
-		
-		configurarInterfazGrafica(ventana);
 		new TimerFruta(15,this); 
 		new TimerVacio(22,this);
 	}
 
-	protected void configurarInterfazGrafica(Ventana ventana) {
-		fondo=new Mesa(565,650);
-		VistaFondo vistaFondo=new VistaFondo(fondo);
-		vistaFondo.setPosicionable(fondo);
-		
-		VistaLaberinto vistaLaberinto=new VistaLaberinto(miLaberinto);
-		VistaFantasma vistaPinky=new VistaFantasma(pinky,"pinky.jpg");
-		vistaPinky.setPosicionable(pinky);
-
-		VistaFantasma vistaBlinky=new VistaFantasma(blinky,"blinky.jpg");
-		vistaBlinky.setPosicionable(blinky);
-		
-		VistaFantasma vistaClyde=new VistaFantasma(clyde,"clyde.jpg");
-		vistaClyde.setPosicionable(clyde);
-		
-		VistaFantasma vistaInky=new VistaFantasma(inky,"inky.jpg");
-		vistaInky.setPosicionable(inky);
-		
-		VistaPacman vistaPacman=new VistaPacman(this.pacman);		
-		vistaPacman.setPosicionable(pacman);
-		vistaPacman.setMovible(pacman);
-		KeyboardController teclado=new KeyboardController(this.pacman);
-		ventana.addKeyboard(teclado);
-		VistaInformacion informacion = new VistaInformacion(this);
-		
-		ventana.setVisible(true);
-		this.juego.agregarDibujable(vistaFondo);
-		this.juego.agregarDibujable(vistaLaberinto);
-		this.juego.agregarDibujable(vistaPacman);
-		this.juego.agregarDibujable(vistaPinky);
-		this.juego.agregarDibujable(vistaClyde);
-		this.juego.agregarDibujable(vistaBlinky);
-		this.juego.agregarDibujable(vistaInky);
-		this.juego.agregarDibujable(informacion);
-	}
 
 	private void crearPersonajes(int velocidad){
 		this.blinky = new Blinky (velocidad-2);
@@ -280,4 +242,22 @@ public class Nivel {
 		return this.pacmanAtrapado;
 	}
 	
+	public Pinky obtenerPinky(){
+		return (this.pinky);
+	}
+	
+	
+	public Blinky obtenerBlinky(){
+		return (this.blinky);
+	}
+	
+	
+	public Clyde obtenerClyde(){
+		return (this.clyde);
+	}
+	
+	
+	public Inky obtenerInky(){
+		return (this.inky);
+	}
 }

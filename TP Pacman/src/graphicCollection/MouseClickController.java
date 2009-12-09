@@ -1,7 +1,5 @@
 package graphicCollection;
 
-import interfasesYControladores.ControladorJuego;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
