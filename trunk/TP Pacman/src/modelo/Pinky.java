@@ -1,6 +1,5 @@
 package modelo;
 
-import interfasesYControladores.Posicionable;
 
 public class Pinky extends Fantasma  {
 

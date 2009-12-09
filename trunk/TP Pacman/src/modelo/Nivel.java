@@ -1,8 +1,5 @@
 package modelo;
 
-import graphicCollection.*;
-import Vista.*;
-
 public class Nivel {
 	
 	private Juego juego;

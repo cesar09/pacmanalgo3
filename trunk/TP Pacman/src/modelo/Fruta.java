@@ -1,11 +1,7 @@
 package modelo;
 
-import Vista.VistaContenido;
-import interfasesYControladores.SuperficieDeDibujo;
-
 public class Fruta extends Comestible {
 
-	private VistaContenido vistaFruta;
 	public Fruta (){
 		this.puntaje = 100;
 	}

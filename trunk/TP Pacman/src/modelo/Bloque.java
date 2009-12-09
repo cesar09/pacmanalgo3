@@ -1,11 +1,7 @@
 package modelo;
 
-import Vista.VistaContenido;
-import interfasesYControladores.*;
-
 public class Bloque implements Contenido {
 
-	private VistaContenido vistaBloque; 
 	public Bloque(){	
 	}
 
