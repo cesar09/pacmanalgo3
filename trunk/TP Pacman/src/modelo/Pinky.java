@@ -8,7 +8,7 @@ public class Pinky extends Fantasma  {
 	}
 	
 	public void atraparPacman(Nivel unNivel){
-		int numeroAleatorio = (int) (Math.random()*1+4);
+		int numeroAleatorio = (int) (Math.random()*3);
 		 switch(numeroAleatorio) {
 		 case 0:
 			 this.moverDerecha(unNivel);
