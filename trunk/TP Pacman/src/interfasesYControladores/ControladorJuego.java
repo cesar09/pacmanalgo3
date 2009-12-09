@@ -1,61 +1,47 @@
 package interfasesYControladores;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
+import graphicCollection.*;
+import Vista.*;
+import modelo.*;
 
-/**
- * @author Nicolas
- * Esta clase es la encargada de manejar todo el gameloop. Básicamente tiene una lista
- * de ObjetosVivos y una Dibujables que son recorridas en cada gameloop.
- */
 public class ControladorJuego {
-	private long intervaloSimulacion;
-	private boolean estaEnEjecucion;
-	private ObjetoVivo unPacman;
-	private List objetosVivos;
-	private List dibujables;
-	private List mouseClickObservadores;//TODO esto es necesario?
-	private SuperficieDeDibujo superficieDeDibujo;	
 	
-	public ControladorJuego(){
-		this.objetosVivos = new ArrayList();
+	private List dibujables;
+	private Juego miJuego;
+	private boolean estaEnEjecucion;
+	private long intervaloSimulacion;
+	private SuperficieDeDibujo superficieDeDibujo;
+	
+	
+	public ControladorJuego(Juego unJuego){
 		this.dibujables = new ArrayList();
-		this.mouseClickObservadores = new ArrayList();
+		this.miJuego = unJuego;
 	}
+	
 	
 	public void comenzar(){
 		estaEnEjecucion = true;
 		try{
-			
-		while(estaEnEjecucion){
-			simular();
-			dibujar();
-			Thread.sleep(intervaloSimulacion);
+			try{			
+				while(estaEnEjecucion){
+					miJuego.mover();
+					this.dibujar();
+					Thread.sleep(intervaloSimulacion);
+				}
+			}
+			catch (NivelGanado e) {
+				this.dibujar();
+				miJuego.pasarDeNivel();
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}catch(JuegoGanado e){ return;
 		}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	public void detener(){
-		this.estaEnEjecucion = false;
-	}
-	
-	public void agregarObjetoVivo(ObjetoVivo objetoVivo){
-		objetosVivos.add(objetoVivo);
-		unPacman=objetoVivo;
-	}
-	public ObjetoVivo getObjetoVivo(){
-		return unPacman;
-	}
-	
-	
-	public void removerSimulador(ObjetoVivo objetoVivo){
-		objetosVivos.remove(objetoVivo);
 	}
 
+	
 	public void agregarDibujable(Dibujable unDibujable){
 		dibujables.add(unDibujable);
 	}
@@ -72,26 +58,19 @@ public class ControladorJuego {
 		this.intervaloSimulacion = intervaloSimulacion;
 	}
 
+
 	private void dibujar() {
+		this.superficieDeDibujo.limpiar();
 		Iterator iterador = dibujables.iterator();
 		while(iterador.hasNext()){
 			Dibujable dibujable = (Dibujable)iterador.next();
 			dibujable.dibujar(this.superficieDeDibujo);
-			//System.out.println(dib.getPosicionable().getX());
-			//System.out.println( dib.getPosicionable().getY());
-		}
+		}		
 		this.superficieDeDibujo.actualizar();
 	}
 	
-	private void simular() {
-		this.superficieDeDibujo.limpiar();
-		Iterator iterador = objetosVivos.iterator();
-		while(iterador.hasNext()){
-			((ObjetoVivo)iterador.next()).vivir();
-		}
-	}
 
-	public SuperficieDeDibujo getSuperficieDeDibujo() {
+	public SuperficieDeDibujo obtenerSuperficieDeDibujo() {
 		return superficieDeDibujo;
 	}
 
@@ -99,23 +78,4 @@ public class ControladorJuego {
 		this.superficieDeDibujo = superficieDeDibujo;
 	}
 	
-	/*
-	 * Se encarga de derivar el manejo del evento click al objeto vista correspondiente
-	 */
-	public void despacharMouseClick(int x, int y){
-		MouseClickObservador mouseClickObservador;
-		Iterator iterador = this.mouseClickObservadores.iterator();
-		while(iterador.hasNext()){
-			mouseClickObservador = (MouseClickObservador)iterador.next();
-			mouseClickObservador.MouseClick(x, y);
-		}
-	}
-	
-	public void agregarMouseClickObservador(MouseClickObservador unMouseClickObservador){
-		this.mouseClickObservadores.add(unMouseClickObservador);
-	}
-	
-	public void removerMouseClickObservador(MouseClickObservador unMouseClickObservador){
-		this.mouseClickObservadores.remove(unMouseClickObservador);
-	}
 }
