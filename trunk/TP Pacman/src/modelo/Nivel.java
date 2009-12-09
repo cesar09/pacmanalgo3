@@ -283,20 +283,9 @@ public class Nivel {
 	public void transportarFantasma(Fantasma unFantasma, int x) {
 		if(x==0){
 			unFantasma.serTransportadoADerecha();
-			try{	
-				int posicionPacmanX = unFantasma.obtenerPosicion().getX()-1;
-				int posicionPacmanY = unFantasma.obtenerPosicion().getY();
-				this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
-			   } catch (NoTransitableException e) {}
 			}
-		
 		if(x==27){
 			unFantasma.serTransportadoAIzquierda();
-		    try{	
-			   int posicionPacmanX = unFantasma.obtenerPosicion().getX()+1;
-			   int posicionPacmanY = unFantasma.obtenerPosicion().getY();
-			   this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
-		    } catch (NoTransitableException e) {}
 		}	
 	}
 	

@@ -102,6 +102,9 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	y++;
 	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        	}
                 this.mover(x,y);
                 this.nuevaUltimaPosicion(1);
                 }catch (NoTransitableException e1) {
@@ -116,6 +119,9 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	y--;
 	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        	}
                 this.mover(x,y);
                 this.nuevaUltimaPosicion(0);
                 }catch (NoTransitableException e1) {
@@ -131,6 +137,9 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	x++;
 	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        	}
                 this.mover(x,y);
                 this.nuevaUltimaPosicion(3);
                 }catch (NoTransitableException e1) {
@@ -145,13 +154,15 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        try {
 	        	x--;
 	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
-                this.mover(x,y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        	}
                 this.nuevaUltimaPosicion(2);
                 }catch (NoTransitableException e1) {
                 	this.moverAbajo(unNivel);
-            		    }
-			
+            	 }
 		}
+		
 		public int getX() {
 			return this.obtenerPosicion().getX();
 		}
@@ -168,11 +179,11 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		}
 		
 		public void serTransportadoADerecha() {
-			this.mover(27,8);
+			this.mover(26,8);
 		}
 		
 		public void serTransportadoAIzquierda() {
-			this.mover(0,8);
+			this.mover(1,8);
 		}
 	
 }

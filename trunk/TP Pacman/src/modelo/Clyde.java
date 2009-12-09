@@ -9,7 +9,7 @@ public class Clyde extends Fantasma {
 	public void atraparPacman(Nivel unNivel) {
 		 switch(this.UltimaPosicion()) {
 		 case 0:
-			 this.moverArriba(unNivel);
+			 this.moverDerecha(unNivel);
 		     break;
 		 case 1:
 			 this.moverAbajo(unNivel);
@@ -17,7 +17,7 @@ public class Clyde extends Fantasma {
 		 case 2:
 			 this.moverIzquierda(unNivel);
 		 case 3:
-			 this.moverDerecha(unNivel);
+			 this.moverArriba(unNivel);
 			 break;
 		 }
 	}
