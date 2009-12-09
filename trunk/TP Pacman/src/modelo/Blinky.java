@@ -30,6 +30,7 @@ public class Blinky extends Fantasma {
 		Point posicion = new Point (13,13);
 		this.posicion = posicion;
 		this.encerrado = true;
+		this.hacerseNoComestible();
 	}
 	
 	public void salirDeJaula (){

@@ -27,7 +27,57 @@ public class Inky extends Fantasma {
 			}else{//sino se mueve y--
 		        this.moverArriba(unNivel);
 			}
-		}		
+		}	
+		
+		/*Point PosicionPacman = unNivel.obtenerPacman().obtenerPosicion();
+		int pacmanX = PosicionPacman.getX();
+		int pacmanY = PosicionPacman.getY();
+		int x = this.obtenerPosicion().getX();
+		int y = this.obtenerPosicion().getY();
+		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
+		if ((pacmanX < this.obtenerPosicion().getX()) && (!this.yaMovio())){
+			try {
+	        	x--;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        		this.setYaMovido(true);
+	        	}
+                }catch (NoTransitableException e1) {}
+		}
+		
+		if ((pacmanX > this.obtenerPosicion().getX()) && (!this.yaMovio())){
+			try {
+	        	x++;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        		this.setYaMovido(true);
+	        	}
+                }catch (NoTransitableException e1) {}
+		}
+		
+		if ((pacmanY < this.obtenerPosicion().getY()) && (!this.yaMovio())){
+			try {
+	        	y++;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        		this.setYaMovido(true);
+	        	}
+                }catch (NoTransitableException e1) {}
+		}
+		
+		if ((pacmanY > this.obtenerPosicion().getY()) && (!this.yaMovio())){
+			try {
+	        	y--;
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
+	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
+	        		this.mover(x,y);
+	        		this.setYaMovido(true);
+	        	}
+                }catch (NoTransitableException e1) {}
+		}*/
 	}
 
 	public void huirDePacman(Nivel unNivel) {
@@ -38,6 +88,7 @@ public class Inky extends Fantasma {
 		Point posicion = new Point (14,14);
 		this.posicion = posicion;
 		this.encerrado = true;
+		this.hacerseNoComestible();
 	}
 	
 	public void salirDeJaula (){

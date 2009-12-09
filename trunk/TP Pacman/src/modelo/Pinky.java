@@ -33,6 +33,8 @@ public class Pinky extends Fantasma  {
 		Point posicion = new Point (13,14);
 		this.posicion = posicion;
 		this.encerrado = true;
+		this.hacerseNoComestible();
+
 	}
 	
 	
