@@ -31,11 +31,11 @@ public class Nivel {
 		this.nivel=nivel;
 		this.miLaberinto = new Laberinto (this.nivel);
 		
-		int velocidad = 8 - this.nivel;
-		if (velocidad >2)
+		int velocidad = 4 - this.nivel;
+		if (velocidad >3)
 			this.crearPersonajes(velocidad);
 		else
-			this.crearPersonajes(2);
+			this.crearPersonajes(3);
 		new TimerFruta(15,this); 
 		new TimerVacio(22,this);
 	}

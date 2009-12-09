@@ -9,6 +9,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		private int contador;
 		protected boolean encerrado;
 		private int ultimaPosicion;
+		private boolean yaMovido;
 
 		
 		
@@ -17,6 +18,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			this.comestible = false;
 			this.velocidad = velocidadInicial;
 			this.contador=1;
+			this.yaMovido = false;
 		}
 		
 		public boolean estaEncerrado(){
@@ -36,6 +38,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		}
 		
 		public void elegirMovimiento (Nivel unNivel){
+			this.yaMovido = false;
 			if(this.contador==velocidad){
 				if (this.esComestible()){ 
 					this.huirDePacman(unNivel);
@@ -105,7 +108,6 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-                this.mover(x,y);
                 this.nuevaUltimaPosicion(1);
                 }catch (NoTransitableException e1) {
                 	this.moverDerecha(unNivel);
@@ -122,7 +124,6 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-                this.mover(x,y);
                 this.nuevaUltimaPosicion(0);
                 }catch (NoTransitableException e1) {
                 	this.moverIzquierda(unNivel);
@@ -140,7 +141,6 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-                this.mover(x,y);
                 this.nuevaUltimaPosicion(3);
                 }catch (NoTransitableException e1) {
                 	this.moverArriba(unNivel);
@@ -184,6 +184,14 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		
 		public void serTransportadoAIzquierda() {
 			this.mover(1,8);
+		}
+
+		public void setYaMovido(boolean yaMovido) {
+			this.yaMovido = yaMovido;
+		}
+
+		public boolean yaMovio() {
+			return yaMovido;
 		}
 	
 }
