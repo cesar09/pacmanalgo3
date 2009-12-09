@@ -72,9 +72,8 @@ public class Juego {
 	
 	
 	public void mover() throws NivelGanado{
-			this.unNivel.comenzarMoverFantasmas();
-			this.unNivel.muevePacman();
-
+		this.unNivel.comenzarMoverFantasmas();
+		this.unNivel.muevePacman();
 		if (this.seGanoNivel()){
 			throw new NivelGanado();
 		}
@@ -91,9 +90,6 @@ public class Juego {
 	
 	public void pacmanFueAtrapado() {
 		this.jugador.perderVida();	
-		if (this.jugador.obtenerVidasDisponibles() == 0){
-			System.out.println("PERDISTE");//TODO HAY Q CAMBIAR ESTA PARTE
-		}		
 	}	
 	
 	

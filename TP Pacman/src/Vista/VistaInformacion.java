@@ -23,8 +23,9 @@ public class VistaInformacion implements Dibujable{
 			grafico.setColor(miColor);
 			grafico.setFont(new Font("fuente",  Font.BOLD, 20));
 			int vidas=this.miNivel.obtenerMiJuego().obtenerVidasDisponibles();
-			grafico.drawString("VIDAS: "+ vidas, 100, 640);
-			grafico.drawString("PUNTAJE: "+ this.miNivel.obtenerMiJuego().obtenerPuntajeDelJugador(), 340, 640);
+			grafico.drawString("VIDAS: "+ vidas, 70, 640);
+			grafico.drawString("NIVEL: "+ this.miNivel.obtenerMiJuego().obtenerNivelActual(), 220, 640);
+			grafico.drawString("PUNTAJE: "+ this.miNivel.obtenerMiJuego().obtenerPuntajeDelJugador(), 370, 640);
 			if(vidas==0) {
 				grafico.setFont(new Font("fuente",  Font.BOLD, 30));
 				grafico.drawString("JUEGO PERDIDO", 154, 360);
