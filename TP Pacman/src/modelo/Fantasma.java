@@ -101,7 +101,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			int y = this.obtenerPosicion().getY();
 	        try {
 	        	y++;
-	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
                 this.mover(x,y);
                 this.nuevaUltimaPosicion(1);
                 }catch (NoTransitableException e1) {
@@ -115,7 +115,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			int y = this.obtenerPosicion().getY();
 	        try {
 	        	y--;
-	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
                 this.mover(x,y);
                 this.nuevaUltimaPosicion(0);
                 }catch (NoTransitableException e1) {
@@ -130,7 +130,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			int y = this.obtenerPosicion().getY();
 	        try {
 	        	x++;
-	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
                 this.mover(x,y);
                 this.nuevaUltimaPosicion(3);
                 }catch (NoTransitableException e1) {
@@ -144,7 +144,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			int y = this.obtenerPosicion().getY();
 	        try {
 	        	x--;
-	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel);
+	        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
                 this.mover(x,y);
                 this.nuevaUltimaPosicion(2);
                 }catch (NoTransitableException e1) {
@@ -165,6 +165,14 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 
 		public int UltimaPosicion() {
 			return ultimaPosicion;
+		}
+		
+		public void serTransportadoADerecha() {
+			this.mover(27,8);
+		}
+		
+		public void serTransportadoAIzquierda() {
+			this.mover(0,8);
 		}
 	
 }

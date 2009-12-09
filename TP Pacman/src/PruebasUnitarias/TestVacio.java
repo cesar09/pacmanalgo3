@@ -31,7 +31,7 @@ public class TestVacio extends TestCase {
 	public void testSerTransitado() {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Vacio unBloqueVacio= new Vacio();		
-		unBloqueVacio.serTransitado(unNivel);
+		unBloqueVacio.serTransitado(unNivel, null, null, null);
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		
 	}

@@ -33,7 +33,7 @@ public class TestPuntoPoder extends TestCase {
 	public void testSerTransitado() {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		PuntoPoder unBloqueVacio= new PuntoPoder();		
-		unBloqueVacio.serTransitado(unNivel);
+		unBloqueVacio.serTransitado(unNivel, null, null, null);
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 	}
 }
