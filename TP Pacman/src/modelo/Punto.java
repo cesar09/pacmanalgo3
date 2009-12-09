@@ -1,11 +1,7 @@
 package modelo;
 
-import interfasesYControladores.SuperficieDeDibujo;
-import Vista.VistaContenido;
 
 public class Punto extends Comestible {
-
-	private VistaContenido vistaPunto;
 
 	public Punto (){
 		this.puntaje = 10;

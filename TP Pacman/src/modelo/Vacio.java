@@ -1,8 +1,5 @@
 package modelo;
 
-import interfasesYControladores.SuperficieDeDibujo;
-import Vista.VistaContenido;
-
 public class Vacio implements Contenido {
 
 	public Vacio(){
@@ -15,9 +12,6 @@ public class Vacio implements Contenido {
 
 	public void serTransitado(Nivel unNivel) {
 		
-	}
-	public void dibujar(SuperficieDeDibujo superficie,int x,int y) {
-		// TODO Acá no debería hacer nada.		
 	}
 	
 }

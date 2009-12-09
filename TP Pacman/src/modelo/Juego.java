@@ -1,13 +1,5 @@
 package modelo;
 
-import graphicCollection.*;
-import interfasesYControladores.*;
-
-import java.util.*;
-
-import Vista.VentanaPrincipal;
-
-
 public class Juego {
 
 	private Nivel unNivel; 

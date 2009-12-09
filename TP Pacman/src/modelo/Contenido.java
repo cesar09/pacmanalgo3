@@ -1,6 +1,5 @@
 package modelo;
 
-import interfasesYControladores.SuperficieDeDibujo;
 
 public interface Contenido {
 		

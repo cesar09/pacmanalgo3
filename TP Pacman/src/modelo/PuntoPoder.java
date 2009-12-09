@@ -1,11 +1,6 @@
 package modelo;
 
-import interfasesYControladores.SuperficieDeDibujo;
-import Vista.VistaContenido;
-
 public class PuntoPoder extends Comestible {
-
-	private VistaContenido vistaPuntoPoder;
 
 	public PuntoPoder (){
 		this.puntaje = 50;
