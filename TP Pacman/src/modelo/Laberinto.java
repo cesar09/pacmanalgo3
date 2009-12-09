@@ -69,6 +69,9 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 			case 32:
 				contenidos[x][y]= new Vacio();
 				break;
+			case 61:
+				contenidos[x][y]= new Transportador();
+				break;
 			default: throw new ArchivoFueraDeFormatoException();
 		}	
 	} 
