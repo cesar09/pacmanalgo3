@@ -5,8 +5,6 @@ import modelo.Bloque;
 import modelo.Juego;
 import modelo.Nivel;
 import modelo.NoTransitableException;
-import graphicCollection.Ventana;
-import TP3.*;
 import junit.framework.TestCase;
 
 public class testBloque extends TestCase{
@@ -14,12 +12,12 @@ public class testBloque extends TestCase{
 	
 	private Nivel unNivel;
 	private Juego unJuego;
-	private Ventana unaVentana;
+
 
 	public void setUp(){
 		unJuego= new Juego();
 		try{
-			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual(),unaVentana);
+			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
 		} catch (ArchivoFueraDeFormatoException e) {
 			System.out.println("Formato incorrecto en laberinto correspondiente al nivel");
 		}
@@ -37,7 +35,7 @@ public class testBloque extends TestCase{
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		
 	}
 	
-	public void testSerTransitado(){
+/*	public void testSerTransitado(){
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 		Bloque unBloque= new Bloque();		
 		try {
@@ -48,5 +46,5 @@ public class testBloque extends TestCase{
 		}
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		
 	}
-
+*/
 }

@@ -3,7 +3,6 @@ package PruebasUnitarias;
 import modelo.Pacman;
 import modelo.Point;
 import junit.framework.TestCase;
-import TP3.*;
 
 public class testPacman extends TestCase{
 

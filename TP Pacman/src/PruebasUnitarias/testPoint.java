@@ -2,7 +2,7 @@ package PruebasUnitarias;
 
 import modelo.Point;
 import junit.framework.TestCase;
-import TP3.*;
+
 
 public class testPoint extends TestCase{
 

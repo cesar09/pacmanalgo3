@@ -5,21 +5,20 @@ import modelo.Inky;
 import modelo.Juego;
 import modelo.Nivel;
 import modelo.Point;
-import graphicCollection.Ventana;
 import junit.framework.TestCase;
-import TP3.*;
+
 
 public class testInky extends TestCase{
 
 	private Inky inky;
 	private Nivel unNivel;
-	private Ventana unaVentana;
+
 	
 	public void setUp(){
 		this.inky=new Inky(1);	
 		Juego unJuego=new Juego();
 		try{
-			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual(),unaVentana);
+			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
 		} catch (ArchivoFueraDeFormatoException e) {
 			System.out.println("Formato incorrecto en laberinto correspondiente al nivel");
 		}
@@ -29,96 +28,51 @@ public class testInky extends TestCase{
 		Point unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),14);
 		assertEquals(unPoint.getY(),14);
-		try{
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),15);
 		assertEquals(unPoint.getY(),14);
-		try{
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),16);
 		assertEquals(unPoint.getY(),14);
-		try{
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),16);
-		assertEquals(unPoint.getY(),15);
-		try{
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		assertEquals(unPoint.getY(),13);
+		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
-		assertEquals(unPoint.getX(),16);
-		assertEquals(unPoint.getY(),14);
+		assertEquals(unPoint.getX(),15);
+		assertEquals(unPoint.getY(),13);
 	}
+	
 	public void testComestible(){
 		assertFalse(this.inky.esComestible());
 		this.inky.hacerseComestible();
 		assertTrue(this.inky.esComestible());
-		try{
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		this.inky.elegirMovimiento(unNivel);
 		Point unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),14);
 		assertEquals(unPoint.getY(),15);
-		try{
-			this.inky.elegirMovimiento(unNivel);
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		this.inky.elegirMovimiento(unNivel);
+		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),16);
 		assertEquals(unPoint.getY(),15);
-		try{
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
-		assertEquals(unPoint.getX(),15);
-		assertEquals(unPoint.getY(),15);
+		assertEquals(unPoint.getX(),16);
+		assertEquals(unPoint.getY(),14);
 	}
+	
 	public void testMoverDerecha(){
-		try{
-			this.inky.elegirMovimiento(unNivel);
-		}catch(PacmanAtrapadoException e){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}catch(FantasmaAtrapadoException e2){
-			fail("No debió lanzar excepción aquí, ya que a esta altura los fantasmas no han salido de la jaula.");;
-		}
+		this.inky.elegirMovimiento(unNivel);
 		this.inky.irAJaula();
 		Point unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),14);
 		assertEquals(unPoint.getY(),14);
 	}
+	
 	public void testSalirDeJaula(){
 		assertTrue(this.inky.estaEncerrado());
 		this.inky.salirDeJaula();
