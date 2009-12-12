@@ -1,8 +1,8 @@
 package modelo;
 public class Clyde extends Fantasma {
 
-	public Clyde(int velocidadInicial) {
-		super(velocidadInicial);
+	public Clyde(int velocidadInicial,int tiempoEnJaula) {
+		super(velocidadInicial, tiempoEnJaula);
 		this.nuevaUltimaPosicion(3);
 	}
 

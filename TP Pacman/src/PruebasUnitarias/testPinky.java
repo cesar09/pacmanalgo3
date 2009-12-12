@@ -14,7 +14,7 @@ public class testPinky extends TestCase{
 
 	
 	public void setUp(){
-		this.pinky=new Pinky(1);	
+		this.pinky=new Pinky(1,1);	
 		Juego unJuego=new Juego();
 		try{
 			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());

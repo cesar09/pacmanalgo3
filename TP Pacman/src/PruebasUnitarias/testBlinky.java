@@ -13,7 +13,7 @@ public class testBlinky extends TestCase{
 
 	
 	public void setUp(){
-		this.blinky=new Blinky(1);	
+		this.blinky=new Blinky(1,1);	
 		Juego unJuego=new Juego();
 		try{
 			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
