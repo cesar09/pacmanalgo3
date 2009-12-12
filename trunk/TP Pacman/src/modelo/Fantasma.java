@@ -6,20 +6,24 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 
 		private boolean comestible;
 		protected int velocidad;
-		private int contador;
+		private int contadorVelocidad;
+		private int contadorJaula;
+		private int tiempoEnJaula;
 		protected boolean encerrado;
 		private int ultimaPosicion;
 		private boolean yaMovido;
 
 		
 		
-		public Fantasma(int velocidadInicial) {
+		public Fantasma(int velocidadInicial, int tiempoEnJaula) {
 			this.irAJaula();
 			this.comestible = false;
 			this.velocidad = velocidadInicial;
-			this.contador=1;
+			this.contadorVelocidad=1;
 			this.yaMovido = false;
+			this.tiempoEnJaula = tiempoEnJaula;
 		}
+
 		
 		public boolean estaEncerrado(){
 			return (this.encerrado);
@@ -39,7 +43,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		
 		public void elegirMovimiento (Nivel unNivel){
 			this.yaMovido = false;
-			if(this.contador==velocidad){
+			if(this.contadorVelocidad==velocidad){
 				if (this.esComestible()){ 
 					this.huirDePacman(unNivel);
 					if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
@@ -53,9 +57,9 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 						}
 					}
 				}
-				this.contador=1;
+				this.contadorVelocidad=1;
 			}
-			else this.contador++;
+			else this.contadorVelocidad++;
 		}
 		
 		public Point obtenerPosicion() {
@@ -77,13 +81,18 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		public void fantasmaComido(Nivel unNivel) {
 			this.hacerseNoComestible();
 			unNivel.obtenerMiJuego().sumarPuntajeAlJugador(200);
-			this.irAJaula();			
+			this.irAJaula();
+			this.contadorJaula = 0;
 		}
 
 		
 		public void moverFantasma (Nivel unNivel) {
 			if (this.estaEncerrado()){
-				this.salirDeJaula();//TODO ACA VA LA PARTE DEL CONTADOR TIMER.
+				if (this.contadorJaula == this.tiempoEnJaula){
+					this.salirDeJaula();
+				}else{
+					this.contadorJaula++;
+				}
 			}else{
 					this.elegirMovimiento(unNivel);
 				}

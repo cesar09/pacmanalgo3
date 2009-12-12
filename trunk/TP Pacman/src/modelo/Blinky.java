@@ -1,8 +1,8 @@
 package modelo;
 public class Blinky extends Fantasma {
 
-	public Blinky(int velocidadInicial) {
-		super(velocidadInicial);
+	public Blinky(int velocidadInicial,int tiempoEnJaula) {
+		super(velocidadInicial, tiempoEnJaula);
 		this.nuevaUltimaPosicion(2);
 	}
 

@@ -12,7 +12,7 @@ public class testClyde extends TestCase{
 	private Nivel unNivel;
 		
 	public void setUp(){
-		this.clyde=new Clyde(1);	
+		this.clyde=new Clyde(1,1);	
 		Juego unJuego=new Juego();
 		try{
 			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());

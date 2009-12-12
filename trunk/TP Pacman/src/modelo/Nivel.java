@@ -31,7 +31,7 @@ public class Nivel {
 		this.nivel=nivel;
 		this.miLaberinto = new Laberinto (this.nivel);
 		
-		int velocidad = 4 - this.nivel;
+		int velocidad = 8 - this.nivel;
 		if (velocidad >3)
 			this.crearPersonajes(velocidad);
 		else
@@ -42,10 +42,10 @@ public class Nivel {
 
 
 	private void crearPersonajes(int velocidad){
-		this.blinky = new Blinky (velocidad-2);
-		this.pinky = new Pinky (velocidad);
-		this.inky = new Inky (velocidad-2);
-		this.clyde = new Clyde (velocidad); 	
+		this.blinky = new Blinky (velocidad-2,10);
+		this.pinky = new Pinky (velocidad,20);
+		this.inky = new Inky (velocidad-2,30);
+		this.clyde = new Clyde (velocidad,40); 	
 		this.pacman = new Pacman ();
 	}
 	

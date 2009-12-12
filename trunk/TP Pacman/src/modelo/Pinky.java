@@ -3,8 +3,8 @@ package modelo;
 
 public class Pinky extends Fantasma  {
 
-	public Pinky(int velocidadInicial) {
-		super(velocidadInicial);
+	public Pinky(int velocidadInicial,int tiempoEnJaula) {
+		super(velocidadInicial, tiempoEnJaula);
 	}
 	
 	public void atraparPacman(Nivel unNivel){

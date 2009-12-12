@@ -15,7 +15,7 @@ public class testInky extends TestCase{
 
 	
 	public void setUp(){
-		this.inky=new Inky(1);	
+		this.inky=new Inky(1,1);	
 		Juego unJuego=new Juego();
 		try{
 			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
