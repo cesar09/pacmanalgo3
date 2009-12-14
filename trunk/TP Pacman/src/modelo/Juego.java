@@ -14,7 +14,7 @@ public class Juego {
 		try{
 			this.unNivel = new Nivel(this, this.nivelActual);
 		} catch (ArchivoFueraDeFormatoException e) {
-			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
+			// TODO Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
 		}
 	}
@@ -28,7 +28,7 @@ public class Juego {
 		else try {
 				this.unNivel = new Nivel(this, this.nivelActual);
 			} catch (ArchivoFueraDeFormatoException e) {
-			// Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
+			// TODO Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
 				System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
 			}
 	}
