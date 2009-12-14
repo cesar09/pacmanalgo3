@@ -34,6 +34,10 @@ public class VistaInformacion implements Dibujable{
 					grafico.setFont(new Font("fuente",  Font.BOLD, 30));
 					grafico.drawString("JUEGO GANADO", 154, 360);
 			}
+			else if(this.miNivel.obtenerMiJuego().archivoErroneo()){
+				grafico.setFont(new Font("fuente",  Font.BOLD, 30));
+				grafico.drawString("Archivo de Nivel fuera de formato", 154, 360);
+		}
 	}
 
 	public Posicionable getPosicionable() {
