@@ -1,4 +1,4 @@
-package principal;
+package interfasesYControladores;
 
 import modelo.*;
 import interfasesYControladores.*;

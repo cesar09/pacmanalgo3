@@ -1,14 +1,13 @@
 package graphicCollection;
 
 import interfasesYControladores.Dibujable;
-import interfasesYControladores.MouseClickObservador;
 import interfasesYControladores.Posicionable;
 import interfasesYControladores.SuperficieDeDibujo;
 
 import java.awt.Color;
 
 
-public abstract class Figura implements Dibujable, MouseClickObservador {
+public abstract class Figura implements Dibujable {
 
 	private Color color;
 	private Posicionable posicionable;
@@ -31,8 +30,4 @@ public abstract class Figura implements Dibujable, MouseClickObservador {
 		this.posicionable = posicionable;		
 	}
 
-	public void MouseClick(int x, int y){
-		System.out.println("Click;" + x + "," + y);
-	}
-		
 }
