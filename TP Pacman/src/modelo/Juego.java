@@ -5,7 +5,7 @@ public class Juego {
 	private Nivel unNivel; 
 	private Jugador jugador;
 	private int nivelActual;
-	private static int cantidadDeNiveles=2;
+	private static int cantidadDeNiveles=3;
 	
 	
 	public Juego(){
