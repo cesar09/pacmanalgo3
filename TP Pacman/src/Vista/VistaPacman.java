@@ -1,7 +1,6 @@
 package Vista;
 
 import graphicCollection.*;
-import interfasesYControladores.*;
 
 import java.awt.*;
 import java.io.InputStream;
@@ -9,6 +8,8 @@ import java.io.InputStream;
 import modelo.Pacman;
 
 import com.sun.image.codec.jpeg.*;
+
+import controlador.*;
 import TP3.*;
 
 public class VistaPacman implements Dibujable{

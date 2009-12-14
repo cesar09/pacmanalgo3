@@ -1,7 +1,8 @@
 package modelo;
 
-import interfasesYControladores.Posicionable;
 import java.io.*; 
+
+import controlador.Posicionable;
 
 public class Laberinto implements Posicionable{
 

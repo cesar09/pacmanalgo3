@@ -1,4 +1,4 @@
-package interfasesYControladores;
+package controlador;
 
 import java.util.*;
 

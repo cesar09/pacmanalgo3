@@ -1,6 +1,6 @@
 package modelo;
 
-import interfasesYControladores.Posicionable;
+import controlador.Posicionable;
 
 public class Mesa implements Posicionable {
 

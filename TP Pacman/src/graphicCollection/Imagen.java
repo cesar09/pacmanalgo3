@@ -1,9 +1,5 @@
 package graphicCollection;
 
-import interfasesYControladores.Dibujable;
-import interfasesYControladores.Movible;
-import interfasesYControladores.Posicionable;
-import interfasesYControladores.SuperficieDeDibujo;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -11,6 +7,11 @@ import java.io.InputStream;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageDecoder;
+
+import controlador.Dibujable;
+import controlador.Movible;
+import controlador.Posicionable;
+import controlador.SuperficieDeDibujo;
 
 
 /*

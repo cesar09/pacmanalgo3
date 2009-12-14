@@ -1,6 +1,5 @@
 package graphicCollection;
 
-import interfasesYControladores.SuperficieDeDibujo;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,6 +9,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+import controlador.SuperficieDeDibujo;
 
 /*
  * ESta clase representa la superficie de dibujo, tipicamente será el formulario
