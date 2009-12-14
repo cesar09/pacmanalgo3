@@ -1,5 +1,7 @@
 package controlador;
 
+import Vista.Ventana;
+import Vista.VentanaPrincipal;
 import controlador.*;
 import modelo.*;
 
@@ -10,7 +12,8 @@ public class ProgramaPrincipal {
 		Juego unJuego=new Juego();
 		
 		ControladorJuego cont = new ControladorJuego(unJuego);
-		
+		Ventana ventanaPrincipal = new VentanaPrincipal();
+		cont.setSuperficieDeDibujo(ventanaPrincipal);		
 		cont.setIntervaloSimulacion(100);
 		
 		cont.comenzar();

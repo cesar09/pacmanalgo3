@@ -12,7 +12,7 @@ public class ControladorJuego {
 	private Juego miJuego;
 	private boolean estaEnEjecucion;
 	private long intervaloSimulacion;
-	private SuperficieDeDibujo superficieDeDibujo;
+	private Ventana superficieDeDibujo;
 	
 	
 	public ControladorJuego(Juego unJuego){
@@ -24,25 +24,26 @@ public class ControladorJuego {
 	public void comenzar(){
 		estaEnEjecucion = true;
 		boolean juegoGanado = false;
-		try{
-			while (!juegoGanado){
-				try{
-					this.generarEscenario();
-					while(estaEnEjecucion){
-						miJuego.mover();
-						this.dibujar();
-						Thread.sleep(intervaloSimulacion);
-					}
-				}
-				catch (NivelGanado e) {
+		while (!juegoGanado){
+			try{
+				this.generarEscenario();
+				while(estaEnEjecucion){
+					miJuego.mover();
 					this.dibujar();
-					miJuego.pasarDeNivel();
-				}catch (InterruptedException e) {
-					e.printStackTrace();
+					Thread.sleep(intervaloSimulacion);
 				}
+			}catch (NivelGanado e) {
+				this.dibujar();
+				try {
+					miJuego.pasarDeNivel();
+				} catch (JuegoGanado e1){ 
+					this.dibujar();
+					return;
+				}
+			}catch (InterruptedException e) {
+					e.printStackTrace();
 			}
-		}catch(JuegoGanado e){ return;
-		}
+		}	
 	}
 
 	
@@ -68,12 +69,11 @@ public class ControladorJuego {
 		vistaPacman.setPosicionable(miJuego.obtenerNivel().obtenerPacman());
 		vistaPacman.setMovible(miJuego.obtenerNivel().obtenerPacman());
 		KeyboardController teclado=new KeyboardController(miJuego.obtenerNivel().obtenerPacman());
-		Ventana ven = new VentanaPrincipal();
-		this.setSuperficieDeDibujo(ven);
-		ven.addKeyboard(teclado);
+
+		this.superficieDeDibujo.addKeyboard(teclado);
 		VistaInformacion informacion = new VistaInformacion(miJuego.obtenerNivel());
 		
-		ven.setVisible(true);
+		this.superficieDeDibujo.setVisible(true);
 		this.agregarDibujable(vistaFondo);
 		this.agregarDibujable(vistaLaberinto);
 		this.agregarDibujable(vistaPacman);
@@ -117,7 +117,7 @@ public class ControladorJuego {
 		return superficieDeDibujo;
 	}
 
-	public void setSuperficieDeDibujo(SuperficieDeDibujo superficieDeDibujo) {
+	public void setSuperficieDeDibujo(Ventana superficieDeDibujo) {
 		this.superficieDeDibujo = superficieDeDibujo;
 	}
 	
