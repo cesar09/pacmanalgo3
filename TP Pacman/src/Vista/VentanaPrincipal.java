@@ -1,7 +1,6 @@
 package Vista;
 
 import graphicCollection.KeyboardController;
-import graphicCollection.MouseClickController;
 import graphicCollection.Ventana;
 import TP3.*;
 
