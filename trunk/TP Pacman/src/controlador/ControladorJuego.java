@@ -46,6 +46,9 @@ public class ControladorJuego {
 				}
 			}catch (InterruptedException e) {
 					e.printStackTrace();
+			} catch (ArchivoFueraDeFormatoException e) {
+				this.dibujar();
+				return;
 			}
 		}	
 	}

@@ -6,6 +6,7 @@ public class Juego {
 	private Jugador jugador;
 	private int nivelActual;
 	private static int cantidadDeNiveles=4;
+	private boolean archivoErroneo=false;
 	
 	
 	public Juego(){
@@ -14,8 +15,7 @@ public class Juego {
 		try{
 			this.unNivel = new Nivel(this, this.nivelActual);
 		} catch (ArchivoFueraDeFormatoException e) {
-			// TODO Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
-			System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
+			archivoErroneo=true;
 		}
 	}
 
@@ -28,8 +28,7 @@ public class Juego {
 		else try {
 				this.unNivel = new Nivel(this, this.nivelActual);
 			} catch (ArchivoFueraDeFormatoException e) {
-			// TODO Acá debe ser enviado un mensaje grafico cuando implementemos la sección visual del tp.
-				System.out.println("Formato incorrecto en laberinto correspondiente al nivel "+nivelActual+".");
+				archivoErroneo=true;
 			}
 	}
 	
@@ -63,7 +62,8 @@ public class Juego {
 	}
 	
 	
-	public void mover() throws NivelGanado{
+	public void mover() throws NivelGanado, ArchivoFueraDeFormatoException{
+		if(archivoErroneo) throw new ArchivoFueraDeFormatoException();
 		this.unNivel.comenzarMoverFantasmas();
 		this.unNivel.muevePacman();
 		if (this.seGanoNivel()){
@@ -87,6 +87,11 @@ public class Juego {
 	
 	public Nivel obtenerNivel(){
 		return (this.unNivel);
+	}
+
+
+	public boolean archivoErroneo() {
+		return this.archivoErroneo;
 	}
 	
 }

@@ -225,8 +225,7 @@ public class Nivel {
 				this.llevarPacmanAPosicionInicial();
 				this.juego.pacmanFueAtrapado();
 				this.setPacmanAtrapado(false);
-			}
-				
+			}				
 		}
 	}
 	
