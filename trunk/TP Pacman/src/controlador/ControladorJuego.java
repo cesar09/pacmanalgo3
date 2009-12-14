@@ -31,6 +31,10 @@ public class ControladorJuego {
 					miJuego.mover();
 					this.dibujar();
 					Thread.sleep(intervaloSimulacion);
+					if (this.miJuego.obtenerVidasDisponibles() == 0){
+						this.dibujar();
+						return;
+					}
 				}
 			}catch (NivelGanado e) {
 				this.dibujar();
