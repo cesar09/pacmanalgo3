@@ -1,11 +1,8 @@
-package graphicCollection;
+package Vista;
 
 
 import java.awt.Color;
 
-import controlador.Dibujable;
-import controlador.Posicionable;
-import controlador.SuperficieDeDibujo;
 
 
 public abstract class Figura implements Dibujable {

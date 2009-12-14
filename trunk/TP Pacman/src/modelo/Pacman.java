@@ -1,5 +1,7 @@
 package modelo;
 
+import Vista.Movible;
+import Vista.Posicionable;
 import controlador.*;
 
 public class Pacman extends Personaje implements Posicionable,Movible {

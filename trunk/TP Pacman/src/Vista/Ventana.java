@@ -1,4 +1,4 @@
-package graphicCollection;
+package Vista;
 
 
 import java.awt.Color;
@@ -10,7 +10,7 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import controlador.SuperficieDeDibujo;
+import controlador.KeyboardController;
 
 /*
  * ESta clase representa la superficie de dibujo, tipicamente será el formulario

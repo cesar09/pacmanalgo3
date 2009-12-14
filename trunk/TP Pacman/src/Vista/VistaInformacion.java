@@ -1,7 +1,6 @@
 package Vista;
 
 import graphicCollection.*;
-import java.awt.Font;
 import java.awt.*;
 
 import controlador.*;

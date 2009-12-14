@@ -1,6 +1,5 @@
 package Vista;
 
-import graphicCollection.Cuadrado;
 
 import java.awt.Color;
 

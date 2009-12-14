@@ -1,7 +1,6 @@
 package Vista;
 
-import graphicCollection.KeyboardController;
-import graphicCollection.Ventana;
+import controlador.KeyboardController;
 import TP3.*;
 
 public class VentanaPrincipal extends Ventana {

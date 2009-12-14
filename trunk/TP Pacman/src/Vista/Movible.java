@@ -1,4 +1,4 @@
-package controlador;
+package Vista;
 
 public interface Movible extends Posicionable {
 	
