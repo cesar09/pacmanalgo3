@@ -2,8 +2,9 @@ package Vista;
 
 import graphicCollection.*;
 import java.awt.Font;
-import interfasesYControladores.*;
 import java.awt.*;
+
+import controlador.*;
 
 import modelo.Nivel;
 import TP3.*;

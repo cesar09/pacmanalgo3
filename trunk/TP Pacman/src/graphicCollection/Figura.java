@@ -1,10 +1,11 @@
 package graphicCollection;
 
-import interfasesYControladores.Dibujable;
-import interfasesYControladores.Posicionable;
-import interfasesYControladores.SuperficieDeDibujo;
 
 import java.awt.Color;
+
+import controlador.Dibujable;
+import controlador.Posicionable;
+import controlador.SuperficieDeDibujo;
 
 
 public abstract class Figura implements Dibujable {

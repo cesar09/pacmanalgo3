@@ -1,7 +1,7 @@
-package interfasesYControladores;
+package controlador;
 
+import controlador.*;
 import modelo.*;
-import interfasesYControladores.*;
 
 public class ProgramaPrincipal {
 

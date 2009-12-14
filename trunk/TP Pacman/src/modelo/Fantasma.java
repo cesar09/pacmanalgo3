@@ -1,6 +1,6 @@
 package modelo;
 
-import interfasesYControladores.Posicionable;
+import controlador.Posicionable;
 
 public abstract class Fantasma extends Personaje implements Posicionable{
 

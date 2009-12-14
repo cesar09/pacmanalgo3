@@ -1,6 +1,6 @@
 package modelo;
 
-import interfasesYControladores.*;
+import controlador.*;
 
 public class Pacman extends Personaje implements Posicionable,Movible {
 

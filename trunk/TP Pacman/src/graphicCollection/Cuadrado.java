@@ -1,9 +1,10 @@
 package graphicCollection;
 
-import interfasesYControladores.SuperficieDeDibujo;
 
 import java.awt.Color;
 import java.awt.Graphics;
+
+import controlador.SuperficieDeDibujo;
 
 
 /* 

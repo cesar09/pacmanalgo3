@@ -1,4 +1,4 @@
-package interfasesYControladores;
+package controlador;
 
 public interface Movible extends Posicionable {
 	
