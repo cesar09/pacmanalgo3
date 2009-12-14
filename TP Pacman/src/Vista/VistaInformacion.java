@@ -37,12 +37,9 @@ public class VistaInformacion implements Dibujable{
 	}
 
 	public Posicionable getPosicionable() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public void setPosicionable(Posicionable posicionable) {
-		// TODO Auto-generated method stub
-		
 	}		
 }
