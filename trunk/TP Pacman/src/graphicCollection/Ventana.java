@@ -71,9 +71,6 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		this.repaint();
 	}
 	
-	public void addMouse(MouseClickController unControladorMouse){
-		this.addMouseListener(unControladorMouse);
-	}
 	public void addKeyboard(KeyboardController unControladorTeclado){
 		this.addKeyListener(unControladorTeclado);
 	}
