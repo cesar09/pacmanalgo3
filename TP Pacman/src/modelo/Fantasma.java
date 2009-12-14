@@ -1,6 +1,6 @@
 package modelo;
 
-import controlador.Posicionable;
+import Vista.Posicionable;
 
 public abstract class Fantasma extends Personaje implements Posicionable{
 

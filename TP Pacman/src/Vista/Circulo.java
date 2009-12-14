@@ -1,9 +1,8 @@
-package graphicCollection;
+package Vista;
 
 
 import java.awt.Graphics;
 
-import controlador.SuperficieDeDibujo;
 
 
 public class Circulo  extends Figura {

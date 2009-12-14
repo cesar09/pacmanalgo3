@@ -1,6 +1,6 @@
 package modelo;
 
-import controlador.Posicionable;
+import Vista.Posicionable;
 
 public class Mesa implements Posicionable {
 

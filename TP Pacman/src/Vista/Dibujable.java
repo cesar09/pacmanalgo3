@@ -1,4 +1,4 @@
-package controlador;
+package Vista;
 
 /*
  * Esta abstraccion representa a todos los objetos Vista de la aplicacion

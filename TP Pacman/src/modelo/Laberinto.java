@@ -2,7 +2,8 @@ package modelo;
 
 import java.io.*; 
 
-import controlador.Posicionable;
+import Vista.Posicionable;
+
 
 public class Laberinto implements Posicionable{
 

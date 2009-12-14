@@ -1,10 +1,9 @@
-package graphicCollection;
+package Vista;
 
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-import controlador.SuperficieDeDibujo;
 
 
 /* 

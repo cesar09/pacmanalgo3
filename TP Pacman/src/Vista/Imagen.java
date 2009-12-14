@@ -1,4 +1,4 @@
-package graphicCollection;
+package Vista;
 
 
 import java.awt.Graphics;
@@ -8,10 +8,6 @@ import java.io.InputStream;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageDecoder;
 
-import controlador.Dibujable;
-import controlador.Movible;
-import controlador.Posicionable;
-import controlador.SuperficieDeDibujo;
 
 
 /*
