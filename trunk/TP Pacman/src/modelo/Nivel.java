@@ -69,95 +69,18 @@ public class Nivel {
 			this.pinky.moverFantasma(this);
 			this.clyde.moverFantasma(this);
 			this.inky.moverFantasma(this);
-	}
-		
+	}		
 	
 	public void muevePacman(){
-			if(!this.moverSegunSentido(false)) this.moverSegunSentido(true);
+			if(!pacman.moverSegunSentido(false,this)) pacman.moverSegunSentido(true,this);
 		}	
 	
-	protected boolean moverSegunSentido(boolean moverSegunUltimoSentido){
-		int x;
-		int y;
-		int sentidoEnX=this.pacman.getSentidoX();
-		int sentidoEnY=this.pacman.getSentidoY();
-		if(moverSegunUltimoSentido){	
-			sentidoEnX=ultimoSentidoPacmanX;
-			sentidoEnY=ultimoSentidoPacmanY;
-		}
-		x = this.pacman.getX();
-		y = this.pacman.getY();
-		
-		switch (sentidoEnX){		
-		case -1:
-			//Si se desea ir para la izquierda.
-			x = x-1;
-			try {
-				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
-				 this.pacman.irIzquierda();
-				 ultimoSentidoPacmanX=-1;
-				 ultimoSentidoPacmanY=0;
-				 if (!this.juego.seGanoJuego()){
-					this.compararPosicionesConFantasmas();
-					return true;
-				 }
-			} catch (NoTransitableException e) {}
-			 break;
-		case 1:
-			//Si se desea ir para la derecha.
-			x = x+1;
-			  try {
-				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
-				 this.pacman.irDerecha();
-				 ultimoSentidoPacmanX=1;
-				 ultimoSentidoPacmanY=0;
-				 if (!this.juego.seGanoJuego()){
-					 this.compararPosicionesConFantasmas();
-					 return true;
-				 }
-			  } catch (NoTransitableException e) {}
-			 break;
-		}
-		switch (sentidoEnY){
-		case 1:
-			//Si se desea ir para abajo.
-			y = y+1;
-			try {
-				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
-				 this.pacman.irAbajo();
-				 ultimoSentidoPacmanY=1;
-				 ultimoSentidoPacmanX=0;
-				 if (!this.juego.seGanoJuego()){
-					 this.compararPosicionesConFantasmas();
-					 return true;
-				 }
-			} catch (NoTransitableException e) {}
-			 break;
-		
-		case -1:
-			y = y-1;
-			try {
-				 this.obtenerMiLaberinto().devolverContenido(x,y).hayPacman(this,x,y);
-				 this.pacman.irArriba();
-				 ultimoSentidoPacmanY=-1;
-				 ultimoSentidoPacmanX=0;
-				 if (!this.juego.seGanoJuego()){
-					 this.compararPosicionesConFantasmas();
-					 return true;
-				 }
-			} catch (NoTransitableException e) {}
-			 break;
-		}
-		return false;
-	}
-
-	private void compararPosicionesConFantasmas() {
+	public void compararPosicionesConFantasmas() {
 		this.comerFantasmaOMorirPacman(this.blinky);
 		this.comerFantasmaOMorirPacman(this.pinky);
 		this.comerFantasmaOMorirPacman(this.clyde);
 		this.comerFantasmaOMorirPacman(this.inky);		
 	}
-
 
 	public void hacerFantasmasComestibles(){
 		this.blinky.hacerseComestible();
@@ -191,6 +114,7 @@ public class Nivel {
 		return this.pacman;
 	}
 	
+	//compara las posiciones de unFantasma y unPacman, devuelve true si son igual, o false en caso contrario
 	public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
 		int fantasmaX = unFantasma.obtenerPosicion().getX();
 		int fantasmaY = unFantasma.obtenerPosicion().getY();
@@ -204,7 +128,7 @@ public class Nivel {
 		return false;
 	}
 
-	
+	//según el estado del Fantasma muere el pacman o el fantasma y se reinicializan las posiciones.
 	public void comerFantasmaOMorirPacman(Fantasma unFantasma){
 		if (mismaPosicion(unFantasma,this.obtenerPacman())){
 			if(unFantasma.esComestible()){
