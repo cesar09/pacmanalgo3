@@ -11,7 +11,6 @@ public class Nivel {
 	private Pinky pinky;
 	private Inky inky;
 	private Clyde clyde;
-	private boolean pacmanAtrapado;//TODO ESTE ATRIBUTO HAY Q BORRARLO DESP DE ENCONTRAR OTRA FORMA DE HACERLO.
 	
 	private int ultimoSentidoPacmanX;
 	private int ultimoSentidoPacmanY;
@@ -70,12 +69,6 @@ public class Nivel {
 			this.pinky.moverFantasma(this);
 			this.clyde.moverFantasma(this);
 			this.inky.moverFantasma(this);
-			if(this.pacmanFueAtrapado()){
-				this.llevarFantasmasAJaula();
-				this.llevarPacmanAPosicionInicial();
-				this.juego.pacmanFueAtrapado();
-				this.setPacmanAtrapado(false);
-			}
 	}
 		
 	
@@ -105,10 +98,7 @@ public class Nivel {
 				 ultimoSentidoPacmanX=-1;
 				 ultimoSentidoPacmanY=0;
 				 if (!this.juego.seGanoJuego()){
-					this.comeOMuere(this.blinky);
-					this.comeOMuere(this.pinky);
-					this.comeOMuere(this.clyde);
-					this.comeOMuere(this.inky);
+					this.compararPosicionesConFantasmas();
 					return true;
 				 }
 			} catch (NoTransitableException e) {}
@@ -122,10 +112,7 @@ public class Nivel {
 				 ultimoSentidoPacmanX=1;
 				 ultimoSentidoPacmanY=0;
 				 if (!this.juego.seGanoJuego()){
-					 this.comeOMuere(this.blinky);
-					 this.comeOMuere(this.pinky);
-					 this.comeOMuere(this.clyde);
-					 this.comeOMuere(this.inky);
+					 this.compararPosicionesConFantasmas();
 					 return true;
 				 }
 			  } catch (NoTransitableException e) {}
@@ -141,10 +128,7 @@ public class Nivel {
 				 ultimoSentidoPacmanY=1;
 				 ultimoSentidoPacmanX=0;
 				 if (!this.juego.seGanoJuego()){
-					 this.comeOMuere(this.blinky);
-					 this.comeOMuere(this.pinky);
-					 this.comeOMuere(this.clyde);
-					 this.comeOMuere(this.inky);
+					 this.compararPosicionesConFantasmas();
 					 return true;
 				 }
 			} catch (NoTransitableException e) {}
@@ -158,10 +142,7 @@ public class Nivel {
 				 ultimoSentidoPacmanY=-1;
 				 ultimoSentidoPacmanX=0;
 				 if (!this.juego.seGanoJuego()){
-					 this.comeOMuere(this.blinky);
-					 this.comeOMuere(this.pinky);
-					 this.comeOMuere(this.clyde);
-					 this.comeOMuere(this.inky);
+					 this.compararPosicionesConFantasmas();
 					 return true;
 				 }
 			} catch (NoTransitableException e) {}
@@ -169,6 +150,14 @@ public class Nivel {
 		}
 		return false;
 	}
+
+	private void compararPosicionesConFantasmas() {
+		this.comerFantasmaOMorirPacman(this.blinky);
+		this.comerFantasmaOMorirPacman(this.pinky);
+		this.comerFantasmaOMorirPacman(this.clyde);
+		this.comerFantasmaOMorirPacman(this.inky);		
+	}
+
 
 	public void hacerFantasmasComestibles(){
 		this.blinky.hacerseComestible();
@@ -216,7 +205,7 @@ public class Nivel {
 	}
 
 	
-	public void comeOMuere(Fantasma unFantasma){
+	public void comerFantasmaOMorirPacman(Fantasma unFantasma){
 		if (mismaPosicion(unFantasma,this.obtenerPacman())){
 			if(unFantasma.esComestible()){
 				unFantasma.fantasmaComido(this);
@@ -224,18 +213,8 @@ public class Nivel {
 				this.llevarFantasmasAJaula();
 				this.llevarPacmanAPosicionInicial();
 				this.juego.pacmanFueAtrapado();
-				this.setPacmanAtrapado(false);
 			}				
 		}
-	}
-	
-	
-	public void setPacmanAtrapado(boolean estado){//TODO ESTE METODO HAY Q BORRARLO DESP DE ENCONTRAR OTRA FORMA DE HACERLO.
-		this.pacmanAtrapado = estado;
-	}
-	
-	public boolean pacmanFueAtrapado(){//TODO ESTE METODO HAY Q BORRARLO DESP DE ENCONTRAR OTRA FORMA DE HACERLO.
-		return this.pacmanAtrapado;
 	}
 	
 	public Pinky obtenerPinky(){

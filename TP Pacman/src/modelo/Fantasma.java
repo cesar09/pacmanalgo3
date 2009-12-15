@@ -44,19 +44,10 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		public void elegirMovimiento (Nivel unNivel){
 			this.yaMovido = false;
 			if(this.contadorVelocidad==velocidad){
-				if (this.esComestible()){ 
+				if (this.esComestible())
 					this.huirDePacman(unNivel);
-					if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
-						this.fantasmaComido(unNivel);
-					}
-				}else{
-					if (!this.esComestible()){
-						this.atraparPacman(unNivel);	
-						if (unNivel.mismaPosicion(this, unNivel.obtenerPacman())){
-							unNivel.setPacmanAtrapado(true);
-						}
-					}
-				}
+				else this.atraparPacman(unNivel);			
+				unNivel.comerFantasmaOMorirPacman(this);
 				this.contadorVelocidad=1;
 			}
 			else this.contadorVelocidad++;
