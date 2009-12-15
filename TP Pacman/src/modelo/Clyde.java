@@ -16,6 +16,7 @@ public class Clyde extends Fantasma {
 			 break;
 		 case 2:
 			 this.moverIzquierda(unNivel);
+			 break;
 		 case 3:
 			 this.moverArriba(unNivel);
 			 break;
