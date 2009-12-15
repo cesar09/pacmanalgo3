@@ -16,6 +16,7 @@ public class Blinky extends Fantasma {
 			 break;
 		 case 2:
 			 this.moverIzquierda(unNivel);
+			 break;
 		 case 3:
 			 this.moverDerecha(unNivel);
 			 break;
