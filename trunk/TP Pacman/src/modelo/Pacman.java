@@ -11,15 +11,12 @@ public class Pacman extends Personaje implements Posicionable,Movible {
 	private int sentidoX=-1;
 	private int sentidoGraficoY=0;
 	private int sentidoGraficoX=-1;
-	private int ultimoSentidoPacmanX;
-	private int ultimoSentidoPacmanY;
+	private int ultimoSentidoPacmanX=-1;
+	private int ultimoSentidoPacmanY=0;
 
 	public Pacman() {
 		this.renacer();
 	}
-	
-	
-	
 	
 	public boolean moverSegunSentido(boolean moverSegunUltimoSentido, Nivel unNivel){
 		int x;
