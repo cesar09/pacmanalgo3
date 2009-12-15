@@ -3,6 +3,7 @@ package Vista;
 import graphicCollection.*;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.InputStream;
 
 import modelo.Pacman;
@@ -12,7 +13,7 @@ import com.sun.image.codec.jpeg.*;
 import controlador.*;
 import TP3.*;
 
-public class VistaPacman implements Dibujable{
+public class VistaPacman extends KeyboardController implements Dibujable{
 	 
 	private int contador=1;
 	private Image imagenPacmanU;
@@ -27,9 +28,11 @@ public class VistaPacman implements Dibujable{
 	private String nombreArchivoPacmanCerrado="pacmanCerrado.jpg";
 	private Movible movible;
 	private Posicionable posicionable;
+	private KeyboardDireccion keyboardDireccion;
 	
 	public VistaPacman(Pacman unPacman) {
 		this.setMovible(unPacman);
+		this.setKeyboardDireccion(unPacman);
 		setNombreArchivoImagen();
 	}
 	
@@ -94,11 +97,33 @@ public class VistaPacman implements Dibujable{
 		this.movible = movible;
 	}
 
+	private void setKeyboardDireccion(Pacman unPacman) {
+		this.keyboardDireccion=unPacman;
+	}
+	
 	public Posicionable getPosicionable() {
 		return this.posicionable;
 	}
 
 	public void setPosicionable(Posicionable posicionable) {
 		this.posicionable = posicionable;		
+	}
+	
+	public void keyPressed(KeyEvent e){ 
+		int aux=e.getKeyCode();
+		switch(aux){
+		case 38: //TODO esto debe ir dentro del Pacman o ligado al pacman pero no de esta forma
+			this.keyboardDireccion.nuevoSentido(0,-1);	
+			break;
+		case 40: 
+			this.keyboardDireccion.nuevoSentido(0,1);
+			break;
+		case 37: 
+			this.keyboardDireccion.nuevoSentido(-1,0);
+			break;
+		case 39: 
+			this.keyboardDireccion.nuevoSentido(1,0);
+			break;
+		}
 	}
 }
