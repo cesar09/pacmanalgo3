@@ -46,24 +46,15 @@ public class VistaLaberinto implements Dibujable{
 				unContenido=unLaberinto.devolverContenido(x,y);
 				if (unContenido instanceof Punto){
 					this.vistaPunto.dibujar(superficie,x,y);
-				}else{
-					if (unContenido instanceof PuntoPoder){
-						this.vistaPuntoPoder.dibujar(superficie,x,y);
-					}else{
-						if (unContenido instanceof Bloque){
-							this.vistaBloque.dibujar(superficie,x,y);
-						}else{
-							if (unContenido instanceof Vacio){
-
-							}else{
-								if (unContenido instanceof Fruta){
-									this.vistaFruta.dibujar(superficie,x,y);
-								}
-							}
-						}
-					}
+				}else if (unContenido instanceof PuntoPoder){
+					this.vistaPuntoPoder.dibujar(superficie,x,y);
+				}else if (unContenido instanceof Bloque){
+					this.vistaBloque.dibujar(superficie,x,y);
+				}else if (unContenido instanceof Vacio){
+				}else if (unContenido instanceof Fruta){
+					this.vistaFruta.dibujar(superficie,x,y);
 				}
-				}
+			}						
 		}
 	}
 
