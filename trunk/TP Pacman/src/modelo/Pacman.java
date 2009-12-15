@@ -1,10 +1,9 @@
 package modelo;
 
-import Vista.Movible;
-import Vista.Posicionable;
+import Vista.*;
 import controlador.*;
 
-public class Pacman extends Personaje implements Posicionable,Movible {
+public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDireccion {
 
 	
 	private int sentidoY=0;
