@@ -42,18 +42,6 @@ public class TestJugador extends TestCase {
 	
 	}
 
-	
-//	TODO: modificar
-	
-//	public void testPerderVida2(){
-//		this.unJugador.perderVida();
-//		this.unJugador.perderVida();
-//		this.unJugador.perderVida();
-//		this.unJugador.perderVida();
-//		fail("Permitió perder más vidas de las que dispone.");
-//	}
-
-	
 	public void testAgregarVida(){
 		this.unJugador.agregarVida();
 		assertEquals(unJugador.obtenerVidasDisponibles(),4);
