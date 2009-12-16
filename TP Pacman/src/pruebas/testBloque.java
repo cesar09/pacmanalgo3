@@ -16,11 +16,6 @@ public class testBloque extends TestCase{
 
 	public void setUp(){
 		unJuego= new Juego();
-		try{
-			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
-		} catch (ArchivoFueraDeFormatoException e) {
-			System.out.println("Formato incorrecto en laberinto correspondiente al nivel");
-		}
 	}
 	
 	public void testHayPacman(){

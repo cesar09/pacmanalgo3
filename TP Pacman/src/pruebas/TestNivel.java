@@ -14,53 +14,47 @@ import junit.framework.TestCase;
 public class TestNivel extends TestCase{
 	
 	private Juego unJuego;
-	private Nivel unNivel;
 	
 	public void setUp() {
 		this.unJuego= new Juego();
-		try{
-			this.unNivel =new Nivel(unJuego,unJuego.obtenerNivelActual());
-		} catch (ArchivoFueraDeFormatoException e) {
-			fail("Formato incorrecto en laberinto correspondiente al nivel");
-		}
 	}
 	
 	public void testHacerFantasmasComestibles(){
-		this.unNivel.hacerFantasmasComestibles();
-		assertTrue(this.unNivel.obtenerBlinky().esComestible());
-		assertTrue(this.unNivel.obtenerClyde().esComestible());
-		assertTrue(this.unNivel.obtenerInky().esComestible());
-		assertTrue(this.unNivel.obtenerPinky().esComestible());
+		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
+		assertTrue(this.unJuego.obtenerNivel().obtenerBlinky().esComestible());
+		assertTrue(this.unJuego.obtenerNivel().obtenerClyde().esComestible());
+		assertTrue(this.unJuego.obtenerNivel().obtenerInky().esComestible());
+		assertTrue(this.unJuego.obtenerNivel().obtenerPinky().esComestible());
 	}
 	
 	public void testHacerFantasmasNoComestibles(){
-		this.unNivel.hacerFantasmasComestibles();
-		this.unNivel.hacerFantasmasNoComestibles();
-		assertFalse(this.unNivel.obtenerBlinky().esComestible());
-		assertFalse(this.unNivel.obtenerClyde().esComestible());
-		assertFalse(this.unNivel.obtenerInky().esComestible());
-		assertFalse(this.unNivel.obtenerPinky().esComestible());
+		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
+		this.unJuego.obtenerNivel().hacerFantasmasNoComestibles();
+		assertFalse(this.unJuego.obtenerNivel().obtenerBlinky().esComestible());
+		assertFalse(this.unJuego.obtenerNivel().obtenerClyde().esComestible());
+		assertFalse(this.unJuego.obtenerNivel().obtenerInky().esComestible());
+		assertFalse(this.unJuego.obtenerNivel().obtenerPinky().esComestible());
 	}
 	
 	public void testMismaPosicion(){
-		Pacman pacman = this.unNivel.obtenerPacman();
-		Blinky blinky = this.unNivel.obtenerBlinky();
+		Pacman pacman = this.unJuego.obtenerNivel().obtenerPacman();
+		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
 		blinky.mover(13, 23);
-		assertTrue(this.unNivel.mismaPosicion(blinky, pacman));
+		assertTrue(this.unJuego.obtenerNivel().mismaPosicion(blinky, pacman));
 	}
 	
 	public void testComerFantasma(){
-		Blinky blinky = this.unNivel.obtenerBlinky();
-		this.unNivel.hacerFantasmasComestibles();
+		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
+		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
 		blinky.mover(13, 23);
-		this.unNivel.comerFantasmaOMorirPacman(blinky);
+		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),200);
 	}
 
 	public void testMatarPacman2(){
-		Blinky blinky = this.unNivel.obtenerBlinky();
+		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
 		blinky.mover(13, 23);
-		this.unNivel.comerFantasmaOMorirPacman(blinky);
+		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
 		assertEquals(this.unJuego.obtenerVidasDisponibles(),2);
 	}
 	
