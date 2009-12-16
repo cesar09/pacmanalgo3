@@ -161,7 +161,7 @@ public class Nivel {
 	}
 
 
-	public void transportarPacman(int x, int y) {
+	public void transportarPacman(int x, int y) {	
 		if(x==0){
 			this.pacman.serTransportadoADerecha(y);
 			try{	
@@ -169,16 +169,15 @@ public class Nivel {
 				int posicionPacmanY = this.pacman.obtenerPosicion().getY();
 				this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
 			   } catch (NoTransitableException e) {}
+		}else
+			if (x==27){
+				this.pacman.serTransportadoAIzquierda(y);
+				try{	
+					int posicionPacmanX = this.pacman.obtenerPosicion().getX()+1;
+					int posicionPacmanY = this.pacman.obtenerPosicion().getY();
+					this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
+				} catch (NoTransitableException e) {}
 			}
-		
-		if(x==27){
-			this.pacman.serTransportadoAIzquierda(y);
-		    try{	
-			   int posicionPacmanX = this.pacman.obtenerPosicion().getX()+1;
-			   int posicionPacmanY = this.pacman.obtenerPosicion().getY();
-			   this.obtenerMiLaberinto().devolverContenido(posicionPacmanX,posicionPacmanY).hayPacman(this,posicionPacmanX,posicionPacmanY);
-		    } catch (NoTransitableException e) {}
-		}
 	}
 
 
