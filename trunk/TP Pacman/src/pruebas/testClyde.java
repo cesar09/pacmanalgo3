@@ -36,12 +36,12 @@ public class testClyde extends TestCase{
 		assertEquals(unPoint.getY(),13);
 		this.clyde.elegirMovimiento(unNivel);
 		unPoint=this.clyde.obtenerPosicion();
-		assertEquals(unPoint.getX(),12);
-		assertEquals(unPoint.getY(),13);
+		assertEquals(unPoint.getX(),11);
+		assertEquals(unPoint.getY(),14);
 		this.clyde.elegirMovimiento(unNivel);
 		unPoint=this.clyde.obtenerPosicion();
 		assertEquals(unPoint.getX(),11);
-		assertEquals(unPoint.getY(),13);
+		assertEquals(unPoint.getY(),15);
 	}
 	
 	public void testComestible(){

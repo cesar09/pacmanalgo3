@@ -1,6 +1,5 @@
 package pruebas;
 
-import modelo.ArchivoFueraDeFormatoException;
 import modelo.Bloque;
 import modelo.Juego;
 import modelo.Nivel;

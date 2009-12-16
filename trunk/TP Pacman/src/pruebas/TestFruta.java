@@ -1,9 +1,8 @@
 package pruebas;
 
-import modelo.ArchivoFueraDeFormatoException;
 import modelo.Fruta;
 import modelo.Juego;
-import modelo.Nivel;
+
 import junit.framework.TestCase;
 
 

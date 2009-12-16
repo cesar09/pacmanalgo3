@@ -30,20 +30,20 @@ public class testInky extends TestCase{
 		assertEquals(unPoint.getY(),14);
 		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
+		assertEquals(unPoint.getX(),14);
+		assertEquals(unPoint.getY(),15);
+		this.inky.elegirMovimiento(unNivel);
+		unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),15);
-		assertEquals(unPoint.getY(),14);
+		assertEquals(unPoint.getY(),15);
+		this.inky.elegirMovimiento(unNivel);
+		unPoint=this.inky.obtenerPosicion();
+		assertEquals(unPoint.getX(),16);
+		assertEquals(unPoint.getY(),15);
 		this.inky.elegirMovimiento(unNivel);
 		unPoint=this.inky.obtenerPosicion();
 		assertEquals(unPoint.getX(),16);
 		assertEquals(unPoint.getY(),14);
-		this.inky.elegirMovimiento(unNivel);
-		unPoint=this.inky.obtenerPosicion();
-		assertEquals(unPoint.getX(),16);
-		assertEquals(unPoint.getY(),13);
-		this.inky.elegirMovimiento(unNivel);
-		unPoint=this.inky.obtenerPosicion();
-		assertEquals(unPoint.getX(),15);
-		assertEquals(unPoint.getY(),13);
 	}
 	
 	public void testComestible(){
