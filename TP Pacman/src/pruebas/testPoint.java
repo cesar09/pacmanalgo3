@@ -1,4 +1,4 @@
-package PruebasUnitarias;
+package pruebas;
 
 import modelo.Point;
 import junit.framework.TestCase;

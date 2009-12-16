@@ -1,4 +1,4 @@
-package PruebasUnitarias;
+package pruebas;
 
 import modelo.Jugador;
 import junit.framework.TestCase;
