@@ -28,17 +28,17 @@ public class testBlinky extends TestCase{
 		assertEquals(unPoint.getY(),13);
 		this.blinky.elegirMovimiento(unNivel);
 		unPoint=this.blinky.obtenerPosicion();
-		assertEquals(unPoint.getX(),13);
+		assertEquals(unPoint.getX(),12);
 		assertEquals(unPoint.getY(),13);
 		this.blinky.elegirMovimiento(unNivel);
 		this.blinky.elegirMovimiento(unNivel);
 		unPoint=this.blinky.obtenerPosicion();
-		assertEquals(unPoint.getX(),15);
-		assertEquals(unPoint.getY(),13);
+		assertEquals(unPoint.getX(),11);
+		assertEquals(unPoint.getY(),14);
 		this.blinky.elegirMovimiento(unNivel);
 		unPoint=this.blinky.obtenerPosicion();
-		assertEquals(unPoint.getX(),16);
-		assertEquals(unPoint.getY(),13);
+		assertEquals(unPoint.getX(),11);
+		assertEquals(unPoint.getY(),15);
 	}
 	
 	public void testComestible(){

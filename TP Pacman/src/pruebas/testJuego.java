@@ -1,11 +1,8 @@
 package pruebas;
 
-import modelo.ArchivoFueraDeFormatoException;
+
 import modelo.Juego;
-import modelo.Nivel;
-import modelo.Blinky;
-import modelo.Pacman;
-import modelo.NivelGanado;
+
 import junit.framework.TestCase;
 
 public class testJuego extends TestCase{

@@ -1,9 +1,7 @@
 package pruebas;
 
-import modelo.ArchivoFueraDeFormatoException;
 import modelo.NoTransitableException;
 import modelo.Juego;
-import modelo.Nivel;
 import junit.framework.TestCase;
 import modelo.Blinky;
 import modelo.Pacman;
