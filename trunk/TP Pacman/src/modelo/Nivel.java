@@ -12,13 +12,8 @@ public class Nivel {
 	private Inky inky;
 	private Clyde clyde;
 	
-	private int ultimoSentidoPacmanX;
-	private int ultimoSentidoPacmanY;
 	private TimerComestible timerComestible;
-	private boolean timerActivado=false;
 	private boolean timerComestibleActivado;
-	//private TimerSalirDeJaula timerSalirDeJaula;
-	//private boolean timerSalirActivado=false;
 	
 
 	public Nivel(Juego unJuego, int nivel) throws ArchivoFueraDeFormatoException{
@@ -99,7 +94,6 @@ public class Nivel {
 	}
 	
 	public void hacerFantasmasNoComestibles(){
-		timerActivado=false;
 		this.blinky.hacerseNoComestible();
 		this.pinky.hacerseNoComestible();
 		this.inky.hacerseNoComestible();
