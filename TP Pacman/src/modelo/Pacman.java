@@ -169,20 +169,13 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 	public int getSentidoGraficoY() {
 		return sentidoGraficoY;
 	}
-	//TODO con esto que onda?
-	public void serTransportadoADerecha() {
-		/*int x = this.obtenerPosicion().getX();
-		int y = this.obtenerPosicion().getY();		
-		try{
-			this.mover(x+27, y);
-		}catch (IllegalArgumentException e){
-			this.mover(x-24, y);
-		}*/
-		this.mover(27,8);
+
+	public void serTransportadoADerecha(int y) {
+		this.mover(27,y);
 	}
 	
-	public void serTransportadoAIzquierda() {
-		this.mover(0,8);
+	public void serTransportadoAIzquierda(int y) {
+		this.mover(0,y);
 	}
 	
 }
