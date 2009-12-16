@@ -1,4 +1,4 @@
-package PruebasUnitarias;
+package pruebas;
 
 import modelo.ArchivoFueraDeFormatoException;
 import modelo.Inky;

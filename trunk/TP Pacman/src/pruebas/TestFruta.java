@@ -1,13 +1,13 @@
-package PruebasUnitarias;
+package pruebas;
 
 import modelo.ArchivoFueraDeFormatoException;
+import modelo.Fruta;
 import modelo.Juego;
 import modelo.Nivel;
-import modelo.Punto;
 import junit.framework.TestCase;
 
 
-public class TestPunto extends TestCase {
+public class TestFruta extends TestCase {
 
 	private Nivel unNivel;
 	private Juego unJuego;
@@ -22,19 +22,17 @@ public class TestPunto extends TestCase {
 		}
 	}
 	
-	public void testHayPacman1() {
+	public void testHayPacman() {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-		Punto unPunto= new Punto();		
-		unPunto.hayPacman(unNivel,1,1);//Doy valores a x e y aleatorios, ya que no son necesarios.
-		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),10);
+		Fruta unaFruta= new Fruta();		
+		unaFruta.hayPacman(unNivel,1,1);//Doy valores a x e y aleatorios, ya que no son necesarios.
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),100);
 	}
 	
 //	public void testSerTransitado() {
 //		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-//		Punto unPunto= new Punto();		
-//		unPunto.serTransitado(unNivel, null, null, null);
+//		Fruta unaFruta= new Fruta();		
+//		unaFruta.serTransitado(unNivel, null, null, null);
 //		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
 //	}
-	
 }
-

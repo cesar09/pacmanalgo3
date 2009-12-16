@@ -96,22 +96,22 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 		this.posicion.setXY(x, y);
 	}
 	
-	protected void irIzquierda() {
+	private void irIzquierda() {
 		this.mover((this.posicion.getX()-1),this.posicion.getY());
 		this.nuevoSentidoGrafico(-1,0);
 	}
 	
-	protected void irDerecha() {
+	private void irDerecha() {
 		this.mover((this.posicion.getX()+1),this.posicion.getY());
 		this.nuevoSentidoGrafico(1,0);
 	}
 	
-	protected void irArriba() {
+	private void irArriba() {
 		this.mover(this.posicion.getX(),(this.posicion.getY()-1));
 		this.nuevoSentidoGrafico(0,-1);
 	}
 	
-	protected void irAbajo() {
+	private void irAbajo() {
 		this.mover(this.posicion.getX(),(this.posicion.getY()+1));
 		this.nuevoSentidoGrafico(0,1);
 	}
@@ -144,6 +144,7 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 		}
 		else throw new IllegalArgumentException();
 	}
+	
 	public int getX() {
 		Point unPoint=obtenerPosicion();
 		return unPoint.getX();
@@ -170,11 +171,11 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 		return sentidoGraficoY;
 	}
 
-	public void serTransportadoADerecha(int y) {
+	protected void serTransportadoADerecha(int y) {
 		this.mover(27,y);
 	}
 	
-	public void serTransportadoAIzquierda(int y) {
+	protected void serTransportadoAIzquierda(int y) {
 		this.mover(0,y);
 	}
 	
