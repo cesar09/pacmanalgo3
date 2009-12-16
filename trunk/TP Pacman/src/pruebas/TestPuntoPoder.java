@@ -28,10 +28,4 @@ public class TestPuntoPoder extends TestCase {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),50);
 	}
 
-//	public void testSerTransitado() {
-//		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-//		PuntoPoder unBloqueVacio= new PuntoPoder();		
-//		unBloqueVacio.serTransitado(unNivel, null, null, null);
-//		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-//	}
 }

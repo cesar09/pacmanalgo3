@@ -34,17 +34,5 @@ public class testBloque extends TestCase{
 		}
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		
 	}
-	
-/*	public void testSerTransitado(){
-		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-		Bloque unBloque= new Bloque();		
-		try {
-			unBloque.serTransitado(unNivel, null, null, null);
-			fail("Debió lanzar excepción por ser los Bloques no transitables.");
-		} catch (NoTransitableException e) {
-			assertTrue(true);
-		}
-		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);		
-	}
-*/
+
 }

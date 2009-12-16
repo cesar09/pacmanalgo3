@@ -29,12 +29,5 @@ public class TestPunto extends TestCase {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),10);
 	}
 	
-//	public void testSerTransitado() {
-//		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-//		Punto unPunto= new Punto();		
-//		unPunto.serTransitado(unNivel, null, null, null);
-//		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-//	}
-	
 }
 
