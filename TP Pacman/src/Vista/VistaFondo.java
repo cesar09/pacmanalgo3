@@ -3,7 +3,6 @@ package Vista;
 
 import java.awt.Color;
 
-import modelo.Mesa;
 
 
 
