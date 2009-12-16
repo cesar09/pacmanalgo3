@@ -161,9 +161,9 @@ public class Nivel {
 	}
 
 
-	public void transportarPacman(int x) {
+	public void transportarPacman(int x, int y) {
 		if(x==0){
-			this.pacman.serTransportadoADerecha();
+			this.pacman.serTransportadoADerecha(y);
 			try{	
 				int posicionPacmanX = this.pacman.obtenerPosicion().getX()-1;
 				int posicionPacmanY = this.pacman.obtenerPosicion().getY();
@@ -172,7 +172,7 @@ public class Nivel {
 			}
 		
 		if(x==27){
-			this.pacman.serTransportadoAIzquierda();
+			this.pacman.serTransportadoAIzquierda(y);
 		    try{	
 			   int posicionPacmanX = this.pacman.obtenerPosicion().getX()+1;
 			   int posicionPacmanY = this.pacman.obtenerPosicion().getY();
@@ -182,12 +182,12 @@ public class Nivel {
 	}
 
 
-	public void transportarFantasma(Fantasma unFantasma, int x) {
+	public void transportarFantasma(Fantasma unFantasma, int x, int y) {
 		if(x==0){
-			unFantasma.serTransportadoADerecha();
+			unFantasma.serTransportadoADerecha(y);
 			}
 		if(x==27){
-			unFantasma.serTransportadoAIzquierda();
+			unFantasma.serTransportadoAIzquierda(y);
 		}	
 	}
 	

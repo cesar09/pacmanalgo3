@@ -178,12 +178,12 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			return ultimaPosicion;
 		}
 		
-		public void serTransportadoADerecha() {
-			this.mover(26,8);
+		public void serTransportadoADerecha(int y) {
+			this.mover(26,y);
 		}
 		
-		public void serTransportadoAIzquierda() {
-			this.mover(1,8);
+		public void serTransportadoAIzquierda(int y) {
+			this.mover(1,y);
 		}
 
 		public void setYaMovido(boolean yaMovido) {
