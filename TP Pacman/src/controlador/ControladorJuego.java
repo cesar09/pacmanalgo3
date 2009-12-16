@@ -36,11 +36,11 @@ public class ControladorJuego {
 						return;
 					}
 				}
-			}catch (NivelGanado e) {
+			}catch (NivelGanadoException e) {
 				this.dibujar();
 				try {
 					miJuego.pasarDeNivel();
-				} catch (JuegoGanado e1){ 
+				} catch (JuegoGanadoException e1){ 
 					this.dibujar();
 					return;
 				}

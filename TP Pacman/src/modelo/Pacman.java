@@ -1,7 +1,6 @@
 package modelo;
 
 import Vista.*;
-import controlador.*;
 
 public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDireccion {
 

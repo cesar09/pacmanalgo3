@@ -20,10 +20,10 @@ public class Juego {
 	}
 
 	
-	public void pasarDeNivel() throws JuegoGanado{
+	public void pasarDeNivel() throws JuegoGanadoException{
 		this.nivelActual++;
 		if(seGanoJuego()){
-			throw new JuegoGanado();
+			throw new JuegoGanadoException();
 		}
 		else try {
 				this.unNivel = new Nivel(this, this.nivelActual);
@@ -62,12 +62,12 @@ public class Juego {
 	}
 	
 	
-	public void mover() throws NivelGanado, ArchivoFueraDeFormatoException{
+	public void mover() throws NivelGanadoException, ArchivoFueraDeFormatoException{
 		if(archivoErroneo) throw new ArchivoFueraDeFormatoException();
 		this.unNivel.comenzarMoverFantasmas();
 		this.unNivel.muevePacman();
 		if (this.seGanoNivel()){
-			throw new NivelGanado();
+			throw new NivelGanadoException();
 		}
 	}
 	
