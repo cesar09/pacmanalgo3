@@ -30,7 +30,7 @@ public class Nivel {
 		this.nivel=nivel;
 		this.miLaberinto = new Laberinto (this.nivel);
 		
-		int velocidad = 8 - this.nivel;
+		int velocidad = 6 - this.nivel;
 		if (velocidad >3)
 			this.crearPersonajes(velocidad);
 		else
@@ -87,13 +87,13 @@ public class Nivel {
 		this.pinky.hacerseComestible();
 		this.inky.hacerseComestible();
 		this.clyde.hacerseComestible();
-		int segundos = (12 - this.nivel);
+		int segundos = (7 - this.nivel);
 		if (segundos > 1){
 			if(timerComestibleActivado) timerComestible.cancelarTimer();
 			timerComestible= new TimerComestible (segundos, this);
 		}else{
 			if(timerComestibleActivado) timerComestible.cancelarTimer();
-			timerComestible= new TimerComestible (segundos, this);
+			timerComestible= new TimerComestible (2, this);
 		}
 		timerComestibleActivado=true;
 	}
