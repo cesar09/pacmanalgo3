@@ -25,28 +25,6 @@ public class TestNivel extends TestCase{
 		}
 	}
 	
-	
-	
-	public void testLlevarFantasmasAJaula(){
-		try{
-			this.unJuego.mover();
-			this.unJuego.mover();
-			this.unJuego.mover();
-			this.unJuego.mover();
-			this.unJuego.mover();
-			this.unJuego.mover();
-			this.unJuego.mover();
-			this.unJuego.mover();
-			this.unJuego.mover();
-		}
-		catch (NivelGanado e) {
-			fail("El nivel no debería haberse ganado aún");
-		}
-		catch (ArchivoFueraDeFormatoException e) {
-			fail("Formato incorrecto en laberinto correspondiente al nivel");
-		}
-	}
-	
 	public void testHacerFantasmasComestibles(){
 		this.unNivel.hacerFantasmasComestibles();
 		assertTrue(this.unNivel.obtenerBlinky().esComestible());
@@ -70,4 +48,20 @@ public class TestNivel extends TestCase{
 		blinky.mover(13, 23);
 		assertTrue(this.unNivel.mismaPosicion(blinky, pacman));
 	}
+	
+	public void testComerFantasma(){
+		Blinky blinky = this.unNivel.obtenerBlinky();
+		this.unNivel.hacerFantasmasComestibles();
+		blinky.mover(13, 23);
+		this.unNivel.comerFantasmaOMorirPacman(blinky);
+		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),200);
+	}
+
+	public void testMatarPacman2(){
+		Blinky blinky = this.unNivel.obtenerBlinky();
+		blinky.mover(13, 23);
+		this.unNivel.comerFantasmaOMorirPacman(blinky);
+		assertEquals(this.unJuego.obtenerVidasDisponibles(),2);
+	}
+	
 }
