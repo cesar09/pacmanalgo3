@@ -29,10 +29,4 @@ public class TestFruta extends TestCase {
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),100);
 	}
 	
-//	public void testSerTransitado() {
-//		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-//		Fruta unaFruta= new Fruta();		
-//		unaFruta.serTransitado(unNivel, null, null, null);
-//		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),0);
-//	}
 }
