@@ -10,7 +10,13 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JOptionPane;
+
+import modelo.Juego;
+
+import controlador.ControladorJuego;
 import controlador.KeyboardController;
+import controlador.WindowAdapterClosing;
 
 /*
  * ESta clase representa la superficie de dibujo, tipicamente será el formulario
@@ -34,12 +40,12 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		int x = (screenSize.width - frameSize.width) / 2;
 		int y = (screenSize.height - frameSize.height) / 2;
 		setLocation(x, y);
-		addWindowListener(new WindowAdapter() {
+		/*addWindowListener(new WindowAdapterClosing(this) {
 			public void windowClosing(WindowEvent e) {
 				dispose();
 				System.exit(0);
 			}
-		});
+		});*/
 	}
 	// es llamado internamente por el metodo repaint() de la clase Frame
 	public void update(Graphics g) {
@@ -72,7 +78,27 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		this.repaint();
 	}
 	
+	public void addWindowListeners(final Juego unJuego){
+		addWindowListener(new WindowAdapterClosing(this) {
+			public void windowClosing(WindowEvent e) {
+				this.ventanaPrincipal.salvarPartida(unJuego);
+				dispose();
+				System.exit(0);
+			}
+		});
+	}
+	
 	public void addKeyboard(KeyboardController unControladorTeclado){
 		this.addKeyListener(unControladorTeclado);
 	}
+	public int continuarPartida() {
+		return 0;
+	}
+	public void salvarPartida(Juego unJuego){
+		int n = JOptionPane.showConfirmDialog(this,"Desea salvar esta partida?",
+			    "Pacman",
+			    JOptionPane.YES_NO_OPTION);
+		if(n==0) unJuego.guardarJuego("partida.dat");
+	}
+	
 }

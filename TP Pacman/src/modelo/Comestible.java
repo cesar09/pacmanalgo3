@@ -1,5 +1,5 @@
 package modelo;
-abstract public class Comestible implements Contenido {
+abstract public class Comestible extends Contenido {
 	
 	protected int puntaje;
 

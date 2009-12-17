@@ -29,7 +29,7 @@ public class ControladorJuego {
 				this.generarEscenario();
 				while(estaEnEjecucion){
 					miJuego.mover();
-					this.dibujar();
+					this.dibujar();					
 					Thread.sleep(intervaloSimulacion);
 					if (this.miJuego.obtenerVidasDisponibles() == 0){
 						this.dibujar();
@@ -126,6 +126,7 @@ public class ControladorJuego {
 
 	public void setSuperficieDeDibujo(Ventana superficieDeDibujo) {
 		this.superficieDeDibujo = superficieDeDibujo;
+		this.superficieDeDibujo.addWindowListeners(miJuego);
 	}
 	
 }

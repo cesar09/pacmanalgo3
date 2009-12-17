@@ -30,6 +30,21 @@ public class Nivel {
 		new TimerVacio(22,this);
 	}
 
+	//constructor para persistencia
+	public Nivel(Juego juego, int nivelActual, Laberinto unLaberinto) {
+		this.juego = juego;
+		this.nivel=nivelActual;
+		this.miLaberinto = unLaberinto;
+		
+		int velocidad = 6 - this.nivel;
+		if (velocidad >3)
+			this.crearPersonajes(velocidad);
+		else
+			this.crearPersonajes(3);
+		new TimerFruta(15,this); 
+		new TimerVacio(22,this);
+	}
+
 
 	private void crearPersonajes(int velocidad){
 		this.blinky = new Blinky (velocidad-2,10);
