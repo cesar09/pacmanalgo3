@@ -73,26 +73,10 @@ public class Nivel {
 		this.comerFantasmaOMorirPacman(this.inky);		
 	}
 
-	public void hacerFantasmasComestibles(){
-		this.blinky.hacerseComestible();
-		this.pinky.hacerseComestible();
-		this.inky.hacerseComestible();
-		this.clyde.hacerseComestible();
-		int segundos = (7 - this.nivel);
-		if (segundos > 1){
-			new TimerComestible (segundos, this);
-		}else{
-			new TimerComestible (2, this);
-		}
+	public int obtenerNumeroNivel() {
+		return this.nivel;
 	}
 	
-	public void hacerFantasmasNoComestibles(){
-		this.blinky.hacerseNoComestible();
-		this.pinky.hacerseNoComestible();
-		this.inky.hacerseNoComestible();
-		this.clyde.hacerseNoComestible();
-	}
-
 	public Laberinto obtenerMiLaberinto() {
 		return miLaberinto;
 	}
