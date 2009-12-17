@@ -14,7 +14,7 @@ public class Juego {
 	private Nivel unNivel; 
 	private Jugador jugador;
 	private int nivelActual;
-	private static int cantidadDeNiveles=6;
+	private static int cantidadDeNiveles=5;
 	private boolean archivoErroneo=false;
 	
 	
