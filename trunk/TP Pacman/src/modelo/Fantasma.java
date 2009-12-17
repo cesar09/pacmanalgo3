@@ -14,7 +14,6 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		private boolean yaMovido;
 
 		
-		
 		public Fantasma(int velocidadInicial, int tiempoEnJaula) {
 			this.irAJaula();
 			this.comestible = false;
@@ -24,7 +23,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			this.tiempoEnJaula = tiempoEnJaula;
 		}
 
-		
+		//Devuelve true si el fantasma está en la jaula, false en caso contrario.
 		public boolean estaEncerrado(){
 			return (this.encerrado);
 		}
@@ -41,6 +40,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			this.posicion.setXY(x, y); 
 		}
 		
+		//Este método decide si el fantasma tiene que huir o ir a atrapar al pacman.
 		public void elegirMovimiento (Nivel unNivel){
 			this.yaMovido = false;
 			if(this.contadorVelocidad==velocidad){
@@ -69,6 +69,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		
 		abstract public void huirDePacman(Nivel unNivel);
 		
+		//Este método se utiliza una vez q el fantasma es comido.
 		public void fantasmaComido(Nivel unNivel) {
 			this.hacerseNoComestible();
 			unNivel.obtenerMiJuego().sumarPuntajeAlJugador(200);
@@ -76,7 +77,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			this.contadorJaula = 0;
 		}
 
-		
+		//Este método corrobora si el fantasma debe seguir en la jaula, debe salir o debe moverse.
 		public void moverFantasma (Nivel unNivel) {
 			if (this.estaEncerrado()){
 				if (this.contadorJaula == this.tiempoEnJaula){
@@ -89,7 +90,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 				}
 		}
 		
-
+		//Calcula la distancia que hay entre el fantasma en cuestión y el pacman.
 		public Point distanciaPacman(Point posicionPacman) {
 			Point auxiliar = new Point(0,0);
 			int distanciaEnX = this.obtenerPosicion().getX() - posicionPacman.getX();
@@ -98,6 +99,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			return auxiliar;
 		}
 		
+		//Estrategia de movimiento.
 		public void moverAbajo(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
@@ -114,6 +116,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
                 }
         }
 		
+		//Estrategia de movimiento.
 		public void moverArriba(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
@@ -131,6 +134,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			
 		}
 		
+		//Estrategia de movimiento.
 		public void moverDerecha(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
@@ -147,6 +151,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
             		    }
 		}
 		
+		//Estrategia de movimiento.
 		public void moverIzquierda(Nivel unNivel){
 			Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
 			int x = this.obtenerPosicion().getX();
@@ -178,10 +183,12 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			return ultimaDireccion;
 		}
 		
+		//Transporta al fantasma desde la izquierda a la derecha
 		protected void serTransportadoADerecha(int y) {
 			this.mover(26,y);
 		}
 		
+		//Transporta al fantasma desde la derecha a la izquierda
 		protected void serTransportadoAIzquierda(int y) {
 			this.mover(1,y);
 		}
