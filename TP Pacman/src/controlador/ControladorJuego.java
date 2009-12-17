@@ -75,9 +75,11 @@ public class ControladorJuego {
 		VistaPacman vistaPacman=new VistaPacman(miJuego.obtenerNivel().obtenerPacman());		
 		vistaPacman.setPosicionable(miJuego.obtenerNivel().obtenerPacman());
 		vistaPacman.setMovible(miJuego.obtenerNivel().obtenerPacman());
-		KeyboardController teclado=vistaPacman;
-
+		
+		KeyboardDireccion direccionamiento=miJuego.obtenerNivel().obtenerPacman();
+		KeyboardController teclado= new KeyboardController(direccionamiento);
 		this.superficieDeDibujo.addKeyboard(teclado);
+		
 		VistaInformacion informacion = new VistaInformacion(miJuego.obtenerNivel());
 		
 		this.superficieDeDibujo.setVisible(true);
