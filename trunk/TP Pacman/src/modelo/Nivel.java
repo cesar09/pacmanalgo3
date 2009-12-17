@@ -79,16 +79,8 @@ public class Nivel {
 	
 	public void comenzarMoverPacman(){
 			if(!pacman.moverSegunSentido(false,this)) pacman.moverSegunSentido(true,this);
-		}	
+	}	
 	
-	//Se fija si el pacman y el fantasma están en la misma posición.
-	/*public void compararPosicionesConFantasmas() {
-		this.comerFantasmaOMorirPacman(this.blinky);
-		this.comerFantasmaOMorirPacman(this.pinky);
-		this.comerFantasmaOMorirPacman(this.clyde);
-		this.comerFantasmaOMorirPacman(this.inky);		
-	}*/
-
 	public int obtenerNumeroNivel() {
 		return this.nivel;
 	}
@@ -100,33 +92,6 @@ public class Nivel {
 	public Pacman obtenerPacman(){
 		return this.pacman;
 	}
-	
-	//compara las posiciones de unFantasma y unPacman, devuelve true si son iguales, o false en caso contrario.
-	/*public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
-		int fantasmaX = unFantasma.obtenerPosicion().getX();
-		int fantasmaY = unFantasma.obtenerPosicion().getY();
-		int pacmanX = unPacman.obtenerPosicion().getX();
-		int pacmanY = unPacman.obtenerPosicion().getY();
-		if(fantasmaX == pacmanX){
-			if (fantasmaY == pacmanY){
-				return true;
-			}
-		}
-		return false;
-	}
-
-	//Según el estado del Fantasma muere el pacman o el fantasma y se reinicializan las posiciones.
-	public void comerFantasmaOMorirPacman(Fantasma unFantasma){
-		if (mismaPosicion(unFantasma,this.obtenerPacman())){
-			if(unFantasma.esComestible()){
-				unFantasma.fantasmaComido(this);
-			}else{
-				this.llevarFantasmasAJaula();
-				this.llevarPacmanAPosicionInicial();
-				this.juego.pacmanFueAtrapado();
-			}				
-		}
-	}*/
 	
 	public Pinky obtenerPinky(){
 		return (this.pinky);
