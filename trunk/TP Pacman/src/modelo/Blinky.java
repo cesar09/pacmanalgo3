@@ -6,6 +6,7 @@ public class Blinky extends Fantasma {
 		this.nuevaDireccion(2);
 	}
 
+	//Contiene la estrategia que usará Blinky para atrapar al pacman.
 	public void atraparPacman(Nivel unNivel) {
 		 switch(this.ultimaDireccion()) {
 		 case 0:
@@ -23,10 +24,12 @@ public class Blinky extends Fantasma {
 		 }
 	}
 	
+	//Contiene la estrategia que usará Blinky para huir al pacman.
 	public void huirDePacman(Nivel unNivel) {
         this.moverDerecha(unNivel);
     }
 	
+	//Tiene una posición predeterminada para estar en la jaula
 	public void irAJaula() {
 		Point posicion = new Point (13,13);
 		this.posicion = posicion;
@@ -34,6 +37,7 @@ public class Blinky extends Fantasma {
 		this.hacerseNoComestible();
 	}
 	
+	//Tiene una posición predeterminada para salir de la jaula
 	public void salirDeJaula (){
 		Point posicion = new Point (13,11);
 		this.posicion = posicion;
