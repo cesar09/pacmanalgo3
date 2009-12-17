@@ -33,7 +33,7 @@ public class Punto extends Comestible {
 		return unPunto;
 	}
 
-public void serTransitado(Nivel unNivel, Fantasma unFantasma, int x, int y){
+	public void serTransitado(Nivel unNivel, Fantasma unFantasma, int x, int y){
 		
 	}
 
