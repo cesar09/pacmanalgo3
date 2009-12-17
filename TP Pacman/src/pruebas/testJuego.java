@@ -15,7 +15,7 @@ public class testJuego extends TestCase{
 	
 	public void testSeGanoNivel(){
 		int i=0;
-		while (i<244){
+		while (i<274){
 			this.unJuego.obtenerNivel().obtenerMiLaberinto().restarCantidadPastillas();
 			i++;
 		}
