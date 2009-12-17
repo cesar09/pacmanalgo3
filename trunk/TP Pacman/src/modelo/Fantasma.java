@@ -10,7 +10,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 		private int contadorJaula;
 		private int tiempoEnJaula;
 		protected boolean encerrado;
-		private int ultimaPosicion;
+		private int ultimaDireccion;
 		private boolean yaMovido;
 
 		
@@ -108,7 +108,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-                this.nuevaUltimaPosicion(1);
+                this.nuevaDireccion(1);
                 }catch (NoTransitableException e1) {
                 	this.moverDerecha(unNivel);
                 }
@@ -124,7 +124,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-                this.nuevaUltimaPosicion(0);
+                this.nuevaDireccion(0);
                 }catch (NoTransitableException e1) {
                 	this.moverIzquierda(unNivel);
             		    }
@@ -141,7 +141,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-                this.nuevaUltimaPosicion(3);
+                this.nuevaDireccion(3);
                 }catch (NoTransitableException e1) {
                 	this.moverArriba(unNivel);
             		    }
@@ -157,7 +157,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-                this.nuevaUltimaPosicion(2);
+                this.nuevaDireccion(2);
                 }catch (NoTransitableException e1) {
                 	this.moverAbajo(unNivel);
             	 }
@@ -170,12 +170,12 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 			return this.obtenerPosicion().getY();
 		}
 
-		public void nuevaUltimaPosicion(int ultimaPosicion) {
-			this.ultimaPosicion = ultimaPosicion;
+		public void nuevaDireccion(int nuevaDireccion){
+			this.ultimaDireccion = nuevaDireccion;
 		}
 
-		public int UltimaPosicion() {
-			return ultimaPosicion;
+		public int ultimaDireccion() {
+			return ultimaDireccion;
 		}
 		
 		protected void serTransportadoADerecha(int y) {
@@ -205,7 +205,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-	            this.nuevaUltimaPosicion(1);
+	            this.nuevaDireccion(1);
 	            }catch (NoTransitableException e1) {
 	            	this.moverIzquierdaDos(unNivel);
 	            }
@@ -221,7 +221,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-	            this.nuevaUltimaPosicion(3);
+	            this.nuevaDireccion(3);
 	            }catch (NoTransitableException e1) {
 	            	this.moverDerechaDos(unNivel);
 	        		    }
@@ -238,7 +238,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-	            this.nuevaUltimaPosicion(0);
+	            this.nuevaDireccion(0);
 	            }catch (NoTransitableException e1) {
 	            	this.moverAbajoDos(unNivel);
 	        		    }
@@ -254,7 +254,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 	        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
 	        		this.mover(x,y);
 	        	}
-	            this.nuevaUltimaPosicion(2);
+	            this.nuevaDireccion(2);
 	            }catch (NoTransitableException e1) {
 	            	this.moverArribaDos(unNivel);
 	        	 }
