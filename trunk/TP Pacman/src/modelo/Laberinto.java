@@ -120,7 +120,6 @@ private void agregarContenido(int caracter, int x, int y) throws ArchivoFueraDeF
 	}
 
 	public Element guardar(Document doc) {
-		Contenido unContenido;
 		Element elemLaberinto = doc.createElement("Laberinto");
 		elemLaberinto.setAttribute("cantidadPastillas",""+this.cantidadPastillas);
 		elemLaberinto.setAttribute("cantidadColumnas",""+this.cantidadColumnas);

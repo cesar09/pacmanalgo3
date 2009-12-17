@@ -1,7 +1,6 @@
 package modelo;
 
 import java.io.*;
-import java.util.Observer;
 
 import javax.xml.parsers.*;
 
