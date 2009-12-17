@@ -1,5 +1,15 @@
 package modelo;
 
+import java.io.*;
+import java.util.Observer;
+
+import javax.xml.parsers.*;
+
+import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+
+import com.sun.org.apache.xml.internal.serialize.*;
+
 public class Juego {
 
 	private Nivel unNivel; 
@@ -20,6 +30,13 @@ public class Juego {
 	}
 
 	
+	public Juego(Jugador unJugador, int unNivel, Laberinto unLaberinto) {
+		this.nivelActual = unNivel;
+		this.jugador = unJugador;
+		this.unNivel = new Nivel(this, this.nivelActual, unLaberinto);
+	}
+
+
 	public void pasarDeNivel() throws JuegoGanadoException{
 		this.nivelActual++;
 		if(seGanoJuego()){
@@ -94,5 +111,61 @@ public class Juego {
 	public boolean archivoErroneo() {
 		return this.archivoErroneo;
 	}
+	
+	public void guardarJuego(String nombreArchivo){
+		try {
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc = builder.newDocument();
+            Element raiz = doc.createElement("Juego");
+            raiz.appendChild((Element)unNivel.obtenerMiLaberinto().guardar(doc));
+            raiz.appendChild((Element)this.jugador.guardar(doc));
+            raiz.setAttribute("nivel",""+this.nivelActual);
+            doc.appendChild(raiz);
+            File archivo = new File(nombreArchivo);
+            XMLSerializer serializer = new XMLSerializer();
+            OutputFormat outFormat = new OutputFormat();
+            outFormat.setVersion("1.0");
+            outFormat.setIndenting(true);
+            outFormat.setIndent(4);
+            serializer.setOutputFormat(outFormat);
+            serializer.setOutputCharStream(new FileWriter(archivo));
+			serializer.serialize(doc);
+		}
+		catch (ParserConfigurationException e) {}
+        catch (IOException e) {
+        	e.printStackTrace();
+        }
+   	}
+	
+	public static Juego recuperarJuego(String nombreArchivo){
+		Juego juego = null;
+		File archivo = new File(nombreArchivo);
+		DocumentBuilder builder;
+		try {
+			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			Document document;
+			document = builder.parse(archivo);
+			Element raiz = document.getDocumentElement();
+			NodeList listaLaberinto = raiz.getElementsByTagName("Laberinto");
+			Node elemLaberinto= listaLaberinto.item(0);
+			NodeList listaJugador = raiz.getElementsByTagName("Jugador");
+			Node elemJugador = listaJugador.item(0);
+			Laberinto unLaberinto=(Laberinto) Laberinto.recuperar((Element)elemLaberinto);
+			Jugador unJugador=(Jugador) Jugador.recuperar((Element)elemJugador);
+			int unNivel= Integer.parseInt(raiz.getAttribute("nivel"));
+			juego=new Juego(unJugador,unNivel, unLaberinto);
+		}
+		catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		catch (SAXException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		return juego;
+	}
+
 	
 }

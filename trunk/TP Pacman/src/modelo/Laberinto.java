@@ -2,6 +2,10 @@ package modelo;
 
 import java.io.*; 
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import Vista.Posicionable;
 
 
@@ -15,8 +19,15 @@ private int cantidadColumnas = 28;
 public Laberinto(int nivel) throws ArchivoFueraDeFormatoException{
 	 cantidadPastillas = 0;
 	 contenidos = new Contenido[cantidadColumnas][cantidadFilas];
-	 this.cargarLaberintoSegunNivel(nivel);
-	
+	 this.cargarLaberintoSegunNivel(nivel);	
+}
+//constructor para persistencia
+public Laberinto(int cantidadPastillas, int cantidadColumnas,
+		int cantidadFilas, Contenido[][] contenidos) {
+	this.contenidos=contenidos;
+	this.cantidadPastillas=cantidadPastillas;
+	this.cantidadColumnas=cantidadColumnas;
+	this.cantidadFilas=cantidadFilas;
 }
 
 
@@ -106,5 +117,50 @@ private void agregarContenido(int caracter, int x, int y) throws ArchivoFueraDeF
 
 	public int getY() {
 		return 0;
+	}
+
+	public Element guardar(Document doc) {
+		Contenido unContenido;
+		Element elemLaberinto = doc.createElement("Laberinto");
+		elemLaberinto.setAttribute("cantidadPastillas",""+this.cantidadPastillas);
+		elemLaberinto.setAttribute("cantidadColumnas",""+this.cantidadColumnas);
+		elemLaberinto.setAttribute("cantidadFilas",""+this.cantidadFilas);
+		for (int y = 0; y < cantidadFilas; y++) {
+			for (int x = 0; x < cantidadColumnas ; x++) 	
+				elemLaberinto.appendChild((Element)contenidos[x][y].guardar(doc,x,y));
+			}
+        return elemLaberinto;
+	}
+
+	public static Laberinto recuperar(Element elemLaberinto) {
+		int cantidadPastillas = Integer.parseInt(elemLaberinto.getAttribute("cantidadPastillas"));
+		int cantidadColumnas= Integer.parseInt(elemLaberinto.getAttribute("cantidadColumnas"));
+		int cantidadFilas= Integer.parseInt(elemLaberinto.getAttribute("cantidadFilas"));
+		Contenido[][] contenidos;
+		contenidos = new Contenido[cantidadColumnas][cantidadFilas];
+		NodeList listaContenido;
+		Node elemContenido;
+		for (int y = 0; y < cantidadFilas; y++) {
+			for (int x = 0; x < cantidadColumnas ; x++){	
+				listaContenido= elemLaberinto.getElementsByTagName("ContenidoColumna"+x+"Fila"+y);
+				elemContenido= listaContenido.item(0);
+				String tipo=((Element) elemContenido).getAttribute("tipo");				
+				if (tipo.equals("PuntoPoder")){
+					contenidos[x][y]=(Contenido) PuntoPoder.recuperar((Element)elemContenido);
+				}else if (tipo.equals("Punto")){
+					contenidos[x][y]=(Contenido) Punto.recuperar((Element)elemContenido);
+				}else if (tipo.equals("Bloque")){
+					contenidos[x][y]=(Contenido) Bloque.recuperar((Element)elemContenido);
+				}else if (tipo.equals("Vacio")){
+					contenidos[x][y]=(Contenido) Vacio.recuperar((Element)elemContenido);
+				}else if (tipo.equals("Fruta")){
+					contenidos[x][y]=(Contenido) Fruta.recuperar((Element)elemContenido);
+				}else if (tipo.equals("Transportador")){
+					contenidos[x][y]=(Contenido) Transportador.recuperar((Element)elemContenido);
+				}
+			}
+		}
+		Laberinto unLaberinto= new Laberinto(cantidadPastillas,cantidadColumnas,cantidadFilas,contenidos);
+		return unLaberinto;
 	}
 }

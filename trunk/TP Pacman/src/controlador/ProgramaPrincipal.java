@@ -7,11 +7,14 @@ import modelo.*;
 public class ProgramaPrincipal {
 
 	public static void main(String[] args) {
-
-		Juego unJuego=new Juego();
+		Juego unJuego = null;
+		Ventana ventanaPrincipal = new VentanaPrincipal();
+		int valor=ventanaPrincipal.continuarPartida();
+		if (valor==0) unJuego=Juego.recuperarJuego("partida.dat");
+		else if(valor==1) unJuego=new Juego();
 		
 		ControladorJuego cont = new ControladorJuego(unJuego);
-		Ventana ventanaPrincipal = new VentanaPrincipal();
+	
 		cont.setSuperficieDeDibujo(ventanaPrincipal);		
 		cont.setIntervaloSimulacion(100);
 		
