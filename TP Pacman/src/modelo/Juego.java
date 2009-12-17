@@ -33,12 +33,13 @@ public class Juego {
 	}
 	
 
+	//Comprobación de si ya se ha ganado el Juego.
 	public boolean seGanoJuego() {
 		if(cantidadDeNiveles<nivelActual) return true;
 		else return false;
 	}
 	
-	
+	//Va sumando el puntaje al jugador, cada 10000 puntos agrega una vida.
 	public void sumarPuntajeAlJugador(int puntaje){
 		if(puntaje<0) throw new IllegalArgumentException();
 		this.jugador.sumarPuntaje(puntaje);
@@ -61,7 +62,7 @@ public class Juego {
 		return (this.jugador.obtenerVidasDisponibles());
 	}
 	
-	
+	//Comienza los movimientos del juego.
 	public void mover() throws NivelGanadoException, ArchivoFueraDeFormatoException{
 		if(archivoErroneo) throw new ArchivoFueraDeFormatoException();
 		this.unNivel.comenzarMoverFantasmas();
@@ -71,7 +72,7 @@ public class Juego {
 		}
 	}
 	
-	
+	//Comprobación de si ya se ha ganado el nivel.
 	public boolean seGanoNivel(){
 		if (this.unNivel.obtenerMiLaberinto().obtenerCantidadPastillas() == 0){
 			return true;
@@ -79,7 +80,7 @@ public class Juego {
 		return false;
 	}
 
-	
+
 	public void pacmanFueAtrapado() {
 		this.jugador.perderVida();	
 	}	

@@ -19,11 +19,13 @@ public Laberinto(int nivel) throws ArchivoFueraDeFormatoException{
 	
 }
 
+
 public Contenido devolverContenido(int x,int y){
 	 if ((x<0)|(x>=cantidadColumnas)|(y<0)|(y>=cantidadFilas)) throw new IllegalArgumentException();
 	 	return (contenidos[x][y]);
  }
  
+//Genera el laberinto dependiendo del número de nivel que se le pase.
 private void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoException{
 	  	
 		int x; 
@@ -46,7 +48,7 @@ private void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoEx
 				}
 				if((x>cantidadColumnas-1)&(!((caracter==13)|(caracter==10)))) throw new ArchivoFueraDeFormatoException(); 
 				else if (x<=cantidadColumnas-1){
-					agregarObjeto(caracter, x, y);
+					agregarContenido(caracter, x, y);
 				
 				}
 			}
@@ -55,7 +57,8 @@ private void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoEx
 	}
 	
 
-private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeFormatoException {
+//Agrega el contenido (correspondiente a la posición que recibe) en el laberinto.
+private void agregarContenido(int caracter, int x, int y) throws ArchivoFueraDeFormatoException {
 		switch (caracter) {
 			case 35:
 				contenidos[x][y]= new Bloque();
@@ -82,13 +85,17 @@ private void agregarObjeto(int caracter, int x, int y) throws ArchivoFueraDeForm
 		return cantidadPastillas;
 	}
 
+	//Resta las pastillas que hay en el laberinto a medida que el pacman se las va comiendo.
 	public int restarCantidadPastillas(){
 		return cantidadPastillas--;
 	}
+	
+	//Agrega una fruta en el laberinto, se usa luego de determinada cantidad de tiempo.
 	public void agregarFruta(){
 		contenidos[14][17] = new Fruta();
 	}
 
+	//Agrega un vacío en determinada posición, luego de que el pacman se come lo que había anteriormente.
 	public void agregarVacio(int columna,int fila) {
 		contenidos[columna][fila] = new Vacio();
 	}
