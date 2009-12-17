@@ -1,7 +1,5 @@
 package Vista;
 
-import graphicCollection.*;
-
 import java.awt.*;
 import java.io.InputStream;
 

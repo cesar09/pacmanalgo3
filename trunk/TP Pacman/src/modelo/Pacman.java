@@ -17,6 +17,7 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 		this.renacer();
 	}
 	
+	//El pacman se mueve en una dirección dependiendo del sentido q se le haya dado.
 	public boolean moverSegunSentido(boolean moverSegunUltimoSentido, Nivel unNivel){
 		int x;
 		int y;
@@ -120,6 +121,7 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 		return (this.posicion);
 	}
 	
+	//Situa al pacman en la posicion inicial.
 	public void renacer() {
 		Point posicion = new Point(13,23);
 		this.posicion=posicion;

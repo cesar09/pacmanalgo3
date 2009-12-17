@@ -16,6 +16,7 @@ public class Vacio extends Contenido {
 	public void serTransitado(Nivel unNivel, Fantasma unFantasma, int x, int y) {
 		
 	}
+	
 	public Element guardar(Document doc, int x, int y) {
 		Element elemVacio = doc.createElement("ContenidoColumna"+x+"Fila"+y);
 		elemVacio.setAttribute("tipo",""+"Vacio");

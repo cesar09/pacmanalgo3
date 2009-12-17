@@ -22,6 +22,8 @@ package modelo;
 		public void cancelarTimer(){
 			timer.cancel ();
 		}
+		
+		//Al pasar el tiempo que se pasó por parámetro se accede al método hacerFantasmasNoComestibles.
 		class RemindTask extends TimerTask {
 			public void run ( ) {
 				hacerFantasmasNoComestibles();
