@@ -12,10 +12,6 @@ public class Nivel {
 	private Inky inky;
 	private Clyde clyde;
 	
-	private TimerComestible timerComestible;
-	private boolean timerComestibleActivado;
-	
-
 	public Nivel(Juego unJuego, int nivel) throws ArchivoFueraDeFormatoException{
 		//La idea es q reciba el numero de nivel por parametro y en base al
 		//nivel se crea el laberinto. Tmb pense en darle a velocidad el mismo
@@ -84,13 +80,10 @@ public class Nivel {
 		this.clyde.hacerseComestible();
 		int segundos = (7 - this.nivel);
 		if (segundos > 1){
-			if(timerComestibleActivado) timerComestible.cancelarTimer();
-			timerComestible= new TimerComestible (segundos, this);
+			new TimerComestible (segundos, this);
 		}else{
-			if(timerComestibleActivado) timerComestible.cancelarTimer();
-			timerComestible= new TimerComestible (2, this);
+			new TimerComestible (2, this);
 		}
-		timerComestibleActivado=true;
 	}
 	
 	public void hacerFantasmasNoComestibles(){
