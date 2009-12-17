@@ -4,24 +4,31 @@ public class Clyde extends Fantasma {
 	public Clyde(int velocidadInicial,int tiempoEnJaula) {
 		super(velocidadInicial, tiempoEnJaula);
 		this.nuevaDireccion(2);
+		this.setRepeticionMovimiento(45);
 	}
 
 	//Contiene la estrategia que usará Clyde para atrapar al pacman.
 	public void atraparPacman(Nivel unNivel) {
-		 switch(this.ultimaDireccion()) {
+		if(this.repeticionMovimiento()!=0){
+		switch(this.ultimaDireccion()) {
 		 case 0:
-			 this.moverDerechaDos(unNivel);
+			 this.moverArriba(unNivel);
 		     break;
 		 case 1:
-			 this.moverAbajoDos(unNivel);
+			 this.moverAbajo(unNivel);
 			 break;
 		 case 2:
-			 this.moverIzquierdaDos(unNivel);
+			 this.moverIzquierda(unNivel);
 			 break;
 		 case 3:
-			 this.moverArribaDos(unNivel);
+			 this.moverDerecha(unNivel);
 			 break;
 		 }
+		this.disminuirRepeticionMovimiento();
+		}else{
+			super.atraparPacman(unNivel);
+	
+		}
 	}
 	
 	//Contiene la estrategia que usará Clyde para huir al pacman.

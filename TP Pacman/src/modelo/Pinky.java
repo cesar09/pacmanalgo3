@@ -5,10 +5,12 @@ public class Pinky extends Fantasma  {
 
 	public Pinky(int velocidadInicial,int tiempoEnJaula) {
 		super(velocidadInicial, tiempoEnJaula);
+		this.setRepeticionMovimiento(20);
 	}
 	
 	//Contiene la estrategia que usará Pinky para atrapar al pacman.
 	public void atraparPacman(Nivel unNivel){
+		if(this.repeticionMovimiento()!=0){
 		int numeroAleatorio = (int) (Math.random()*3);
 		 switch(numeroAleatorio) {
 		 case 0:
@@ -23,7 +25,11 @@ public class Pinky extends Fantasma  {
 		 case 3: 
 			 this.moverAbajo(unNivel);
 			 break;
-		 }
+		  }
+		 this.disminuirRepeticionMovimiento();
+		 }else{
+			super.atraparPacman(unNivel);
+			}
 	}
 
 	//Contiene la estrategia que usará Pinky para huir al pacman.
