@@ -1,4 +1,6 @@
 package modelo;
+
+//Esta clase fue generada para poder guardar posiciones de dos coordenadas.
 public class Point {
 
   int x,y;

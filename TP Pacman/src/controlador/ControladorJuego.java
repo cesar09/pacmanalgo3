@@ -2,7 +2,6 @@ package controlador;
 
 import java.util.*;
 
-import graphicCollection.*;
 import Vista.*;
 import modelo.*;
 

@@ -19,6 +19,7 @@ public class TimerFruta {
 			this.miNivel.obtenerMiLaberinto().agregarFruta();
 	}
 
+	//Al pasar el tiempo que se pasó por parámetro se accede al método aparecerFruta.
 	class RemindTask extends TimerTask {
 		public void run ( ) {
 			aparecerFruta();
