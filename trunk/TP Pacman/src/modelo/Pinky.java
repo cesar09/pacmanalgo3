@@ -43,6 +43,7 @@ public class Pinky extends Fantasma  {
 		this.posicion = posicion;
 		this.encerrado = true;
 		this.hacerseNoComestible();
+		this.setRepeticionMovimiento(20);
 
 	}
 	

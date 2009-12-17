@@ -42,6 +42,7 @@ public class Blinky extends Fantasma {
 		this.posicion = posicion;
 		this.encerrado = true;
 		this.hacerseNoComestible();
+		this.setRepeticionMovimiento(30);
 	}
 	
 	//Tiene una posición predeterminada para salir de la jaula
