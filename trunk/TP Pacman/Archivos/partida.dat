@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Juego nivel="5">
-    <Laberinto cantidadColumnas="28" cantidadFilas="31" cantidadPastillas="654">
+<Juego nivel="4">
+    <Laberinto cantidadColumnas="28" cantidadFilas="31" cantidadPastillas="326">
         <ContenidoColumna0Fila0 tipo="Bloque"/>
         <ContenidoColumna1Fila0 tipo="Bloque"/>
         <ContenidoColumna2Fila0 tipo="Bloque"/>
@@ -40,12 +40,12 @@
         <ContenidoColumna8Fila1 puntaje="10" tipo="Punto"/>
         <ContenidoColumna9Fila1 puntaje="10" tipo="Punto"/>
         <ContenidoColumna10Fila1 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila1 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila1 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila1 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila1 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila1 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila1 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna11Fila1 tipo="Bloque"/>
+        <ContenidoColumna12Fila1 tipo="Vacio"/>
+        <ContenidoColumna13Fila1 tipo="Vacio"/>
+        <ContenidoColumna14Fila1 tipo="Vacio"/>
+        <ContenidoColumna15Fila1 tipo="Vacio"/>
+        <ContenidoColumna16Fila1 tipo="Bloque"/>
         <ContenidoColumna17Fila1 puntaje="10" tipo="Punto"/>
         <ContenidoColumna18Fila1 puntaje="10" tipo="Punto"/>
         <ContenidoColumna19Fila1 puntaje="10" tipo="Punto"/>
@@ -59,42 +59,42 @@
         <ContenidoColumna27Fila1 tipo="Bloque"/>
         <ContenidoColumna0Fila2 tipo="Bloque"/>
         <ContenidoColumna1Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila2 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila2 tipo="Bloque"/>
         <ContenidoColumna3Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila2 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila2 tipo="Bloque"/>
+        <ContenidoColumna5Fila2 tipo="Bloque"/>
         <ContenidoColumna6Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila2 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila2 tipo="Bloque"/>
+        <ContenidoColumna8Fila2 tipo="Bloque"/>
+        <ContenidoColumna9Fila2 tipo="Bloque"/>
         <ContenidoColumna10Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila2 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna11Fila2 tipo="Bloque"/>
+        <ContenidoColumna12Fila2 tipo="Bloque"/>
+        <ContenidoColumna13Fila2 tipo="Bloque"/>
+        <ContenidoColumna14Fila2 tipo="Bloque"/>
+        <ContenidoColumna15Fila2 tipo="Bloque"/>
+        <ContenidoColumna16Fila2 tipo="Bloque"/>
         <ContenidoColumna17Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila2 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna18Fila2 tipo="Bloque"/>
+        <ContenidoColumna19Fila2 tipo="Bloque"/>
+        <ContenidoColumna20Fila2 tipo="Bloque"/>
         <ContenidoColumna21Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila2 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila2 tipo="Bloque"/>
         <ContenidoColumna23Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila2 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila2 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila2 tipo="Bloque"/>
+        <ContenidoColumna25Fila2 tipo="Bloque"/>
         <ContenidoColumna26Fila2 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila2 tipo="Bloque"/>
         <ContenidoColumna0Fila3 tipo="Bloque"/>
         <ContenidoColumna1Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila3 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila3 tipo="Bloque"/>
         <ContenidoColumna3Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila3 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila3 puntaje="50" tipo="PuntoPoder"/>
+        <ContenidoColumna5Fila3 tipo="Bloque"/>
         <ContenidoColumna6Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila3 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila3 tipo="Bloque"/>
+        <ContenidoColumna8Fila3 tipo="Vacio"/>
+        <ContenidoColumna9Fila3 tipo="Bloque"/>
         <ContenidoColumna10Fila3 puntaje="10" tipo="Punto"/>
         <ContenidoColumna11Fila3 puntaje="10" tipo="Punto"/>
         <ContenidoColumna12Fila3 puntaje="10" tipo="Punto"/>
@@ -103,42 +103,42 @@
         <ContenidoColumna15Fila3 puntaje="10" tipo="Punto"/>
         <ContenidoColumna16Fila3 puntaje="10" tipo="Punto"/>
         <ContenidoColumna17Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila3 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna18Fila3 tipo="Bloque"/>
+        <ContenidoColumna19Fila3 tipo="Vacio"/>
+        <ContenidoColumna20Fila3 tipo="Bloque"/>
         <ContenidoColumna21Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila3 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila3 tipo="Bloque"/>
         <ContenidoColumna23Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila3 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila3 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila3 puntaje="50" tipo="PuntoPoder"/>
+        <ContenidoColumna25Fila3 tipo="Bloque"/>
         <ContenidoColumna26Fila3 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila3 tipo="Bloque"/>
         <ContenidoColumna0Fila4 tipo="Bloque"/>
         <ContenidoColumna1Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila4 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila4 tipo="Bloque"/>
+        <ContenidoColumna3Fila4 tipo="Bloque"/>
+        <ContenidoColumna4Fila4 tipo="Bloque"/>
+        <ContenidoColumna5Fila4 tipo="Bloque"/>
         <ContenidoColumna6Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila4 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila4 tipo="Bloque"/>
+        <ContenidoColumna8Fila4 tipo="Bloque"/>
+        <ContenidoColumna9Fila4 tipo="Bloque"/>
+        <ContenidoColumna10Fila4 tipo="Bloque"/>
+        <ContenidoColumna11Fila4 tipo="Bloque"/>
+        <ContenidoColumna12Fila4 tipo="Bloque"/>
+        <ContenidoColumna13Fila4 tipo="Bloque"/>
+        <ContenidoColumna14Fila4 tipo="Bloque"/>
+        <ContenidoColumna15Fila4 tipo="Bloque"/>
+        <ContenidoColumna16Fila4 tipo="Bloque"/>
+        <ContenidoColumna17Fila4 tipo="Bloque"/>
+        <ContenidoColumna18Fila4 tipo="Bloque"/>
+        <ContenidoColumna19Fila4 tipo="Bloque"/>
+        <ContenidoColumna20Fila4 tipo="Bloque"/>
         <ContenidoColumna21Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila4 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila4 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila4 tipo="Bloque"/>
+        <ContenidoColumna23Fila4 tipo="Bloque"/>
+        <ContenidoColumna24Fila4 tipo="Bloque"/>
+        <ContenidoColumna25Fila4 tipo="Bloque"/>
         <ContenidoColumna26Fila4 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila4 tipo="Bloque"/>
         <ContenidoColumna0Fila5 tipo="Bloque"/>
@@ -171,61 +171,61 @@
         <ContenidoColumna27Fila5 tipo="Bloque"/>
         <ContenidoColumna0Fila6 tipo="Bloque"/>
         <ContenidoColumna1Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila6 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila6 tipo="Bloque"/>
+        <ContenidoColumna3Fila6 tipo="Bloque"/>
+        <ContenidoColumna4Fila6 tipo="Bloque"/>
+        <ContenidoColumna5Fila6 tipo="Bloque"/>
         <ContenidoColumna6Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila6 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila6 tipo="Bloque"/>
+        <ContenidoColumna8Fila6 tipo="Bloque"/>
         <ContenidoColumna9Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila6 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna10Fila6 tipo="Bloque"/>
+        <ContenidoColumna11Fila6 tipo="Bloque"/>
+        <ContenidoColumna12Fila6 tipo="Bloque"/>
+        <ContenidoColumna13Fila6 tipo="Bloque"/>
+        <ContenidoColumna14Fila6 tipo="Bloque"/>
+        <ContenidoColumna15Fila6 tipo="Bloque"/>
+        <ContenidoColumna16Fila6 tipo="Bloque"/>
+        <ContenidoColumna17Fila6 tipo="Bloque"/>
         <ContenidoColumna18Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila6 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna19Fila6 tipo="Bloque"/>
+        <ContenidoColumna20Fila6 tipo="Bloque"/>
         <ContenidoColumna21Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila6 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila6 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila6 tipo="Bloque"/>
+        <ContenidoColumna23Fila6 tipo="Bloque"/>
+        <ContenidoColumna24Fila6 tipo="Bloque"/>
+        <ContenidoColumna25Fila6 tipo="Bloque"/>
         <ContenidoColumna26Fila6 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila6 tipo="Bloque"/>
         <ContenidoColumna0Fila7 tipo="Bloque"/>
         <ContenidoColumna1Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila7 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila7 tipo="Bloque"/>
+        <ContenidoColumna3Fila7 tipo="Bloque"/>
+        <ContenidoColumna4Fila7 tipo="Bloque"/>
+        <ContenidoColumna5Fila7 tipo="Bloque"/>
         <ContenidoColumna6Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila7 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila7 tipo="Bloque"/>
+        <ContenidoColumna8Fila7 tipo="Bloque"/>
         <ContenidoColumna9Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila7 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna10Fila7 tipo="Bloque"/>
+        <ContenidoColumna11Fila7 tipo="Bloque"/>
+        <ContenidoColumna12Fila7 tipo="Bloque"/>
+        <ContenidoColumna13Fila7 tipo="Bloque"/>
+        <ContenidoColumna14Fila7 tipo="Bloque"/>
+        <ContenidoColumna15Fila7 tipo="Bloque"/>
+        <ContenidoColumna16Fila7 tipo="Bloque"/>
+        <ContenidoColumna17Fila7 tipo="Bloque"/>
         <ContenidoColumna18Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila7 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna19Fila7 tipo="Bloque"/>
+        <ContenidoColumna20Fila7 tipo="Bloque"/>
         <ContenidoColumna21Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila7 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila7 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila7 tipo="Bloque"/>
+        <ContenidoColumna23Fila7 tipo="Bloque"/>
+        <ContenidoColumna24Fila7 tipo="Bloque"/>
+        <ContenidoColumna25Fila7 tipo="Bloque"/>
         <ContenidoColumna26Fila7 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila7 tipo="Bloque"/>
-        <ContenidoColumna0Fila8 tipo="Transportador"/>
+        <ContenidoColumna0Fila8 tipo="Bloque"/>
         <ContenidoColumna1Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna2Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna3Fila8 puntaje="10" tipo="Punto"/>
@@ -238,8 +238,8 @@
         <ContenidoColumna10Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna11Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna12Fila8 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila8 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila8 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna13Fila8 tipo="Bloque"/>
+        <ContenidoColumna14Fila8 tipo="Bloque"/>
         <ContenidoColumna15Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna16Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna17Fila8 puntaje="10" tipo="Punto"/>
@@ -252,33 +252,33 @@
         <ContenidoColumna24Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna25Fila8 puntaje="10" tipo="Punto"/>
         <ContenidoColumna26Fila8 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna27Fila8 tipo="Transportador"/>
+        <ContenidoColumna27Fila8 tipo="Bloque"/>
         <ContenidoColumna0Fila9 tipo="Bloque"/>
         <ContenidoColumna1Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila9 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila9 tipo="Bloque"/>
+        <ContenidoColumna3Fila9 tipo="Bloque"/>
+        <ContenidoColumna4Fila9 tipo="Bloque"/>
+        <ContenidoColumna5Fila9 tipo="Bloque"/>
         <ContenidoColumna6Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila9 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila9 tipo="Bloque"/>
+        <ContenidoColumna8Fila9 tipo="Bloque"/>
+        <ContenidoColumna9Fila9 tipo="Bloque"/>
+        <ContenidoColumna10Fila9 tipo="Vacio"/>
+        <ContenidoColumna11Fila9 tipo="Bloque"/>
+        <ContenidoColumna12Fila9 tipo="Bloque"/>
+        <ContenidoColumna13Fila9 tipo="Bloque"/>
+        <ContenidoColumna14Fila9 tipo="Bloque"/>
+        <ContenidoColumna15Fila9 tipo="Bloque"/>
+        <ContenidoColumna16Fila9 tipo="Bloque"/>
+        <ContenidoColumna17Fila9 tipo="Vacio"/>
+        <ContenidoColumna18Fila9 tipo="Bloque"/>
+        <ContenidoColumna19Fila9 tipo="Bloque"/>
+        <ContenidoColumna20Fila9 tipo="Bloque"/>
         <ContenidoColumna21Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila9 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila9 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila9 tipo="Bloque"/>
+        <ContenidoColumna23Fila9 tipo="Bloque"/>
+        <ContenidoColumna24Fila9 tipo="Bloque"/>
+        <ContenidoColumna25Fila9 tipo="Bloque"/>
         <ContenidoColumna26Fila9 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila9 tipo="Bloque"/>
         <ContenidoColumna0Fila10 tipo="Bloque"/>
@@ -286,24 +286,24 @@
         <ContenidoColumna2Fila10 puntaje="10" tipo="Punto"/>
         <ContenidoColumna3Fila10 puntaje="10" tipo="Punto"/>
         <ContenidoColumna4Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila10 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila10 tipo="Bloque"/>
         <ContenidoColumna6Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila10 tipo="Vacio"/>
-        <ContenidoColumna14Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila10 tipo="Vacio"/>
-        <ContenidoColumna17Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila10 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila10 tipo="Bloque"/>
+        <ContenidoColumna8Fila10 tipo="Bloque"/>
+        <ContenidoColumna9Fila10 tipo="Bloque"/>
+        <ContenidoColumna10Fila10 tipo="Vacio"/>
+        <ContenidoColumna11Fila10 tipo="Bloque"/>
+        <ContenidoColumna12Fila10 tipo="Bloque"/>
+        <ContenidoColumna13Fila10 tipo="Bloque"/>
+        <ContenidoColumna14Fila10 tipo="Bloque"/>
+        <ContenidoColumna15Fila10 tipo="Bloque"/>
+        <ContenidoColumna16Fila10 tipo="Bloque"/>
+        <ContenidoColumna17Fila10 tipo="Vacio"/>
+        <ContenidoColumna18Fila10 tipo="Bloque"/>
+        <ContenidoColumna19Fila10 tipo="Bloque"/>
+        <ContenidoColumna20Fila10 tipo="Bloque"/>
         <ContenidoColumna21Fila10 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila10 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila10 tipo="Bloque"/>
         <ContenidoColumna23Fila10 puntaje="10" tipo="Punto"/>
         <ContenidoColumna24Fila10 puntaje="10" tipo="Punto"/>
         <ContenidoColumna25Fila10 puntaje="10" tipo="Punto"/>
@@ -311,14 +311,14 @@
         <ContenidoColumna27Fila10 tipo="Bloque"/>
         <ContenidoColumna0Fila11 tipo="Bloque"/>
         <ContenidoColumna1Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila11 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila11 tipo="Bloque"/>
+        <ContenidoColumna3Fila11 tipo="Bloque"/>
         <ContenidoColumna4Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila11 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila11 tipo="Bloque"/>
         <ContenidoColumna6Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila11 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila11 tipo="Bloque"/>
+        <ContenidoColumna8Fila11 tipo="Bloque"/>
+        <ContenidoColumna9Fila11 tipo="Vacio"/>
         <ContenidoColumna10Fila11 tipo="Vacio"/>
         <ContenidoColumna11Fila11 tipo="Vacio"/>
         <ContenidoColumna12Fila11 tipo="Vacio"/>
@@ -328,26 +328,26 @@
         <ContenidoColumna16Fila11 tipo="Vacio"/>
         <ContenidoColumna17Fila11 tipo="Vacio"/>
         <ContenidoColumna18Fila11 tipo="Vacio"/>
-        <ContenidoColumna19Fila11 tipo="Vacio"/>
-        <ContenidoColumna20Fila11 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna19Fila11 tipo="Bloque"/>
+        <ContenidoColumna20Fila11 tipo="Bloque"/>
         <ContenidoColumna21Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila11 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila11 tipo="Bloque"/>
         <ContenidoColumna23Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila11 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila11 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila11 tipo="Bloque"/>
+        <ContenidoColumna25Fila11 tipo="Bloque"/>
         <ContenidoColumna26Fila11 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila11 tipo="Bloque"/>
         <ContenidoColumna0Fila12 tipo="Bloque"/>
         <ContenidoColumna1Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila12 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila12 tipo="Bloque"/>
+        <ContenidoColumna3Fila12 tipo="Bloque"/>
         <ContenidoColumna4Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila12 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila12 tipo="Bloque"/>
         <ContenidoColumna6Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila12 tipo="Vacio"/>
+        <ContenidoColumna7Fila12 tipo="Bloque"/>
+        <ContenidoColumna8Fila12 tipo="Bloque"/>
+        <ContenidoColumna9Fila12 tipo="Vacio"/>
+        <ContenidoColumna10Fila12 tipo="Bloque"/>
         <ContenidoColumna11Fila12 tipo="Bloque"/>
         <ContenidoColumna12Fila12 tipo="Bloque"/>
         <ContenidoColumna13Fila12 tipo="Bloque"/>
@@ -355,42 +355,42 @@
         <ContenidoColumna15Fila12 tipo="Bloque"/>
         <ContenidoColumna16Fila12 tipo="Bloque"/>
         <ContenidoColumna17Fila12 tipo="Bloque"/>
-        <ContenidoColumna18Fila12 tipo="Bloque"/>
-        <ContenidoColumna19Fila12 tipo="Vacio"/>
-        <ContenidoColumna20Fila12 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna18Fila12 tipo="Vacio"/>
+        <ContenidoColumna19Fila12 tipo="Bloque"/>
+        <ContenidoColumna20Fila12 tipo="Bloque"/>
         <ContenidoColumna21Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila12 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila12 tipo="Bloque"/>
         <ContenidoColumna23Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila12 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila12 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila12 tipo="Bloque"/>
+        <ContenidoColumna25Fila12 tipo="Bloque"/>
         <ContenidoColumna26Fila12 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila12 tipo="Bloque"/>
         <ContenidoColumna0Fila13 tipo="Bloque"/>
         <ContenidoColumna1Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila13 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila13 tipo="Bloque"/>
+        <ContenidoColumna3Fila13 tipo="Bloque"/>
         <ContenidoColumna4Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila13 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila13 tipo="Bloque"/>
         <ContenidoColumna6Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila13 tipo="Vacio"/>
-        <ContenidoColumna11Fila13 tipo="Bloque"/>
+        <ContenidoColumna7Fila13 tipo="Bloque"/>
+        <ContenidoColumna8Fila13 tipo="Bloque"/>
+        <ContenidoColumna9Fila13 tipo="Vacio"/>
+        <ContenidoColumna10Fila13 tipo="Bloque"/>
+        <ContenidoColumna11Fila13 tipo="Vacio"/>
         <ContenidoColumna12Fila13 tipo="Vacio"/>
         <ContenidoColumna13Fila13 tipo="Vacio"/>
         <ContenidoColumna14Fila13 tipo="Vacio"/>
         <ContenidoColumna15Fila13 tipo="Vacio"/>
         <ContenidoColumna16Fila13 tipo="Vacio"/>
-        <ContenidoColumna17Fila13 tipo="Vacio"/>
-        <ContenidoColumna18Fila13 tipo="Bloque"/>
-        <ContenidoColumna19Fila13 tipo="Vacio"/>
-        <ContenidoColumna20Fila13 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna17Fila13 tipo="Bloque"/>
+        <ContenidoColumna18Fila13 tipo="Vacio"/>
+        <ContenidoColumna19Fila13 tipo="Bloque"/>
+        <ContenidoColumna20Fila13 tipo="Bloque"/>
         <ContenidoColumna21Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila13 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila13 tipo="Bloque"/>
         <ContenidoColumna23Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila13 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila13 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila13 tipo="Bloque"/>
+        <ContenidoColumna25Fila13 tipo="Bloque"/>
         <ContenidoColumna26Fila13 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila13 tipo="Bloque"/>
         <ContenidoColumna0Fila14 tipo="Bloque"/>
@@ -398,24 +398,24 @@
         <ContenidoColumna2Fila14 puntaje="10" tipo="Punto"/>
         <ContenidoColumna3Fila14 puntaje="10" tipo="Punto"/>
         <ContenidoColumna4Fila14 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila14 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila14 tipo="Bloque"/>
         <ContenidoColumna6Fila14 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila14 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila14 tipo="Vacio"/>
         <ContenidoColumna8Fila14 tipo="Vacio"/>
         <ContenidoColumna9Fila14 tipo="Vacio"/>
-        <ContenidoColumna10Fila14 tipo="Vacio"/>
-        <ContenidoColumna11Fila14 tipo="Bloque"/>
+        <ContenidoColumna10Fila14 tipo="Bloque"/>
+        <ContenidoColumna11Fila14 tipo="Vacio"/>
         <ContenidoColumna12Fila14 tipo="Vacio"/>
         <ContenidoColumna13Fila14 tipo="Vacio"/>
         <ContenidoColumna14Fila14 tipo="Vacio"/>
         <ContenidoColumna15Fila14 tipo="Vacio"/>
         <ContenidoColumna16Fila14 tipo="Vacio"/>
-        <ContenidoColumna17Fila14 tipo="Vacio"/>
-        <ContenidoColumna18Fila14 tipo="Bloque"/>
+        <ContenidoColumna17Fila14 tipo="Bloque"/>
+        <ContenidoColumna18Fila14 tipo="Vacio"/>
         <ContenidoColumna19Fila14 tipo="Vacio"/>
         <ContenidoColumna20Fila14 tipo="Vacio"/>
-        <ContenidoColumna21Fila14 tipo="Vacio"/>
-        <ContenidoColumna22Fila14 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna21Fila14 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila14 tipo="Bloque"/>
         <ContenidoColumna23Fila14 puntaje="10" tipo="Punto"/>
         <ContenidoColumna24Fila14 puntaje="10" tipo="Punto"/>
         <ContenidoColumna25Fila14 puntaje="10" tipo="Punto"/>
@@ -423,43 +423,43 @@
         <ContenidoColumna27Fila14 tipo="Bloque"/>
         <ContenidoColumna0Fila15 tipo="Bloque"/>
         <ContenidoColumna1Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila15 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila15 tipo="Bloque"/>
+        <ContenidoColumna3Fila15 tipo="Bloque"/>
         <ContenidoColumna4Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila15 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila15 tipo="Bloque"/>
         <ContenidoColumna6Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila15 tipo="Vacio"/>
-        <ContenidoColumna11Fila15 tipo="Bloque"/>
+        <ContenidoColumna7Fila15 tipo="Bloque"/>
+        <ContenidoColumna8Fila15 tipo="Bloque"/>
+        <ContenidoColumna9Fila15 tipo="Vacio"/>
+        <ContenidoColumna10Fila15 tipo="Bloque"/>
+        <ContenidoColumna11Fila15 tipo="Vacio"/>
         <ContenidoColumna12Fila15 tipo="Vacio"/>
         <ContenidoColumna13Fila15 tipo="Vacio"/>
         <ContenidoColumna14Fila15 tipo="Vacio"/>
         <ContenidoColumna15Fila15 tipo="Vacio"/>
         <ContenidoColumna16Fila15 tipo="Vacio"/>
-        <ContenidoColumna17Fila15 tipo="Vacio"/>
-        <ContenidoColumna18Fila15 tipo="Bloque"/>
-        <ContenidoColumna19Fila15 tipo="Vacio"/>
-        <ContenidoColumna20Fila15 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna17Fila15 tipo="Bloque"/>
+        <ContenidoColumna18Fila15 tipo="Vacio"/>
+        <ContenidoColumna19Fila15 tipo="Bloque"/>
+        <ContenidoColumna20Fila15 tipo="Bloque"/>
         <ContenidoColumna21Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila15 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila15 tipo="Bloque"/>
         <ContenidoColumna23Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila15 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila15 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila15 tipo="Bloque"/>
+        <ContenidoColumna25Fila15 tipo="Bloque"/>
         <ContenidoColumna26Fila15 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila15 tipo="Bloque"/>
         <ContenidoColumna0Fila16 tipo="Bloque"/>
         <ContenidoColumna1Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila16 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila16 tipo="Bloque"/>
+        <ContenidoColumna3Fila16 tipo="Bloque"/>
         <ContenidoColumna4Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila16 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila16 tipo="Bloque"/>
         <ContenidoColumna6Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila16 tipo="Vacio"/>
+        <ContenidoColumna7Fila16 tipo="Bloque"/>
+        <ContenidoColumna8Fila16 tipo="Bloque"/>
+        <ContenidoColumna9Fila16 tipo="Vacio"/>
+        <ContenidoColumna10Fila16 tipo="Bloque"/>
         <ContenidoColumna11Fila16 tipo="Bloque"/>
         <ContenidoColumna12Fila16 tipo="Bloque"/>
         <ContenidoColumna13Fila16 tipo="Bloque"/>
@@ -467,26 +467,26 @@
         <ContenidoColumna15Fila16 tipo="Bloque"/>
         <ContenidoColumna16Fila16 tipo="Bloque"/>
         <ContenidoColumna17Fila16 tipo="Bloque"/>
-        <ContenidoColumna18Fila16 tipo="Bloque"/>
-        <ContenidoColumna19Fila16 tipo="Vacio"/>
-        <ContenidoColumna20Fila16 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna18Fila16 tipo="Vacio"/>
+        <ContenidoColumna19Fila16 tipo="Bloque"/>
+        <ContenidoColumna20Fila16 tipo="Bloque"/>
         <ContenidoColumna21Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila16 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila16 tipo="Bloque"/>
         <ContenidoColumna23Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila16 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila16 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila16 tipo="Bloque"/>
+        <ContenidoColumna25Fila16 tipo="Bloque"/>
         <ContenidoColumna26Fila16 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila16 tipo="Bloque"/>
         <ContenidoColumna0Fila17 tipo="Bloque"/>
         <ContenidoColumna1Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna3Fila17 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila17 tipo="Bloque"/>
+        <ContenidoColumna3Fila17 tipo="Bloque"/>
         <ContenidoColumna4Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila17 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila17 tipo="Bloque"/>
         <ContenidoColumna6Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila17 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila17 tipo="Bloque"/>
+        <ContenidoColumna8Fila17 tipo="Bloque"/>
+        <ContenidoColumna9Fila17 tipo="Vacio"/>
         <ContenidoColumna10Fila17 tipo="Vacio"/>
         <ContenidoColumna11Fila17 tipo="Vacio"/>
         <ContenidoColumna12Fila17 tipo="Vacio"/>
@@ -496,13 +496,13 @@
         <ContenidoColumna16Fila17 tipo="Vacio"/>
         <ContenidoColumna17Fila17 tipo="Vacio"/>
         <ContenidoColumna18Fila17 tipo="Vacio"/>
-        <ContenidoColumna19Fila17 tipo="Vacio"/>
-        <ContenidoColumna20Fila17 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna19Fila17 tipo="Bloque"/>
+        <ContenidoColumna20Fila17 tipo="Bloque"/>
         <ContenidoColumna21Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila17 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila17 tipo="Bloque"/>
         <ContenidoColumna23Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila17 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila17 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna24Fila17 tipo="Bloque"/>
+        <ContenidoColumna25Fila17 tipo="Bloque"/>
         <ContenidoColumna26Fila17 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila17 tipo="Bloque"/>
         <ContenidoColumna0Fila18 tipo="Bloque"/>
@@ -510,24 +510,24 @@
         <ContenidoColumna2Fila18 puntaje="10" tipo="Punto"/>
         <ContenidoColumna3Fila18 puntaje="10" tipo="Punto"/>
         <ContenidoColumna4Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila18 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna5Fila18 tipo="Bloque"/>
         <ContenidoColumna6Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila18 tipo="Vacio"/>
-        <ContenidoColumna11Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila18 tipo="Vacio"/>
-        <ContenidoColumna20Fila18 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila18 tipo="Bloque"/>
+        <ContenidoColumna8Fila18 tipo="Bloque"/>
+        <ContenidoColumna9Fila18 tipo="Vacio"/>
+        <ContenidoColumna10Fila18 tipo="Bloque"/>
+        <ContenidoColumna11Fila18 tipo="Bloque"/>
+        <ContenidoColumna12Fila18 tipo="Bloque"/>
+        <ContenidoColumna13Fila18 tipo="Bloque"/>
+        <ContenidoColumna14Fila18 tipo="Bloque"/>
+        <ContenidoColumna15Fila18 tipo="Bloque"/>
+        <ContenidoColumna16Fila18 tipo="Bloque"/>
+        <ContenidoColumna17Fila18 tipo="Bloque"/>
+        <ContenidoColumna18Fila18 tipo="Vacio"/>
+        <ContenidoColumna19Fila18 tipo="Bloque"/>
+        <ContenidoColumna20Fila18 tipo="Bloque"/>
         <ContenidoColumna21Fila18 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila18 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila18 tipo="Bloque"/>
         <ContenidoColumna23Fila18 puntaje="10" tipo="Punto"/>
         <ContenidoColumna24Fila18 puntaje="10" tipo="Punto"/>
         <ContenidoColumna25Fila18 puntaje="10" tipo="Punto"/>
@@ -535,18 +535,18 @@
         <ContenidoColumna27Fila18 tipo="Bloque"/>
         <ContenidoColumna0Fila19 tipo="Bloque"/>
         <ContenidoColumna1Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila19 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila19 tipo="Bloque"/>
         <ContenidoColumna3Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila19 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila19 tipo="Bloque"/>
+        <ContenidoColumna5Fila19 tipo="Bloque"/>
         <ContenidoColumna6Fila19 puntaje="10" tipo="Punto"/>
         <ContenidoColumna7Fila19 puntaje="10" tipo="Punto"/>
         <ContenidoColumna8Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila19 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna9Fila19 tipo="Vacio"/>
+        <ContenidoColumna10Fila19 tipo="Vacio"/>
+        <ContenidoColumna11Fila19 tipo="Vacio"/>
+        <ContenidoColumna12Fila19 tipo="Vacio"/>
+        <ContenidoColumna13Fila19 tipo="Vacio"/>
         <ContenidoColumna14Fila19 puntaje="10" tipo="Punto"/>
         <ContenidoColumna15Fila19 puntaje="10" tipo="Punto"/>
         <ContenidoColumna16Fila19 puntaje="10" tipo="Punto"/>
@@ -555,43 +555,43 @@
         <ContenidoColumna19Fila19 puntaje="10" tipo="Punto"/>
         <ContenidoColumna20Fila19 puntaje="10" tipo="Punto"/>
         <ContenidoColumna21Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila19 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila19 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna22Fila19 tipo="Bloque"/>
+        <ContenidoColumna23Fila19 tipo="Bloque"/>
+        <ContenidoColumna24Fila19 tipo="Bloque"/>
+        <ContenidoColumna25Fila19 tipo="Bloque"/>
         <ContenidoColumna26Fila19 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila19 tipo="Bloque"/>
-        <ContenidoColumna0Fila20 tipo="Transportador"/>
+        <ContenidoColumna0Fila20 tipo="Bloque"/>
         <ContenidoColumna1Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila20 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila20 tipo="Bloque"/>
         <ContenidoColumna3Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna6Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna21Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila20 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila20 tipo="Bloque"/>
+        <ContenidoColumna5Fila20 tipo="Bloque"/>
+        <ContenidoColumna6Fila20 tipo="Bloque"/>
+        <ContenidoColumna7Fila20 tipo="Bloque"/>
+        <ContenidoColumna8Fila20 tipo="Bloque"/>
+        <ContenidoColumna9Fila20 tipo="Bloque"/>
+        <ContenidoColumna10Fila20 tipo="Bloque"/>
+        <ContenidoColumna11Fila20 tipo="Bloque"/>
+        <ContenidoColumna12Fila20 tipo="Bloque"/>
+        <ContenidoColumna13Fila20 tipo="Vacio"/>
+        <ContenidoColumna14Fila20 tipo="Vacio"/>
+        <ContenidoColumna15Fila20 tipo="Bloque"/>
+        <ContenidoColumna16Fila20 tipo="Bloque"/>
+        <ContenidoColumna17Fila20 tipo="Bloque"/>
+        <ContenidoColumna18Fila20 tipo="Bloque"/>
+        <ContenidoColumna19Fila20 tipo="Bloque"/>
+        <ContenidoColumna20Fila20 tipo="Bloque"/>
+        <ContenidoColumna21Fila20 tipo="Bloque"/>
+        <ContenidoColumna22Fila20 tipo="Bloque"/>
+        <ContenidoColumna23Fila20 tipo="Bloque"/>
+        <ContenidoColumna24Fila20 tipo="Bloque"/>
+        <ContenidoColumna25Fila20 tipo="Bloque"/>
         <ContenidoColumna26Fila20 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna27Fila20 tipo="Transportador"/>
+        <ContenidoColumna27Fila20 tipo="Bloque"/>
         <ContenidoColumna0Fila21 tipo="Bloque"/>
         <ContenidoColumna1Fila21 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila21 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila21 tipo="Bloque"/>
         <ContenidoColumna3Fila21 puntaje="10" tipo="Punto"/>
         <ContenidoColumna4Fila21 puntaje="10" tipo="Punto"/>
         <ContenidoColumna5Fila21 puntaje="10" tipo="Punto"/>
@@ -602,7 +602,7 @@
         <ContenidoColumna10Fila21 puntaje="10" tipo="Punto"/>
         <ContenidoColumna11Fila21 puntaje="10" tipo="Punto"/>
         <ContenidoColumna12Fila21 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila21 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna13Fila21 tipo="Vacio"/>
         <ContenidoColumna14Fila21 puntaje="10" tipo="Punto"/>
         <ContenidoColumna15Fila21 puntaje="10" tipo="Punto"/>
         <ContenidoColumna16Fila21 puntaje="10" tipo="Punto"/>
@@ -619,49 +619,49 @@
         <ContenidoColumna27Fila21 tipo="Bloque"/>
         <ContenidoColumna0Fila22 tipo="Bloque"/>
         <ContenidoColumna1Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna2Fila22 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila22 tipo="Bloque"/>
         <ContenidoColumna3Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna6Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna21Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila22 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila22 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila22 tipo="Bloque"/>
+        <ContenidoColumna5Fila22 tipo="Bloque"/>
+        <ContenidoColumna6Fila22 tipo="Bloque"/>
+        <ContenidoColumna7Fila22 tipo="Bloque"/>
+        <ContenidoColumna8Fila22 tipo="Bloque"/>
+        <ContenidoColumna9Fila22 tipo="Bloque"/>
+        <ContenidoColumna10Fila22 tipo="Bloque"/>
+        <ContenidoColumna11Fila22 tipo="Bloque"/>
+        <ContenidoColumna12Fila22 tipo="Bloque"/>
+        <ContenidoColumna13Fila22 tipo="Vacio"/>
+        <ContenidoColumna14Fila22 tipo="Vacio"/>
+        <ContenidoColumna15Fila22 tipo="Bloque"/>
+        <ContenidoColumna16Fila22 tipo="Bloque"/>
+        <ContenidoColumna17Fila22 tipo="Bloque"/>
+        <ContenidoColumna18Fila22 tipo="Bloque"/>
+        <ContenidoColumna19Fila22 tipo="Bloque"/>
+        <ContenidoColumna20Fila22 tipo="Bloque"/>
+        <ContenidoColumna21Fila22 tipo="Bloque"/>
+        <ContenidoColumna22Fila22 tipo="Bloque"/>
+        <ContenidoColumna23Fila22 tipo="Bloque"/>
+        <ContenidoColumna24Fila22 tipo="Bloque"/>
+        <ContenidoColumna25Fila22 tipo="Bloque"/>
         <ContenidoColumna26Fila22 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila22 tipo="Bloque"/>
         <ContenidoColumna0Fila23 tipo="Bloque"/>
-        <ContenidoColumna1Fila23 tipo="Vacio"/>
-        <ContenidoColumna2Fila23 tipo="Vacio"/>
-        <ContenidoColumna3Fila23 tipo="Vacio"/>
-        <ContenidoColumna4Fila23 tipo="Vacio"/>
-        <ContenidoColumna5Fila23 tipo="Vacio"/>
-        <ContenidoColumna6Fila23 tipo="Vacio"/>
-        <ContenidoColumna7Fila23 tipo="Vacio"/>
-        <ContenidoColumna8Fila23 tipo="Vacio"/>
-        <ContenidoColumna9Fila23 tipo="Vacio"/>
-        <ContenidoColumna10Fila23 tipo="Vacio"/>
-        <ContenidoColumna11Fila23 tipo="Vacio"/>
-        <ContenidoColumna12Fila23 tipo="Vacio"/>
+        <ContenidoColumna1Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila23 tipo="Bloque"/>
+        <ContenidoColumna3Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila23 tipo="Bloque"/>
+        <ContenidoColumna5Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna6Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna7Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna8Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna9Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna10Fila23 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna11Fila23 puntaje="50" tipo="PuntoPoder"/>
+        <ContenidoColumna12Fila23 tipo="Bloque"/>
         <ContenidoColumna13Fila23 tipo="Vacio"/>
         <ContenidoColumna14Fila23 tipo="Vacio"/>
-        <ContenidoColumna15Fila23 tipo="Vacio"/>
-        <ContenidoColumna16Fila23 tipo="Vacio"/>
+        <ContenidoColumna15Fila23 tipo="Bloque"/>
+        <ContenidoColumna16Fila23 puntaje="50" tipo="PuntoPoder"/>
         <ContenidoColumna17Fila23 puntaje="10" tipo="Punto"/>
         <ContenidoColumna18Fila23 puntaje="10" tipo="Punto"/>
         <ContenidoColumna19Fila23 puntaje="10" tipo="Punto"/>
@@ -670,42 +670,42 @@
         <ContenidoColumna22Fila23 puntaje="10" tipo="Punto"/>
         <ContenidoColumna23Fila23 puntaje="10" tipo="Punto"/>
         <ContenidoColumna24Fila23 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila23 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna26Fila23 puntaje="50" tipo="PuntoPoder"/>
+        <ContenidoColumna25Fila23 tipo="Bloque"/>
+        <ContenidoColumna26Fila23 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila23 tipo="Bloque"/>
         <ContenidoColumna0Fila24 tipo="Bloque"/>
-        <ContenidoColumna1Fila24 tipo="Vacio"/>
+        <ContenidoColumna1Fila24 puntaje="10" tipo="Punto"/>
         <ContenidoColumna2Fila24 puntaje="10" tipo="Punto"/>
         <ContenidoColumna3Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna6Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna21Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila24 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila24 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila24 tipo="Bloque"/>
+        <ContenidoColumna5Fila24 tipo="Bloque"/>
+        <ContenidoColumna6Fila24 tipo="Bloque"/>
+        <ContenidoColumna7Fila24 tipo="Bloque"/>
+        <ContenidoColumna8Fila24 tipo="Vacio"/>
+        <ContenidoColumna9Fila24 tipo="Bloque"/>
+        <ContenidoColumna10Fila24 tipo="Bloque"/>
+        <ContenidoColumna11Fila24 tipo="Bloque"/>
+        <ContenidoColumna12Fila24 tipo="Bloque"/>
+        <ContenidoColumna13Fila24 tipo="Vacio"/>
+        <ContenidoColumna14Fila24 tipo="Vacio"/>
+        <ContenidoColumna15Fila24 tipo="Bloque"/>
+        <ContenidoColumna16Fila24 tipo="Bloque"/>
+        <ContenidoColumna17Fila24 tipo="Bloque"/>
+        <ContenidoColumna18Fila24 tipo="Bloque"/>
+        <ContenidoColumna19Fila24 tipo="Bloque"/>
+        <ContenidoColumna20Fila24 tipo="Vacio"/>
+        <ContenidoColumna21Fila24 tipo="Bloque"/>
+        <ContenidoColumna22Fila24 tipo="Bloque"/>
+        <ContenidoColumna23Fila24 tipo="Bloque"/>
+        <ContenidoColumna24Fila24 tipo="Bloque"/>
+        <ContenidoColumna25Fila24 tipo="Bloque"/>
         <ContenidoColumna26Fila24 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila24 tipo="Bloque"/>
         <ContenidoColumna0Fila25 tipo="Bloque"/>
-        <ContenidoColumna1Fila25 tipo="Vacio"/>
-        <ContenidoColumna2Fila25 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna1Fila25 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila25 tipo="Bloque"/>
         <ContenidoColumna3Fila25 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila25 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila25 tipo="Bloque"/>
         <ContenidoColumna5Fila25 puntaje="10" tipo="Punto"/>
         <ContenidoColumna6Fila25 puntaje="10" tipo="Punto"/>
         <ContenidoColumna7Fila25 puntaje="10" tipo="Punto"/>
@@ -726,42 +726,42 @@
         <ContenidoColumna22Fila25 puntaje="10" tipo="Punto"/>
         <ContenidoColumna23Fila25 puntaje="10" tipo="Punto"/>
         <ContenidoColumna24Fila25 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila25 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna25Fila25 tipo="Bloque"/>
         <ContenidoColumna26Fila25 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila25 tipo="Bloque"/>
         <ContenidoColumna0Fila26 tipo="Bloque"/>
-        <ContenidoColumna1Fila26 tipo="Vacio"/>
-        <ContenidoColumna2Fila26 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna1Fila26 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila26 tipo="Bloque"/>
         <ContenidoColumna3Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna6Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna21Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila26 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila26 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila26 tipo="Bloque"/>
+        <ContenidoColumna5Fila26 tipo="Bloque"/>
+        <ContenidoColumna6Fila26 tipo="Bloque"/>
+        <ContenidoColumna7Fila26 tipo="Vacio"/>
+        <ContenidoColumna8Fila26 tipo="Bloque"/>
+        <ContenidoColumna9Fila26 tipo="Bloque"/>
+        <ContenidoColumna10Fila26 tipo="Bloque"/>
+        <ContenidoColumna11Fila26 tipo="Bloque"/>
+        <ContenidoColumna12Fila26 tipo="Bloque"/>
+        <ContenidoColumna13Fila26 tipo="Bloque"/>
+        <ContenidoColumna14Fila26 tipo="Bloque"/>
+        <ContenidoColumna15Fila26 tipo="Bloque"/>
+        <ContenidoColumna16Fila26 tipo="Bloque"/>
+        <ContenidoColumna17Fila26 tipo="Bloque"/>
+        <ContenidoColumna18Fila26 tipo="Bloque"/>
+        <ContenidoColumna19Fila26 tipo="Bloque"/>
+        <ContenidoColumna20Fila26 tipo="Vacio"/>
+        <ContenidoColumna21Fila26 tipo="Bloque"/>
+        <ContenidoColumna22Fila26 tipo="Bloque"/>
+        <ContenidoColumna23Fila26 tipo="Bloque"/>
+        <ContenidoColumna24Fila26 tipo="Bloque"/>
+        <ContenidoColumna25Fila26 tipo="Bloque"/>
         <ContenidoColumna26Fila26 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila26 tipo="Bloque"/>
         <ContenidoColumna0Fila27 tipo="Bloque"/>
-        <ContenidoColumna1Fila27 tipo="Vacio"/>
-        <ContenidoColumna2Fila27 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna1Fila27 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila27 tipo="Bloque"/>
         <ContenidoColumna3Fila27 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila27 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila27 tipo="Bloque"/>
         <ContenidoColumna5Fila27 puntaje="10" tipo="Punto"/>
         <ContenidoColumna6Fila27 puntaje="10" tipo="Punto"/>
         <ContenidoColumna7Fila27 puntaje="10" tipo="Punto"/>
@@ -782,39 +782,39 @@
         <ContenidoColumna22Fila27 puntaje="10" tipo="Punto"/>
         <ContenidoColumna23Fila27 puntaje="10" tipo="Punto"/>
         <ContenidoColumna24Fila27 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila27 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna25Fila27 tipo="Bloque"/>
         <ContenidoColumna26Fila27 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila27 tipo="Bloque"/>
         <ContenidoColumna0Fila28 tipo="Bloque"/>
-        <ContenidoColumna1Fila28 tipo="Vacio"/>
-        <ContenidoColumna2Fila28 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna1Fila28 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna2Fila28 tipo="Bloque"/>
         <ContenidoColumna3Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna4Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna5Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna6Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna7Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna8Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna9Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna10Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna11Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna12Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna13Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna14Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna15Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna16Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna17Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna18Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna19Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna20Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna21Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna22Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna23Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna24Fila28 puntaje="10" tipo="Punto"/>
-        <ContenidoColumna25Fila28 puntaje="10" tipo="Punto"/>
+        <ContenidoColumna4Fila28 tipo="Bloque"/>
+        <ContenidoColumna5Fila28 tipo="Bloque"/>
+        <ContenidoColumna6Fila28 tipo="Bloque"/>
+        <ContenidoColumna7Fila28 tipo="Bloque"/>
+        <ContenidoColumna8Fila28 tipo="Bloque"/>
+        <ContenidoColumna9Fila28 tipo="Bloque"/>
+        <ContenidoColumna10Fila28 tipo="Bloque"/>
+        <ContenidoColumna11Fila28 tipo="Bloque"/>
+        <ContenidoColumna12Fila28 tipo="Bloque"/>
+        <ContenidoColumna13Fila28 tipo="Bloque"/>
+        <ContenidoColumna14Fila28 puntaje="50" tipo="PuntoPoder"/>
+        <ContenidoColumna15Fila28 tipo="Bloque"/>
+        <ContenidoColumna16Fila28 tipo="Bloque"/>
+        <ContenidoColumna17Fila28 tipo="Bloque"/>
+        <ContenidoColumna18Fila28 tipo="Bloque"/>
+        <ContenidoColumna19Fila28 tipo="Bloque"/>
+        <ContenidoColumna20Fila28 tipo="Bloque"/>
+        <ContenidoColumna21Fila28 tipo="Bloque"/>
+        <ContenidoColumna22Fila28 tipo="Bloque"/>
+        <ContenidoColumna23Fila28 tipo="Bloque"/>
+        <ContenidoColumna24Fila28 tipo="Bloque"/>
+        <ContenidoColumna25Fila28 tipo="Bloque"/>
         <ContenidoColumna26Fila28 puntaje="10" tipo="Punto"/>
         <ContenidoColumna27Fila28 tipo="Bloque"/>
         <ContenidoColumna0Fila29 tipo="Bloque"/>
-        <ContenidoColumna1Fila29 tipo="Vacio"/>
+        <ContenidoColumna1Fila29 puntaje="10" tipo="Punto"/>
         <ContenidoColumna2Fila29 puntaje="10" tipo="Punto"/>
         <ContenidoColumna3Fila29 puntaje="10" tipo="Punto"/>
         <ContenidoColumna4Fila29 puntaje="10" tipo="Punto"/>
@@ -870,5 +870,5 @@
         <ContenidoColumna26Fila30 tipo="Bloque"/>
         <ContenidoColumna27Fila30 tipo="Bloque"/>
     </Laberinto>
-    <Jugador puntaje="13390" vidas="2"/>
+    <Jugador puntaje="7440" vidas="0"/>
 </Juego>

@@ -10,7 +10,7 @@ public class ProgramaPrincipal {
 		Juego unJuego = null;
 		Ventana ventanaPrincipal = new VentanaPrincipal();
 		int valor=ventanaPrincipal.continuarPartida();
-		if (valor==0) unJuego=Juego.recuperarJuego("partida.dat");
+		if (valor==0) unJuego=Juego.recuperarJuego("TP Pacman/Archivos/partida.dat");
 		else if(valor==1) unJuego=new Juego();
 		
 		ControladorJuego cont = new ControladorJuego(unJuego);
