@@ -39,7 +39,7 @@ public class Jugador {
 		this.vidas++;
 	}
 
-	public static Object recuperar(Element elemJugador) {
+	public static Jugador recuperar(Element elemJugador) {
 		int valorPuntaje = Integer.parseInt(elemJugador.getAttribute("puntaje"));
 		int valorVida = Integer.parseInt(elemJugador.getAttribute("vidas"));
 		Jugador unJugador = new Jugador(valorVida,valorPuntaje);
