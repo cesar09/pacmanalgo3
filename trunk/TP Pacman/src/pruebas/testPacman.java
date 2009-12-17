@@ -43,5 +43,16 @@ public class testPacman extends TestCase{
 		assertEquals(unPoint.getX(),14);
 		assertEquals(unPoint.getY(),23);
 	}
+	
+	public void testIrIzquierdaHabiendoBloque(){
+		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
+		assertEquals(unPoint.getX(),13);
+		assertEquals(unPoint.getY(),23);
+		unNivel.obtenerPacman().nuevoSentido(-1,0);
+		unNivel.comenzarMoverPacman();
+		//Se debe quedar en la misma posición porque a la izquierda hay un bloque.
+		assertEquals(unPoint.getX(),13);
+		assertEquals(unPoint.getY(),23);
+	}
 
 }

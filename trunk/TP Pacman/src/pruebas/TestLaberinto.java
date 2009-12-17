@@ -21,7 +21,6 @@ public class TestLaberinto extends TestCase {
 		}
 	}
 		
-		
 	/*
 	 * Testea que devuelva el contenido correcto segun la posicion de los
 	 * elementos en la carga del Laberinto mediante el archivo nivel1.xml 
