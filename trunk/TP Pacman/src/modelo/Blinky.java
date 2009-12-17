@@ -4,11 +4,13 @@ public class Blinky extends Fantasma {
 	public Blinky(int velocidadInicial,int tiempoEnJaula) {
 		super(velocidadInicial, tiempoEnJaula);
 		this.nuevaDireccion(2);
+		this.setRepeticionMovimiento(30);
 	}
 
 	//Contiene la estrategia que usará Blinky para atrapar al pacman.
 	public void atraparPacman(Nivel unNivel) {
-		 switch(this.ultimaDireccion()) {
+		if(this.repeticionMovimiento()!=0){
+		switch(this.ultimaDireccion()) {
 		 case 0:
 			 this.moverArriba(unNivel);
 		     break;
@@ -22,6 +24,11 @@ public class Blinky extends Fantasma {
 			 this.moverDerecha(unNivel);
 			 break;
 		 }
+		this.disminuirRepeticionMovimiento();
+		}else{
+			super.atraparPacman(unNivel);
+	
+		}
 	}
 	
 	//Contiene la estrategia que usará Blinky para huir al pacman.
