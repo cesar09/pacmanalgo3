@@ -1,6 +1,5 @@
 package Vista;
 
-import graphicCollection.*;
 
 import java.awt.*;
 import java.io.InputStream;
@@ -9,12 +8,9 @@ import modelo.Fantasma;
 
 import com.sun.image.codec.jpeg.*;
 
-import controlador.*;
-import TP3.*;
 
 public class VistaFantasma implements Dibujable{
 	 
-	private int contador=1;
 	private Image imagenFantasma;
 	private Image imagenComible;
 	private String nombreArchivoComible="comible.jpg";

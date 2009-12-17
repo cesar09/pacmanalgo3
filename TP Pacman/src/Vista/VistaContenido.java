@@ -9,9 +9,6 @@ import modelo.Contenido;
 
 import com.sun.image.codec.jpeg.*;
 
-import controlador.*;
-import TP3.*;
-
 public class VistaContenido{
 	 
 	private Image imagenContenido;

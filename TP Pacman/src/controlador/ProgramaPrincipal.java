@@ -2,7 +2,6 @@ package controlador;
 
 import Vista.Ventana;
 import Vista.VentanaPrincipal;
-import controlador.*;
 import modelo.*;
 
 public class ProgramaPrincipal {
