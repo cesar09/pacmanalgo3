@@ -12,34 +12,28 @@ import junit.framework.TestCase;
 public class TestNivel extends TestCase{
 	
 	private Juego unJuego;
+	private Nivel unNivel;
 	
 	public void setUp() {
 		this.unJuego= new Juego();
+		this.unNivel = this.unJuego.obtenerNivel();
 	}
 	
-	/*	public void testMismaPosicion(){
-		Pacman pacman = this.unJuego.obtenerNivel().obtenerPacman();
-		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
-		blinky.mover(13, 23);
-		assertTrue(this.unJuego.obtenerNivel().mismaPosicion(blinky, pacman));
+	public void testTransportarPacman(){
+		this.unNivel.transportarPacman(0, 8);
+		assertEquals(this.unNivel.obtenerPacman().obtenerPosicion().getX(),27);
+		assertEquals(this.unNivel.obtenerPacman().obtenerPosicion().getY(),8);
 	}
 	
-	public void testComerFantasma(){
-		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
-		try{
-			this.unJuego.obtenerNivel().obtenerMiLaberinto().devolverContenido(1, 3).hayPacman(this.unJuego.obtenerNivel(), 1, 3);
-		}catch (NoTransitableException e){}
-		blinky.mover(13, 23);
-		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
-		assertEquals(blinky.obtenerPosicion().getX(),13);
-		assertEquals(blinky.obtenerPosicion().getY(),13);
+	public void testTransportarFantasma(){
+		this.unNivel.transportarFantasma(this.unNivel.obtenerBlinky(),0,8);
+		assertEquals(this.unNivel.obtenerBlinky().obtenerPosicion().getX(),26);
+		assertEquals(this.unNivel.obtenerBlinky().obtenerPosicion().getY(),8);
 	}
-
-	public void testMatarPacman2(){
-		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
-		blinky.mover(13, 23);
-		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
+	
+	public void pacmanFueAtrapado(){
+		this.unNivel.pacmanFueAtrapado();
 		assertEquals(this.unJuego.obtenerVidasDisponibles(),2);
-	}*/
+	}
 	
 }
