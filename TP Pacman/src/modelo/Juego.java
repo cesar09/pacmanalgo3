@@ -79,7 +79,7 @@ public class Juego {
 	}
 	
 	//Comienza los movimientos del juego.
-	public void mover() throws NivelGanadoException, ArchivoFueraDeFormatoException{
+	public void empezarAJugar() throws NivelGanadoException, ArchivoFueraDeFormatoException{
 		if(archivoErroneo) throw new ArchivoFueraDeFormatoException();
 		this.unNivel.comenzarMoverFantasmas();
 		this.unNivel.comenzarMoverPacman();

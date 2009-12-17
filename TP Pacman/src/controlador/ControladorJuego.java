@@ -27,7 +27,7 @@ public class ControladorJuego {
 			try{
 				this.generarEscenario();
 				while(estaEnEjecucion){
-					miJuego.mover();
+					miJuego.empezarAJugar();
 					this.dibujar();					
 					Thread.sleep(intervaloSimulacion);
 					if (this.miJuego.obtenerVidasDisponibles() == 0){
