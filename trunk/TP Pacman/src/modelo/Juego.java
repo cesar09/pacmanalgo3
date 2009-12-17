@@ -66,7 +66,7 @@ public class Juego {
 	public void mover() throws NivelGanadoException, ArchivoFueraDeFormatoException{
 		if(archivoErroneo) throw new ArchivoFueraDeFormatoException();
 		this.unNivel.comenzarMoverFantasmas();
-		this.unNivel.muevePacman();
+		this.unNivel.comenzarMoverPacman();
 		if (this.seGanoNivel()){
 			throw new NivelGanadoException();
 		}

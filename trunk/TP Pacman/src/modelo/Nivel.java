@@ -62,10 +62,11 @@ public class Nivel {
 			this.inky.moverFantasma(this);
 	}		
 	
-	public void muevePacman(){
+	public void comenzarMoverPacman(){
 			if(!pacman.moverSegunSentido(false,this)) pacman.moverSegunSentido(true,this);
 		}	
 	
+	//Se fija si el pacman y el fantasma están en la misma posición.
 	public void compararPosicionesConFantasmas() {
 		this.comerFantasmaOMorirPacman(this.blinky);
 		this.comerFantasmaOMorirPacman(this.pinky);
@@ -85,7 +86,7 @@ public class Nivel {
 		return this.pacman;
 	}
 	
-	//compara las posiciones de unFantasma y unPacman, devuelve true si son igual, o false en caso contrario
+	//compara las posiciones de unFantasma y unPacman, devuelve true si son iguales, o false en caso contrario.
 	public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
 		int fantasmaX = unFantasma.obtenerPosicion().getX();
 		int fantasmaY = unFantasma.obtenerPosicion().getY();
@@ -99,7 +100,7 @@ public class Nivel {
 		return false;
 	}
 
-	//según el estado del Fantasma muere el pacman o el fantasma y se reinicializan las posiciones.
+	//Según el estado del Fantasma muere el pacman o el fantasma y se reinicializan las posiciones.
 	public void comerFantasmaOMorirPacman(Fantasma unFantasma){
 		if (mismaPosicion(unFantasma,this.obtenerPacman())){
 			if(unFantasma.esComestible()){
@@ -131,7 +132,7 @@ public class Nivel {
 		return (this.inky);
 	}
 
-
+	//Tranporta al pacman, en caso de estar en un casillero Transportador.
 	public void transportarPacman(int x, int y) {	
 		if(x==0){
 			this.pacman.serTransportadoADerecha(y);
@@ -152,6 +153,7 @@ public class Nivel {
 	}
 
 
+	//Tranporta al fantasma, en caso de estar en un casillero Transportador.
 	public void transportarFantasma(Fantasma unFantasma, int x, int y) {
 		if(x==0){
 			unFantasma.serTransportadoADerecha(y);
