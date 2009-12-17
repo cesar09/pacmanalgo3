@@ -9,9 +9,11 @@ public class testFantasma extends TestCase {
 	private Fantasma miFantasma;
 	private Nivel unNivel;
 	private Juego unJuego;
+	private int posicionInicialX;
+	private int posicionInicialY;
 
 	public void setUp(){
-		miFantasma = new Clyde(1,1);
+		miFantasma = new Blinky(1,1);
 		try {
 			unNivel = new Nivel(unJuego,1);
 		} catch (ArchivoFueraDeFormatoException e) {
@@ -20,16 +22,53 @@ public class testFantasma extends TestCase {
 		}
 	}
 	
-	public void testElegirMovimiento(){
-		
+	public void testElegirMovimientoSiEsComestible(){
+		posicionInicialX = miFantasma.getX();
+		posicionInicialY = miFantasma.getY();
 		miFantasma.hacerseComestible();
 		miFantasma.elegirMovimiento(unNivel);	
 		assertFalse(miFantasma.yaMovio());
-		
-		
-		
-		
+		assertEquals(++posicionInicialX, miFantasma.getX());
+		assertEquals(posicionInicialY, miFantasma.getY());
+	}
+	
+	public void testElegirMovimientoSiNoEsComestible(){
+		posicionInicialX = miFantasma.getX();
+		posicionInicialY = miFantasma.getY();
+		miFantasma.hacerseNoComestible();
+		miFantasma.elegirMovimiento(unNivel);	
+		assertFalse(miFantasma.yaMovio());
+		assertEquals(--posicionInicialX, miFantasma.getX());
+		assertEquals(posicionInicialY, miFantasma.getY());
+	}
+	
+	public void testFantasmaComido(){
 		
 	}
 
+	public void testMoverFantasma(){
+		
+	}
+
+	public void testDistanciaPacman(){
+		
+	}
+	
+	public void testMoverAbajo(){
+		
+	}
+	
+	public void testMoverArriba(){
+		
+	}
+
+	public void testMoverDerecha(){
+	
+	}
+
+	public void testMoverIzquierda(){
+	
+	}
+	
+	
 }
