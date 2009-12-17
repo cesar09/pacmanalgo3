@@ -5,6 +5,7 @@ public class Inky extends Fantasma {
 		super(velocidadInicial, tiempoEnJaula);
 	}
 
+	//Contiene la estrategia que usará Inky para atrapar al pacman.
 	public void atraparPacman(Nivel unNivel){
 	    Point distancia = this.distanciaPacman(unNivel.obtenerPacman().obtenerPosicion());
 	    int distanciaEnX = distancia.getX();
@@ -30,10 +31,12 @@ public class Inky extends Fantasma {
 			}
 		}	
 
+	//Contiene la estrategia que usará Inky para huir al pacman.
 	public void huirDePacman(Nivel unNivel) {
         this.moverAbajo(unNivel);
     }
 	
+	//Tiene una posición predeterminada para estar en la jaula
 	public void irAJaula() {
 		Point posicion = new Point (14,14);
 		this.posicion = posicion;
@@ -41,6 +44,7 @@ public class Inky extends Fantasma {
 		this.hacerseNoComestible();
 	}
 	
+	//Tiene una posición predeterminada para salir de la jaula
 	public void salirDeJaula (){
 		Point posicion = new Point (14,11);
 		this.posicion = posicion;
