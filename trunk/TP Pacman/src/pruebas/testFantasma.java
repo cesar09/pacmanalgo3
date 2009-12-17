@@ -17,8 +17,7 @@ public class testFantasma extends TestCase {
 		try {
 			unNivel = new Nivel(unJuego,1);
 		} catch (ArchivoFueraDeFormatoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			fail("No debía enviar esta excepción.");
 		}
 	}
 	

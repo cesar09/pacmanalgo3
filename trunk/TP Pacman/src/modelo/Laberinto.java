@@ -44,7 +44,7 @@ private void cargarLaberintoSegunNivel(int nivel) throws ArchivoFueraDeFormatoEx
 		int caracter = 0;
 				
 		BufferedReader input = null;
-		File laberintoFile = new File("nivel"+nivel+".xml");
+		File laberintoFile = new File("TP Pacman/Archivos/nivel"+nivel+".xml");
 		try {
 			input = new BufferedReader(new FileReader(laberintoFile));
 		} catch (FileNotFoundException e) {
