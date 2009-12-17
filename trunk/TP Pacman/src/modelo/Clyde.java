@@ -9,16 +9,16 @@ public class Clyde extends Fantasma {
 	public void atraparPacman(Nivel unNivel) {
 		 switch(this.UltimaPosicion()) {
 		 case 0:
-			 this.moverDerecha(unNivel);
+			 this.moverDerechaDos(unNivel);
 		     break;
 		 case 1:
-			 this.moverAbajo(unNivel);
+			 this.moverAbajoDos(unNivel);
 			 break;
 		 case 2:
-			 this.moverIzquierda(unNivel);
+			 this.moverIzquierdaDos(unNivel);
 			 break;
 		 case 3:
-			 this.moverArriba(unNivel);
+			 this.moverArribaDos(unNivel);
 			 break;
 		 }
 	}
@@ -38,72 +38,5 @@ public class Clyde extends Fantasma {
 		Point posicion = new Point (13,11);
 		this.posicion = posicion;
 		this.encerrado = false;
-	}
-	
-	public void moverAbajo(Nivel unNivel){
-		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-		int x = this.obtenerPosicion().getX();
-		int y = this.obtenerPosicion().getY();
-        try {
-        	y++;
-        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
-        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
-        		this.mover(x,y);
-        	}
-            this.nuevaUltimaPosicion(1);
-            }catch (NoTransitableException e1) {
-            	this.moverIzquierda(unNivel);
-            }
-    }
-	
-	public void moverArriba(Nivel unNivel){
-		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-		int x = this.obtenerPosicion().getX();
-		int y = this.obtenerPosicion().getY();
-        try {
-        	y--;
-        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
-        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
-        		this.mover(x,y);
-        	}
-            this.nuevaUltimaPosicion(3);
-            }catch (NoTransitableException e1) {
-            	this.moverDerecha(unNivel);
-        		    }
-		
-	}
-	
-	public void moverDerecha(Nivel unNivel){
-		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-		int x = this.obtenerPosicion().getX();
-		int y = this.obtenerPosicion().getY();
-        try {
-        	x++;
-        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
-        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
-        		this.mover(x,y);
-        	}
-            this.nuevaUltimaPosicion(0);
-            }catch (NoTransitableException e1) {
-            	this.moverAbajo(unNivel);
-        		    }
-	}
-	
-	public void moverIzquierda(Nivel unNivel){
-		Laberinto unLaberinto = unNivel.obtenerMiLaberinto();
-		int x = this.obtenerPosicion().getX();
-		int y = this.obtenerPosicion().getY();
-        try {
-        	x--;
-        	unLaberinto.devolverContenido(x,y).serTransitado(unNivel,this,x, y);
-        	if (!(unLaberinto.devolverContenido(x,y) instanceof Transportador)){
-        		this.mover(x,y);
-        	}
-            this.nuevaUltimaPosicion(2);
-            }catch (NoTransitableException e1) {
-            	this.moverArriba(unNivel);
-        	 }
-	}
-
-	
+	}	
 }
