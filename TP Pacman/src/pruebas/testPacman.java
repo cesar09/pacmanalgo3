@@ -36,28 +36,28 @@ public class testPacman extends TestCase{
 	}
 	public void testIrIzquierda(){
 		unNivel.obtenerPacman().nuevoSentido(-1,0);
-		unNivel.muevePacman();
+		unNivel.comenzarMoverPacman();
 		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
 		assertEquals(unPoint.getX(),12);
 		assertEquals(unPoint.getY(),23);
 	}
 	public void testIrDerecha(){
 		unNivel.obtenerPacman().nuevoSentido(1,0);
-		unNivel.muevePacman();
+		unNivel.comenzarMoverPacman();
 		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
 		assertEquals(unPoint.getX(),14);
 		assertEquals(unPoint.getY(),23);
 	}
 	public void testIrArriba(){
 		unNivel.obtenerPacman().nuevoSentido(0,-1);
-		unNivel.muevePacman();
+		unNivel.comenzarMoverPacman();
 		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
 		assertEquals(unPoint.getX(),12);
 		assertEquals(unPoint.getY(),23);
 	}
 	public void testIrAbajo(){
 		unNivel.obtenerPacman().nuevoSentido(0,1);
-		unNivel.muevePacman();
+		unNivel.comenzarMoverPacman();
 		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
 		assertEquals(unPoint.getX(),12);
 		assertEquals(unPoint.getY(),23);
