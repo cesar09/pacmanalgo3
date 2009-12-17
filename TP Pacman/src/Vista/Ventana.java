@@ -90,7 +90,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		int n = JOptionPane.showConfirmDialog(this,"Desea salvar esta partida?",
 			    "Pacman",
 			    JOptionPane.YES_NO_OPTION);
-		if(n==0) unJuego.guardarJuego("partida.dat");
+		if(n==0) unJuego.guardarJuego("TP Pacman/Archivos/partida.dat");
 	}
 	
 }
