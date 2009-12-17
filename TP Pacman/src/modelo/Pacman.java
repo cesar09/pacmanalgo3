@@ -40,7 +40,7 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 				 ultimoSentidoPacmanX=-1;
 				 ultimoSentidoPacmanY=0;
 				 if (!unNivel.obtenerMiJuego().seGanoJuego()){
-					unNivel.compararPosicionesConFantasmas();
+					this.compararPosicionesConFantasmas(unNivel);
 					return true;
 				 }
 			} catch (NoTransitableException e) {}
@@ -54,7 +54,7 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 				 ultimoSentidoPacmanX=1;
 				 ultimoSentidoPacmanY=0;
 				 if (!unNivel.obtenerMiJuego().seGanoJuego()){
-					 unNivel.compararPosicionesConFantasmas();
+					 this.compararPosicionesConFantasmas(unNivel);
 					 return true;
 				 }
 			  } catch (NoTransitableException e) {}
@@ -70,8 +70,8 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 				 ultimoSentidoPacmanY=1;
 				 ultimoSentidoPacmanX=0;
 				 if (!unNivel.obtenerMiJuego().seGanoJuego()){
-					 unNivel.compararPosicionesConFantasmas();
-					 return true;
+					this.compararPosicionesConFantasmas(unNivel);
+					return true;
 				 }
 			} catch (NoTransitableException e) {}
 			 break;
@@ -84,7 +84,7 @@ public class Pacman extends Personaje implements Posicionable,Movible,KeyboardDi
 				 ultimoSentidoPacmanY=-1;
 				 ultimoSentidoPacmanX=0;
 				 if (!unNivel.obtenerMiJuego().seGanoJuego()){
-					 unNivel.compararPosicionesConFantasmas();
+					 this.compararPosicionesConFantasmas(unNivel);
 					 return true;
 				 }
 			} catch (NoTransitableException e) {}
