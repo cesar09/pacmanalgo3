@@ -2,11 +2,9 @@ package Vista;
 
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.InputStream;
 import modelo.Pacman;
 import com.sun.image.codec.jpeg.*;
-import controlador.*;
 
 public class VistaPacman implements Dibujable{
 	 
