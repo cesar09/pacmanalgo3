@@ -7,14 +7,12 @@ import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JOptionPane;
 
 import modelo.Juego;
 
-import controlador.ControladorJuego;
 import controlador.KeyboardController;
 import controlador.WindowAdapterClosing;
 

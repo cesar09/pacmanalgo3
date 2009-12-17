@@ -3,15 +3,12 @@ package Vista;
 import java.awt.*;
 import java.io.InputStream;
 
-import modelo.Contenido;
-
 import com.sun.image.codec.jpeg.*;
 
 public class VistaContenido{
 	 
 	private Image imagenContenido;
-	private Posicionable posicionable;
-	private Contenido unContenido;
+
 	
 	public VistaContenido(String nombreArchivoImagen) {
 		setNombreArchivoImagen(nombreArchivoImagen);
