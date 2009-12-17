@@ -42,6 +42,7 @@ public class Clyde extends Fantasma {
 		this.posicion = posicion;
 		this.encerrado = true;
 		this.hacerseNoComestible();
+		this.setRepeticionMovimiento(45);
 	}
 	
 	//Tiene una posición predeterminada para salir de la jaula
