@@ -17,7 +17,7 @@ public class TestNivel extends TestCase{
 		this.unJuego= new Juego();
 	}
 	
-		public void testMismaPosicion(){
+	/*	public void testMismaPosicion(){
 		Pacman pacman = this.unJuego.obtenerNivel().obtenerPacman();
 		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
 		blinky.mover(13, 23);
@@ -33,7 +33,6 @@ public class TestNivel extends TestCase{
 		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
 		assertEquals(blinky.obtenerPosicion().getX(),13);
 		assertEquals(blinky.obtenerPosicion().getY(),13);
-		//assertEquals(this.unJuego.obtenerPuntajeDelJugador(),200);
 	}
 
 	public void testMatarPacman2(){
@@ -41,6 +40,6 @@ public class TestNivel extends TestCase{
 		blinky.mover(13, 23);
 		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
 		assertEquals(this.unJuego.obtenerVidasDisponibles(),2);
-	}
+	}*/
 	
 }

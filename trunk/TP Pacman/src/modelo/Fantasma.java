@@ -48,7 +48,7 @@ public abstract class Fantasma extends Personaje implements Posicionable{
 				if (this.esComestible())
 					this.huirDePacman(unNivel);
 				else this.atraparPacman(unNivel);			
-				unNivel.comerFantasmaOMorirPacman(this);
+				this.comerFantasmaOMorirPacman(this,unNivel);
 				this.contadorVelocidad=1;
 			}
 			else this.contadorVelocidad++;

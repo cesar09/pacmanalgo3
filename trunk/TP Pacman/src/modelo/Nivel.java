@@ -82,12 +82,12 @@ public class Nivel {
 		}	
 	
 	//Se fija si el pacman y el fantasma están en la misma posición.
-	public void compararPosicionesConFantasmas() {
+	/*public void compararPosicionesConFantasmas() {
 		this.comerFantasmaOMorirPacman(this.blinky);
 		this.comerFantasmaOMorirPacman(this.pinky);
 		this.comerFantasmaOMorirPacman(this.clyde);
 		this.comerFantasmaOMorirPacman(this.inky);		
-	}
+	}*/
 
 	public int obtenerNumeroNivel() {
 		return this.nivel;
@@ -102,7 +102,7 @@ public class Nivel {
 	}
 	
 	//compara las posiciones de unFantasma y unPacman, devuelve true si son iguales, o false en caso contrario.
-	public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
+	/*public boolean mismaPosicion(Fantasma unFantasma,Pacman unPacman){
 		int fantasmaX = unFantasma.obtenerPosicion().getX();
 		int fantasmaY = unFantasma.obtenerPosicion().getY();
 		int pacmanX = unPacman.obtenerPosicion().getX();
@@ -126,7 +126,7 @@ public class Nivel {
 				this.juego.pacmanFueAtrapado();
 			}				
 		}
-	}
+	}*/
 	
 	public Pinky obtenerPinky(){
 		return (this.pinky);
@@ -176,6 +176,10 @@ public class Nivel {
 		if(x==27){
 			unFantasma.serTransportadoAIzquierda(y);
 		}	
+	}
+
+	public void pacmanFueAtrapado() {
+		this.juego.pacmanFueAtrapado();
 	}
 	
 }
