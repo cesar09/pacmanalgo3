@@ -31,7 +31,7 @@ public class VistaInformacion implements Dibujable{
 			}
 			else if(this.miNivel.obtenerMiJuego().archivoErroneo()){
 				grafico.setFont(new Font("fuente",  Font.BOLD, 30));
-				grafico.drawString("Archivo de Nivel fuera de formato", 154, 360);
+				grafico.drawString("Archivo de Nivel fuera de formato", 47, 360);
 		}
 	}
 
