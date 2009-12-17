@@ -34,32 +34,13 @@ public class testPacman extends TestCase{
 		assertEquals(unPoint.getY(),23);
 		assertSame(unPacman.obtenerPosicion(),unPoint);
 	}
-	public void testIrIzquierda(){
-		unNivel.obtenerPacman().nuevoSentido(-1,0);
-		unNivel.comenzarMoverPacman();
-		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
-		assertEquals(unPoint.getX(),12);
-		assertEquals(unPoint.getY(),23);
-	}
+
+	//Los métodos irIzquierda, irArriba e irAbajo son similares.
 	public void testIrDerecha(){
 		unNivel.obtenerPacman().nuevoSentido(1,0);
 		unNivel.comenzarMoverPacman();
 		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
 		assertEquals(unPoint.getX(),14);
-		assertEquals(unPoint.getY(),23);
-	}
-	public void testIrArriba(){
-		unNivel.obtenerPacman().nuevoSentido(0,-1);
-		unNivel.comenzarMoverPacman();
-		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
-		assertEquals(unPoint.getX(),12);
-		assertEquals(unPoint.getY(),23);
-	}
-	public void testIrAbajo(){
-		unNivel.obtenerPacman().nuevoSentido(0,1);
-		unNivel.comenzarMoverPacman();
-		Point unPoint=unNivel.obtenerPacman().obtenerPosicion();
-		assertEquals(unPoint.getX(),12);
 		assertEquals(unPoint.getY(),23);
 	}
 

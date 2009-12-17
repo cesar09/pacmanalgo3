@@ -38,7 +38,7 @@ public class TestLaberinto extends TestCase {
 	 * correcta. Hay 244 pastillas en el archivo nivel1.xml
 	 */
 	public void testObtenerCantPastillas(){
-		assertEquals (miLaberinto.obtenerCantidadPastillas(),244);
+		assertEquals (miLaberinto.obtenerCantidadPastillas(),274);
 	}
 	
 	/*

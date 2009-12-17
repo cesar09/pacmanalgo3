@@ -1,9 +1,9 @@
 package pruebas;
 
 
-import modelo.Juego;
-import modelo.Blinky;
-import modelo.Pacman;
+import modelo.*;
+
+
 
 
 import junit.framework.TestCase;
@@ -17,37 +17,24 @@ public class TestNivel extends TestCase{
 		this.unJuego= new Juego();
 	}
 	
-	/*public void testHacerFantasmasComestibles(){
-		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
-		assertTrue(this.unJuego.obtenerNivel().obtenerBlinky().esComestible());
-		assertTrue(this.unJuego.obtenerNivel().obtenerClyde().esComestible());
-		assertTrue(this.unJuego.obtenerNivel().obtenerInky().esComestible());
-		assertTrue(this.unJuego.obtenerNivel().obtenerPinky().esComestible());
-	}
-	
-	public void testHacerFantasmasNoComestibles(){
-		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
-		this.unJuego.obtenerNivel().hacerFantasmasNoComestibles();
-		assertFalse(this.unJuego.obtenerNivel().obtenerBlinky().esComestible());
-		assertFalse(this.unJuego.obtenerNivel().obtenerClyde().esComestible());
-		assertFalse(this.unJuego.obtenerNivel().obtenerInky().esComestible());
-		assertFalse(this.unJuego.obtenerNivel().obtenerPinky().esComestible());
-	}*/
-	
-	public void testMismaPosicion(){
+		public void testMismaPosicion(){
 		Pacman pacman = this.unJuego.obtenerNivel().obtenerPacman();
 		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
 		blinky.mover(13, 23);
 		assertTrue(this.unJuego.obtenerNivel().mismaPosicion(blinky, pacman));
 	}
 	
-	/*public void testComerFantasma(){
+	public void testComerFantasma(){
 		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
-		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
+		try{
+			this.unJuego.obtenerNivel().obtenerMiLaberinto().devolverContenido(1, 3).hayPacman(this.unJuego.obtenerNivel(), 1, 3);
+		}catch (NoTransitableException e){}
 		blinky.mover(13, 23);
 		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
-		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),200);
-	}*/
+		assertEquals(blinky.obtenerPosicion().getX(),13);
+		assertEquals(blinky.obtenerPosicion().getY(),13);
+		//assertEquals(this.unJuego.obtenerPuntajeDelJugador(),200);
+	}
 
 	public void testMatarPacman2(){
 		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
