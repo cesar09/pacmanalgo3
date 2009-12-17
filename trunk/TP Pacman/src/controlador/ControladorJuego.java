@@ -82,7 +82,6 @@ public class ControladorJuego {
 		
 		VistaInformacion informacion = new VistaInformacion(miJuego.obtenerNivel());
 		
-		this.superficieDeDibujo.setVisible(true);
 		this.agregarDibujable(vistaFondo);
 		this.agregarDibujable(vistaLaberinto);
 		this.agregarDibujable(vistaPacman);

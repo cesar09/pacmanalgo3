@@ -40,12 +40,6 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		int x = (screenSize.width - frameSize.width) / 2;
 		int y = (screenSize.height - frameSize.height) / 2;
 		setLocation(x, y);
-		/*addWindowListener(new WindowAdapterClosing(this) {
-			public void windowClosing(WindowEvent e) {
-				dispose();
-				System.exit(0);
-			}
-		});*/
 	}
 	// es llamado internamente por el metodo repaint() de la clase Frame
 	public void update(Graphics g) {
@@ -66,7 +60,7 @@ public class Ventana extends Frame implements SuperficieDeDibujo{
 		if(this.imagen == null)
 			this.imagen = this.createImage(getSize().width, getSize().height);
 		Graphics superficieParaDibujar =  this.imagen.getGraphics();
-		superficieParaDibujar.setColor(Color.WHITE);// 
+		superficieParaDibujar.setColor(Color.BLACK);// 
 		superficieParaDibujar.fillRect(0, 0, this.getSize().width, this.getSize().height);		
 	}
 
