@@ -1,12 +1,7 @@
 package Vista;
 
-import graphicCollection.*;
 import java.awt.*;
-
-import controlador.*;
-
 import modelo.Nivel;
-import TP3.*;
 
 public class VistaInformacion implements Dibujable{
 

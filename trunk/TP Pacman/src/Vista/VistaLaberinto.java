@@ -1,10 +1,6 @@
 package Vista;
 
-import graphicCollection.*;
 
-import java.awt.*;
-import java.io.IOException;
-import java.io.InputStream;
 
 import modelo.Bloque;
 import modelo.Contenido;
@@ -14,10 +10,6 @@ import modelo.Punto;
 import modelo.PuntoPoder;
 import modelo.Vacio;
 
-import com.sun.image.codec.jpeg.*;
-
-import controlador.*;
-import TP3.*;
 
 public class VistaLaberinto implements Dibujable{
 

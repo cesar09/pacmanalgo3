@@ -1,17 +1,12 @@
 package Vista;
 
-import graphicCollection.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.InputStream;
-
 import modelo.Pacman;
-
 import com.sun.image.codec.jpeg.*;
-
 import controlador.*;
-import TP3.*;
 
 public class VistaPacman extends KeyboardController implements Dibujable{
 	 
