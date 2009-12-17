@@ -40,34 +40,5 @@ public class testFantasma extends TestCase {
 		assertEquals(--posicionInicialX, miFantasma.getX());
 		assertEquals(posicionInicialY, miFantasma.getY());
 	}
-	
-	public void testFantasmaComido(){
 		
-	}
-
-	public void testMoverFantasma(){
-		
-	}
-
-	public void testDistanciaPacman(){
-		
-	}
-	
-	public void testMoverAbajo(){
-		
-	}
-	
-	public void testMoverArriba(){
-		
-	}
-
-	public void testMoverDerecha(){
-	
-	}
-
-	public void testMoverIzquierda(){
-	
-	}
-	
-	
 }
