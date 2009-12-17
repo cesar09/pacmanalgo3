@@ -3,7 +3,6 @@ package controlador;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import Vista.KeyboardDireccion;
 	
 public class KeyboardController extends KeyAdapter{
 	
