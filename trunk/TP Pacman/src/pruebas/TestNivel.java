@@ -17,7 +17,7 @@ public class TestNivel extends TestCase{
 		this.unJuego= new Juego();
 	}
 	
-	public void testHacerFantasmasComestibles(){
+	/*public void testHacerFantasmasComestibles(){
 		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
 		assertTrue(this.unJuego.obtenerNivel().obtenerBlinky().esComestible());
 		assertTrue(this.unJuego.obtenerNivel().obtenerClyde().esComestible());
@@ -32,7 +32,7 @@ public class TestNivel extends TestCase{
 		assertFalse(this.unJuego.obtenerNivel().obtenerClyde().esComestible());
 		assertFalse(this.unJuego.obtenerNivel().obtenerInky().esComestible());
 		assertFalse(this.unJuego.obtenerNivel().obtenerPinky().esComestible());
-	}
+	}*/
 	
 	public void testMismaPosicion(){
 		Pacman pacman = this.unJuego.obtenerNivel().obtenerPacman();
@@ -41,13 +41,13 @@ public class TestNivel extends TestCase{
 		assertTrue(this.unJuego.obtenerNivel().mismaPosicion(blinky, pacman));
 	}
 	
-	public void testComerFantasma(){
+	/*public void testComerFantasma(){
 		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();
 		this.unJuego.obtenerNivel().hacerFantasmasComestibles();
 		blinky.mover(13, 23);
 		this.unJuego.obtenerNivel().comerFantasmaOMorirPacman(blinky);
 		assertEquals(this.unJuego.obtenerPuntajeDelJugador(),200);
-	}
+	}*/
 
 	public void testMatarPacman2(){
 		Blinky blinky = this.unJuego.obtenerNivel().obtenerBlinky();

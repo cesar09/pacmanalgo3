@@ -13,7 +13,10 @@ package modelo;
 		}
 
 		private void hacerFantasmasNoComestibles(){
-			this.miNivel.hacerFantasmasNoComestibles();
+			this.miNivel.obtenerBlinky().hacerseNoComestible();
+			this.miNivel.obtenerInky().hacerseNoComestible();
+			this.miNivel.obtenerPinky().hacerseNoComestible();
+			this.miNivel.obtenerClyde().hacerseNoComestible();
 		}
 
 		public void cancelarTimer(){
